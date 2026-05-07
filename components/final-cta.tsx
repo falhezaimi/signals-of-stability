@@ -18,20 +18,23 @@ export function FinalCTA() {
 
   return (
     <section ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-alpine-night/50" />
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
+      
+      {/* Subtle top accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-6 md:px-8">
+      <div className="relative max-w-3xl mx-auto px-6 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center"
         >
           {/* Header */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-widest text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+            <span className="text-[11px] font-mono uppercase tracking-widest text-primary/80">
               Research Project
             </span>
           </div>
@@ -40,17 +43,17 @@ export function FinalCTA() {
             Reading the Alpine Signal
           </h2>
 
-          <p className="max-w-xl mx-auto text-muted-foreground mb-12 text-balance">
+          <p className="max-w-md mx-auto text-muted-foreground/80 text-sm mb-10 text-balance">
             A research-driven digital experience connecting remote sensing, 
             ecological stability, and conservation storytelling.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
               size="lg"
               onClick={() => handleNavClick('#observatory')}
-              className="w-full sm:w-auto gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full sm:w-auto gap-2 bg-primary/90 hover:bg-primary text-primary-foreground"
             >
               <Telescope className="w-4 h-4" />
               Explore Observatory
@@ -59,7 +62,7 @@ export function FinalCTA() {
               size="lg"
               variant="outline"
               onClick={() => handleNavClick('#method')}
-              className="w-full sm:w-auto gap-2 border-border/50 hover:bg-card/50"
+              className="w-full sm:w-auto gap-2 border-border/30 hover:bg-card/30"
             >
               <BookOpen className="w-4 h-4" />
               View Methodology
@@ -68,7 +71,7 @@ export function FinalCTA() {
               size="lg"
               variant="outline"
               onClick={() => handleNavClick('#findings')}
-              className="w-full sm:w-auto gap-2 border-border/50 hover:bg-card/50"
+              className="w-full sm:w-auto gap-2 border-border/30 hover:bg-card/30"
             >
               <FileText className="w-4 h-4" />
               Read Findings
@@ -80,21 +83,21 @@ export function FinalCTA() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20 pt-12 border-t border-border/30"
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+          className="mt-16 pt-10 border-t border-border/20"
         >
-          <div className="grid sm:grid-cols-3 gap-8 text-center">
+          <div className="grid sm:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="text-xs font-mono text-muted-foreground mb-2">PROJECT</p>
-              <p className="text-sm text-foreground">Signals of Stability</p>
+              <p className="text-[10px] font-mono text-muted-foreground/50 mb-1">PROJECT</p>
+              <p className="text-xs text-foreground/70">Signals of Stability</p>
             </div>
             <div>
-              <p className="text-xs font-mono text-muted-foreground mb-2">FOCUS</p>
-              <p className="text-sm text-foreground">Swiss National Park, CH</p>
+              <p className="text-[10px] font-mono text-muted-foreground/50 mb-1">FOCUS</p>
+              <p className="text-xs text-foreground/70">Swiss National Park, CH</p>
             </div>
             <div>
-              <p className="text-xs font-mono text-muted-foreground mb-2">PERIOD</p>
-              <p className="text-sm text-foreground">2019 - 2024</p>
+              <p className="text-[10px] font-mono text-muted-foreground/50 mb-1">PERIOD</p>
+              <p className="text-xs text-foreground/70">2019 - 2024</p>
             </div>
           </div>
         </motion.div>
@@ -103,14 +106,11 @@ export function FinalCTA() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.8, delay: 0.45, ease: 'easeOut' }}
+          className="mt-12 text-center"
         >
-          <p className="text-xs text-muted-foreground/50">
+          <p className="text-[10px] text-muted-foreground/40">
             This is a research prototype. Data visualizations use simulated values for demonstration purposes.
-          </p>
-          <p className="text-xs text-muted-foreground/50 mt-2">
-            Real satellite analysis outputs will be integrated upon completion of the research phase.
           </p>
         </motion.div>
       </div>

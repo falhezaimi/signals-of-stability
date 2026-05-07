@@ -131,71 +131,11 @@
   background: oklch(0.35 0.02 240);
 }
 
-/* Animated gradient background */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient-shift 15s ease infinite;
-  background-size: 200% 200%;
-}
-
-/* Scan line effect */
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
-
-.animate-scan {
-  animation: scan 8s linear infinite;
-}
-
-/* Pulse glow effect */
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.4;
-    box-shadow: 0 0 20px oklch(0.65 0.12 160 / 0.3);
-  }
-  50% {
-    opacity: 0.8;
-    box-shadow: 0 0 40px oklch(0.65 0.12 160 / 0.5);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Contour line animation */
-@keyframes contour-flow {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.animate-contour {
-  stroke-dasharray: 1000;
-  animation: contour-flow 20s linear infinite;
-}
-
-/* Fade up animation */
+/* Subtle fade up animation */
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -207,16 +147,8 @@
   animation: fade-up 0.8s ease-out forwards;
 }
 
-/* Orbital motion */
-@keyframes orbit {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-orbit {
-  animation: orbit 60s linear infinite;
+/* Selection color */
+::selection {
+  background: oklch(0.65 0.12 160 / 0.25);
+  color: oklch(0.97 0.005 240);
 }

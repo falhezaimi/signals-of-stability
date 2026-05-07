@@ -14,7 +14,6 @@ import {
   ResponsiveContainer,
   Legend,
 } from 'recharts'
-import { Info } from 'lucide-react'
 
 // Simulated data
 const vegetationData = [
@@ -54,10 +53,10 @@ const coverageData = [
 function CustomTooltip({ active, payload, label }: any) {
   if (active && payload && payload.length) {
     return (
-      <div className="px-3 py-2 rounded-lg bg-card border border-border shadow-xl">
-        <p className="text-xs font-mono text-muted-foreground mb-1">{label}</p>
+      <div className="px-3 py-2 rounded-lg bg-card/95 border border-border/40 shadow-lg backdrop-blur-sm">
+        <p className="text-[10px] font-mono text-muted-foreground/70 mb-1">{label}</p>
         {payload.map((entry: { name: string; value: number; color: string }, index: number) => (
-          <p key={index} className="text-sm font-mono" style={{ color: entry.color }}>
+          <p key={index} className="text-xs font-mono" style={{ color: entry.color }}>
             {entry.name}: {typeof entry.value === 'number' ? entry.value.toFixed(2) : entry.value}
           </p>
         ))}
@@ -69,13 +68,14 @@ function CustomTooltip({ active, payload, label }: any) {
 
 function HeatmapCell({ value, maxAbs = 0.6 }: { value: number; maxAbs?: number }) {
   const normalizedValue = value / maxAbs
+  const opacity = Math.min(0.8, Math.abs(normalizedValue) * 0.8 + 0.2)
   const color = value > 0 
-    ? `oklch(0.75 ${Math.abs(normalizedValue) * 0.12} 85)` // gold for stress
-    : `oklch(0.65 ${Math.abs(normalizedValue) * 0.12} 160)` // green for normal
+    ? `oklch(0.75 0.08 85 / ${opacity})`
+    : `oklch(0.65 0.08 160 / ${opacity})`
 
   return (
     <div
-      className="aspect-square rounded flex items-center justify-center text-[10px] font-mono transition-all hover:scale-110"
+      className="aspect-square rounded flex items-center justify-center text-[9px] font-mono transition-all duration-300 hover:scale-105"
       style={{ backgroundColor: color, color: 'white' }}
     >
       {value > 0 ? '+' : ''}{value.toFixed(1)}
@@ -89,38 +89,41 @@ export function DataVisualizations() {
   const [activeChart, setActiveChart] = useState<'vegetation' | 'et' | 'stress' | 'coverage'>('vegetation')
 
   return (
-    <section id="findings" ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/10 to-background" />
+    <section id="findings" ref={sectionRef} className="relative py-28 md:py-40 overflow-hidden">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
+      
+      {/* Subtle accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-8">
+      <div className="relative max-w-5xl mx-auto px-6 md:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center mb-12 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-card/30 backdrop-blur-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-card/20 backdrop-blur-sm mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+            <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
               Data Analysis
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance">
             Visualizing the Signals
           </h2>
-          <p className="max-w-2xl mx-auto text-muted-foreground text-balance">
+          <p className="max-w-lg mx-auto text-muted-foreground/80 text-sm text-balance">
             Publication-grade visualizations of vegetation, water, and stress indicators
           </p>
         </motion.div>
 
         {/* Chart selector */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-2 mb-8"
+          transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
+          className="flex flex-wrap justify-center gap-1.5 mb-8"
         >
           {[
             { id: 'vegetation', label: 'Vegetation Index' },
@@ -131,10 +134,10 @@ export function DataVisualizations() {
             <button
               key={chart.id}
               onClick={() => setActiveChart(chart.id as typeof activeChart)}
-              className={`px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+              className={`px-4 py-2 rounded-lg border text-xs font-medium transition-all duration-300 ${
                 activeChart === chart.id
-                  ? 'bg-primary/20 border-primary/50 text-foreground'
-                  : 'border-border/50 text-muted-foreground hover:text-foreground hover:border-border'
+                  ? 'bg-primary/15 border-primary/30 text-foreground'
+                  : 'border-border/20 text-muted-foreground hover:text-foreground hover:border-border/40'
               }`}
             >
               {chart.label}
@@ -144,43 +147,42 @@ export function DataVisualizations() {
 
         {/* Charts */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm overflow-hidden"
+          transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+          className="rounded-xl border border-border/25 bg-card/10 overflow-hidden"
         >
           {/* Vegetation Index Chart */}
           {activeChart === 'vegetation' && (
-            <div className="p-6 md:p-8">
-              <div className="flex items-center justify-between mb-6">
+            <div className="p-5 md:p-6">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <h3 className="text-lg font-medium mb-1">Vegetation Greenness (NDVI)</h3>
-                  <p className="text-sm text-muted-foreground">Mean growing season values with range</p>
+                  <h3 className="text-sm font-medium mb-0.5">Vegetation Greenness (NDVI)</h3>
+                  <p className="text-xs text-muted-foreground/60">Mean growing season values with range</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Info className="w-4 h-4" />
-                  <span>Simulated Data</span>
-                </div>
+                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
               </div>
-              <div className="h-[300px] md:h-[400px]">
+              <div className="h-[280px] md:h-[340px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={vegetationData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                  <AreaChart data={vegetationData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                     <defs>
                       <linearGradient id="ndviGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="oklch(0.65 0.12 160)" stopOpacity={0.3} />
+                        <stop offset="5%" stopColor="oklch(0.65 0.12 160)" stopOpacity={0.2} />
                         <stop offset="95%" stopColor="oklch(0.65 0.12 160)" stopOpacity={0} />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240)" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
                     <XAxis 
                       dataKey="year" 
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <YAxis 
                       domain={[0.4, 0.8]}
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <Area
@@ -188,7 +190,7 @@ export function DataVisualizations() {
                       dataKey="ndviMax"
                       stroke="none"
                       fill="oklch(0.65 0.12 160)"
-                      fillOpacity={0.1}
+                      fillOpacity={0.08}
                     />
                     <Area
                       type="monotone"
@@ -200,9 +202,9 @@ export function DataVisualizations() {
                       type="monotone"
                       dataKey="ndvi"
                       stroke="oklch(0.65 0.12 160)"
-                      strokeWidth={2}
-                      dot={{ fill: 'oklch(0.65 0.12 160)', strokeWidth: 0, r: 4 }}
-                      activeDot={{ r: 6, fill: 'oklch(0.65 0.12 160)' }}
+                      strokeWidth={1.5}
+                      dot={{ fill: 'oklch(0.65 0.12 160)', strokeWidth: 0, r: 3 }}
+                      activeDot={{ r: 5, fill: 'oklch(0.65 0.12 160)' }}
                     />
                   </AreaChart>
                 </ResponsiveContainer>
@@ -212,60 +214,59 @@ export function DataVisualizations() {
 
           {/* Seasonal ET Comparison */}
           {activeChart === 'et' && (
-            <div className="p-6 md:p-8">
-              <div className="flex items-center justify-between mb-6">
+            <div className="p-5 md:p-6">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <h3 className="text-lg font-medium mb-1">Seasonal Evapotranspiration</h3>
-                  <p className="text-sm text-muted-foreground">Monthly comparison across selected years (mm/day)</p>
+                  <h3 className="text-sm font-medium mb-0.5">Seasonal Evapotranspiration</h3>
+                  <p className="text-xs text-muted-foreground/60">Monthly comparison across selected years (mm/day)</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Info className="w-4 h-4" />
-                  <span>Simulated Data</span>
-                </div>
+                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
               </div>
-              <div className="h-[300px] md:h-[400px]">
+              <div className="h-[280px] md:h-[340px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={seasonalETData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240)" />
+                  <LineChart data={seasonalETData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
                     <XAxis 
                       dataKey="month" 
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <YAxis 
                       domain={[2, 5]}
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend 
-                      wrapperStyle={{ paddingTop: '20px' }}
-                      formatter={(value) => <span className="text-xs text-muted-foreground">{value}</span>}
+                      wrapperStyle={{ paddingTop: '16px' }}
+                      formatter={(value) => <span className="text-[10px] text-muted-foreground/70">{value}</span>}
                     />
                     <Line
                       type="monotone"
                       dataKey="y2019"
                       name="2019 (Baseline)"
                       stroke="oklch(0.45 0.02 240)"
-                      strokeWidth={2}
-                      strokeDasharray="5 5"
-                      dot={{ fill: 'oklch(0.45 0.02 240)', strokeWidth: 0, r: 3 }}
+                      strokeWidth={1.5}
+                      strokeDasharray="4 4"
+                      dot={{ fill: 'oklch(0.45 0.02 240)', strokeWidth: 0, r: 2.5 }}
                     />
                     <Line
                       type="monotone"
                       dataKey="y2021"
                       name="2021 (Drought)"
-                      stroke="oklch(0.75 0.12 85)"
-                      strokeWidth={2}
-                      dot={{ fill: 'oklch(0.75 0.12 85)', strokeWidth: 0, r: 3 }}
+                      stroke="oklch(0.75 0.08 85)"
+                      strokeWidth={1.5}
+                      dot={{ fill: 'oklch(0.75 0.08 85)', strokeWidth: 0, r: 2.5 }}
                     />
                     <Line
                       type="monotone"
                       dataKey="y2023"
                       name="2023 (Recovery)"
-                      stroke="oklch(0.7 0.1 220)"
-                      strokeWidth={2}
-                      dot={{ fill: 'oklch(0.7 0.1 220)', strokeWidth: 0, r: 3 }}
+                      stroke="oklch(0.7 0.08 220)"
+                      strokeWidth={1.5}
+                      dot={{ fill: 'oklch(0.7 0.08 220)', strokeWidth: 0, r: 2.5 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -275,44 +276,41 @@ export function DataVisualizations() {
 
           {/* Stress Matrix */}
           {activeChart === 'stress' && (
-            <div className="p-6 md:p-8">
-              <div className="flex items-center justify-between mb-6">
+            <div className="p-5 md:p-6">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <h3 className="text-lg font-medium mb-1">Monthly Stress Index Matrix</h3>
-                  <p className="text-sm text-muted-foreground">Evaporative stress anomalies (ESI) by year and month</p>
+                  <h3 className="text-sm font-medium mb-0.5">Monthly Stress Index Matrix</h3>
+                  <p className="text-xs text-muted-foreground/60">Evaporative stress anomalies (ESI) by year and month</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Info className="w-4 h-4" />
-                  <span>Simulated Data</span>
-                </div>
+                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
               </div>
               <div className="overflow-x-auto">
-                <div className="min-w-[400px]">
+                <div className="min-w-[320px] max-w-md mx-auto">
                   {/* Header */}
-                  <div className="grid grid-cols-[80px_1fr_1fr_1fr] gap-2 mb-2">
+                  <div className="grid grid-cols-[70px_1fr_1fr_1fr] gap-1.5 mb-1.5">
                     <div />
-                    <div className="text-center text-xs font-mono text-muted-foreground py-2">June</div>
-                    <div className="text-center text-xs font-mono text-muted-foreground py-2">July</div>
-                    <div className="text-center text-xs font-mono text-muted-foreground py-2">August</div>
+                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Jun</div>
+                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Jul</div>
+                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Aug</div>
                   </div>
                   {/* Matrix rows */}
                   {stressMatrix.map((row) => (
-                    <div key={row.year} className="grid grid-cols-[80px_1fr_1fr_1fr] gap-2 mb-2">
-                      <div className="flex items-center text-sm font-mono text-foreground/80">{row.year}</div>
+                    <div key={row.year} className="grid grid-cols-[70px_1fr_1fr_1fr] gap-1.5 mb-1.5">
+                      <div className="flex items-center text-xs font-mono text-foreground/60">{row.year}</div>
                       <HeatmapCell value={row.jun} />
                       <HeatmapCell value={row.jul} />
                       <HeatmapCell value={row.aug} />
                     </div>
                   ))}
                   {/* Legend */}
-                  <div className="mt-6 flex items-center justify-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded" style={{ backgroundColor: 'oklch(0.65 0.12 160)' }} />
-                      <span className="text-xs text-muted-foreground">No Stress</span>
+                  <div className="mt-5 flex items-center justify-center gap-5">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded" style={{ backgroundColor: 'oklch(0.65 0.08 160 / 0.6)' }} />
+                      <span className="text-[10px] text-muted-foreground/60">No Stress</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded" style={{ backgroundColor: 'oklch(0.75 0.12 85)' }} />
-                      <span className="text-xs text-muted-foreground">Elevated Stress</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded" style={{ backgroundColor: 'oklch(0.75 0.08 85 / 0.6)' }} />
+                      <span className="text-[10px] text-muted-foreground/60">Elevated Stress</span>
                     </div>
                   </div>
                 </div>
@@ -322,73 +320,71 @@ export function DataVisualizations() {
 
           {/* Data Quality / Coverage */}
           {activeChart === 'coverage' && (
-            <div className="p-6 md:p-8">
-              <div className="flex items-center justify-between mb-6">
+            <div className="p-5 md:p-6">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <h3 className="text-lg font-medium mb-1">Valid Data Coverage</h3>
-                  <p className="text-sm text-muted-foreground">Percentage of valid pixels meeting 70% threshold</p>
+                  <h3 className="text-sm font-medium mb-0.5">Valid Data Coverage</h3>
+                  <p className="text-xs text-muted-foreground/60">Percentage of valid pixels meeting 70% threshold</p>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <Info className="w-4 h-4" />
-                  <span>Simulated Data</span>
-                </div>
+                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
               </div>
-              <div className="h-[300px] md:h-[400px]">
+              <div className="h-[280px] md:h-[340px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={coverageData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                  <AreaChart data={coverageData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                     <defs>
                       <linearGradient id="coverageGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="oklch(0.7 0.1 220)" stopOpacity={0.4} />
-                        <stop offset="95%" stopColor="oklch(0.7 0.1 220)" stopOpacity={0} />
+                        <stop offset="5%" stopColor="oklch(0.7 0.08 220)" stopOpacity={0.25} />
+                        <stop offset="95%" stopColor="oklch(0.7 0.08 220)" stopOpacity={0} />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240)" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
                     <XAxis 
                       dataKey="year" 
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <YAxis 
                       domain={[60, 100]}
-                      tick={{ fill: 'oklch(0.55 0.02 240)', fontSize: 12 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240)' }}
+                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
+                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
+                      tickLine={false}
                     />
                     <Tooltip content={<CustomTooltip />} />
                     {/* 70% threshold line */}
                     <Line
                       type="monotone"
                       dataKey={() => 70}
-                      stroke="oklch(0.75 0.12 85)"
+                      stroke="oklch(0.75 0.08 85 / 0.5)"
                       strokeWidth={1}
-                      strokeDasharray="5 5"
+                      strokeDasharray="4 4"
                       dot={false}
                       name="70% Threshold"
                     />
                     <Area
                       type="monotone"
                       dataKey="coverage"
-                      stroke="oklch(0.7 0.1 220)"
-                      strokeWidth={2}
+                      stroke="oklch(0.7 0.08 220)"
+                      strokeWidth={1.5}
                       fill="url(#coverageGradient)"
                       name="Coverage"
                     />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
-              <div className="mt-4 flex items-center justify-center gap-4 text-xs">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-0.5 rounded" style={{ backgroundColor: 'oklch(0.75 0.12 85)' }} />
-                  <span className="text-muted-foreground">70% Threshold</span>
+              <div className="mt-3 flex items-center justify-center">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-6 h-0.5 rounded bg-gold/50" style={{ backgroundImage: 'repeating-linear-gradient(90deg, oklch(0.75 0.08 85 / 0.5) 0, oklch(0.75 0.08 85 / 0.5) 4px, transparent 4px, transparent 8px)' }} />
+                  <span className="text-[10px] text-muted-foreground/60">70% Threshold</span>
                 </div>
               </div>
             </div>
           )}
 
           {/* Footer note */}
-          <div className="px-6 py-4 border-t border-border/50 bg-card/30">
-            <p className="text-xs text-muted-foreground text-center">
-              All visualizations use prototype/simulated data for demonstration. 
-              Real analysis outputs will be integrated when available.
+          <div className="px-5 py-3 border-t border-border/15">
+            <p className="text-[10px] text-muted-foreground/50 text-center">
+              All visualizations use prototype/simulated data for demonstration purposes
             </p>
           </div>
         </motion.div>

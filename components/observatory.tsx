@@ -2,19 +2,18 @@
 
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Info, AlertCircle } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 
 const layers = [
   { id: 'ndvi', label: 'NDVI', name: 'Vegetation Index', color: '#4ade80' },
   { id: 'et', label: 'ET', name: 'Evapotranspiration', color: '#60a5fa' },
   { id: 'lst', label: 'LST', name: 'Land Surface Temp', color: '#f97316' },
-  { id: 'esi', label: 'ESI', name: 'Evaporative Stress', color: '#a855f7' },
+  { id: 'esi', label: 'ESI', name: 'Evaporative Stress', color: '#a78bfa' },
 ]
 
 const years = ['2019', '2020', '2021', '2022', '2023', '2024']
 const months = ['June', 'July', 'August']
 
-// Simulated data for visualization
 const generateMockData = (layer: string, year: string, month: string) => {
   const seed = layer.charCodeAt(0) + parseInt(year) + month.charCodeAt(0)
   const base = Math.sin(seed) * 0.3 + 0.5
@@ -30,14 +29,13 @@ const generateMockData = (layer: string, year: string, month: string) => {
 function RasterVisualization({ layer, year, month }: { layer: string; year: string; month: string }) {
   const layerConfig = layers.find(l => l.id === layer) || layers[0]
   
-  // Generate a grid pattern based on the parameters
   const cells = []
-  for (let i = 0; i < 20; i++) {
-    for (let j = 0; j < 30; j++) {
-      const seed = (i * 30 + j + layer.charCodeAt(0) + parseInt(year) + months.indexOf(month)) * 0.1
+  for (let i = 0; i < 16; i++) {
+    for (let j = 0; j < 24; j++) {
+      const seed = (i * 24 + j + layer.charCodeAt(0) + parseInt(year) + months.indexOf(month)) * 0.1
       const value = Math.sin(seed) * 0.5 + 0.5 + Math.cos(i * 0.3) * 0.2 + Math.sin(j * 0.2) * 0.15
       const opacity = Math.max(0.1, Math.min(1, value))
-      const isValid = Math.random() > 0.15 // 85% valid pixels
+      const isValid = Math.random() > 0.12
       cells.push({ x: j, y: i, opacity, isValid })
     }
   }
@@ -45,7 +43,7 @@ function RasterVisualization({ layer, year, month }: { layer: string; year: stri
   return (
     <div className="relative w-full h-full bg-alpine-night rounded-lg overflow-hidden">
       {/* Raster grid */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 200" preserveAspectRatio="none">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 240 160" preserveAspectRatio="none">
         {cells.map((cell, idx) => (
           <rect
             key={idx}
@@ -53,51 +51,44 @@ function RasterVisualization({ layer, year, month }: { layer: string; year: stri
             y={cell.y * 10}
             width={10}
             height={10}
-            fill={cell.isValid ? layerConfig.color : '#1a1a2e'}
-            opacity={cell.isValid ? cell.opacity * 0.7 : 0.2}
+            fill={cell.isValid ? layerConfig.color : '#0f0f1a'}
+            opacity={cell.isValid ? cell.opacity * 0.6 : 0.15}
           />
         ))}
       </svg>
 
-      {/* Contour overlay */}
-      <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 300 200">
-        {[...Array(8)].map((_, i) => (
+      {/* Subtle contour overlay */}
+      <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 240 160">
+        {[...Array(5)].map((_, i) => (
           <path
             key={i}
-            d={`M${20 + i * 10},${100 + Math.sin(i * 0.8) * 30} Q${150 + Math.cos(i) * 30},${60 + i * 15} ${280 - i * 10},${110 + Math.cos(i * 0.6) * 40}`}
+            d={`M${15 + i * 8},${80 + Math.sin(i * 0.8) * 20} Q${120 + Math.cos(i) * 25},${50 + i * 12} ${225 - i * 8},${85 + Math.cos(i * 0.6) * 25}`}
             fill="none"
             stroke="white"
-            strokeWidth="0.5"
+            strokeWidth="0.4"
           />
         ))}
       </svg>
 
       {/* Park boundary */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 200">
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 240 160">
         <path
-          d="M80,50 L120,40 L180,55 L220,50 L240,70 L250,100 L235,140 L200,160 L140,165 L90,145 L60,110 Z"
+          d="M60,35 L90,30 L135,40 L165,35 L180,50 L185,75 L175,105 L150,115 L105,118 L70,105 L50,80 Z"
           fill="none"
           stroke="white"
-          strokeWidth="1.5"
-          strokeDasharray="6,3"
-          opacity="0.5"
+          strokeWidth="1"
+          strokeDasharray="4,2"
+          opacity="0.35"
         />
       </svg>
 
-      {/* Scan line */}
-      <motion.div
-        className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-        animate={{ y: [-10, 210] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-      />
-
       {/* Corner coordinates */}
-      <div className="absolute top-2 left-2 text-[10px] font-mono text-foreground/40">46.74°N 10.08°E</div>
-      <div className="absolute bottom-2 right-2 text-[10px] font-mono text-foreground/40">46.52°N 10.38°E</div>
+      <div className="absolute top-2 left-2 text-[9px] font-mono text-foreground/25">46.74°N</div>
+      <div className="absolute bottom-2 right-2 text-[9px] font-mono text-foreground/25">10.38°E</div>
 
       {/* Prototype label */}
-      <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-gold/20 border border-gold/30">
-        <span className="text-[10px] font-mono text-gold">SIMULATED DATA</span>
+      <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-gold/15 border border-gold/20">
+        <span className="text-[9px] font-mono text-gold/70">SIMULATED</span>
       </div>
     </div>
   )
@@ -109,16 +100,16 @@ function MiniChart({ data, color }: { data: number[]; color: string }) {
   const range = max - min || 1
 
   return (
-    <div className="flex items-end gap-0.5 h-8">
+    <div className="flex items-end gap-0.5 h-6">
       {data.map((value, idx) => (
         <div
           key={idx}
-          className="flex-1 rounded-t transition-all"
+          className="flex-1 rounded-sm transition-all"
           style={{
             height: `${((value - min) / range) * 100}%`,
-            minHeight: '4px',
+            minHeight: '3px',
             backgroundColor: color,
-            opacity: 0.3 + (idx / data.length) * 0.7,
+            opacity: 0.25 + (idx / data.length) * 0.55,
           }}
         />
       ))}
@@ -136,81 +127,79 @@ export function Observatory() {
   const currentData = generateMockData(activeLayer, activeYear, activeMonth)
   const layerConfig = layers.find(l => l.id === activeLayer) || layers[0]
 
-  // Generate chart data
   const chartData = years.map((y) => {
     const d = generateMockData(activeLayer, y, activeMonth)
     return parseFloat(d.mean)
   })
 
   return (
-    <section id="observatory" ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-alpine-night/50 to-background" />
+    <section id="observatory" ref={sectionRef} className="relative py-28 md:py-40 overflow-hidden">
+      {/* Clean background with subtle accent */}
+      <div className="absolute inset-0 bg-background" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/[0.015] blur-[150px]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-8">
+      <div className="relative max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center mb-14 md:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-mono uppercase tracking-widest text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+            <span className="text-[11px] font-mono uppercase tracking-widest text-primary/80">
               Interactive Dashboard
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance">
             Observatory Interface
           </h2>
-          <p className="max-w-2xl mx-auto text-muted-foreground text-balance">
-            Explore vegetation, water, and thermal signals across time. 
-            Toggle data layers and navigate through years of observation.
+          <p className="max-w-lg mx-auto text-muted-foreground/80 text-sm text-balance">
+            Explore vegetation, water, and thermal signals across time
           </p>
         </motion.div>
 
         {/* Observatory Panel */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm overflow-hidden"
+          transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
+          className="rounded-xl border border-border/30 bg-card/10 backdrop-blur-sm overflow-hidden"
         >
           {/* Top Controls */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 border-b border-border/50 bg-card/50">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 border-b border-border/20">
             {/* Layer selector */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0">
               {layers.map((layer) => (
                 <button
                   key={layer.id}
                   onClick={() => setActiveLayer(layer.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg border whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-lg border whitespace-nowrap transition-all duration-300 ${
                     activeLayer === layer.id
-                      ? 'bg-card border-border text-foreground'
+                      ? 'bg-card/80 border-border/50 text-foreground'
                       : 'border-transparent text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   <span
-                    className="w-2 h-2 rounded-full"
-                    style={{ backgroundColor: layer.color }}
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ backgroundColor: layer.color, opacity: activeLayer === layer.id ? 1 : 0.5 }}
                   />
-                  <span className="text-sm font-medium">{layer.label}</span>
-                  <span className="text-xs text-muted-foreground hidden sm:inline">{layer.name}</span>
+                  <span className="text-xs font-medium">{layer.label}</span>
                 </button>
               ))}
             </div>
 
             {/* Coverage badge */}
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-background/50 border border-border/50">
-              <div className={`w-2 h-2 rounded-full ${currentData.coverage >= 70 ? 'bg-primary' : 'bg-gold'}`} />
-              <span className="text-xs font-mono text-muted-foreground">Coverage:</span>
-              <span className="text-xs font-mono text-foreground">{currentData.coverage}%</span>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-background/40 border border-border/20">
+              <span className={`w-1.5 h-1.5 rounded-full ${currentData.coverage >= 70 ? 'bg-primary/60' : 'bg-gold/60'}`} />
+              <span className="text-[11px] font-mono text-muted-foreground/70">Coverage:</span>
+              <span className="text-[11px] font-mono text-foreground/80">{currentData.coverage}%</span>
             </div>
           </div>
 
           {/* Main content area */}
-          <div className="grid lg:grid-cols-[1fr_320px]">
+          <div className="grid lg:grid-cols-[1fr_280px]">
             {/* Raster visualization */}
             <div className="p-4">
               <div className="aspect-[16/10] relative">
@@ -219,19 +208,19 @@ export function Observatory() {
             </div>
 
             {/* Side panel */}
-            <div className="border-t lg:border-t-0 lg:border-l border-border/50 p-4 space-y-6">
-              {/* Date selectors */}
-              <div className="space-y-3">
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Year</p>
-                <div className="grid grid-cols-3 gap-2">
+            <div className="border-t lg:border-t-0 lg:border-l border-border/20 p-4 space-y-5">
+              {/* Year selector */}
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">Year</p>
+                <div className="grid grid-cols-3 gap-1.5">
                   {years.map((year) => (
                     <button
                       key={year}
                       onClick={() => setActiveYear(year)}
-                      className={`px-3 py-2 text-sm font-mono rounded-lg border transition-all ${
+                      className={`px-2.5 py-1.5 text-xs font-mono rounded-lg border transition-all duration-300 ${
                         activeYear === year
-                          ? 'bg-primary/20 border-primary/50 text-foreground'
-                          : 'border-border/50 text-muted-foreground hover:text-foreground hover:border-border'
+                          ? 'bg-primary/15 border-primary/30 text-foreground'
+                          : 'border-border/20 text-muted-foreground hover:text-foreground hover:border-border/40'
                       }`}
                     >
                       {year}
@@ -240,17 +229,18 @@ export function Observatory() {
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Month</p>
-                <div className="grid grid-cols-3 gap-2">
+              {/* Month selector */}
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">Month</p>
+                <div className="grid grid-cols-3 gap-1.5">
                   {months.map((month) => (
                     <button
                       key={month}
                       onClick={() => setActiveMonth(month)}
-                      className={`px-3 py-2 text-sm font-mono rounded-lg border transition-all ${
+                      className={`px-2.5 py-1.5 text-xs font-mono rounded-lg border transition-all duration-300 ${
                         activeMonth === month
-                          ? 'bg-primary/20 border-primary/50 text-foreground'
-                          : 'border-border/50 text-muted-foreground hover:text-foreground hover:border-border'
+                          ? 'bg-primary/15 border-primary/30 text-foreground'
+                          : 'border-border/20 text-muted-foreground hover:text-foreground hover:border-border/40'
                       }`}
                     >
                       {month.slice(0, 3)}
@@ -260,36 +250,28 @@ export function Observatory() {
               </div>
 
               {/* Statistics */}
-              <div className="space-y-3">
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Statistics</p>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3 rounded-lg bg-background/50 border border-border/50">
-                    <p className="text-[10px] text-muted-foreground mb-1">Mean</p>
-                    <p className="text-lg font-mono" style={{ color: layerConfig.color }}>{currentData.mean}</p>
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">Statistics</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2.5 rounded-lg bg-background/30 border border-border/15">
+                    <p className="text-[9px] text-muted-foreground/60 mb-0.5">Mean</p>
+                    <p className="text-base font-mono" style={{ color: layerConfig.color }}>{currentData.mean}</p>
                   </div>
-                  <div className="p-3 rounded-lg bg-background/50 border border-border/50">
-                    <p className="text-[10px] text-muted-foreground mb-1">Anomaly</p>
-                    <p className={`text-lg font-mono ${parseFloat(currentData.anomaly) >= 0 ? 'text-primary' : 'text-destructive'}`}>
+                  <div className="p-2.5 rounded-lg bg-background/30 border border-border/15">
+                    <p className="text-[9px] text-muted-foreground/60 mb-0.5">Anomaly</p>
+                    <p className={`text-base font-mono ${parseFloat(currentData.anomaly) >= 0 ? 'text-primary' : 'text-destructive'}`}>
                       {parseFloat(currentData.anomaly) >= 0 ? '+' : ''}{currentData.anomaly}
                     </p>
-                  </div>
-                  <div className="p-3 rounded-lg bg-background/50 border border-border/50">
-                    <p className="text-[10px] text-muted-foreground mb-1">Min</p>
-                    <p className="text-sm font-mono text-foreground/70">{currentData.min}</p>
-                  </div>
-                  <div className="p-3 rounded-lg bg-background/50 border border-border/50">
-                    <p className="text-[10px] text-muted-foreground mb-1">Max</p>
-                    <p className="text-sm font-mono text-foreground/70">{currentData.max}</p>
                   </div>
                 </div>
               </div>
 
               {/* Trend chart */}
-              <div className="space-y-3">
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Trend (2019-2024)</p>
-                <div className="p-3 rounded-lg bg-background/50 border border-border/50">
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">Trend (2019-2024)</p>
+                <div className="p-2.5 rounded-lg bg-background/30 border border-border/15">
                   <MiniChart data={chartData} color={layerConfig.color} />
-                  <div className="flex justify-between mt-2 text-[10px] font-mono text-muted-foreground">
+                  <div className="flex justify-between mt-1.5 text-[9px] font-mono text-muted-foreground/50">
                     <span>2019</span>
                     <span>2024</span>
                   </div>
@@ -297,17 +279,17 @@ export function Observatory() {
               </div>
 
               {/* Legend */}
-              <div className="space-y-3">
-                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Legend</p>
+              <div className="space-y-2">
+                <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-wider">Legend</p>
                 <div className="flex items-center gap-2">
                   <div 
-                    className="h-2 flex-1 rounded"
+                    className="h-1.5 flex-1 rounded-full"
                     style={{
-                      background: `linear-gradient(to right, ${layerConfig.color}20, ${layerConfig.color})`
+                      background: `linear-gradient(to right, ${layerConfig.color}15, ${layerConfig.color})`
                     }}
                   />
                 </div>
-                <div className="flex justify-between text-[10px] font-mono text-muted-foreground">
+                <div className="flex justify-between text-[9px] font-mono text-muted-foreground/50">
                   <span>Low</span>
                   <span>High</span>
                 </div>
@@ -316,17 +298,13 @@ export function Observatory() {
           </div>
 
           {/* Methodology note */}
-          <div className="p-4 border-t border-border/50 bg-card/30">
-            <div className="flex items-start gap-3">
-              <AlertCircle className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-              <div>
-                <p className="text-xs font-medium text-gold mb-1">Methodology Note</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Only raster scenes with at least 70% valid spatial coverage are included to reduce 
-                  misleading interpretations from incomplete imagery. Current display uses simulated 
-                  data for demonstration purposes.
-                </p>
-              </div>
+          <div className="p-4 border-t border-border/20">
+            <div className="flex items-start gap-2.5">
+              <AlertCircle className="w-3.5 h-3.5 text-gold/70 mt-0.5 shrink-0" />
+              <p className="text-[11px] text-muted-foreground/70 leading-relaxed">
+                Only raster scenes with at least 70% valid spatial coverage are included. 
+                Current display uses simulated data for demonstration.
+              </p>
             </div>
           </div>
         </motion.div>

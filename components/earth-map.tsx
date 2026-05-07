@@ -12,96 +12,72 @@ const mapLayers = [
   { id: 'water', label: 'Water Stress', icon: Droplets },
 ]
 
-// Fallback visual when no Mapbox token
 function FallbackMap({ activeLayer }: { activeLayer: string }) {
   const layerColors: Record<string, { primary: string; secondary: string; name: string }> = {
     terrain: { primary: '#4a5568', secondary: '#2d3748', name: 'Elevation Model' },
     satellite: { primary: '#1a365d', secondary: '#2a4365', name: 'True Color' },
     vegetation: { primary: '#276749', secondary: '#22543d', name: 'NDVI Index' },
-    thermal: { primary: '#c53030', secondary: '#9b2c2c', name: 'Land Surface Temp' },
+    thermal: { primary: '#9b2c2c', secondary: '#742a2a', name: 'Land Surface Temp' },
     water: { primary: '#2b6cb0', secondary: '#2c5282', name: 'ET Anomaly' },
   }
 
   const layer = layerColors[activeLayer] || layerColors.terrain
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-lg">
-      {/* Simulated satellite view with terrain */}
+    <div className="relative w-full h-full overflow-hidden rounded-lg bg-alpine-night">
+      {/* Simplified terrain visualization */}
       <div 
-        className="absolute inset-0 transition-all duration-700"
+        className="absolute inset-0 transition-all duration-1000"
         style={{
           background: `
-            radial-gradient(ellipse at 45% 40%, ${layer.primary}40 0%, transparent 50%),
-            radial-gradient(ellipse at 60% 55%, ${layer.secondary}60 0%, transparent 45%),
-            radial-gradient(ellipse at 35% 65%, ${layer.primary}50 0%, transparent 40%),
-            radial-gradient(ellipse at 70% 35%, ${layer.secondary}40 0%, transparent 35%),
-            linear-gradient(180deg, ${layer.secondary}80 0%, ${layer.primary}90 100%)
+            radial-gradient(ellipse at 45% 40%, ${layer.primary}30 0%, transparent 50%),
+            radial-gradient(ellipse at 60% 55%, ${layer.secondary}40 0%, transparent 45%),
+            radial-gradient(ellipse at 35% 65%, ${layer.primary}35 0%, transparent 40%)
           `
         }}
       />
       
-      {/* Contour lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 400 300">
-        {[...Array(12)].map((_, i) => (
+      {/* Minimalist contour lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 300">
+        {[...Array(6)].map((_, i) => (
           <path
             key={i}
-            d={`M${50 + i * 5},${150 + Math.sin(i * 0.8) * 30} Q${200 + Math.cos(i) * 50},${100 + i * 10} ${350 - i * 5},${160 + Math.cos(i * 0.6) * 40}`}
+            d={`M${60 + i * 8},${150 + Math.sin(i * 0.8) * 25} Q${200 + Math.cos(i) * 40},${110 + i * 12} ${340 - i * 8},${155 + Math.cos(i * 0.6) * 30}`}
             fill="none"
             stroke="currentColor"
             strokeWidth="0.5"
-            className="text-foreground/20"
+            className="text-foreground/30"
           />
         ))}
       </svg>
 
-      {/* Park boundary indicator */}
+      {/* Park boundary */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300">
         <path
           d="M120,80 L180,70 L240,90 L280,85 L300,110 L310,150 L290,190 L260,210 L200,220 L140,200 L100,160 L110,120 Z"
           fill="none"
           stroke="oklch(0.65 0.12 160)"
-          strokeWidth="2"
-          strokeDasharray="8,4"
-          className="animate-pulse"
+          strokeWidth="1.5"
+          strokeDasharray="6,4"
+          className="opacity-60"
         />
-        <circle cx="200" cy="140" r="4" fill="oklch(0.65 0.12 160)" />
+        <circle cx="200" cy="140" r="3" fill="oklch(0.65 0.12 160)" className="opacity-60" />
       </svg>
 
-      {/* Grid overlay */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, oklch(0.65 0.12 160) 1px, transparent 1px),
-            linear-gradient(to bottom, oklch(0.65 0.12 160) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px'
-        }}
-      />
-
-      {/* Scanning line */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
-          animate={{ y: [-10, 310] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
-
       {/* Layer label */}
-      <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded bg-background/80 backdrop-blur-sm border border-border/50">
-        <span className="text-xs font-mono text-muted-foreground">{layer.name}</span>
+      <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded bg-background/60 backdrop-blur-sm border border-border/30">
+        <span className="text-[11px] font-mono text-muted-foreground">{layer.name}</span>
       </div>
 
-      {/* Data quality indicator */}
-      <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded bg-background/80 backdrop-blur-sm border border-border/50 flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-        <span className="text-xs font-mono text-muted-foreground">LIVE PREVIEW</span>
+      {/* Status indicator */}
+      <div className="absolute bottom-4 right-4 px-3 py-1.5 rounded bg-background/60 backdrop-blur-sm border border-border/30 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+        <span className="text-[11px] font-mono text-muted-foreground">PREVIEW</span>
       </div>
 
       {/* Prototype notice */}
-      <div className="absolute top-4 left-4 px-3 py-1.5 rounded bg-gold/10 border border-gold/30">
-        <span className="text-xs font-mono text-gold">PROTOTYPE VISUALIZATION</span>
+      <div className="absolute top-4 left-4 px-2.5 py-1 rounded bg-gold/10 border border-gold/20">
+        <span className="text-[10px] font-mono text-gold/80">PROTOTYPE</span>
       </div>
     </div>
   )
@@ -129,7 +105,7 @@ function MapboxMap({ activeLayer, mapboxToken }: MapboxMapProps) {
       const map = new mapboxgl.Map({
         container: mapContainerRef.current!,
         style: 'mapbox://styles/mapbox/satellite-v9',
-        center: [10.2176, 46.6603], // Swiss National Park coordinates
+        center: [10.2176, 46.6603],
         zoom: 11,
         pitch: 45,
         bearing: -15,
@@ -141,7 +117,6 @@ function MapboxMap({ activeLayer, mapboxToken }: MapboxMapProps) {
       map.on('load', () => {
         setIsLoaded(true)
         
-        // Add terrain
         map.addSource('mapbox-dem', {
           type: 'raster-dem',
           url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
@@ -150,7 +125,6 @@ function MapboxMap({ activeLayer, mapboxToken }: MapboxMapProps) {
         })
         map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 })
 
-        // Add park boundary (approximate)
         map.addSource('park-boundary', {
           type: 'geojson',
           data: {
@@ -196,7 +170,6 @@ function MapboxMap({ activeLayer, mapboxToken }: MapboxMapProps) {
     }
   }, [mapboxToken])
 
-  // Update layer style
   useEffect(() => {
     if (!mapRef.current || !isLoaded) return
 
@@ -217,7 +190,7 @@ function MapboxMap({ activeLayer, mapboxToken }: MapboxMapProps) {
       {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-card">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-primary/60 animate-pulse" />
             <span className="text-sm text-muted-foreground">Loading map...</span>
           </div>
         </div>
@@ -231,55 +204,54 @@ export function EarthMap() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
   
-  // Check for Mapbox token
   const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
 
   return (
-    <section id="earth" ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+    <section id="earth" ref={sectionRef} className="relative py-28 md:py-40 overflow-hidden">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
       
-      <div className="relative max-w-7xl mx-auto px-6 md:px-8">
+      {/* Subtle top accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
+      
+      <div className="relative max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center mb-14 md:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-card/30 backdrop-blur-sm mb-6">
-            <Layers className="w-4 h-4 text-primary" />
-            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-card/20 backdrop-blur-sm mb-6">
+            <Layers className="w-3.5 h-3.5 text-primary/70" />
+            <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
               Earth Observation
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance">
-            Live Earth Context
+            Study Region
           </h2>
-          <p className="max-w-2xl mx-auto text-muted-foreground text-balance">
-            Interactive visualization of the Swiss National Park study region with multiple data layers
+          <p className="max-w-lg mx-auto text-muted-foreground/80 text-sm text-balance">
+            Interactive visualization of the Swiss National Park with multiple data layers
           </p>
         </motion.div>
 
         {/* Map Interface */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
         >
-          <div className="rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm overflow-hidden">
+          <div className="rounded-xl border border-border/30 bg-card/10 backdrop-blur-sm overflow-hidden">
             {/* Top bar */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border/50 bg-card/50">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-border/20">
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-primary/50" />
-                <span className="text-sm font-mono text-foreground/80">Swiss National Park</span>
-                <span className="text-xs font-mono text-muted-foreground">46.6603°N, 10.2176°E</span>
+                <span className="w-2 h-2 rounded-full bg-primary/40" />
+                <span className="text-sm font-mono text-foreground/70">Swiss National Park</span>
+                <span className="text-[11px] font-mono text-muted-foreground/60 hidden sm:inline">46.6603°N, 10.2176°E</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                <span>ELEV: 1,500-3,174m</span>
-                <span className="w-px h-3 bg-border" />
-                <span>AREA: 170km²</span>
+              <div className="flex items-center gap-2 text-[11px] font-mono text-muted-foreground/50">
+                <span>170 km²</span>
               </div>
             </div>
 
@@ -292,51 +264,50 @@ export function EarthMap() {
               )}
 
               {/* Layer controls */}
-              <div className="absolute top-4 right-4 flex flex-col gap-2">
+              <div className="absolute top-4 right-4 flex flex-col gap-1.5">
                 {mapLayers.map((layer) => (
                   <button
                     key={layer.id}
                     onClick={() => setActiveLayer(layer.id)}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm transition-all ${
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg border backdrop-blur-sm transition-all duration-300 ${
                       activeLayer === layer.id
-                        ? 'bg-primary/20 border-primary/50 text-foreground'
-                        : 'bg-background/80 border-border/50 text-muted-foreground hover:text-foreground hover:border-border'
+                        ? 'bg-primary/15 border-primary/30 text-foreground'
+                        : 'bg-background/60 border-border/20 text-muted-foreground hover:text-foreground hover:border-border/40'
                     }`}
                   >
-                    <layer.icon className="w-4 h-4" />
-                    <span className="text-xs font-medium hidden sm:block">{layer.label}</span>
+                    <layer.icon className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-medium hidden sm:block">{layer.label}</span>
                   </button>
                 ))}
               </div>
 
               {/* Info panel */}
-              <div className="absolute bottom-4 left-4 max-w-xs">
-                <div className="px-4 py-3 rounded-lg bg-background/90 backdrop-blur-sm border border-border/50">
+              <div className="absolute bottom-4 left-4 max-w-xs hidden md:block">
+                <div className="px-4 py-3 rounded-lg bg-background/70 backdrop-blur-sm border border-border/20">
                   <div className="flex items-start gap-3">
-                    <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-xs font-medium text-foreground mb-1">Study Region</p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        The Swiss National Park, established in 1914, is the only national park in Switzerland 
-                        and one of the oldest in the Alps.
-                      </p>
-                    </div>
+                    <Info className="w-3.5 h-3.5 text-primary/60 mt-0.5 shrink-0" />
+                    <p className="text-[11px] text-muted-foreground/80 leading-relaxed">
+                      The Swiss National Park, established in 1914, is the only national park in Switzerland.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border/50">
+            <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-border/20">
               {[
                 { label: 'Coverage', value: '170 km²' },
                 { label: 'Elevation Range', value: '1,674m' },
                 { label: 'Protected Since', value: '1914' },
                 { label: 'Data Points', value: '~2.4M' },
-              ].map((stat) => (
-                <div key={stat.label} className="px-4 py-3 bg-card/30 text-center">
-                  <p className="text-xs text-muted-foreground mb-1">{stat.label}</p>
-                  <p className="text-sm font-mono text-foreground">{stat.value}</p>
+              ].map((stat, i) => (
+                <div 
+                  key={stat.label} 
+                  className={`px-4 py-3 text-center ${i < 3 ? 'border-r border-border/10' : ''}`}
+                >
+                  <p className="text-[10px] text-muted-foreground/60 mb-0.5">{stat.label}</p>
+                  <p className="text-xs font-mono text-foreground/80">{stat.value}</p>
                 </div>
               ))}
             </div>
