@@ -31,10 +31,14 @@ export function Footer() {
               onClick={() => handleNavClick('#hero')}
               className="flex items-center gap-2.5 group mb-3"
             >
-              <div className="w-6 h-6 rounded-full border border-primary/40 flex items-center justify-center group-hover:border-primary/60 transition-colors duration-500">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-              </div>
-              <span className="text-xs font-medium tracking-wide text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500">
+              <svg width="20" height="20" viewBox="0 0 20 20" className="text-primary/50 group-hover:text-primary/70 transition-colors duration-500 shrink-0">
+                <line x1="0" y1="10" x2="7" y2="10" stroke="currentColor" strokeWidth="1.2" />
+                <line x1="13" y1="10" x2="20" y2="10" stroke="currentColor" strokeWidth="1.2" />
+                <line x1="10" y1="0" x2="10" y2="7" stroke="currentColor" strokeWidth="1.2" />
+                <line x1="10" y1="13" x2="10" y2="20" stroke="currentColor" strokeWidth="1.2" />
+                <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+              </svg>
+              <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-foreground/55 group-hover:text-foreground/75 transition-colors duration-500">
                 SNP Research
               </span>
             </button>
@@ -77,10 +81,10 @@ export function Footer() {
           <p className="text-[10px] text-muted-foreground/35">
             Signals of Stability — Research Prototype 2024
           </p>
-          <div className="flex items-center gap-4 text-[10px] text-muted-foreground/35">
-            <span>Built with Next.js</span>
+          <div className="flex items-center gap-4 text-[10px] font-mono text-muted-foreground/30">
+            <span>46.6603°N · 10.2176°E</span>
             <span className="w-px h-2.5 bg-border/20" />
-            <span>Deployed on Vercel</span>
+            <span>Swiss National Park · Est. 1914</span>
           </div>
         </motion.div>
       </div>

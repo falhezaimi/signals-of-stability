@@ -1,0 +1,30 @@
+{
+  "title": "ET 2023_APR_JUN mean",
+  "variable": "et",
+  "metric": "mean",
+  "source_raster": "data/processed/composites/et_2023_apr_jun_mean.tif",
+  "png": "public/data/rasters/et_2023_apr_jun_mean.png",
+  "vmin": 0.9676263928413391,
+  "vmax": 1.958475947380066,
+  "legend_ticks": [
+    0.9676263928413391,
+    1.4630511701107025,
+    1.958475947380066
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 1.4058345556259155,
+  "median": 1.3752410411834717,
+  "min": 0.6704698801040649,
+  "max": 2.3777315616607666,
+  "std": 0.24985384941101074,
+  "p05": 1.046476125717163,
+  "p25": 1.2274749279022217,
+  "p75": 1.5619385242462158,
+  "p95": 1.86769437789917,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

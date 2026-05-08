@@ -1,0 +1,30 @@
+{
+  "title": "ESI 2022_APR_JUN raw anomaly",
+  "variable": "esi",
+  "metric": "raw_anomaly",
+  "source_raster": "data/processed/anomalies/esi_2022_apr_jun_raw_anomaly.tif",
+  "png": "public/data/rasters/esi_2022_apr_jun_raw_anomaly.png",
+  "vmin": -0.18086028099060059,
+  "vmax": 0.18086028099060059,
+  "legend_ticks": [
+    -0.18086028099060059,
+    0.0,
+    0.18086028099060059
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": -0.02737407572567463,
+  "median": -0.012709736824035645,
+  "min": -0.44654569029808044,
+  "max": 0.15233004093170166,
+  "std": 0.07366744428873062,
+  "p05": -0.18086028099060059,
+  "p25": -0.05427861213684082,
+  "p75": 0.01978820562362671,
+  "p95": 0.059690922498703,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

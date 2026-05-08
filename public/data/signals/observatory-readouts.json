@@ -1,0 +1,43 @@
+{
+  "site": "Swiss National Park",
+  "coordinates": "46.6603°N 10.2176°E",
+  "season": "apr_jun",
+  "season_label": "April–June",
+  "platform": "ECOSTRESS / AppEEARS",
+  "coverage_note": "~37% of AOI pixels contain valid composite data. Remaining pixels lack cloud-free observations in this window.",
+  "readouts": {
+    "ndvi": {
+      "unit": "index (–1 to 1)",
+      "description": "Area mean NDVI across valid SNP pixels, April–June composite",
+      "2019": { "mean": 0.1365, "median": 0.0779, "min": -0.2207, "max": 0.4912, "std": 0.1455, "p05": -0.0312, "p25": 0.0125, "p75": 0.2783, "p95": 0.3851, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 75.0, "confidence_level": "high", "data_status": "good" },
+      "2020": { "mean": 0.1204, "median": 0.0671, "min": -0.2099, "max": 0.4877, "std": 0.1418, "p05": -0.0294, "p25": 0.0108, "p75": 0.2634, "p95": 0.3712, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 72.4, "confidence_level": "high", "data_status": "good" },
+      "2021": { "mean": 0.1090, "median": 0.0593, "min": -0.2189, "max": 0.4771, "std": 0.1402, "p05": -0.0283, "p25": 0.0094, "p75": 0.2512, "p95": 0.3601, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 74.2, "confidence_level": "high", "data_status": "good", "note": "Lowest NDVI mean in series — consistent with documented early-season drought" },
+      "2022": { "mean": 0.1453, "median": 0.0821, "min": -0.2134, "max": 0.4943, "std": 0.1447, "p05": -0.0304, "p25": 0.0131, "p75": 0.2791, "p95": 0.3874, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 72.1, "confidence_level": "high", "data_status": "good" },
+      "2023": { "mean": 0.1632, "median": 0.0943, "min": -0.2041, "max": 0.5021, "std": 0.1463, "p05": -0.0298, "p25": 0.0148, "p75": 0.2901, "p95": 0.3963, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 76.8, "confidence_level": "high", "data_status": "good", "note": "Highest NDVI mean in series" },
+      "2024": { "mean": 0.1252, "median": 0.0714, "min": -0.2118, "max": 0.4834, "std": 0.1421, "p05": -0.0291, "p25": 0.0113, "p75": 0.2671, "p95": 0.3741, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 72.7, "confidence_level": "medium", "data_status": "partial" },
+      "2025": { "mean": 0.1524, "median": 0.0882, "min": -0.2072, "max": 0.4889, "std": 0.1441, "p05": -0.0287, "p25": 0.0139, "p75": 0.2812, "p95": 0.3902, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 85.7, "confidence_level": "low", "data_status": "partial", "note": "Partial season — data collection ongoing" }
+    },
+    "et": {
+      "unit": "mm/day",
+      "description": "Area mean evapotranspiration across valid SNP pixels, April–June composite",
+      "2019": { "mean": 2.1472, "median": 2.0391, "min": 0.0, "max": 5.8821, "std": 0.9844, "p05": 0.6124, "p25": 1.3487, "p75": 2.8901, "p95": 3.7214, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 76.9, "confidence_level": "high", "data_status": "good" },
+      "2020": { "mean": 1.1674, "median": 1.0821, "min": 0.0, "max": 4.5312, "std": 0.7892, "p05": 0.2318, "p25": 0.5814, "p75": 1.6201, "p95": 2.4871, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 66.7, "confidence_level": "high", "data_status": "good" },
+      "2021": { "mean": 1.1739, "median": 1.0934, "min": 0.0, "max": 4.6124, "std": 0.7941, "p05": 0.2394, "p25": 0.5921, "p75": 1.6341, "p95": 2.4912, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 79.5, "confidence_level": "high", "data_status": "good", "note": "Below-average ET consistent with drought-suppressed vegetation activity" },
+      "2022": { "mean": 1.6182, "median": 1.5341, "min": 0.0, "max": 5.1241, "std": 0.8821, "p05": 0.3841, "p25": 0.9201, "p75": 2.2341, "p95": 3.1824, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 72.9, "confidence_level": "high", "data_status": "good" },
+      "2023": { "mean": 1.4058, "median": 1.3124, "min": 0.0, "max": 4.9812, "std": 0.8412, "p05": 0.3214, "p25": 0.8124, "p75": 1.9841, "p95": 2.9412, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 75.5, "confidence_level": "high", "data_status": "good" },
+      "2024": { "mean": 2.2553, "median": 2.1662, "min": 0.0, "max": 6.1101, "std": 1.0011, "p05": 0.8075, "p25": 1.4342, "p75": 3.0498, "p95": 3.9265, "coverage_aoi_percent": 36.39, "obs_coverage_p95_percent": 50.0, "confidence_level": "low", "data_status": "low_confidence", "note": "LOW CONFIDENCE — only 2 ECOSTRESS overpasses available for this season. Value should not be used for trend statements." },
+      "2025": { "mean": 1.9066, "median": 1.8124, "min": 0.0, "max": 5.6214, "std": 0.9421, "p05": 0.6841, "p25": 1.2314, "p75": 2.6124, "p95": 3.6412, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 88.9, "confidence_level": "low", "data_status": "low_confidence", "note": "Partial season — data collection ongoing." }
+    },
+    "esi": {
+      "unit": "index (0–1, 1 = no stress)",
+      "description": "Area mean Evaporative Stress Index across valid SNP pixels, April–June composite",
+      "2019": { "mean": 0.8600, "median": 0.9124, "min": 0.0, "max": 1.0, "std": 0.1892, "p05": 0.4812, "p25": 0.7841, "p75": 0.9841, "p95": 0.9974, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 71.4, "confidence_level": "high", "data_status": "good" },
+      "2020": { "mean": 0.7891, "median": 0.8512, "min": 0.0, "max": 1.0, "std": 0.2134, "p05": 0.3214, "p25": 0.7012, "p75": 0.9731, "p95": 0.9952, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 66.7, "confidence_level": "high", "data_status": "good" },
+      "2021": { "mean": 0.8181, "median": 0.8841, "min": 0.0, "max": 1.0, "std": 0.2012, "p05": 0.3912, "p25": 0.7341, "p75": 0.9812, "p95": 0.9968, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 79.5, "confidence_level": "high", "data_status": "good" },
+      "2022": { "mean": 0.7957, "median": 0.8621, "min": 0.0, "max": 1.0, "std": 0.2098, "p05": 0.3421, "p25": 0.7124, "p75": 0.9763, "p95": 0.9957, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 72.9, "confidence_level": "high", "data_status": "good" },
+      "2023": { "mean": 0.7811, "median": 0.8421, "min": 0.0, "max": 1.0, "std": 0.2189, "p05": 0.3124, "p25": 0.6941, "p75": 0.9712, "p95": 0.9948, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 75.5, "confidence_level": "high", "data_status": "good" },
+      "2024": { "mean": 0.9248, "median": 0.9512, "min": 0.0, "max": 1.0, "std": 0.1634, "p05": 0.5821, "p25": 0.8741, "p75": 0.9924, "p95": 0.9989, "coverage_aoi_percent": 36.39, "obs_coverage_p95_percent": 50.0, "confidence_level": "low", "data_status": "low_confidence", "note": "LOW CONFIDENCE — only 2 ECOSTRESS overpasses available for this season. Value should not be used for trend statements." },
+      "2025": { "mean": 0.7942, "median": 0.8614, "min": 0.0, "max": 1.0, "std": 0.2071, "p05": 0.3312, "p25": 0.7081, "p75": 0.9748, "p95": 0.9953, "coverage_aoi_percent": 36.64, "obs_coverage_p95_percent": 88.9, "confidence_level": "low", "data_status": "low_confidence", "note": "Partial season — data collection ongoing." }
+    }
+  }
+}

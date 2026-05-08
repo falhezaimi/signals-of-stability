@@ -1,0 +1,23 @@
+{
+  "note": "Raster preview PNGs are real ECOSTRESS/AppEEARS pipeline outputs. URL pattern: /data/rasters/{variable}_{year}_apr_jun_{metric}.png",
+  "url_pattern": "/data/rasters/{variable}_{year}_apr_jun_{metric}.png",
+  "metrics": ["mean", "raw_anomaly", "standardized_anomaly", "observation_coverage"],
+  "trend_maps": [
+    { "filename": "ndvi_apr_jun_slope_per_year.png", "variable": "ndvi", "metric": "slope_per_year" },
+    { "filename": "et_apr_jun_slope_per_year.png", "variable": "et", "metric": "slope_per_year" },
+    { "filename": "esi_apr_jun_slope_per_year.png", "variable": "esi", "metric": "slope_per_year" },
+    { "filename": "ndvi_apr_jun_interannual_std.png", "variable": "ndvi", "metric": "interannual_std" },
+    { "filename": "et_apr_jun_interannual_std.png", "variable": "et", "metric": "interannual_std" },
+    { "filename": "esi_apr_jun_interannual_std.png", "variable": "esi", "metric": "interannual_std" },
+    { "filename": "ndvi_apr_jun_coefficient_of_variation.png", "variable": "ndvi", "metric": "coefficient_of_variation" },
+    { "filename": "et_apr_jun_coefficient_of_variation.png", "variable": "et", "metric": "coefficient_of_variation" },
+    { "filename": "esi_apr_jun_coefficient_of_variation.png", "variable": "esi", "metric": "coefficient_of_variation" }
+  ],
+  "yearly_previews": [
+    { "id": "ndvi_2023_amj_mean", "variable": "ndvi", "year": "2023", "metric": "mean", "filename": "ndvi_2023_apr_jun_mean.png", "available": true },
+    { "id": "ndvi_2021_amj_mean", "variable": "ndvi", "year": "2021", "metric": "mean", "filename": "ndvi_2021_apr_jun_mean.png", "available": true },
+    { "id": "ndvi_2025_amj_mean", "variable": "ndvi", "year": "2025", "metric": "mean", "filename": "ndvi_2025_apr_jun_mean.png", "available": true },
+    { "id": "et_2024_amj_mean",   "variable": "et",   "year": "2024", "metric": "mean", "filename": "et_2024_apr_jun_mean.png",   "available": true, "low_confidence": true },
+    { "id": "esi_2024_amj_mean",  "variable": "esi",  "year": "2024", "metric": "mean", "filename": "esi_2024_apr_jun_mean.png",  "available": true, "low_confidence": true }
+  ]
+}

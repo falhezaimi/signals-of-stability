@@ -1,0 +1,30 @@
+{
+  "title": "ET APR_JUN interannual std",
+  "variable": "et",
+  "metric": "interannual_std",
+  "source_raster": "data/processed/stability/et_apr_jun_interannual_std.tif",
+  "png": "public/data/rasters/et_apr_jun_interannual_std.png",
+  "vmin": 0.1723901480436325,
+  "vmax": 0.9094820618629456,
+  "legend_ticks": [
+    0.1723901480436325,
+    0.540936104953289,
+    0.9094820618629456
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.5033276081085205,
+  "median": 0.4885576665401459,
+  "min": 0.049105506390333176,
+  "max": 1.495193600654602,
+  "std": 0.20535564422607422,
+  "p05": 0.20896905660629272,
+  "p25": 0.33369117975234985,
+  "p75": 0.6550842523574829,
+  "p95": 0.8462464809417725,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

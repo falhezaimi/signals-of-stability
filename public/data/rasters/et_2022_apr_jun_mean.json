@@ -1,0 +1,30 @@
+{
+  "title": "ET 2022_APR_JUN mean",
+  "variable": "et",
+  "metric": "mean",
+  "source_raster": "data/processed/composites/et_2022_apr_jun_mean.tif",
+  "png": "public/data/rasters/et_2022_apr_jun_mean.png",
+  "vmin": 0.8822534084320068,
+  "vmax": 2.4359567165374756,
+  "legend_ticks": [
+    0.8822534084320068,
+    1.6591050624847412,
+    2.4359567165374756
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 1.6182425022125244,
+  "median": 1.546446681022644,
+  "min": 0.6108649969100952,
+  "max": 2.7493703365325928,
+  "std": 0.4392538070678711,
+  "p05": 0.9727444052696228,
+  "p25": 1.2676875591278076,
+  "p75": 2.006370782852173,
+  "p95": 2.346968650817871,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

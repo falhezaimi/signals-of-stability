@@ -1,0 +1,30 @@
+{
+  "title": "NDVI 2024_APR_JUN mean",
+  "variable": "ndvi",
+  "metric": "mean",
+  "source_raster": "data/processed/composites/ndvi_2024_apr_jun_mean.tif",
+  "png": "public/data/rasters/ndvi_2024_apr_jun_mean.png",
+  "vmin": 0.018454238772392273,
+  "vmax": 0.3029947280883789,
+  "legend_ticks": [
+    0.018454238772392273,
+    0.1607244834303856,
+    0.3029947280883789
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.12522590160369873,
+  "median": 0.10452900826931,
+  "min": -0.019196586683392525,
+  "max": 0.4008741080760956,
+  "std": 0.0820930227637291,
+  "p05": 0.026285607367753983,
+  "p25": 0.05559063330292702,
+  "p75": 0.19095101952552795,
+  "p95": 0.27350515127182007,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

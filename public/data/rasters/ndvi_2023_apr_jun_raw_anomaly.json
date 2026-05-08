@@ -1,0 +1,30 @@
+{
+  "title": "NDVI 2023_APR_JUN raw anomaly",
+  "variable": "ndvi",
+  "metric": "raw_anomaly",
+  "source_raster": "data/processed/anomalies/ndvi_2023_apr_jun_raw_anomaly.tif",
+  "png": "public/data/rasters/ndvi_2023_apr_jun_raw_anomaly.png",
+  "vmin": -0.07008305191993713,
+  "vmax": 0.07008305191993713,
+  "legend_ticks": [
+    -0.07008305191993713,
+    0.0,
+    0.07008305191993713
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.02716224081814289,
+  "median": 0.02844160795211792,
+  "min": -0.1022714376449585,
+  "max": 0.16351039707660675,
+  "std": 0.02810351736843586,
+  "p05": -0.023052066564559937,
+  "p25": 0.00943613052368164,
+  "p75": 0.047060973942279816,
+  "p95": 0.06994469463825226,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

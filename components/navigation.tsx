@@ -61,15 +61,27 @@ export function Navigation() {
       >
         <div className="max-w-6xl mx-auto px-6 md:px-8">
           <div className="flex items-center justify-between h-14 md:h-16">
-            {/* Logo */}
+            {/* Logo — field-station cross mark */}
             <button
               onClick={() => handleNavClick('#hero')}
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-3 group"
             >
-              <div className="w-7 h-7 rounded-full border border-primary/40 flex items-center justify-center group-hover:border-primary/60 transition-colors duration-500">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/70" />
-              </div>
-              <span className="text-xs font-medium tracking-wide text-foreground/60 group-hover:text-foreground/80 transition-colors duration-500 hidden sm:block">
+              <svg
+                width="20" height="20"
+                viewBox="0 0 20 20"
+                className="text-primary/60 group-hover:text-primary/80 transition-colors duration-500"
+                aria-hidden="true"
+              >
+                {/* Horizontal arm */}
+                <line x1="0" y1="10" x2="7" y2="10" stroke="currentColor" strokeWidth="1.2" />
+                <line x1="13" y1="10" x2="20" y2="10" stroke="currentColor" strokeWidth="1.2" />
+                {/* Vertical arm */}
+                <line x1="10" y1="0" x2="10" y2="7" stroke="currentColor" strokeWidth="1.2" />
+                <line x1="10" y1="13" x2="10" y2="20" stroke="currentColor" strokeWidth="1.2" />
+                {/* Center dot */}
+                <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+              </svg>
+              <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-foreground/55 group-hover:text-foreground/75 transition-colors duration-500 hidden sm:block">
                 SNP Research
               </span>
             </button>

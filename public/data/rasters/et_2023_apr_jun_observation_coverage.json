@@ -1,0 +1,30 @@
+{
+  "title": "ET 2023_APR_JUN observation coverage",
+  "variable": "et",
+  "metric": "observation_coverage",
+  "source_raster": "data/processed/composites/et_2023_apr_jun_observation_coverage.tif",
+  "png": "public/data/rasters/et_2023_apr_jun_observation_coverage.png",
+  "vmin": 0.0,
+  "vmax": 79.59183502197266,
+  "legend_ticks": [
+    0.0,
+    39.79591751098633,
+    79.59183502197266
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 24.609872817993164,
+  "median": 0.0,
+  "min": 0.0,
+  "max": 85.71428680419922,
+  "std": 33.09711837768555,
+  "p05": 0.0,
+  "p25": 0.0,
+  "p75": 67.34693908691406,
+  "p95": 75.51020050048828,
+  "valid_pixel_count": 94839,
+  "valid_aoi_pixel_count": 94839,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 100.0,
+  "coverage_percent": 100.0
+}

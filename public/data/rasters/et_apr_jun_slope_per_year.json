@@ -1,0 +1,30 @@
+{
+  "title": "ET APR_JUN slope per year",
+  "variable": "et",
+  "metric": "slope_per_year",
+  "source_raster": "data/processed/trends/et_apr_jun_slope.tif",
+  "png": "public/data/rasters/et_apr_jun_slope_per_year.png",
+  "vmin": -0.1848958283662796,
+  "vmax": 0.1848958283662796,
+  "legend_ticks": [
+    -0.1848958283662796,
+    0.0,
+    0.1848958283662796
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.06122126057744026,
+  "median": 0.0598551444709301,
+  "min": -0.2005615234375,
+  "max": 0.33935546875,
+  "std": 0.07480224967002869,
+  "p05": -0.0585123710334301,
+  "p25": 0.006490071304142475,
+  "p75": 0.1162109375,
+  "p95": 0.184814453125,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

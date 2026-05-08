@@ -1,0 +1,71 @@
+{
+  "season": "April–June",
+  "season_code": "AMJ",
+  "platform": "ECOSTRESS / AppEEARS",
+  "note": "All means are area averages over ~37% of AOI pixels with valid composite data. ESI scale: 0=maximum stress, 1=no stress.",
+  "years": [
+    {
+      "year": "2019",
+      "ndvi": { "mean": 0.1365, "obs_coverage_p95": 75.0, "confidence_level": "high" },
+      "et":   { "mean": 2.1472, "obs_coverage_p95": 76.9, "confidence_level": "high", "unit": "mm/day" },
+      "esi":  { "mean": 0.8600, "obs_coverage_p95": 71.4, "confidence_level": "high", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Baseline season — near-average signal across all indicators",
+      "ecological_context": "Near-average NDVI and ET. Moderate observation density supports reliable seasonal characterization."
+    },
+    {
+      "year": "2020",
+      "ndvi": { "mean": 0.1204, "obs_coverage_p95": 72.4, "confidence_level": "high" },
+      "et":   { "mean": 1.1674, "obs_coverage_p95": 66.7, "confidence_level": "high", "unit": "mm/day" },
+      "esi":  { "mean": 0.7891, "obs_coverage_p95": 66.7, "confidence_level": "high", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Below-average NDVI and ET — lower signal than adjacent years",
+      "ecological_context": "NDVI and ET both below 2019 baseline. Directional signal only — single year cannot confirm trend."
+    },
+    {
+      "year": "2021",
+      "ndvi": { "mean": 0.1090, "obs_coverage_p95": 74.2, "confidence_level": "high" },
+      "et":   { "mean": 1.1739, "obs_coverage_p95": 79.5, "confidence_level": "high", "unit": "mm/day" },
+      "esi":  { "mean": 0.8181, "obs_coverage_p95": 79.5, "confidence_level": "high", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Lowest NDVI mean in series — potential stress episode",
+      "ecological_context": "Lowest NDVI in the April–June series (0.1090). ET also among the lowest. Directionally consistent with documented drought conditions; requires independent validation."
+    },
+    {
+      "year": "2022",
+      "ndvi": { "mean": 0.1453, "obs_coverage_p95": 72.1, "confidence_level": "high" },
+      "et":   { "mean": 1.6182, "obs_coverage_p95": 72.9, "confidence_level": "high", "unit": "mm/day" },
+      "esi":  { "mean": 0.7957, "obs_coverage_p95": 72.9, "confidence_level": "high", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Recovery signal — NDVI above 2021 low",
+      "ecological_context": "NDVI recovers from 2021 low. ET increases substantially. Directional recovery signal — not a confirmed trend."
+    },
+    {
+      "year": "2023",
+      "ndvi": { "mean": 0.1632, "obs_coverage_p95": 76.8, "confidence_level": "high" },
+      "et":   { "mean": 1.4058, "obs_coverage_p95": 75.5, "confidence_level": "high", "unit": "mm/day" },
+      "esi":  { "mean": 0.7811, "obs_coverage_p95": 75.5, "confidence_level": "high", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Highest NDVI mean in series — best-characterized season",
+      "ecological_context": "Highest NDVI mean in the series (0.1632). Well-characterized season with good observation density. ET below 2019 despite high NDVI — directional complexity."
+    },
+    {
+      "year": "2024",
+      "ndvi": { "mean": 0.1252, "obs_coverage_p95": 72.7, "confidence_level": "medium" },
+      "et":   { "mean": 2.2553, "obs_coverage_p95": 50.0, "confidence_level": "low", "unit": "mm/day" },
+      "esi":  { "mean": 0.9248, "obs_coverage_p95": 50.0, "confidence_level": "low", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.4,
+      "note": "Reduced ET/ESI coverage — low-confidence values",
+      "ecological_context": "Only 2 ECOSTRESS overpasses available for ET and ESI. These values should not support trend statements. NDVI is better supported but still partial."
+    },
+    {
+      "year": "2025",
+      "ndvi": { "mean": 0.1524, "obs_coverage_p95": 85.7, "confidence_level": "low" },
+      "et":   { "mean": 1.9066, "obs_coverage_p95": 88.9, "confidence_level": "low", "unit": "mm/day" },
+      "esi":  { "mean": 0.7942, "obs_coverage_p95": 88.9, "confidence_level": "low", "unit": "index 0–1" },
+      "coverage_aoi_percent": 36.6,
+      "note": "Partial season — data collection ongoing",
+      "ecological_context": "Season not yet complete. All values preliminary and subject to revision as additional overpasses are acquired."
+    }
+  ]
+}

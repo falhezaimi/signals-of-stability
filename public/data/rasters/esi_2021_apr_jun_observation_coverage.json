@@ -1,0 +1,30 @@
+{
+  "title": "ESI 2021_APR_JUN observation coverage",
+  "variable": "esi",
+  "metric": "observation_coverage",
+  "source_raster": "data/processed/composites/esi_2021_apr_jun_observation_coverage.tif",
+  "png": "public/data/rasters/esi_2021_apr_jun_observation_coverage.png",
+  "vmin": 0.0,
+  "vmax": 79.4871826171875,
+  "legend_ticks": [
+    0.0,
+    39.74359130859375,
+    79.4871826171875
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 26.901193618774414,
+  "median": 0.0,
+  "min": 0.0,
+  "max": 89.74359130859375,
+  "std": 35.59489440917969,
+  "p05": 0.0,
+  "p25": 0.0,
+  "p75": 74.35897827148438,
+  "p95": 79.4871826171875,
+  "valid_pixel_count": 94839,
+  "valid_aoi_pixel_count": 94839,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 100.0,
+  "coverage_percent": 100.0
+}

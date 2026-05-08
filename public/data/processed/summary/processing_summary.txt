@@ -1,0 +1,35 @@
+Signals of Stability — ECOSTRESS Raster Processing Summary
+==============================================================
+
+Raster inventory rows: 1059
+Composite statistic rows: 147
+Anomaly rows: 42
+Trend rows: 3
+Stability rows: 9
+Preview PNGs: 96
+
+Available months in raster inventory: [4, 5, 6]
+Available time bins in raster inventory: ['evening', 'midday_afternoon', 'morning', 'night']
+
+Coverage correction:
+- coverage_inside_aoi_percent now uses total AOI pixels as denominator.
+- observation_count and mean_valid_observations_per_aoi_pixel are exported for confidence.
+- Do not use old rectangle-footprint coverage values.
+
+Scientific interpretation rules:
+- These outputs support short-window raster-derived analysis.
+- Do not call the trend outputs long-term ecological change.
+- Do not claim causality from NDVI, ET, and ESI alone.
+- Check observation count and valid-observation metrics before interpretation.
+- If CRS warnings appear in inventory, resolve them before spatial claims.
+- Do not call a season JJA unless July and August are actually present.
+
+Primary website outputs:
+- public/data/signals/hero-metadata.json
+- public/data/signals/observatory-readouts.json
+- public/data/signals/timeline-yearly-values.json
+- public/data/signals/findings-figures.json
+- public/data/signals/limitations.json
+- public/data/signals/data-provenance.json
+- public/data/signals/interpretation-summary.json
+- public/data/rasters/*.png

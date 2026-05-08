@@ -1,0 +1,30 @@
+{
+  "title": "ET 2020_APR_JUN mean",
+  "variable": "et",
+  "metric": "mean",
+  "source_raster": "data/processed/composites/et_2020_apr_jun_mean.tif",
+  "png": "public/data/rasters/et_2020_apr_jun_mean.png",
+  "vmin": 0.8168474435806274,
+  "vmax": 1.597829818725586,
+  "legend_ticks": [
+    0.8168474435806274,
+    1.2073386311531067,
+    1.597829818725586
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 1.1674408912658691,
+  "median": 1.1442617177963257,
+  "min": 0.5965304374694824,
+  "max": 1.926068663597107,
+  "std": 0.1974472552537918,
+  "p05": 0.87528395652771,
+  "p25": 1.0219395160675049,
+  "p75": 1.2998017072677612,
+  "p95": 1.522371530532837,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

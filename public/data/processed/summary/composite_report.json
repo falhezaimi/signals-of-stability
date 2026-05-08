@@ -1,0 +1,233 @@
+[
+  {
+    "variable": "ndvi",
+    "year": 2019,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 32,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 23.973583221435547,
+    "mean_pixel_observation_coverage_percent": 74.9174575805664
+  },
+  {
+    "variable": "ndvi",
+    "year": 2020,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 116,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 84.02489471435547,
+    "mean_pixel_observation_coverage_percent": 72.43526458740234
+  },
+  {
+    "variable": "ndvi",
+    "year": 2021,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 124,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 92.0658950805664,
+    "mean_pixel_observation_coverage_percent": 74.24669647216797
+  },
+  {
+    "variable": "ndvi",
+    "year": 2022,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 136,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 97.8806381225586,
+    "mean_pixel_observation_coverage_percent": 71.9710693359375
+  },
+  {
+    "variable": "ndvi",
+    "year": 2023,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 138,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 105.9804916381836,
+    "mean_pixel_observation_coverage_percent": 76.7974624633789
+  },
+  {
+    "variable": "ndvi",
+    "year": 2024,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 44,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 32.02699279785156,
+    "mean_pixel_observation_coverage_percent": 72.78863525390625
+  },
+  {
+    "variable": "ndvi",
+    "year": 2025,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 70,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 59.97298049926758,
+    "mean_pixel_observation_coverage_percent": 85.67567443847656
+  },
+  {
+    "variable": "et",
+    "year": 2019,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 13,
+    "confidence_level": "medium",
+    "mean_valid_observations_per_aoi_pixel": 8.199102401733398,
+    "mean_pixel_observation_coverage_percent": 63.07001876831055
+  },
+  {
+    "variable": "et",
+    "year": 2020,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 30,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 18.495899200439453,
+    "mean_pixel_observation_coverage_percent": 61.65300369262695
+  },
+  {
+    "variable": "et",
+    "year": 2021,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 39,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 28.63226890563965,
+    "mean_pixel_observation_coverage_percent": 73.41608428955078
+  },
+  {
+    "variable": "et",
+    "year": 2022,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 48,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 33.1323127746582,
+    "mean_pixel_observation_coverage_percent": 69.02565002441406
+  },
+  {
+    "variable": "et",
+    "year": 2023,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 49,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 32.909786224365234,
+    "mean_pixel_observation_coverage_percent": 67.16282653808594
+  },
+  {
+    "variable": "et",
+    "year": 2024,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 2,
+    "confidence_level": "low",
+    "mean_valid_observations_per_aoi_pixel": 1.1191332340240479,
+    "mean_pixel_observation_coverage_percent": 55.956661224365234
+  },
+  {
+    "variable": "et",
+    "year": 2025,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 18,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 14.465971946716309,
+    "mean_pixel_observation_coverage_percent": 80.36651611328125
+  },
+  {
+    "variable": "esi",
+    "year": 2019,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 14,
+    "confidence_level": "medium",
+    "mean_valid_observations_per_aoi_pixel": 8.201691627502441,
+    "mean_pixel_observation_coverage_percent": 58.58351516723633
+  },
+  {
+    "variable": "esi",
+    "year": 2020,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 30,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 18.495899200439453,
+    "mean_pixel_observation_coverage_percent": 61.65300369262695
+  },
+  {
+    "variable": "esi",
+    "year": 2021,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 39,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 28.63226890563965,
+    "mean_pixel_observation_coverage_percent": 73.41608428955078
+  },
+  {
+    "variable": "esi",
+    "year": 2022,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 48,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 33.1323127746582,
+    "mean_pixel_observation_coverage_percent": 69.02565002441406
+  },
+  {
+    "variable": "esi",
+    "year": 2023,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 49,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 32.909786224365234,
+    "mean_pixel_observation_coverage_percent": 67.16282653808594
+  },
+  {
+    "variable": "esi",
+    "year": 2024,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 2,
+    "confidence_level": "low",
+    "mean_valid_observations_per_aoi_pixel": 1.1191332340240479,
+    "mean_pixel_observation_coverage_percent": 55.956661224365234
+  },
+  {
+    "variable": "esi",
+    "year": 2025,
+    "season": "apr_jun",
+    "season_label": "April\u2013June available observation window",
+    "created": true,
+    "observation_count": 18,
+    "confidence_level": "higher",
+    "mean_valid_observations_per_aoi_pixel": 14.465971946716309,
+    "mean_pixel_observation_coverage_percent": 80.36651611328125
+  }
+]

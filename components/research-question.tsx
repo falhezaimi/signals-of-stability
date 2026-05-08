@@ -48,9 +48,9 @@ export function ResearchQuestion() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center mb-20 md:mb-28"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-card/20 backdrop-blur-sm mb-10">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-gold/25 bg-gold/[0.05] mb-10">
             <span className="w-1.5 h-1.5 rounded-full bg-gold/60" />
-            <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
+            <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-gold/75 whitespace-nowrap">
               Research Question
             </span>
           </div>
@@ -71,10 +71,15 @@ export function ResearchQuestion() {
               transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: 'easeOut' }}
               className="group"
             >
-              <div className="relative h-full p-6 md:p-7 rounded-xl border border-border/25 bg-card/10 hover:bg-card/20 hover:border-border/40 transition-all duration-500">
-                {/* Icon */}
-                <div className="w-10 h-10 rounded-lg bg-primary/8 border border-primary/15 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors duration-500">
-                  <area.icon className="w-4 h-4 text-primary/80" />
+              <div className="relative h-full p-6 md:p-7 border border-border/25 bg-card/10 hover:bg-card/20 hover:border-border/40 transition-all duration-500">
+                {/* Metric tag top-right */}
+                <div className="absolute top-4 right-4">
+                  <span className="text-[8px] font-mono uppercase tracking-[0.15em] text-muted-foreground/30">{area.metric}</span>
+                </div>
+                {/* Signal indicator — small colored bar instead of icon circle */}
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="w-6 h-px bg-primary/40" />
+                  <area.icon className="w-3.5 h-3.5 text-primary/60" />
                 </div>
 
                 {/* Content */}

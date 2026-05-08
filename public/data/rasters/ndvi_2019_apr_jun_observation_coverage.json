@@ -1,0 +1,30 @@
+{
+  "title": "NDVI 2019_APR_JUN observation coverage",
+  "variable": "ndvi",
+  "metric": "observation_coverage",
+  "source_raster": "data/processed/composites/ndvi_2019_apr_jun_observation_coverage.tif",
+  "png": "public/data/rasters/ndvi_2019_apr_jun_observation_coverage.png",
+  "vmin": 0.0,
+  "vmax": 75.0,
+  "legend_ticks": [
+    0.0,
+    37.5,
+    75.0
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 27.451322555541992,
+  "median": 0.0,
+  "min": 0.0,
+  "max": 100.0,
+  "std": 36.11683654785156,
+  "p05": 0.0,
+  "p25": 0.0,
+  "p75": 75.0,
+  "p95": 75.0,
+  "valid_pixel_count": 94839,
+  "valid_aoi_pixel_count": 94839,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 100.0,
+  "coverage_percent": 100.0
+}

@@ -1,393 +1,443 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
 import {
-  LineChart,
-  Line,
   AreaChart,
   Area,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Legend,
 } from 'recharts'
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from '@/components/ui/chart'
+import { ArtisticBackground } from './artistic-background'
+import { SectionReveal } from './section-reveal'
+import figuresRaw from '@/public/data/signals/findings-figures.json'
 
-// Simulated data
-const vegetationData = [
-  { year: '2019', ndvi: 0.62, ndviMin: 0.48, ndviMax: 0.74 },
-  { year: '2020', ndvi: 0.64, ndviMin: 0.51, ndviMax: 0.76 },
-  { year: '2021', ndvi: 0.58, ndviMin: 0.42, ndviMax: 0.71 },
-  { year: '2022', ndvi: 0.61, ndviMin: 0.47, ndviMax: 0.73 },
-  { year: '2023', ndvi: 0.63, ndviMin: 0.50, ndviMax: 0.75 },
-  { year: '2024', ndvi: 0.65, ndviMin: 0.52, ndviMax: 0.77 },
-]
+type FigureDataEntry = Record<string, string | number>
 
-const seasonalETData = [
-  { month: 'June', y2019: 3.8, y2021: 3.2, y2023: 4.0 },
-  { month: 'July', y2019: 4.5, y2021: 3.6, y2023: 4.7 },
-  { month: 'August', y2019: 4.2, y2021: 3.5, y2023: 4.4 },
-]
+const fig1 = figuresRaw.figures[0]
+const fig2 = figuresRaw.figures[1]
+const fig3 = figuresRaw.figures[2]
+const fig4 = figuresRaw.figures[3]
 
-const stressMatrix = [
-  { year: '2019', jun: -0.2, jul: -0.3, aug: -0.4 },
-  { year: '2020', jun: -0.1, jul: -0.2, aug: -0.3 },
-  { year: '2021', jun: 0.2, jul: 0.5, aug: 0.6 },
-  { year: '2022', jun: 0.1, jul: 0.3, aug: 0.2 },
-  { year: '2023', jun: -0.1, jul: 0.0, aug: -0.2 },
-  { year: '2024', jun: -0.3, jul: -0.4, aug: -0.5 },
-]
+const ndviData = fig1.data as Array<{ year: string; ndvi: number; confidence_level: string }>
+const etData = fig2.data as Array<{ year: string; et: number; confidence_level: string }>
+const esiData = fig3.data as Array<{ year: string; esi: number; confidence_level: string }>
+const covData = fig4.data as Array<{ year: string; ndvi_cov: number; et_cov: number; esi_cov: number }>
 
-const coverageData = [
-  { year: '2019', coverage: 82 },
-  { year: '2020', coverage: 78 },
-  { year: '2021', coverage: 71 },
-  { year: '2022', coverage: 85 },
-  { year: '2023', coverage: 88 },
-  { year: '2024', coverage: 79 },
-]
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function CustomTooltip({ active, payload, label }: any) {
-  if (active && payload && payload.length) {
-    return (
-      <div className="px-3 py-2 rounded-lg bg-card/95 border border-border/40 shadow-lg backdrop-blur-sm">
-        <p className="text-[10px] font-mono text-muted-foreground/70 mb-1">{label}</p>
-        {payload.map((entry: { name: string; value: number; color: string }, index: number) => (
-          <p key={index} className="text-xs font-mono" style={{ color: entry.color }}>
-            {entry.name}: {typeof entry.value === 'number' ? entry.value.toFixed(2) : entry.value}
-          </p>
-        ))}
-      </div>
-    )
-  }
-  return null
+const ndviChartConfig: ChartConfig = {
+  ndvi: { label: 'NDVI Mean', color: '#3F6F42' },
 }
 
-function HeatmapCell({ value, maxAbs = 0.6 }: { value: number; maxAbs?: number }) {
-  const normalizedValue = value / maxAbs
-  const opacity = Math.min(0.8, Math.abs(normalizedValue) * 0.8 + 0.2)
-  const color = value > 0 
-    ? `oklch(0.75 0.08 85 / ${opacity})`
-    : `oklch(0.65 0.08 160 / ${opacity})`
+const etChartConfig: ChartConfig = {
+  et: { label: 'ET mm/day', color: '#557F96' },
+}
 
+const esiChartConfig: ChartConfig = {
+  esi: { label: 'ESI (0–1)', color: '#B99B45' },
+}
+
+function CoverageCell({ value, threshold }: { value: number; threshold: number }) {
+  const normalizedAbs = Math.min(1, value / 100)
+  const intensity = 0.12 + normalizedAbs * 0.55
+  const isLow = value < threshold
+  const bg = isLow
+    ? `oklch(0.52 0.11 22 / ${intensity})`
+    : `oklch(0.555 0.09 140 / ${intensity})`
   return (
     <div
-      className="aspect-square rounded flex items-center justify-center text-[9px] font-mono transition-all duration-300 hover:scale-105"
-      style={{ backgroundColor: color, color: 'white' }}
+      className="flex items-center justify-center text-[10px] font-mono py-2 transition-all duration-300"
+      style={{ backgroundColor: bg, color: '#E8E3D8' }}
     >
-      {value > 0 ? '+' : ''}{value.toFixed(1)}
+      {value.toFixed(1)}%
+    </div>
+  )
+}
+
+function FigureFrame({
+  number,
+  title,
+  subtitle,
+  caption,
+  tag,
+  children,
+}: {
+  number: string
+  title: string
+  subtitle: string
+  caption: string
+  tag?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="border border-border/25 bg-card/8">
+      {/* Figure header */}
+      <div className="flex items-start justify-between px-5 pt-4 pb-3 border-b border-border/15">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.18em]">Fig. {number}</span>
+            <span className="w-3 h-px bg-border/25" />
+            <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · AMJ · 2019–2025</span>
+          </div>
+          <p className="text-sm font-medium text-foreground/85">{title}</p>
+          <p className="text-[11px] text-muted-foreground/55 mt-0.5">{subtitle}</p>
+        </div>
+        <span className="text-[8px] font-mono text-muted-foreground/25 mt-1 shrink-0 ml-4">{tag ?? 'ECOSTRESS'}</span>
+      </div>
+      {/* Chart area */}
+      <div className="px-4 py-4">
+        {children}
+      </div>
+      {/* Figure caption */}
+      <div className="px-5 py-2.5 border-t border-border/10">
+        <p className="text-[9px] font-mono text-muted-foreground/35 leading-relaxed italic">{caption}</p>
+      </div>
     </div>
   )
 }
 
 export function DataVisualizations() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
-  const [activeChart, setActiveChart] = useState<'vegetation' | 'et' | 'stress' | 'coverage'>('vegetation')
-
   return (
-    <section id="findings" ref={sectionRef} className="relative py-28 md:py-40 overflow-hidden">
-      {/* Clean background */}
-      <div className="absolute inset-0 bg-background" />
-      
-      {/* Subtle accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/30 to-transparent" />
+    <section id="findings" className="relative py-20 md:py-32 overflow-hidden">
+      <ArtisticBackground variant="findings" />
 
       <div className="relative max-w-5xl mx-auto px-6 md:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-card/20 backdrop-blur-sm mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-            <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
-              Data Analysis
+        <SectionReveal>
+          {/* Coordinate strip */}
+          <div className="flex items-center gap-3 mb-10 pb-4 border-b border-border/15">
+            <span className="w-4 h-px bg-foreground/18" />
+            <span className="text-[8px] font-mono uppercase tracking-[0.22em] text-muted-foreground/40">
+              SNP · 46.6603°N 10.2176°E · AMJ Composite · April–June 2019–2025
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance">
-            Visualizing the Signals
-          </h2>
-          <p className="max-w-lg mx-auto text-muted-foreground/80 text-sm text-balance">
-            Publication-grade visualizations of vegetation, water, and stress indicators
-          </p>
-        </motion.div>
 
-        {/* Chart selector */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-          className="flex flex-wrap justify-center gap-1.5 mb-8"
-        >
-          {[
-            { id: 'vegetation', label: 'Vegetation Index' },
-            { id: 'et', label: 'Seasonal ET' },
-            { id: 'stress', label: 'Stress Matrix' },
-            { id: 'coverage', label: 'Data Quality' },
-          ].map((chart) => (
-            <button
-              key={chart.id}
-              onClick={() => setActiveChart(chart.id as typeof activeChart)}
-              className={`px-4 py-2 rounded-lg border text-xs font-medium transition-all duration-300 ${
-                activeChart === chart.id
-                  ? 'bg-primary/15 border-primary/30 text-foreground'
-                  : 'border-border/20 text-muted-foreground hover:text-foreground hover:border-border/40'
-              }`}
+          {/* Section header */}
+          <div className="grid md:grid-cols-[1fr_auto] gap-8 items-end mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-border/30 bg-card/15 mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+                <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/80">
+                  Data Findings · ECOSTRESS/AppEEARS · Research Prototype
+                </span>
+              </div>
+              <h2 className="font-serif text-4xl sm:text-5xl font-medium tracking-tight mb-3 text-balance">
+                Reading the Signals
+              </h2>
+              <p className="max-w-md text-muted-foreground/65 text-sm leading-relaxed">
+                Seven April–June seasons of raster-derived ECOSTRESS satellite indices across the Swiss National Park
+              </p>
+            </div>
+            <div className="hidden md:block text-right">
+              <div className="text-[8px] font-mono text-muted-foreground/30 leading-relaxed space-y-0.5">
+                <div className="text-[7px] uppercase tracking-[0.15em] text-muted-foreground/20 mb-1">Elevation Bands</div>
+                <div>Subalpine · 1400–1800m</div>
+                <div>Alpine · 1800–2400m</div>
+                <div>Subnival · 2400–3174m</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 2-column chart grid — Fig 1 + Fig 2 */}
+          <div className="grid md:grid-cols-2 gap-5 mb-5">
+            <FigureFrame
+              number={fig1.number}
+              title={fig1.title}
+              subtitle={fig1.subtitle}
+              caption={fig1.caption}
             >
-              {chart.label}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Charts */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-          className="rounded-xl border border-border/25 bg-card/10 overflow-hidden"
-        >
-          {/* Vegetation Index Chart */}
-          {activeChart === 'vegetation' && (
-            <div className="p-5 md:p-6">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <h3 className="text-sm font-medium mb-0.5">Vegetation Greenness (NDVI)</h3>
-                  <p className="text-xs text-muted-foreground/60">Mean growing season values with range</p>
-                </div>
-                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
-              </div>
-              <div className="h-[280px] md:h-[340px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={vegetationData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="ndviGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="oklch(0.65 0.12 160)" stopOpacity={0.2} />
-                        <stop offset="95%" stopColor="oklch(0.65 0.12 160)" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
-                    <XAxis 
-                      dataKey="year" 
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <YAxis 
-                      domain={[0.4, 0.8]}
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Area
-                      type="monotone"
-                      dataKey="ndviMax"
-                      stroke="none"
-                      fill="oklch(0.65 0.12 160)"
-                      fillOpacity={0.08}
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="ndviMin"
-                      stroke="none"
-                      fill="oklch(0.08 0.01 240)"
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="ndvi"
-                      stroke="oklch(0.65 0.12 160)"
-                      strokeWidth={1.5}
-                      dot={{ fill: 'oklch(0.65 0.12 160)', strokeWidth: 0, r: 3 }}
-                      activeDot={{ r: 5, fill: 'oklch(0.65 0.12 160)' }}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          )}
-
-          {/* Seasonal ET Comparison */}
-          {activeChart === 'et' && (
-            <div className="p-5 md:p-6">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <h3 className="text-sm font-medium mb-0.5">Seasonal Evapotranspiration</h3>
-                  <p className="text-xs text-muted-foreground/60">Monthly comparison across selected years (mm/day)</p>
-                </div>
-                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
-              </div>
-              <div className="h-[280px] md:h-[340px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={seasonalETData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
-                    <XAxis 
-                      dataKey="month" 
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <YAxis 
-                      domain={[2, 5]}
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend 
-                      wrapperStyle={{ paddingTop: '16px' }}
-                      formatter={(value) => <span className="text-[10px] text-muted-foreground/70">{value}</span>}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="y2019"
-                      name="2019 (Baseline)"
-                      stroke="oklch(0.45 0.02 240)"
-                      strokeWidth={1.5}
-                      strokeDasharray="4 4"
-                      dot={{ fill: 'oklch(0.45 0.02 240)', strokeWidth: 0, r: 2.5 }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="y2021"
-                      name="2021 (Drought)"
-                      stroke="oklch(0.75 0.08 85)"
-                      strokeWidth={1.5}
-                      dot={{ fill: 'oklch(0.75 0.08 85)', strokeWidth: 0, r: 2.5 }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="y2023"
-                      name="2023 (Recovery)"
-                      stroke="oklch(0.7 0.08 220)"
-                      strokeWidth={1.5}
-                      dot={{ fill: 'oklch(0.7 0.08 220)', strokeWidth: 0, r: 2.5 }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          )}
-
-          {/* Stress Matrix */}
-          {activeChart === 'stress' && (
-            <div className="p-5 md:p-6">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <h3 className="text-sm font-medium mb-0.5">Monthly Stress Index Matrix</h3>
-                  <p className="text-xs text-muted-foreground/60">Evaporative stress anomalies (ESI) by year and month</p>
-                </div>
-                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
-              </div>
-              <div className="overflow-x-auto">
-                <div className="min-w-[320px] max-w-md mx-auto">
-                  {/* Header */}
-                  <div className="grid grid-cols-[70px_1fr_1fr_1fr] gap-1.5 mb-1.5">
-                    <div />
-                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Jun</div>
-                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Jul</div>
-                    <div className="text-center text-[10px] font-mono text-muted-foreground/60 py-1.5">Aug</div>
+              <ChartContainer config={ndviChartConfig} className="h-[200px]">
+                <AreaChart data={ndviData} margin={{ top: 6, right: 6, left: -18, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="ndviFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#3F6F42" stopOpacity={0.22} />
+                      <stop offset="95%" stopColor="#3F6F42" stopOpacity={0.02} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="2 3" stroke="currentColor" strokeOpacity={0.07} />
+                  <XAxis dataKey="year" tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} />
+                  <YAxis domain={[0.08, 0.20]} tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} tickCount={4} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Area type="monotone" dataKey="ndvi" stroke="#3F6F42" strokeWidth={1.5} fill="url(#ndviFill)"
+                    dot={{ fill: '#3F6F42', strokeWidth: 0, r: 2.5 }} activeDot={{ r: 4, fill: '#3F6F42' }} />
+                </AreaChart>
+              </ChartContainer>
+              <div className="grid grid-cols-3 gap-1.5 mt-3 pt-3 border-t border-border/10">
+                {([
+                  { year: '2021', label: '2021 — low' },
+                  { year: '2023', label: '2023 — high' },
+                  { year: '2025', label: '2025 — partial' },
+                ] as { year: string; label: string }[]).map(({ year, label }) => (
+                  <div key={year}>
+                    <div className="relative overflow-hidden border border-border/15" style={{ aspectRatio: '4/3' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/data/rasters/ndvi_${year}_apr_jun_mean.png`}
+                        alt={`NDVI ${year} AMJ`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        style={{ objectFit: 'contain', imageRendering: 'pixelated' }}
+                      />
+                    </div>
+                    <p className="text-[7px] font-mono text-muted-foreground/35 text-center mt-0.5">{label}</p>
                   </div>
-                  {/* Matrix rows */}
-                  {stressMatrix.map((row) => (
-                    <div key={row.year} className="grid grid-cols-[70px_1fr_1fr_1fr] gap-1.5 mb-1.5">
-                      <div className="flex items-center text-xs font-mono text-foreground/60">{row.year}</div>
-                      <HeatmapCell value={row.jun} />
-                      <HeatmapCell value={row.jul} />
-                      <HeatmapCell value={row.aug} />
+                ))}
+              </div>
+            </FigureFrame>
+
+            <FigureFrame
+              number={fig2.number}
+              title={fig2.title}
+              subtitle={fig2.subtitle}
+              caption={fig2.caption}
+            >
+              <ChartContainer config={etChartConfig} className="h-[200px]">
+                <AreaChart data={etData} margin={{ top: 6, right: 6, left: -18, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="etFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#557F96" stopOpacity={0.22} />
+                      <stop offset="95%" stopColor="#557F96" stopOpacity={0.02} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="2 3" stroke="currentColor" strokeOpacity={0.07} />
+                  <XAxis dataKey="year" tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} />
+                  <YAxis domain={[0.8, 2.8]} tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} tickCount={4} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Area type="monotone" dataKey="et" stroke="#557F96" strokeWidth={1.5} fill="url(#etFill)"
+                    dot={{ fill: '#557F96', strokeWidth: 0, r: 2.5 }} activeDot={{ r: 4, fill: '#557F96' }} />
+                </AreaChart>
+              </ChartContainer>
+              <p className="text-[8px] font-mono text-muted-foreground/35 mt-1.5 pl-1">
+                ⚠ 2024 LOW CONFIDENCE — 2 overpasses only
+              </p>
+              <div className="grid grid-cols-4 gap-1.5 mt-3 pt-3 border-t border-border/10">
+                {([
+                  { year: '2021', label: '2021', lowConf: false },
+                  { year: '2022', label: '2022', lowConf: false },
+                  { year: '2024', label: '2024', lowConf: true },
+                  { year: '2025', label: '2025', lowConf: false },
+                ] as { year: string; label: string; lowConf: boolean }[]).map(({ year, label, lowConf }) => (
+                  <div key={year}>
+                    <div className="relative overflow-hidden border border-border/15" style={{ aspectRatio: '4/3' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/data/rasters/et_${year}_apr_jun_mean.png`}
+                        alt={`ET ${year} AMJ`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        style={{ objectFit: 'contain', imageRendering: 'pixelated' }}
+                      />
+                      {lowConf && (
+                        <div className="absolute inset-0 flex items-end justify-start p-1">
+                          <span className="text-[6px] font-mono uppercase px-1 py-0.5" style={{ color: '#A6523A', background: 'rgba(0,0,0,0.6)' }}>LOW CONF</span>
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-[7px] font-mono text-muted-foreground/35 text-center mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </FigureFrame>
+          </div>
+
+          {/* Fig 3 — ESI area chart */}
+          <div className="mb-5">
+            <FigureFrame
+              number={fig3.number}
+              title={fig3.title}
+              subtitle={fig3.subtitle}
+              caption={fig3.caption}
+            >
+              <ChartContainer config={esiChartConfig} className="h-[160px]">
+                <BarChart data={esiData} margin={{ top: 6, right: 6, left: -18, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="2 3" stroke="currentColor" strokeOpacity={0.07} />
+                  <XAxis dataKey="year" tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} />
+                  <YAxis domain={[0.7, 1.0]} tick={{ fontSize: 9, fontFamily: 'monospace' }} tickLine={false} axisLine={false} tickCount={4} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Bar dataKey="esi" fill="#B99B45" maxBarSize={18} />
+                </BarChart>
+              </ChartContainer>
+              <div className="flex items-center gap-6 mt-2 pl-1">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3" style={{ backgroundColor: '#B99B4555' }} />
+                  <span className="text-[9px] font-mono text-muted-foreground/50">0 = max stress</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3" style={{ backgroundColor: '#B99B45' }} />
+                  <span className="text-[9px] font-mono text-muted-foreground/50">1 = no stress</span>
+                </div>
+                <span className="text-[8px] font-mono text-muted-foreground/30 ml-auto">⚠ 2024 LOW CONF</span>
+              </div>
+              <div className="grid grid-cols-3 gap-1.5 mt-3 pt-3 border-t border-border/10">
+                {([
+                  { year: '2021', label: '2021', lowConf: false },
+                  { year: '2023', label: '2023', lowConf: false },
+                  { year: '2024', label: '2024', lowConf: true },
+                ] as { year: string; label: string; lowConf: boolean }[]).map(({ year, label, lowConf }) => (
+                  <div key={year}>
+                    <div className="relative overflow-hidden border border-border/15" style={{ aspectRatio: '4/3' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/data/rasters/esi_${year}_apr_jun_mean.png`}
+                        alt={`ESI ${year} AMJ`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        style={{ objectFit: 'contain', imageRendering: 'pixelated' }}
+                      />
+                      {lowConf && (
+                        <div className="absolute inset-0 flex items-end justify-start p-1">
+                          <span className="text-[6px] font-mono uppercase px-1 py-0.5" style={{ color: '#A6523A', background: 'rgba(0,0,0,0.6)' }}>LOW CONF</span>
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-[7px] font-mono text-muted-foreground/35 text-center mt-0.5">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </FigureFrame>
+          </div>
+
+          {/* Fig 4 — Directional Trend Maps (slope rasters) */}
+          <div className="mb-5">
+            <FigureFrame
+              number="4"
+              title="Directional Trend Maps"
+              subtitle="Pixel-level linear slope per year · April–June AMJ · 2019–2025"
+              caption="Short-window directional signal only — not indicative of long-term ecological change. Seven-season record; independent validation pending."
+              tag="TREND"
+            >
+              <div className="grid grid-cols-3 gap-3">
+                {([
+                  { layer: 'ndvi', label: 'NDVI', desc: 'Vegetation index' },
+                  { layer: 'et',   label: 'ET',   desc: 'Evapotranspiration' },
+                  { layer: 'esi',  label: 'ESI',  desc: 'Evaporative stress' },
+                ] as { layer: string; label: string; desc: string }[]).map(({ layer, label, desc }) => (
+                  <div key={layer} className="flex flex-col gap-1.5">
+                    <div className="relative overflow-hidden border border-border/20" style={{ aspectRatio: '1 / 1' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/data/rasters/${layer}_apr_jun_slope_per_year.png`}
+                        alt={`${label} slope per year`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        style={{ objectFit: 'contain', imageRendering: 'pixelated' }}
+                      />
+                      <div
+                        className="absolute bottom-0 left-0 right-0 px-1.5 py-1 pointer-events-none"
+                        style={{ background: 'linear-gradient(to top, rgba(8,12,10,0.72), transparent)' }}
+                      >
+                        <span className="text-[7px] font-mono uppercase tracking-[0.10em]" style={{ color: '#DDD3BE', opacity: 0.85 }}>
+                          {label} slope/yr
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-[8px] font-mono text-muted-foreground/45 text-center">{desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[8px] font-mono text-muted-foreground/35 mt-3 italic">
+                ⚠ Directional signal from 7 seasons (2019–2025). Short observation window — not sufficient for trend attribution.
+              </p>
+            </FigureFrame>
+          </div>
+
+          {/* Fig 5 — Observation Coverage */}
+          <div className="border border-border/25 bg-card/8 mb-5">
+            <div className="flex items-start justify-between px-5 pt-4 pb-3 border-b border-border/15">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.18em]">Fig. 5</span>
+                  <span className="w-3 h-px bg-border/25" />
+                  <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · AMJ · 2019–2025</span>
+                </div>
+                <p className="text-sm font-medium text-foreground/85">Observation Coverage</p>
+                <p className="text-[11px] text-muted-foreground/55 mt-0.5">ECOSTRESS overpass count per pixel · April–June window</p>
+              </div>
+              <span className="text-[8px] font-mono text-muted-foreground/25 mt-1 ml-4">COVERAGE</span>
+            </div>
+            <div className="px-5 py-5">
+              <div className="grid grid-cols-7 gap-1.5 mb-5">
+                {(['2019', '2020', '2021', '2022', '2023', '2024', '2025'] as string[]).map((year) => (
+                  <div key={year} className="flex flex-col gap-0.5">
+                    <div className="relative overflow-hidden border border-border/15" style={{ aspectRatio: '1 / 1' }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/data/rasters/ndvi_${year}_apr_jun_observation_coverage.png`}
+                        alt={`Observation coverage ${year}`}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full"
+                        style={{ objectFit: 'contain', imageRendering: 'pixelated' }}
+                      />
+                      {(year === '2024' || year === '2025') && (
+                        <div className="absolute inset-0 border border-[#A6523A]/25" />
+                      )}
+                    </div>
+                    <p className="text-[7px] font-mono text-center text-muted-foreground/40">{year}</p>
+                    {year === '2024' && (
+                      <p className="text-[6px] font-mono text-center" style={{ color: '#A6523A' }}>2 OVP</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="max-w-2xl">
+                <div className="grid grid-cols-[72px_1fr_1fr_1fr] gap-2 mb-2">
+                  <div />
+                  {['NDVI', 'ET', 'ESI'].map((v) => (
+                    <div key={v} className="text-center text-[9px] font-mono text-muted-foreground/50 py-1 uppercase tracking-[0.12em]">{v}</div>
+                  ))}
+                </div>
+                {covData.map((row) => (
+                  <div key={row.year} className="grid grid-cols-[72px_1fr_1fr_1fr] gap-2 mb-1.5">
+                    <div className="flex items-center text-[10px] font-mono text-foreground/55">{row.year}</div>
+                    <CoverageCell value={row.ndvi_cov} threshold={60} />
+                    <CoverageCell value={row.et_cov} threshold={60} />
+                    <CoverageCell value={row.esi_cov} threshold={60} />
+                  </div>
+                ))}
+                <div className="mt-4 flex items-center gap-6">
+                  {[
+                    { color: 'oklch(0.555 0.09 140 / 0.6)', label: '≥60% — adequate coverage' },
+                    { color: 'oklch(0.52 0.11 22 / 0.6)', label: '<60% — low confidence' },
+                  ].map((l) => (
+                    <div key={l.label} className="flex items-center gap-2">
+                      <div className="w-3 h-3" style={{ backgroundColor: l.color }} />
+                      <span className="text-[9px] font-mono text-muted-foreground/50">{l.label}</span>
                     </div>
                   ))}
-                  {/* Legend */}
-                  <div className="mt-5 flex items-center justify-center gap-5">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded" style={{ backgroundColor: 'oklch(0.65 0.08 160 / 0.6)' }} />
-                      <span className="text-[10px] text-muted-foreground/60">No Stress</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded" style={{ backgroundColor: 'oklch(0.75 0.08 85 / 0.6)' }} />
-                      <span className="text-[10px] text-muted-foreground/60">Elevated Stress</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-          )}
-
-          {/* Data Quality / Coverage */}
-          {activeChart === 'coverage' && (
-            <div className="p-5 md:p-6">
-              <div className="flex items-center justify-between mb-5">
-                <div>
-                  <h3 className="text-sm font-medium mb-0.5">Valid Data Coverage</h3>
-                  <p className="text-xs text-muted-foreground/60">Percentage of valid pixels meeting 70% threshold</p>
-                </div>
-                <span className="text-[10px] font-mono text-muted-foreground/40">Simulated Data</span>
-              </div>
-              <div className="h-[280px] md:h-[340px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={coverageData} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="coverageGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="oklch(0.7 0.08 220)" stopOpacity={0.25} />
-                        <stop offset="95%" stopColor="oklch(0.7 0.08 220)" stopOpacity={0} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.2 0.02 240 / 0.4)" />
-                    <XAxis 
-                      dataKey="year" 
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <YAxis 
-                      domain={[60, 100]}
-                      tick={{ fill: 'oklch(0.5 0.02 240)', fontSize: 10 }}
-                      axisLine={{ stroke: 'oklch(0.2 0.02 240 / 0.4)' }}
-                      tickLine={false}
-                    />
-                    <Tooltip content={<CustomTooltip />} />
-                    {/* 70% threshold line */}
-                    <Line
-                      type="monotone"
-                      dataKey={() => 70}
-                      stroke="oklch(0.75 0.08 85 / 0.5)"
-                      strokeWidth={1}
-                      strokeDasharray="4 4"
-                      dot={false}
-                      name="70% Threshold"
-                    />
-                    <Area
-                      type="monotone"
-                      dataKey="coverage"
-                      stroke="oklch(0.7 0.08 220)"
-                      strokeWidth={1.5}
-                      fill="url(#coverageGradient)"
-                      name="Coverage"
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
-              <div className="mt-3 flex items-center justify-center">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-0.5 rounded bg-gold/50" style={{ backgroundImage: 'repeating-linear-gradient(90deg, oklch(0.75 0.08 85 / 0.5) 0, oklch(0.75 0.08 85 / 0.5) 4px, transparent 4px, transparent 8px)' }} />
-                  <span className="text-[10px] text-muted-foreground/60">70% Threshold</span>
-                </div>
-              </div>
+            <div className="px-5 py-2.5 border-t border-border/10">
+              <p className="text-[9px] font-mono text-muted-foreground/35 italic">
+                {fig4.caption}
+              </p>
             </div>
-          )}
-
-          {/* Footer note */}
-          <div className="px-5 py-3 border-t border-border/15">
-            <p className="text-[10px] text-muted-foreground/50 text-center">
-              All visualizations use prototype/simulated data for demonstration purposes
-            </p>
           </div>
-        </motion.div>
+
+          {/* Summary stats */}
+          <div className="grid grid-cols-3 gap-px bg-border/20 border border-border/20">
+            {[
+              { label: 'NDVI Min/Max', value: '0.109 – 0.163', note: '2021 low · 2023 high' },
+              { label: 'ET Range', value: '1.17 – 2.26', note: 'mm/day · AMJ mean' },
+              { label: 'ESI Range', value: '0.781 – 0.925', note: '2024 is low confidence' },
+            ].map((stat) => (
+              <div key={stat.label} className="px-5 py-4 bg-card/8 text-center">
+                <p className="text-[8px] font-mono uppercase tracking-[0.15em] text-muted-foreground/35 mb-1">{stat.label}</p>
+                <p className="font-serif text-xl font-medium text-foreground/85 mb-0.5">{stat.value}</p>
+                <p className="text-[9px] font-mono text-muted-foreground/40">{stat.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-[9px] font-mono text-muted-foreground/30 mt-5 uppercase tracking-[0.12em]">
+            Raster-derived ECOSTRESS/AppEEARS output · April–June composite · Research prototype · Validation pending
+          </p>
+        </SectionReveal>
       </div>
     </section>
   )

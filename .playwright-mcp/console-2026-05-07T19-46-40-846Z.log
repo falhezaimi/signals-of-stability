@@ -1,0 +1,1042 @@
+[     363ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     371ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1860ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    1984ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    2673ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="group/tabs..." ref={null}>
+      <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="group/tabs..." ref={null}>
+        <div>
+        <TabsContent value="ndvi" className="flex-1 mt-...">
+          <TabsContent data-slot="tabs-content" className="outline-no..." value="ndvi">
+            <Presence present={true}>
+              <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_b..." ...>
+                  <TooltipProvider>
+                  <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4}} ...>
+                    <div className="flex-1 min..." style={{opacity:0}} ref={function useMotionRef.useCallback}>
+                      <RasterVisualization layer="ndvi" year="2024" month="July">
+                        <div className="relative w..." style={{...}}>
+                          <svg className="absolute i..." viewBox="0 0 240 160" preserveAspectRatio="none">
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={0}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.6472922789804675}
+-                             opacity="0.6472922789804674"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={80}
+                              y={20}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.29402604696275564}
+-                             opacity="0.2940260469627557"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={30}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.3625845022910435}
+-                             opacity="0.36258450229104344"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={30}
+                              y={50}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.26428449664404746}
+-                             opacity="0.2642844966440475"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={160}
+                              y={50}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.584158553057292}
+-                             opacity="0.5841585530572919"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={70}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.17378489724025808}
+-                             opacity="0.17378489724025806"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={80}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.350522975733121}
+-                             opacity="0.35052297573312097"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={100}
+                              y={130}
+                              width={10}
+                              height={10}
+                              fill="#6F8F5B"
++                             opacity={0.5174612330997748}
+-                             opacity="0.5174612330997747"
+                            >
+                            ...
+                          ...
+                  ...
+        ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[    2830ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    3008ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    3135ms] [LOG] [Fast Refresh] done in 245ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  198007ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  199793ms] [LOG] [Fast Refresh] done in 1747ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 8774797ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 8774980ms] [LOG] [Fast Refresh] done in 669ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[11646632ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[11648049ms] [LOG] [Fast Refresh] done in 1608ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13031343ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13032393ms] [LOG] [Fast Refresh] done in 1159ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13033526ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13034454ms] [LOG] [Fast Refresh] done in 1028ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13036231ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13036425ms] [LOG] [Fast Refresh] done in 295ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13036542ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13037060ms] [LOG] [Fast Refresh] done in 617ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13646667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13647903ms] [LOG] [Fast Refresh] done in 1341ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13827748ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13827895ms] [LOG] [Fast Refresh] done in 261ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14429847ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14431162ms] [LOG] [Fast Refresh] done in 1419ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14452564ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14452787ms] [LOG] [Fast Refresh] done in 324ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14460376ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14460489ms] [LOG] [Fast Refresh] done in 223ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14474097ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14475381ms] [LOG] [Fast Refresh] done in 1386ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14479328ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14479561ms] [LOG] [Fast Refresh] done in 335ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14506907ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14507021ms] [LOG] [Fast Refresh] done in 214ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14530767ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14530868ms] [LOG] [Fast Refresh] done in 202ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14630603ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14633779ms] [LOG] [Fast Refresh] done in 2481ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14634075ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14636490ms] [LOG] [Fast Refresh] done in 2532ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14708863ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14709723ms] [LOG] [Fast Refresh] done in 550ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14709832ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14709856ms] [LOG] [Fast Refresh] done in 124ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14729705ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14730161ms] [LOG] [Fast Refresh] done in 345ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14731102ms] ReferenceError: stressData is not defined
+    at DataVisualizations (http://localhost:3000/_next/static/chunks/_0_n3ae8._.js?id=%255Bproject%255D%252Fcomponents%252Fdata-visualizations.tsx+%255Bapp-client%255D+%2528ecmascript%2529:743:45)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:186)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at processRootScheduleInMicrotask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10200:106)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10274:158
+[14740309ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14740430ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14741439ms] ReferenceError: stressData is not defined
+    at DataVisualizations (http://localhost:3000/_next/static/chunks/_0_n3ae8._.js?id=%255Bproject%255D%252Fcomponents%252Fdata-visualizations.tsx+%255Bapp-client%255D+%2528ecmascript%2529:743:45)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performSyncWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at flushSyncWork$1 (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9230:86)
+    at Object.scheduleRefresh (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:299:13)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:384:38)
+    at applyUpdate (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:878:31)
+    at http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:886:13
+[14741458ms] [LOG] [Fast Refresh] done in 212ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14743646ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[14744006ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14744138ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14745162ms] ReferenceError: stressData is not defined
+    at DataVisualizations (http://localhost:3000/_next/static/chunks/_0_n3ae8._.js:10475:45)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[14745193ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[14804526ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14805055ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14805074ms] [LOG] [Fast Refresh] done in 615ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14807674ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14807775ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14808849ms] [ERROR] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="group/tabs..." ref={null}>
+      <div dir="ltr" data-orientation="horizontal" data-slot="tabs" className="group/tabs..." ref={null}>
+        <div>
+        <TabsContent value="ndvi" className="flex-1 mt-...">
+          <TabsContent data-slot="tabs-content" className="outline-no..." value="ndvi">
+            <Presence present={true}>
+              <Primitive.div data-state="active" data-orientation="horizontal" role="tabpanel" ...>
+                <div data-state="active" data-orientation="horizontal" role="tabpanel" aria-labelledby="radix-_R_b..." ...>
+                  <TooltipProvider>
+                  <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4}} ...>
+                    <div className="flex-1 min..." style={{opacity:0}} ref={function useMotionRef.useCallback}>
+                      <RasterVisualization layer="ndvi" year="2023">
+                        <div className="relative w..." style={{...}}>
+                          <svg className="absolute i..." viewBox="0 0 240 160" preserveAspectRatio="none">
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={100}
+                              y={20}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.2852241197817128}
+-                             opacity="0.2852241197817129"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={30}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.42540917666685507}
+-                             opacity="0.425409176666855"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={50}
+                              y={50}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.2912752765068014}
+-                             opacity="0.29127527650680146"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={180}
+                              y={50}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.5467042888202329}
+-                             opacity="0.5467042888202328"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={70}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.10908975136398347}
+-                             opacity="0.10908975136398345"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={80}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.39481961858687914}
+-                             opacity="0.39481961858687903"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={110}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.10470258280195309}
+-                             opacity="0.10470258280195308"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={120}
+                              y={130}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.494662394088008}
+-                             opacity="0.49466239408800794"
+                            >
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect>
+                            <rect
+                              x={220}
+                              y={150}
+                              width={10}
+                              height={10}
+                              fill="#3F6F42"
++                             opacity={0.2606283056554454}
+-                             opacity="0.26062830565544537"
+                            >
+                            ...
+                          ...
+                  ...
+        ...
+ @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[14809156ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14818049ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14818278ms] [LOG] [Fast Refresh] done in 222ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14823027ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14823190ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14826358ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14826807ms] [LOG] [Fast Refresh] done in 465ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14829647ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14829787ms] [LOG] [Fast Refresh] done in 159ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14836140ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14836280ms] [LOG] [Fast Refresh] done in 171ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14871431ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14871817ms] [LOG] [Fast Refresh] done in 458ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14874469ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14874805ms] [LOG] [Fast Refresh] done in 250ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14878446ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14880488ms] [LOG] [Fast Refresh] done in 1669ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14880643ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14880688ms] [LOG] [Fast Refresh] done in 146ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14880958ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14881012ms] [LOG] [Fast Refresh] done in 158ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14881203ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14881246ms] [LOG] [Fast Refresh] done in 145ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14925347ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14925660ms] [LOG] [Fast Refresh] done in 415ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15038045ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15038589ms] [LOG] [Fast Refresh] done in 651ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

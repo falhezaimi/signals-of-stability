@@ -1,0 +1,269 @@
+[
+  {
+    "variable": "ndvi",
+    "file_path": "data/metadata/ndvi/ECO-L2T-STARS-002-NDVI-UQ-Statistics-QA.csv",
+    "file_name": "ECO-L2T-STARS-002-NDVI-UQ-Statistics-QA.csv",
+    "suffix": ".csv",
+    "kind": "qa_statistics_csv",
+    "read_ok": true,
+    "error": null,
+    "row_count": 330.0,
+    "column_count": 16.0,
+    "columns": [
+      "File Name",
+      "Dataset",
+      "aid",
+      "Date",
+      "Count",
+      "Minimum",
+      "Maximum",
+      "Range",
+      "Mean",
+      "Standard Deviation",
+      "Variance",
+      "Upper Quartile",
+      "Upper 1.5 IQR",
+      "Median",
+      "Lower 1.5 IQR",
+      "Lower Quartile"
+    ],
+    "date_columns_detected": [
+      "Date"
+    ],
+    "parsed_date_ranges": {
+      "Date": {
+        "min": "2019-06-08T13:09:28+00:00",
+        "max": "2025-06-29T04:59:26+00:00",
+        "valid_count": 330
+      }
+    },
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": null,
+    "extracted_fields": null,
+    "parse_mode": null,
+    "parse_error": null
+  },
+  {
+    "variable": "ndvi",
+    "file_path": "data/metadata/ndvi/ECO-L2T-STARS-002-Statistics.csv",
+    "file_name": "ECO-L2T-STARS-002-Statistics.csv",
+    "suffix": ".csv",
+    "kind": "statistics_csv",
+    "read_ok": true,
+    "error": null,
+    "row_count": 330.0,
+    "column_count": 17.0,
+    "columns": [
+      "File Name",
+      "Dataset",
+      "aid",
+      "Date",
+      "UTM Zone",
+      "Count",
+      "Minimum",
+      "Maximum",
+      "Range",
+      "Mean",
+      "Standard Deviation",
+      "Variance",
+      "Upper Quartile",
+      "Upper 1.5 IQR",
+      "Median",
+      "Lower 1.5 IQR",
+      "Lower Quartile"
+    ],
+    "date_columns_detected": [
+      "Date"
+    ],
+    "parsed_date_ranges": {
+      "Date": {
+        "min": "2019-06-08T13:09:28+00:00",
+        "max": "2025-06-29T04:59:26+00:00",
+        "valid_count": 330
+      }
+    },
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": null,
+    "extracted_fields": null,
+    "parse_mode": null,
+    "parse_error": null
+  },
+  {
+    "variable": "ndvi",
+    "file_path": "data/metadata/ndvi/NDVi-ECO-L2T-STARS-002-metadata.xml",
+    "file_name": "NDVi-ECO-L2T-STARS-002-metadata.xml",
+    "suffix": ".xml",
+    "kind": "metadata_xml",
+    "read_ok": true,
+    "error": null,
+    "row_count": null,
+    "column_count": null,
+    "columns": null,
+    "date_columns_detected": null,
+    "parsed_date_ranges": null,
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": [
+      "AppEEARS",
+      "ECO-L2T-STARS",
+      "ECO-L2T-STARS-002",
+      "ECOSTRESS",
+      "ECO_L2T_STARS.002",
+      "LP DAAC",
+      "appeears"
+    ],
+    "extracted_fields": {},
+    "parse_mode": "text_fallback",
+    "parse_error": "not well-formed (invalid token): line 277, column 68"
+  },
+  {
+    "variable": "et",
+    "file_path": "data/metadata/et/ECO-L3T-JET-002-Statistics.csv",
+    "file_name": "ECO-L3T-JET-002-Statistics.csv",
+    "suffix": ".csv",
+    "kind": "statistics_csv",
+    "read_ok": true,
+    "error": null,
+    "row_count": 199.0,
+    "column_count": 17.0,
+    "columns": [
+      "File Name",
+      "Dataset",
+      "aid",
+      "Date",
+      "UTM Zone",
+      "Count",
+      "Minimum",
+      "Maximum",
+      "Range",
+      "Mean",
+      "Standard Deviation",
+      "Variance",
+      "Upper Quartile",
+      "Upper 1.5 IQR",
+      "Median",
+      "Lower 1.5 IQR",
+      "Lower Quartile"
+    ],
+    "date_columns_detected": [
+      "Date"
+    ],
+    "parsed_date_ranges": {
+      "Date": {
+        "min": "2019-06-04T14:50:35+00:00",
+        "max": "2025-06-24T07:26:30+00:00",
+        "valid_count": 199
+      }
+    },
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": null,
+    "extracted_fields": null,
+    "parse_mode": null,
+    "parse_error": null
+  },
+  {
+    "variable": "et",
+    "file_path": "data/metadata/et/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+    "file_name": "final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+    "suffix": ".xml",
+    "kind": "metadata_xml",
+    "read_ok": true,
+    "error": null,
+    "row_count": null,
+    "column_count": null,
+    "columns": null,
+    "date_columns_detected": null,
+    "parsed_date_ranges": null,
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": [
+      "AppEEARS",
+      "ECO-L3T-JET",
+      "ECO-L3T-JET-002",
+      "ECOSTRESS",
+      "ECO_L3T_JET.002",
+      "LP DAAC",
+      "appeears"
+    ],
+    "extracted_fields": {},
+    "parse_mode": "text_fallback",
+    "parse_error": "not well-formed (invalid token): line 277, column 40"
+  },
+  {
+    "variable": "esi",
+    "file_path": "data/metadata/esi/ECO-L4T-ESI-002-Statistics.csv",
+    "file_name": "ECO-L4T-ESI-002-Statistics.csv",
+    "suffix": ".csv",
+    "kind": "statistics_csv",
+    "read_ok": true,
+    "error": null,
+    "row_count": 200.0,
+    "column_count": 17.0,
+    "columns": [
+      "File Name",
+      "Dataset",
+      "aid",
+      "Date",
+      "UTM Zone",
+      "Count",
+      "Minimum",
+      "Maximum",
+      "Range",
+      "Mean",
+      "Standard Deviation",
+      "Variance",
+      "Upper Quartile",
+      "Upper 1.5 IQR",
+      "Median",
+      "Lower 1.5 IQR",
+      "Lower Quartile"
+    ],
+    "date_columns_detected": [
+      "Date"
+    ],
+    "parsed_date_ranges": {
+      "Date": {
+        "min": "2019-06-04T14:50:35+00:00",
+        "max": "2025-06-24T07:26:30+00:00",
+        "valid_count": 200
+      }
+    },
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": null,
+    "extracted_fields": null,
+    "parse_mode": null,
+    "parse_error": null
+  },
+  {
+    "variable": "esi",
+    "file_path": "data/metadata/esi/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+    "file_name": "final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+    "suffix": ".xml",
+    "kind": "metadata_xml",
+    "read_ok": true,
+    "error": null,
+    "row_count": null,
+    "column_count": null,
+    "columns": null,
+    "date_columns_detected": null,
+    "parsed_date_ranges": null,
+    "root_tag": null,
+    "text_entry_count": null,
+    "product_mentions": [
+      "AppEEARS",
+      "ECO-L4T-ESI",
+      "ECO-L4T-ESI-002",
+      "ECOSTRESS",
+      "ECO_L4T_ESI.002",
+      "LP DAAC",
+      "appeears"
+    ],
+    "extracted_fields": {},
+    "parse_mode": "text_fallback",
+    "parse_error": "not well-formed (invalid token): line 277, column 40"
+  }
+]

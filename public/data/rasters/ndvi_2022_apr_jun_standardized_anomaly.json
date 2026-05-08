@@ -1,0 +1,30 @@
+{
+  "title": "NDVI 2022_APR_JUN standardized anomaly",
+  "variable": "ndvi",
+  "metric": "standardized_anomaly",
+  "source_raster": "data/processed/anomalies/ndvi_2022_apr_jun_standardized_anomaly.tif",
+  "png": "public/data/rasters/ndvi_2022_apr_jun_standardized_anomaly.png",
+  "vmin": -1.3263643980026245,
+  "vmax": 1.3263643980026245,
+  "legend_ticks": [
+    -1.3263643980026245,
+    0.0,
+    1.3263643980026245
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.22321078181266785,
+  "median": 0.22524581849575043,
+  "min": -2.2445223331451416,
+  "max": 2.383892297744751,
+  "std": 0.6369092464447021,
+  "p05": -0.8202356100082397,
+  "p25": -0.20736907422542572,
+  "p75": 0.6569092273712158,
+  "p95": 1.270336627960205,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

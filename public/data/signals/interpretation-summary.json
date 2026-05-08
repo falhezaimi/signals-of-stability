@@ -1,0 +1,61 @@
+{
+  "site": "Swiss National Park",
+  "season": "April–June",
+  "period": "2019–2025",
+  "status": "Research prototype — exploratory findings only. Not peer reviewed.",
+  "headline": "Short-window ECOSTRESS signals show inter-annual variability in SNP April–June phenology, with a directional low in 2021 and recovery signal through 2023. 2024–2025 coverage is insufficient for seasonal characterization.",
+  "findings": [
+    {
+      "id": "finding_1",
+      "variable": "NDVI",
+      "signal": "directional_variability",
+      "summary": "NDVI area means range from 0.109 (2021) to 0.163 (2023). The 2021 minimum is directionally consistent with documented drought conditions but requires independent field validation.",
+      "confidence": "medium",
+      "values_high_confidence": [0.1365, 0.1204, 0.1090, 0.1453, 0.1632],
+      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
+      "caveats": ["April–June window only — not full growing season", "Area mean includes ~63% no-data pixels (bare rock, snow, persistent cloud)", "Short series limits trend inference"],
+      "language_required": "directional signal — requires multi-year validation"
+    },
+    {
+      "id": "finding_2",
+      "variable": "ET",
+      "signal": "variable",
+      "summary": "ET area means show notable variability (1.167–2.147 mm/day for high-confidence years). 2020 and 2021 show the lowest values. 2024 (2.255 mm/day) is LOW CONFIDENCE with only 2 overpasses and should not be interpreted.",
+      "confidence": "mixed",
+      "values_high_confidence": [2.1472, 1.1674, 1.1739, 1.6182, 1.4058],
+      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
+      "caveats": ["2024 ET based on 2 overpasses only — analytically insufficient", "April–June is early-season — peak ET typically occurs later in summer"],
+      "language_required": "cautious — do not extrapolate 2024 ET value"
+    },
+    {
+      "id": "finding_3",
+      "variable": "ESI",
+      "signal": "moderate_stable",
+      "summary": "ESI values range narrowly from 0.781 to 0.860 for high-confidence years, all in the moderate-to-high range (no extreme stress). The lowest ESI in 2023 (0.781) is unexpected given high NDVI — directional complexity not fully explained. 2024 (0.925) is LOW CONFIDENCE.",
+      "confidence": "medium",
+      "values_high_confidence": [0.8600, 0.7891, 0.8181, 0.7957, 0.7811],
+      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
+      "caveats": ["ESI is ET/PET ratio — higher PET in warmer years can lower ESI even with adequate actual ET", "2024 LOW CONFIDENCE", "April–June window captures pre-peak-season conditions"],
+      "language_required": "directional — do not claim confirmed stress or recovery"
+    }
+  ],
+  "hypotheses": [
+    "The SNP April–June satellite signal shows inter-annual variability characteristic of alpine phenology.",
+    "The 2021 NDVI minimum (0.109) may reflect early-season drought. Directional signal only — requires ground-truth validation.",
+    "The NDVI recovery from 2021 to 2023 is a directional signal consistent with return to baseline, not a confirmed trend.",
+    "ESI values in the moderate range (0.78–0.86) across most years suggest the April–June period is not characterized by extreme stress conditions — but this window precedes peak-summer stress potential."
+  ],
+  "what_we_cannot_claim": [
+    "Confirmed long-term vegetation trend (positive or negative)",
+    "Confirmed drought impact in 2021 from satellite data alone",
+    "2024 seasonal characterization for ET or ESI",
+    "Full growing season (July–September) conditions — analysis window ends in June",
+    "Sub-pixel spatial patterns — 70m resolution limits fine-scale inference"
+  ],
+  "next_steps": [
+    "Extend to full growing season (July–September) to capture peak phenology",
+    "Cross-validate with SNP ground-station records and phenology cameras",
+    "Increase 2024–2025 data density as additional overpasses are acquired",
+    "Formal trend analysis requires ≥10 years of data for statistical reliability"
+  ]
+}

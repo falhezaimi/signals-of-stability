@@ -1,0 +1,30 @@
+{
+  "title": "ET APR_JUN coefficient of variation",
+  "variable": "et",
+  "metric": "coefficient_of_variation",
+  "source_raster": "data/processed/stability/et_apr_jun_coefficient_of_variation.tif",
+  "png": "public/data/rasters/et_apr_jun_coefficient_of_variation.png",
+  "vmin": 0.14563795924186707,
+  "vmax": 0.4482269883155823,
+  "legend_ticks": [
+    0.14563795924186707,
+    0.29693247377872467,
+    0.4482269883155823
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.2943747043609619,
+  "median": 0.29762181639671326,
+  "min": 0.05053870752453804,
+  "max": 0.6257997751235962,
+  "std": 0.07326054573059082,
+  "p05": 0.17082133889198303,
+  "p25": 0.2450287789106369,
+  "p75": 0.34194299578666687,
+  "p95": 0.4123188257217407,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

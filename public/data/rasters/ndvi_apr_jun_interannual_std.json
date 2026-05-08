@@ -1,0 +1,30 @@
+{
+  "title": "NDVI APR_JUN interannual std",
+  "variable": "ndvi",
+  "metric": "interannual_std",
+  "source_raster": "data/processed/stability/ndvi_apr_jun_interannual_std.tif",
+  "png": "public/data/rasters/ndvi_apr_jun_interannual_std.png",
+  "vmin": 0.014550824649631977,
+  "vmax": 0.07309982180595398,
+  "legend_ticks": [
+    0.014550824649631977,
+    0.04382532322779298,
+    0.07309982180595398
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.036779604852199554,
+  "median": 0.03429551422595978,
+  "min": 0.0037628270220011473,
+  "max": 0.11285240203142166,
+  "std": 0.01437974814325571,
+  "p05": 0.017816035076975822,
+  "p25": 0.026702027767896652,
+  "p75": 0.04417707771062851,
+  "p95": 0.0643266811966896,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

@@ -1,0 +1,30 @@
+{
+  "title": "ET 2025_APR_JUN standardized anomaly",
+  "variable": "et",
+  "metric": "standardized_anomaly",
+  "source_raster": "data/processed/anomalies/et_2025_apr_jun_standardized_anomaly.tif",
+  "png": "public/data/rasters/et_2025_apr_jun_standardized_anomaly.png",
+  "vmin": -1.442525863647461,
+  "vmax": 1.442525863647461,
+  "legend_ticks": [
+    -1.442525863647461,
+    0.0,
+    1.442525863647461
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.4796043336391449,
+  "median": 0.493335098028183,
+  "min": -2.1015751361846924,
+  "max": 2.291377305984497,
+  "std": 0.577479362487793,
+  "p05": -0.538986086845398,
+  "p25": 0.15170401334762573,
+  "p75": 0.8354053497314453,
+  "p95": 1.4353458881378174,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

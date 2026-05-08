@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { PineSprigs } from './alpine-accents'
 
 export function ConservationClose() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -15,6 +16,21 @@ export function ConservationClose() {
       {/* Very subtle glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/[0.02] blur-[150px]" />
       
+      {/* Ghost background word — more visible */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
+        <span
+          className="font-serif font-bold text-foreground leading-none"
+          style={{ fontSize: 'clamp(80px, 18vw, 260px)', opacity: 0.04 }}
+        >
+          RESILIENCE
+        </span>
+      </div>
+
+      {/* Pine sprigs corner accent */}
+      <div className="absolute bottom-12 right-8 hidden lg:block">
+        <PineSprigs className="opacity-[0.08] rotate-[6deg]" />
+      </div>
+
       {/* Faint contour accent */}
       <svg
         className="absolute inset-0 w-full h-full opacity-[0.025]"

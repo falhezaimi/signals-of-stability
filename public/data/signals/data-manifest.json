@@ -1,0 +1,45 @@
+{
+  "generated_files": {
+    "hero_metadata": "public/data/signals/hero-metadata.json",
+    "observatory_readouts": "public/data/signals/observatory-readouts.json",
+    "timeline_yearly_values": "public/data/signals/timeline-yearly-values.json",
+    "findings_figures": "public/data/signals/findings-figures.json",
+    "limitations": "public/data/signals/limitations.json",
+    "data_provenance": "public/data/signals/data-provenance.json",
+    "interpretation_summary": "public/data/signals/interpretation-summary.json",
+    "raster_preview_manifest": "public/data/signals/raster-preview-manifest.json"
+  },
+  "preview_count": 96,
+  "variables": [
+    "esi",
+    "et",
+    "ndvi"
+  ],
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "months_available": [
+    4,
+    5,
+    6
+  ],
+  "time_bins_available": [
+    "evening",
+    "midday_afternoon",
+    "morning",
+    "night"
+  ],
+  "seasons_configured": [
+    "apr_jun",
+    "may_jun",
+    "june"
+  ],
+  "provenance_available": true,
+  "interpretation_summary_available": true
+}

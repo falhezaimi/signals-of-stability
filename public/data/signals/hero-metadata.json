@@ -1,0 +1,17 @@
+{
+  "site": "Swiss National Park",
+  "site_abbreviation": "SNP",
+  "coordinates": "46.6603°N 10.2176°E",
+  "area_km2": 170,
+  "elevation_range_m": [1400, 3174],
+  "platform": "ECOSTRESS / AppEEARS",
+  "instrument": "ECOSTRESS (ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station)",
+  "nominal_resolution_m": 70,
+  "analysis_season": "April–June",
+  "season_code": "AMJ",
+  "analysis_years": "2019–2025",
+  "year_range": [2019, 2025],
+  "variables": ["NDVI", "ET", "ESI"],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "note": "Observation frequency varies with ISS orbital overpass. 2024 ET and ESI are LOW CONFIDENCE (2 observations). 2025 is partial season only."
+}

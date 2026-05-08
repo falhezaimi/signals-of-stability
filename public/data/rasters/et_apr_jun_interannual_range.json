@@ -1,0 +1,30 @@
+{
+  "title": "ET APR_JUN interannual range",
+  "variable": "et",
+  "metric": "interannual_range",
+  "source_raster": "data/processed/stability/et_apr_jun_interannual_range.tif",
+  "png": "public/data/rasters/et_apr_jun_interannual_range.png",
+  "vmin": 0.513802707195282,
+  "vmax": 2.778348445892334,
+  "legend_ticks": [
+    0.513802707195282,
+    1.646075576543808,
+    2.778348445892334
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 1.493288278579712,
+  "median": 1.4475014209747314,
+  "min": 0.12615138292312622,
+  "max": 4.694629669189453,
+  "std": 0.6110231876373291,
+  "p05": 0.627358078956604,
+  "p25": 1.0040454864501953,
+  "p75": 1.9005701541900635,
+  "p95": 2.561584711074829,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

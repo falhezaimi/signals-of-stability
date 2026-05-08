@@ -1,0 +1,30 @@
+{
+  "title": "NDVI APR_JUN coefficient of variation",
+  "variable": "ndvi",
+  "metric": "coefficient_of_variation",
+  "source_raster": "data/processed/stability/ndvi_apr_jun_coefficient_of_variation.tif",
+  "png": "public/data/rasters/ndvi_apr_jun_coefficient_of_variation.png",
+  "vmin": 0.09095334261655807,
+  "vmax": 1.218695878982544,
+  "legend_ticks": [
+    0.09095334261655807,
+    0.654824610799551,
+    1.218695878982544
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.3922319710254669,
+  "median": 0.30364713072776794,
+  "min": 0.02371666394174099,
+  "max": 20.82423210144043,
+  "std": 0.3053211271762848,
+  "p05": 0.11985601484775543,
+  "p25": 0.2058212161064148,
+  "p75": 0.498835951089859,
+  "p95": 0.9388456344604492,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

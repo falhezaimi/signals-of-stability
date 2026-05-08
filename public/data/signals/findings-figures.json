@@ -1,0 +1,100 @@
+{
+  "season": "April–June",
+  "season_code": "AMJ",
+  "period": "2019–2025",
+  "platform": "ECOSTRESS / AppEEARS",
+  "coordinate_strip": "SNP · 46.6603°N 10.2176°E · AMJ Composite · Growing Season 2019–2025",
+  "coverage_note": "Area means computed over ~37% of AOI pixels with valid composite data. Approximately 63% of pixels lack cloud-free observations in this April–June window.",
+  "figures": [
+    {
+      "id": "fig_1",
+      "number": "1",
+      "title": "Vegetation Index Short-Window Signal",
+      "subtitle": "NDVI area mean, April–June composite",
+      "caption": "Fig. 1. — NDVI area mean derived from ECOSTRESS/AppEEARS, Swiss National Park April–June composite 2019–2025. Values represent the mean over ~37% of AOI pixels with valid observations. Lowest mean in 2021 (0.109) is directionally consistent with documented drought conditions. 2025 is a partial season. Raster-derived research output — validate before interpretation.",
+      "type": "area_chart",
+      "data": [
+        { "year": "2019", "ndvi": 0.1365, "obs_coverage_p95": 75.0, "confidence_level": "high" },
+        { "year": "2020", "ndvi": 0.1204, "obs_coverage_p95": 72.4, "confidence_level": "high" },
+        { "year": "2021", "ndvi": 0.1090, "obs_coverage_p95": 74.2, "confidence_level": "high" },
+        { "year": "2022", "ndvi": 0.1453, "obs_coverage_p95": 72.1, "confidence_level": "high" },
+        { "year": "2023", "ndvi": 0.1632, "obs_coverage_p95": 76.8, "confidence_level": "high" },
+        { "year": "2024", "ndvi": 0.1252, "obs_coverage_p95": 72.7, "confidence_level": "medium" },
+        { "year": "2025", "ndvi": 0.1524, "obs_coverage_p95": 85.7, "confidence_level": "low" }
+      ],
+      "y_domain": [0.08, 0.20],
+      "color": "#3F6F42",
+      "tags": ["AMJ", "SNP", "2019–2025"]
+    },
+    {
+      "id": "fig_2",
+      "number": "2",
+      "title": "Evapotranspiration Short-Window Signal",
+      "subtitle": "ET area mean (mm/day), April–June composite",
+      "caption": "Fig. 2. — ET area mean (mm/day) derived from ECOSTRESS/AppEEARS ECO3ETPTJPL, April–June composite 2019–2025. 2024 value is based on only 2 ECOSTRESS overpasses and is LOW CONFIDENCE. 2025 is partial season. Raster-derived research output.",
+      "type": "area_chart",
+      "data": [
+        { "year": "2019", "et": 2.1472, "obs_coverage_p95": 76.9, "confidence_level": "high" },
+        { "year": "2020", "et": 1.1674, "obs_coverage_p95": 66.7, "confidence_level": "high" },
+        { "year": "2021", "et": 1.1739, "obs_coverage_p95": 79.5, "confidence_level": "high" },
+        { "year": "2022", "et": 1.6182, "obs_coverage_p95": 72.9, "confidence_level": "high" },
+        { "year": "2023", "et": 1.4058, "obs_coverage_p95": 75.5, "confidence_level": "high" },
+        { "year": "2024", "et": 2.2553, "obs_coverage_p95": 50.0, "confidence_level": "low" },
+        { "year": "2025", "et": 1.9066, "obs_coverage_p95": 88.9, "confidence_level": "low" }
+      ],
+      "y_domain": [0.8, 2.8],
+      "color": "#557F96",
+      "tags": ["AMJ", "SNP", "2019–2025"],
+      "low_confidence_years": ["2024", "2025"]
+    },
+    {
+      "id": "fig_3",
+      "number": "3",
+      "title": "Evaporative Stress Signal",
+      "subtitle": "ESI area mean (0–1, 1 = no stress), April–June composite",
+      "caption": "Fig. 3. — ESI area mean derived from ECOSTRESS/AppEEARS ECO4ESIPTJPL, April–June composite 2019–2025. Scale: 0 = maximum stress, 1 = no stress. 2024 value is LOW CONFIDENCE (2 overpasses). All values show moderate-to-low stress range (0.78–0.93). Raster-derived research output.",
+      "type": "bar_chart",
+      "data": [
+        { "year": "2019", "esi": 0.8600, "obs_coverage_p95": 71.4, "confidence_level": "high" },
+        { "year": "2020", "esi": 0.7891, "obs_coverage_p95": 66.7, "confidence_level": "high" },
+        { "year": "2021", "esi": 0.8181, "obs_coverage_p95": 79.5, "confidence_level": "high" },
+        { "year": "2022", "esi": 0.7957, "obs_coverage_p95": 72.9, "confidence_level": "high" },
+        { "year": "2023", "esi": 0.7811, "obs_coverage_p95": 75.5, "confidence_level": "high" },
+        { "year": "2024", "esi": 0.9248, "obs_coverage_p95": 50.0, "confidence_level": "low" },
+        { "year": "2025", "esi": 0.7942, "obs_coverage_p95": 88.9, "confidence_level": "low" }
+      ],
+      "y_domain": [0.7, 1.0],
+      "color_high": "#3F6F42",
+      "color_low": "#A6523A",
+      "tags": ["AMJ", "SNP", "2019–2025"],
+      "low_confidence_years": ["2024", "2025"]
+    },
+    {
+      "id": "fig_4",
+      "number": "4",
+      "title": "Observation Coverage Matrix",
+      "subtitle": "ECOSTRESS overpass coverage per season (obs_coverage_p95 %)",
+      "caption": "Fig. 4. — Per-variable observation coverage matrix (p95 percentile of per-pixel observation coverage %), April–June 2019–2025. Higher values indicate more uniform temporal coverage across the AOI. ET/ESI 2024 coverage of 50% reflects only 2 available overpasses — analytically insufficient for seasonal characterization.",
+      "type": "coverage_matrix",
+      "data": [
+        { "year": "2019", "ndvi_cov": 75.0, "et_cov": 76.9, "esi_cov": 71.4 },
+        { "year": "2020", "ndvi_cov": 72.4, "et_cov": 66.7, "esi_cov": 66.7 },
+        { "year": "2021", "ndvi_cov": 74.2, "et_cov": 79.5, "esi_cov": 79.5 },
+        { "year": "2022", "ndvi_cov": 72.1, "et_cov": 72.9, "esi_cov": 72.9 },
+        { "year": "2023", "ndvi_cov": 76.8, "et_cov": 75.5, "esi_cov": 75.5 },
+        { "year": "2024", "ndvi_cov": 72.7, "et_cov": 50.0, "esi_cov": 50.0 },
+        { "year": "2025", "ndvi_cov": 85.7, "et_cov": 88.9, "esi_cov": 88.9 }
+      ],
+      "low_confidence_threshold_percent": 60.0
+    }
+  ],
+  "summary_stats": {
+    "ndvi_range": [0.1090, 0.1632],
+    "ndvi_min_year": "2021",
+    "ndvi_max_year": "2023",
+    "et_range_high_confidence": [1.1674, 2.1472],
+    "esi_range": [0.7811, 0.9248],
+    "seasons_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
+    "seasons_low_confidence": ["2024 (ET/ESI)", "2025 (all)"]
+  }
+}

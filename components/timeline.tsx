@@ -1,245 +1,357 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { ArtisticBackground } from './artistic-background'
+import { SectionReveal } from './section-reveal'
+import timelineRaw from '@/public/data/signals/timeline-yearly-values.json'
 
-const timelineData = [
-  {
-    year: '2019',
-    ndvi: 0.62,
-    et: 4.2,
-    stress: -0.3,
-    note: 'Baseline year. Normal growing season conditions with consistent vegetation patterns.',
-    condition: 'stable',
-  },
-  {
-    year: '2020',
-    ndvi: 0.64,
-    et: 4.5,
-    stress: -0.2,
-    note: 'Slight increase in greenness. Above-average spring precipitation supported early growth.',
-    condition: 'positive',
-  },
-  {
-    year: '2021',
-    ndvi: 0.58,
-    et: 3.8,
-    stress: 0.4,
-    note: 'Early summer drought conditions. Reduced evapotranspiration and elevated thermal stress.',
-    condition: 'negative',
-  },
-  {
-    year: '2022',
-    ndvi: 0.61,
-    et: 4.1,
-    stress: 0.2,
-    note: 'Partial recovery. Mixed signals with localized stress persistence in south-facing slopes.',
-    condition: 'mixed',
-  },
-  {
-    year: '2023',
-    ndvi: 0.63,
-    et: 4.4,
-    stress: -0.1,
-    note: 'Return to near-baseline. Favorable precipitation timing supported vegetation recovery.',
-    condition: 'positive',
-  },
-  {
-    year: '2024',
-    ndvi: 0.65,
-    et: 4.6,
-    stress: -0.4,
-    note: 'Preliminary data suggests continued stability. Full season analysis pending.',
-    condition: 'stable',
-  },
-]
-
-const conditionColors: Record<string, { bg: string; text: string; label: string }> = {
-  stable: { bg: 'bg-stone/15', text: 'text-stone', label: 'Stable' },
-  positive: { bg: 'bg-primary/15', text: 'text-primary', label: 'Positive' },
-  negative: { bg: 'bg-destructive/15', text: 'text-destructive/80', label: 'Stress' },
-  mixed: { bg: 'bg-gold/15', text: 'text-gold', label: 'Mixed' },
+type YearEntry = {
+  year: string
+  ndvi: { mean: number; obs_coverage_p95: number; confidence_level: string }
+  et: { mean: number; obs_coverage_p95: number; confidence_level: string; unit: string }
+  esi: { mean: number; obs_coverage_p95: number; confidence_level: string; unit: string }
+  coverage_aoi_percent: number
+  note: string
+  ecological_context: string
 }
 
-function SignalBar({ value, max, color }: { value: number; max: number; color: string }) {
-  const percentage = (value / max) * 100
+const timelineData = timelineRaw.years as YearEntry[]
+
+type Condition = 'stable' | 'positive' | 'negative' | 'mixed' | 'partial'
+
+function getCondition(entry: YearEntry): Condition {
+  if (entry.ndvi.confidence_level === 'low' || entry.esi.confidence_level === 'low') return 'partial'
+  if (entry.year === '2021') return 'negative'
+  if (entry.year === '2023') return 'positive'
+  if (entry.year === '2020' || entry.year === '2022') return 'mixed'
+  return 'stable'
+}
+
+const conditionConfig: Record<Condition, { label: string; color: string }> = {
+  stable:   { label: 'BASELINE',  color: 'text-muted-foreground/60' },
+  positive: { label: 'HIGH NDVI', color: 'text-primary/70' },
+  negative: { label: 'STRESSED',  color: 'text-gold/70' },
+  mixed:    { label: 'VARIABLE',  color: 'text-ice-blue/60' },
+  partial:  { label: 'PARTIAL',   color: 'text-muted-foreground/40' },
+}
+
+function RasterThumbnail({ year }: { year: string }) {
   return (
-    <div className="h-1.5 w-full bg-background/40 rounded-full overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${percentage}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className={`h-full rounded-full ${color}`}
+    <div className="relative w-full h-full overflow-hidden">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`/data/rasters/ndvi_${year}_apr_jun_mean.png`}
+        alt={`NDVI ${year} April–June mean`}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full"
+        style={{ objectFit: 'cover', imageRendering: 'pixelated' }}
       />
+      {/* Scan-line overlay */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden>
+        <defs>
+          <pattern id={`ts-scan-${year}`} x="0" y="0" width="1" height="2" patternUnits="userSpaceOnUse">
+            <rect y="1" width="1" height="1" fill="black" fillOpacity="0.09" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#ts-scan-${year})`} />
+      </svg>
+      {/* Corner registration marks */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 80" aria-hidden>
+        <g opacity="0.28">
+          <line x1="3" y1="4" x2="9" y2="4" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="6" y1="1" x2="6" y2="7" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="91" y1="4" x2="97" y2="4" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="94" y1="1" x2="94" y2="7" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="3" y1="76" x2="9" y2="76" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="6" y1="73" x2="6" y2="79" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="91" y1="76" x2="97" y2="76" stroke="#DDD3BE" strokeWidth="0.8" />
+          <line x1="94" y1="73" x2="94" y2="79" stroke="#DDD3BE" strokeWidth="0.8" />
+        </g>
+      </svg>
+      {/* Label bar */}
+      <div className="absolute top-0 left-0 px-1.5 py-0.5 pointer-events-none" style={{ background: 'rgba(0,0,0,0.42)' }}>
+        <span className="text-[7px] font-mono" style={{ color: '#DDD3BE', opacity: 0.75 }}>NDVI · {year}</span>
+      </div>
     </div>
   )
 }
 
-function YearCard({ data, index }: { data: typeof timelineData[0]; index: number }) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(cardRef, { once: true, margin: '-50px' })
-  const condition = conditionColors[data.condition]
+function SignalTrace({ values, activeIdx, colorClass }: { values: number[]; activeIdx: number; colorClass: string }) {
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const norm = (v: number) => ((v - min) / (max - min)) * 28 + 4
+  const pts = values.map((v, i) => `${i * (100 / (values.length - 1))},${32 - norm(v)}`).join(' ')
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-      className="relative"
-    >
-      <div className="p-5 rounded-xl border border-border/25 bg-card/10 hover:bg-card/20 transition-all duration-500">
-        {/* Year header */}
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="font-serif text-2xl md:text-3xl font-medium">{data.year}</h3>
-          <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono ${condition.bg} ${condition.text}`}>
-            {condition.label}
-          </span>
-        </div>
-
-        {/* Signals */}
-        <div className="space-y-3 mb-4">
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[10px] font-mono text-muted-foreground/60">NDVI</span>
-              <span className="text-[10px] font-mono text-primary/80">{data.ndvi}</span>
-            </div>
-            <SignalBar value={data.ndvi} max={1} color="bg-primary/70" />
-          </div>
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[10px] font-mono text-muted-foreground/60">ET (mm/day)</span>
-              <span className="text-[10px] font-mono text-ice-blue/80">{data.et}</span>
-            </div>
-            <SignalBar value={data.et} max={6} color="bg-ice-blue/70" />
-          </div>
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-[10px] font-mono text-muted-foreground/60">Stress Index</span>
-              <span className={`text-[10px] font-mono ${data.stress > 0 ? 'text-gold/80' : 'text-primary/80'}`}>
-                {data.stress > 0 ? '+' : ''}{data.stress}
-              </span>
-            </div>
-            <div className="relative h-1.5 w-full bg-background/40 rounded-full overflow-hidden">
-              <div className="absolute top-0 left-1/2 w-px h-full bg-border/30" />
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${Math.abs(data.stress) * 25}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                className={`absolute top-0 h-full rounded-full ${data.stress > 0 ? 'bg-gold/70 left-1/2' : 'bg-primary/70 right-1/2'}`}
-                style={{ [data.stress > 0 ? 'left' : 'right']: '50%' }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Note */}
-        <p className="text-xs text-muted-foreground/60 leading-relaxed pt-3 border-t border-border/20">
-          {data.note}
-        </p>
-
-        {/* Prototype label */}
-        <div className="mt-3 pt-2 border-t border-border/15">
-          <span className="text-[9px] font-mono text-muted-foreground/30">PROTOTYPE DATA</span>
-        </div>
-      </div>
-    </motion.div>
+    <svg viewBox="0 0 100 36" className="w-full" preserveAspectRatio="none" aria-hidden>
+      <line x1="0" y1="32" x2="100" y2="32" stroke="currentColor" strokeWidth="0.4" opacity="0.15" />
+      <polyline points={pts} fill="none" stroke="currentColor" strokeWidth="1.2" className={colorClass} opacity="0.55" />
+      {(() => {
+        const [ax, ay] = pts.split(' ')[activeIdx].split(',')
+        return <circle cx={ax} cy={ay} r="2" fill="currentColor" className={colorClass} opacity="0.8" />
+      })()}
+      {values.map((_, i) => (
+        <line
+          key={i}
+          x1={i * (100 / (values.length - 1))}
+          y1="32"
+          x2={i * (100 / (values.length - 1))}
+          y2="30"
+          stroke="currentColor"
+          strokeWidth="0.5"
+          opacity="0.2"
+        />
+      ))}
+    </svg>
   )
 }
 
 export function Timeline() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIdx, setActiveIdx] = useState(0)
+  const isInView = useInView(sectionRef, { once: true, margin: '-60px' })
+
+  const ndviValues = timelineData.map((d) => d.ndvi.mean)
+  const etValues = timelineData.map((d) => d.et.mean)
+  const esiValues = timelineData.map((d) => d.esi.mean)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, clientWidth } = scrollRef.current
+    const idx = Math.round(scrollLeft / clientWidth)
+    setActiveIdx(Math.min(Math.max(idx, 0), timelineData.length - 1))
+  }
+
+  const scrollToFrame = (i: number) => {
+    if (!scrollRef.current) return
+    scrollRef.current.scrollTo({ left: i * scrollRef.current.clientWidth, behavior: 'smooth' })
+    setActiveIdx(i)
+  }
+
+  const total = timelineData.length
 
   return (
-    <section id="timeline" ref={sectionRef} className="relative py-28 md:py-40 overflow-hidden">
-      {/* Clean background */}
-      <div className="absolute inset-0 bg-background" />
-      
-      {/* Subtle top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/[0.02] blur-[120px]" />
+    <section id="timeline" ref={sectionRef} className="relative py-24 md:py-36 overflow-hidden">
+      <ArtisticBackground variant="rasterband" />
 
       <div className="relative max-w-5xl mx-auto px-6 md:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-16 md:mb-24"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-card/20 backdrop-blur-sm mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-ice-blue/60" />
-            <span className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
-              Temporal Analysis
-            </span>
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance">
-            A Journey Through Alpine Time
-          </h2>
-          <p className="max-w-lg mx-auto text-muted-foreground/80 text-sm text-balance">
-            Six years of observation reveal patterns of resilience, stress, and recovery
-          </p>
-        </motion.div>
-
-        {/* Timeline */}
-        <div className="relative">
-          {/* Central timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-border/30 via-border/20 to-transparent md:-translate-x-1/2" />
-
-          {/* Year cards */}
-          <div className="space-y-6 md:space-y-10">
-            {timelineData.map((data, index) => (
-              <div
-                key={data.year}
-                className={`relative grid md:grid-cols-2 gap-6 ${
-                  index % 2 === 0 ? '' : 'md:direction-rtl'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 top-6 w-2.5 h-2.5 rounded-full bg-primary/60 border-2 border-background md:-translate-x-1/2 z-10" />
-
-                {/* Card */}
-                <div className={`pl-10 md:pl-0 ${index % 2 === 0 ? 'md:pr-10' : 'md:pl-10 md:col-start-2'}`}>
-                  <YearCard data={data} index={index} />
-                </div>
-
-                {/* Year label (opposite side on desktop) */}
-                <div className={`hidden md:flex items-center ${index % 2 === 0 ? 'justify-start pl-10' : 'justify-end pr-10'}`}>
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.08 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="font-serif text-7xl font-bold text-foreground"
-                  >
-                    {data.year}
-                  </motion.span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mt-16 md:mt-24 text-center"
-        >
-          <div className="inline-flex flex-col items-center gap-3 p-5 rounded-xl border border-border/20 bg-card/5">
-            <p className="text-xs text-muted-foreground/70 max-w-md leading-relaxed">
-              The timeline suggests a pattern of recovery following stress events, 
-              potentially indicating ecosystem resilience within the protected boundary.
+        <SectionReveal>
+          <header className="mb-12 md:mb-16">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-border/30 bg-card/15 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-ice-blue/60" />
+              <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/80">
+                Temporal Analysis · April–June · 2019–2025
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance text-foreground">
+              Seven Years of Signal
+            </h2>
+            <p className="max-w-lg text-muted-foreground/70 text-sm text-balance leading-relaxed">
+              Season-by-season ECOSTRESS/AppEEARS satellite composite. Scroll to advance through the study period.
             </p>
-            <span className="text-[9px] font-mono text-gold/60">
-              PRELIMINARY INTERPRETATION
+          </header>
+        </SectionReveal>
+
+        {/* ── FILM STRIP — horizontal scroll ── */}
+        <SectionReveal delay={0.15}>
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto gap-0"
+            style={{
+              scrollSnapType: 'x mandatory',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+            }}
+          >
+            {timelineData.map((data, i) => {
+              const condition = getCondition(data)
+              const cond = conditionConfig[condition]
+              const isLowConf = data.et.confidence_level === 'low' || data.esi.confidence_level === 'low'
+
+              return (
+                <div
+                  key={data.year}
+                  className="shrink-0 flex flex-col border-r border-border/25 last:border-r-0"
+                  style={{ scrollSnapAlign: 'start', width: '100%', minWidth: '100%' }}
+                >
+                  {/* Frame header */}
+                  <div className="flex items-center justify-between px-4 py-2 border-b border-border/20 bg-card/12">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[8px] font-mono text-muted-foreground/30 uppercase tracking-[0.15em]">
+                        FRAME {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                      </span>
+                      <span className="w-px h-3 bg-border/25" />
+                      <span className={`text-[8px] font-mono uppercase tracking-[0.15em] ${cond.color}`}>
+                        {cond.label}
+                      </span>
+                    </div>
+                    <span className="text-[8px] font-mono text-muted-foreground/25">
+                      AMJ · SNP · ECOSTRESS
+                    </span>
+                  </div>
+
+                  {/* Frame body */}
+                  <div className="flex-1 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-0">
+
+                    {/* Raster panel */}
+                    <div className="border-b md:border-b-0 md:border-r border-border/20 p-5 flex flex-col gap-3">
+                      <div className="relative h-[100px] md:h-[140px] flex items-center justify-center overflow-hidden">
+                        <span
+                          className="absolute font-serif font-bold text-foreground select-none leading-none"
+                          style={{ fontSize: 'clamp(72px, 18vw, 120px)', opacity: 0.07, letterSpacing: '-0.03em' }}
+                        >
+                          {data.year}
+                        </span>
+                        <div className="relative w-full h-full max-w-[200px] mx-auto text-foreground/50">
+                          <RasterThumbnail year={data.year} />
+                        </div>
+                      </div>
+
+                      {/* Scene metadata */}
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 mt-1">
+                        {[
+                          { label: 'NDVI', value: data.ndvi.mean.toFixed(4), col: 'text-primary/65' },
+                          { label: 'ET mm/day', value: data.et.mean.toFixed(3), col: 'text-ice-blue/65' },
+                          { label: 'ESI', value: data.esi.mean.toFixed(4), col: 'text-gold/65' },
+                          { label: 'Season', value: 'Apr–Jun', col: 'text-muted-foreground/50' },
+                        ].map((m) => (
+                          <div key={m.label}>
+                            <p className="text-[8px] font-mono text-muted-foreground/30 mb-0.5">{m.label}</p>
+                            <p className={`text-[11px] font-mono ${m.col}`}>{m.value}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {isLowConf ? (
+                        <span
+                          className="text-[8px] font-mono uppercase tracking-[0.12em] mt-1"
+                          style={{ color: '#A6523A' }}
+                        >
+                          ET · ESI: LOW CONFIDENCE
+                        </span>
+                      ) : (
+                        <span className="text-[8px] font-mono text-muted-foreground/20 uppercase tracking-[0.12em] mt-1">
+                          RASTER-DERIVED
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Annotation panel */}
+                    <div className="p-5 md:p-6 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-baseline gap-4 mb-4">
+                          <span className="font-serif text-5xl md:text-6xl font-medium text-foreground/85 leading-none">
+                            {data.year}
+                          </span>
+                          <div className="flex flex-col gap-1">
+                            <span className={`text-[9px] font-mono uppercase tracking-[0.18em] ${cond.color}`}>
+                              {cond.label}
+                            </span>
+                            <span className="text-[8px] font-mono text-muted-foreground/30">
+                              Year {i + 1} of {total}
+                            </span>
+                          </div>
+                        </div>
+
+                        <p className="text-sm text-muted-foreground/65 leading-relaxed mb-3 max-w-sm">
+                          {data.note}
+                        </p>
+                        <p className="text-xs text-muted-foreground/45 leading-relaxed mb-6 max-w-sm">
+                          {data.ecological_context}
+                        </p>
+                      </div>
+
+                      {/* Signal bars */}
+                      <div className="space-y-3">
+                        {[
+                          { label: 'NDVI', value: data.ndvi.mean, displayVal: data.ndvi.mean.toFixed(4), max: 0.20, col: 'bg-primary/55' },
+                          { label: 'ET mm/day', value: data.et.mean, displayVal: data.et.mean.toFixed(3), max: 3.0, col: 'bg-ice-blue/55' },
+                          { label: 'ESI (0–1)', value: data.esi.mean, displayVal: data.esi.mean.toFixed(4), max: 1.0, col: 'bg-gold/55' },
+                        ].map((bar) => (
+                          <div key={bar.label}>
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="text-[9px] font-mono text-muted-foreground/40">{bar.label}</span>
+                              <span className="text-[9px] font-mono text-muted-foreground/55">{bar.displayVal}</span>
+                            </div>
+                            <div className="h-1 w-full bg-background/30 overflow-hidden">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={isInView ? { width: `${(bar.value / bar.max) * 100}%` } : { width: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2 + i * 0.05 }}
+                                className={`h-full ${bar.col}`}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </SectionReveal>
+
+        {/* ── TEMPORAL RAIL ── */}
+        <SectionReveal delay={0.2}>
+          <div className="mt-4 border border-border/25 bg-card/10 px-5 py-4">
+            <div className="flex items-center gap-0 mb-3">
+              {timelineData.map((d, i) => (
+                <button
+                  key={d.year}
+                  onClick={() => scrollToFrame(i)}
+                  className={`flex-1 py-2 text-center transition-all duration-200 border-r border-border/20 last:border-r-0 ${
+                    activeIdx === i ? 'bg-primary/15 border-t border-primary/30' : 'hover:bg-card/30'
+                  }`}
+                >
+                  <span className={`text-[9px] font-mono ${activeIdx === i ? 'text-primary/80' : 'text-muted-foreground/40'}`}>
+                    {d.year}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              {[
+                { label: 'NDVI', values: ndviValues, col: 'text-primary' },
+                { label: 'ET',   values: etValues,   col: 'text-ice-blue' },
+                { label: 'ESI',  values: esiValues,  col: 'text-gold' },
+              ].map((trace) => (
+                <div key={trace.label} className="flex items-center gap-3">
+                  <span className="text-[8px] font-mono text-muted-foreground/35 w-10 shrink-0">{trace.label}</span>
+                  <div className="flex-1 text-foreground">
+                    <SignalTrace values={trace.values} activeIdx={activeIdx} colorClass={trace.col} />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-between mt-3 pt-2 border-t border-border/15">
+              <span className="text-[8px] font-mono text-muted-foreground/25 uppercase tracking-[0.12em]">
+                ECOSTRESS/AppEEARS · April–June · 2019–2025
+              </span>
+              <span className="text-[8px] font-mono text-muted-foreground/20">
+                Frame {String(activeIdx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+              </span>
+            </div>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={0.3}>
+          <div className="mt-6 border border-border/20 bg-card/8 px-6 py-5 text-center">
+            <p className="text-xs text-muted-foreground/60 max-w-md mx-auto leading-relaxed mb-2">
+              The April–June short-window signal shows inter-annual variability with a directional low in 2021
+              and apparent recovery through 2023. Directional signals only — requires independent validation.
+            </p>
+            <span className="text-[9px] font-mono text-gold/45 uppercase tracking-[0.15em]">
+              Exploratory Findings · Research Prototype · Not Peer Reviewed
             </span>
           </div>
-        </motion.div>
+        </SectionReveal>
       </div>
     </section>
   )

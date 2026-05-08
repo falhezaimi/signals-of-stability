@@ -1,0 +1,30 @@
+{
+  "title": "ESI APR_JUN coefficient of variation",
+  "variable": "esi",
+  "metric": "coefficient_of_variation",
+  "source_raster": "data/processed/stability/esi_apr_jun_coefficient_of_variation.tif",
+  "png": "public/data/rasters/esi_apr_jun_coefficient_of_variation.png",
+  "vmin": 0.04346948489546776,
+  "vmax": 0.25292477011680603,
+  "legend_ticks": [
+    0.04346948489546776,
+    0.1481971275061369,
+    0.25292477011680603
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.10364175587892532,
+  "median": 0.09208247065544128,
+  "min": 0.0,
+  "max": 0.6389292478561401,
+  "std": 0.055237118154764175,
+  "p05": 0.05146279186010361,
+  "p25": 0.0736818015575409,
+  "p75": 0.11584563553333282,
+  "p95": 0.19337239861488342,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

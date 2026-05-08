@@ -1,0 +1,54 @@
+{
+  "limitations": [
+    {
+      "id": "obs_frequency",
+      "title": "Irregular Observation Frequency",
+      "severity": "high",
+      "description": "ECOSTRESS observations depend on ISS orbital geometry. Overpass frequency is irregular and varies between seasons, making year-to-year comparisons sensitive to observation timing.",
+      "affected_years": ["all"],
+      "mitigation": "Report observation counts alongside all summary values. Do not treat annual means as uniform time series."
+    },
+    {
+      "id": "low_confidence_2024_et_esi",
+      "title": "2024 ET and ESI: Low Confidence",
+      "severity": "critical",
+      "description": "Only 2 ECOSTRESS observations were acquired for the April–June 2024 window for ET and ESI products. This is insufficient to characterize seasonal conditions with confidence.",
+      "affected_years": ["2024"],
+      "affected_variables": ["ET", "ESI"],
+      "mitigation": "Display LOW CONFIDENCE badge. Do not include 2024 ET/ESI in trend calculations. Annotate all figures clearly."
+    },
+    {
+      "id": "low_confidence_2025",
+      "title": "2025: Partial Season",
+      "severity": "high",
+      "description": "Data collection for 2025 is ongoing. All 2025 values are preliminary and based on 1–3 observations. The season has not yet been completed.",
+      "affected_years": ["2025"],
+      "affected_variables": ["NDVI", "ET", "ESI"],
+      "mitigation": "Mark 2025 as 'partial season'. Do not compare 2025 to complete-season years without explicit caveat."
+    },
+    {
+      "id": "short_window",
+      "title": "April–June Window Only",
+      "severity": "medium",
+      "description": "Analysis is restricted to the April–June phenological window. This is not the full growing season (which extends through August/September in alpine ecosystems). Signals may not represent peak-season vegetation conditions.",
+      "affected_years": ["all"],
+      "mitigation": "Label consistently as 'April–June window' or 'AMJ'. Never describe as 'full growing season' or use JJA terminology."
+    },
+    {
+      "id": "spatial_scale",
+      "title": "70m Nominal Resolution",
+      "severity": "low",
+      "description": "ECOSTRESS has 70m nominal spatial resolution. The SNP encompasses heterogeneous terrain at scales finer than this. Results represent area-averaged signals and cannot resolve sub-pixel variation.",
+      "affected_years": ["all"],
+      "mitigation": "Describe outputs as 'area mean' or 'spatially averaged'. Note that fine-scale ecological features are below instrument resolution."
+    },
+    {
+      "id": "prototype_status",
+      "title": "Research Prototype",
+      "severity": "medium",
+      "description": "This analysis pipeline is a research prototype. Data processing, AOI masking, and quality filtering have not undergone formal peer review. Results should be treated as exploratory and require independent validation.",
+      "affected_years": ["all"],
+      "mitigation": "Label all figures as 'research prototype'. Use cautious language: directional signal, requires validation, not confirmed trend."
+    }
+  ]
+}

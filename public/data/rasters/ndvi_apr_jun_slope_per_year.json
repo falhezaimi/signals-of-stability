@@ -1,0 +1,30 @@
+{
+  "title": "NDVI APR_JUN slope per year",
+  "variable": "ndvi",
+  "metric": "slope_per_year",
+  "source_raster": "data/processed/trends/ndvi_apr_jun_slope.tif",
+  "png": "public/data/rasters/ndvi_apr_jun_slope_per_year.png",
+  "vmin": -0.014484405517578125,
+  "vmax": 0.014484405517578125,
+  "legend_ticks": [
+    -0.014484405517578125,
+    0.0,
+    0.014484405517578125
+  ],
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "mean": 0.004062341060489416,
+  "median": 0.00472259521484375,
+  "min": -0.02965291403234005,
+  "max": 0.03826904296875,
+  "std": 0.006650646682828665,
+  "p05": -0.0076395669020712376,
+  "p25": 0.0001678466796875,
+  "p75": 0.00823974609375,
+  "p95": 0.013905842788517475,
+  "valid_pixel_count": 34751,
+  "valid_aoi_pixel_count": 34751,
+  "total_aoi_pixel_count": 94839,
+  "total_pixel_count": 94839,
+  "coverage_inside_aoi_percent": 36.6420987146638,
+  "coverage_percent": 36.6420987146638
+}

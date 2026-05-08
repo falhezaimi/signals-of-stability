@@ -1,0 +1,55 @@
+{
+  "platform": "ECOSTRESS",
+  "full_name": "ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station",
+  "operator": "NASA / JPL",
+  "host_platform": "International Space Station (ISS)",
+  "nominal_spatial_resolution_m": 70,
+  "access_system": "NASA AppEEARS (Application for Extracting and Exploring Analysis Ready Samples)",
+  "products_used": [
+    {
+      "product": "ECO2LSTE",
+      "description": "Land Surface Temperature and Emissivity",
+      "version": "002",
+      "note": "Used for ESI derivation"
+    },
+    {
+      "product": "ECO3ETPTJPL",
+      "description": "Evapotranspiration PT-JPL",
+      "version": "001",
+      "note": "ET product used directly"
+    },
+    {
+      "product": "ECO4ESIPTJPL",
+      "description": "Evaporative Stress Index PT-JPL",
+      "version": "001",
+      "note": "ESI product used directly"
+    }
+  ],
+  "study_area": {
+    "name": "Swiss National Park",
+    "abbreviation": "SNP",
+    "country": "Switzerland",
+    "centroid": "46.6603°N 10.2176°E",
+    "area_km2": 170,
+    "elevation_range_m": [1400, 3174],
+    "established": 1914
+  },
+  "analysis_window": {
+    "months": "April–June",
+    "code": "AMJ",
+    "rationale": "April–June captures early alpine growing season onset and peak spring greenup. Constrained by ECOSTRESS overpass availability and snow-free conditions at lower elevations."
+  },
+  "temporal_coverage": {
+    "start_year": 2019,
+    "end_year": 2025,
+    "note": "2025 is partial. Complete seasons: 2019–2023. 2024 has reduced coverage for ET/ESI."
+  },
+  "quality_filtering": {
+    "cloud_mask": "Applied",
+    "snow_mask": "Applied (snow-free pixels only)",
+    "emissivity_qa": "Quality flag > 1 excluded",
+    "method": "Area-of-interest aggregation via AppEEARS polygon extraction"
+  },
+  "processing_pipeline": "Research prototype — not peer reviewed. Exploratory analysis only.",
+  "citation_note": "Data accessed via NASA AppEEARS. ECOSTRESS mission: NASA/JPL. Processing by [researcher]. Cite data products individually if publishing."
+}
