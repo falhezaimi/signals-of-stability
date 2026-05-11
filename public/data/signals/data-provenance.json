@@ -1,55 +1,313 @@
 {
-  "platform": "ECOSTRESS",
-  "full_name": "ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station",
-  "operator": "NASA / JPL",
-  "host_platform": "International Space Station (ISS)",
-  "nominal_spatial_resolution_m": 70,
-  "access_system": "NASA AppEEARS (Application for Extracting and Exploring Analysis Ready Samples)",
-  "products_used": [
-    {
-      "product": "ECO2LSTE",
-      "description": "Land Surface Temperature and Emissivity",
-      "version": "002",
-      "note": "Used for ESI derivation"
+  "purpose": "Product provenance, AppEEARS context, statistics/QA references, and website source notes.",
+  "important_note": "Raster calculations use data/NDVI, data/ET, and data/ESI. Metadata/statistics files are supporting provenance and QA context.",
+  "products": {
+    "ndvi": {
+      "variable": "ndvi",
+      "product": "ECO_L2T_STARS.002",
+      "label": "ECOSTRESS Tiled Ancillary NDVI and Albedo L2 Global",
+      "raster_dir": "data/NDVI",
+      "metadata_dir": "data/metadata",
+      "metadata_files": [
+        "data/metadata/esi-final-2-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/et-final-2-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/NDVi-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/ndvi-final-2-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/wue-final-ECO-L4T-WUE-002-metadata.xml"
+      ],
+      "statistics_files": [
+        "data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_monthly_summary_long_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_timeline_summary_wide_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_year_month_summary_long_with_pet_wue.csv",
+        "data/metadata/support_product_source_inventory.csv"
+      ],
+      "qa_statistics_files": [],
+      "other_files": [],
+      "raster_inventory": {
+        "raster_count": 930,
+        "readable_raster_count": 930,
+        "first_date": "2019-01-31",
+        "last_date": "2025-06-29",
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "time_bins": [
+          "evening",
+          "midday_afternoon",
+          "morning",
+          "night"
+        ],
+        "epsg_values": [
+          32632
+        ],
+        "crs_values": [
+          "EPSG:32632"
+        ],
+        "mean_valid_data_coverage_inside_aoi_percent": 99.90524911018264
+      }
     },
-    {
-      "product": "ECO3ETPTJPL",
-      "description": "Evapotranspiration PT-JPL",
-      "version": "001",
-      "note": "ET product used directly"
+    "et": {
+      "variable": "et",
+      "product": "ECO_L3T_JET.002",
+      "label": "ECOSTRESS Tiled Evapotranspiration Instantaneous and Daytime L3 Global",
+      "raster_dir": "data/ET",
+      "metadata_dir": "data/metadata",
+      "metadata_files": [
+        "data/metadata/esi-final-2-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/et-final-2-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/NDVi-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/ndvi-final-2-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/wue-final-ECO-L4T-WUE-002-metadata.xml"
+      ],
+      "statistics_files": [
+        "data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_monthly_summary_long_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_timeline_summary_wide_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_year_month_summary_long_with_pet_wue.csv",
+        "data/metadata/support_product_source_inventory.csv"
+      ],
+      "qa_statistics_files": [],
+      "other_files": [],
+      "raster_inventory": {
+        "raster_count": 308,
+        "readable_raster_count": 308,
+        "first_date": "2019-01-31",
+        "last_date": "2025-06-24",
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "time_bins": [
+          "evening",
+          "midday_afternoon",
+          "morning"
+        ],
+        "epsg_values": [
+          32632
+        ],
+        "crs_values": [
+          "EPSG:32632"
+        ],
+        "mean_valid_data_coverage_inside_aoi_percent": 78.50783966021274
+      }
     },
-    {
-      "product": "ECO4ESIPTJPL",
-      "description": "Evaporative Stress Index PT-JPL",
-      "version": "001",
-      "note": "ESI product used directly"
+    "esi": {
+      "variable": "esi",
+      "product": "ECO_L4T_ESI.002",
+      "label": "ECOSTRESS Tiled Evaporative Stress Index PT-JPL Instantaneous L4 Global",
+      "raster_dir": "data/ESI",
+      "metadata_dir": "data/metadata",
+      "metadata_files": [
+        "data/metadata/esi-final-2-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/et-final-2-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/NDVi-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/ndvi-final-2-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/wue-final-ECO-L4T-WUE-002-metadata.xml"
+      ],
+      "statistics_files": [
+        "data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_monthly_summary_long_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_timeline_summary_wide_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_year_month_summary_long_with_pet_wue.csv",
+        "data/metadata/support_product_source_inventory.csv"
+      ],
+      "qa_statistics_files": [],
+      "other_files": [],
+      "raster_inventory": {
+        "raster_count": 309,
+        "readable_raster_count": 309,
+        "first_date": "2019-01-31",
+        "last_date": "2025-06-24",
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "time_bins": [
+          "evening",
+          "midday_afternoon",
+          "morning"
+        ],
+        "epsg_values": [
+          32632
+        ],
+        "crs_values": [
+          "EPSG:32632"
+        ],
+        "mean_valid_data_coverage_inside_aoi_percent": 78.57739357716999
+      }
+    },
+    "pet": {
+      "variable": "pet",
+      "product": null,
+      "label": null,
+      "raster_dir": "data/PET",
+      "metadata_dir": "data/metadata",
+      "metadata_files": [
+        "data/metadata/esi-final-2-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/et-final-2-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/NDVi-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/ndvi-final-2-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/wue-final-ECO-L4T-WUE-002-metadata.xml"
+      ],
+      "statistics_files": [
+        "data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_monthly_summary_long_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_timeline_summary_wide_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_year_month_summary_long_with_pet_wue.csv",
+        "data/metadata/support_product_source_inventory.csv"
+      ],
+      "qa_statistics_files": [],
+      "other_files": [],
+      "raster_inventory": {
+        "raster_count": 309,
+        "readable_raster_count": 309,
+        "first_date": "2019-01-31",
+        "last_date": "2025-06-24",
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "time_bins": [
+          "evening",
+          "midday_afternoon",
+          "morning"
+        ],
+        "epsg_values": [
+          32632
+        ],
+        "crs_values": [
+          "EPSG:32632"
+        ],
+        "mean_valid_data_coverage_inside_aoi_percent": 78.57739357716999
+      }
+    },
+    "wue": {
+      "variable": "wue",
+      "product": null,
+      "label": null,
+      "raster_dir": "data/WUE",
+      "metadata_dir": "data/metadata",
+      "metadata_files": [
+        "data/metadata/esi-final-2-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/et-final-2-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-esi-ECO-L4T-ESI-002-metadata.xml",
+        "data/metadata/final-swiss-nation-park-and-vegetation-et-ECO-L3T-JET-002-metadata.xml",
+        "data/metadata/NDVi-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/ndvi-final-2-ECO-L2T-STARS-002-metadata.xml",
+        "data/metadata/wue-final-ECO-L4T-WUE-002-metadata.xml"
+      ],
+      "statistics_files": [
+        "data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_monthly_summary_long_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_timeline_summary_wide_with_pet_wue.csv",
+        "data/metadata/snp_jan_jun_year_month_summary_long_with_pet_wue.csv",
+        "data/metadata/support_product_source_inventory.csv"
+      ],
+      "qa_statistics_files": [],
+      "other_files": [],
+      "raster_inventory": {
+        "raster_count": 266,
+        "readable_raster_count": 266,
+        "first_date": "2019-02-10",
+        "last_date": "2025-06-24",
+        "years": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "months": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "time_bins": [
+          "evening",
+          "midday_afternoon",
+          "morning"
+        ],
+        "epsg_values": [
+          32632
+        ],
+        "crs_values": [
+          "EPSG:32632"
+        ],
+        "mean_valid_data_coverage_inside_aoi_percent": 30.864803394283886
+      }
     }
-  ],
-  "study_area": {
-    "name": "Swiss National Park",
-    "abbreviation": "SNP",
-    "country": "Switzerland",
-    "centroid": "46.6603°N 10.2176°E",
-    "area_km2": 170,
-    "elevation_range_m": [1400, 3174],
-    "established": 1914
   },
-  "analysis_window": {
-    "months": "April–June",
-    "code": "AMJ",
-    "rationale": "April–June captures early alpine growing season onset and peak spring greenup. Constrained by ECOSTRESS overpass availability and snow-free conditions at lower elevations."
-  },
-  "temporal_coverage": {
-    "start_year": 2019,
-    "end_year": 2025,
-    "note": "2025 is partial. Complete seasons: 2019–2023. 2024 has reduced coverage for ET/ESI."
-  },
-  "quality_filtering": {
-    "cloud_mask": "Applied",
-    "snow_mask": "Applied (snow-free pixels only)",
-    "emissivity_qa": "Quality flag > 1 excluded",
-    "method": "Area-of-interest aggregation via AppEEARS polygon extraction"
-  },
-  "processing_pipeline": "Research prototype — not peer reviewed. Exploratory analysis only.",
-  "citation_note": "Data accessed via NASA AppEEARS. ECOSTRESS mission: NASA/JPL. Processing by [researcher]. Cite data products individually if publishing."
+  "warnings": [],
+  "generated_outputs": {
+    "metadata_inventory_csv": "data/processed/summary/metadata_inventory.csv",
+    "metadata_inventory_json": "data/processed/summary/metadata_inventory.json",
+    "data_provenance_json": "public/data/signals/data-provenance.json"
+  }
 }

@@ -18,18 +18,44 @@ import {
 import { ArtisticBackground } from './artistic-background'
 import { SectionReveal } from './section-reveal'
 import figuresRaw from '@/public/data/signals/findings-figures.json'
+import observatoryRaw from '@/public/data/signals/observatory-readouts.json'
 
-type FigureDataEntry = Record<string, string | number>
+type ReadoutEntry = {
+  variable: string; year: number; season: string; mean: number
+  confidence_level: string; coverage_inside_aoi_percent: number
+}
 
 const fig1 = figuresRaw.figures[0]
 const fig2 = figuresRaw.figures[1]
 const fig3 = figuresRaw.figures[2]
 const fig4 = figuresRaw.figures[3]
 
-const ndviData = fig1.data as Array<{ year: string; ndvi: number; confidence_level: string }>
-const etData = fig2.data as Array<{ year: string; et: number; confidence_level: string }>
-const esiData = fig3.data as Array<{ year: string; esi: number; confidence_level: string }>
-const covData = fig4.data as Array<{ year: string; ndvi_cov: number; et_cov: number; esi_cov: number }>
+const readouts = observatoryRaw as ReadoutEntry[]
+
+const ndviData = readouts
+  .filter(d => d.variable === 'ndvi' && d.season === 'june')
+  .sort((a, b) => a.year - b.year)
+  .map(d => ({ year: String(d.year), ndvi: d.mean, confidence_level: d.confidence_level }))
+
+const etData = readouts
+  .filter(d => d.variable === 'et' && d.season === 'june')
+  .sort((a, b) => a.year - b.year)
+  .map(d => ({ year: String(d.year), et: d.mean, confidence_level: d.confidence_level }))
+
+const esiData = readouts
+  .filter(d => d.variable === 'esi' && d.season === 'june')
+  .sort((a, b) => a.year - b.year)
+  .map(d => ({ year: String(d.year), esi: d.mean, confidence_level: d.confidence_level }))
+
+const covData = ['2019', '2020', '2021', '2022', '2023', '2024', '2025'].map(year => {
+  const get = (v: string) => readouts.find(d => d.variable === v && d.season === 'june' && String(d.year) === year)
+  return {
+    year,
+    ndvi_cov: get('ndvi')?.coverage_inside_aoi_percent ?? 0,
+    et_cov:   get('et')?.coverage_inside_aoi_percent ?? 0,
+    esi_cov:  get('esi')?.coverage_inside_aoi_percent ?? 0,
+  }
+})
 
 const ndviChartConfig: ChartConfig = {
   ndvi: { label: 'NDVI Mean', color: '#3F6F42' },
@@ -146,9 +172,9 @@ export function DataVisualizations() {
           {/* 2-column chart grid — Fig 1 + Fig 2 */}
           <div className="grid md:grid-cols-2 gap-5 mb-5">
             <FigureFrame
-              number={fig1.number}
+              number={fig1.figure_number.replace('Fig. ', '')}
               title={fig1.title}
-              subtitle={fig1.subtitle}
+              subtitle={fig1.data_source_note}
               caption={fig1.caption}
             >
               <ChartContainer config={ndviChartConfig} className="h-[200px]">
@@ -191,9 +217,9 @@ export function DataVisualizations() {
             </FigureFrame>
 
             <FigureFrame
-              number={fig2.number}
+              number={fig2.figure_number.replace('Fig. ', '')}
               title={fig2.title}
-              subtitle={fig2.subtitle}
+              subtitle={fig2.data_source_note}
               caption={fig2.caption}
             >
               <ChartContainer config={etChartConfig} className="h-[200px]">
@@ -248,9 +274,9 @@ export function DataVisualizations() {
           {/* Fig 3 — ESI area chart */}
           <div className="mb-5">
             <FigureFrame
-              number={fig3.number}
+              number={fig3.figure_number.replace('Fig. ', '')}
               title={fig3.title}
-              subtitle={fig3.subtitle}
+              subtitle={fig3.data_source_note}
               caption={fig3.caption}
             >
               <ChartContainer config={esiChartConfig} className="h-[160px]">

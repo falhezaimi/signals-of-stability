@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -110,8 +111,24 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Coordinates Display */}
+            {/* Data Atlas + Further Research links + Coordinates */}
             <div className="hidden md:flex items-center gap-3 text-[10px] font-mono text-muted-foreground/40">
+              <Link
+                href="/signals"
+                className="flex items-center gap-1.5 border border-border/30 px-2.5 py-1 hover:border-primary/30 hover:text-primary/70 transition-all duration-500"
+              >
+                <span className="w-1 h-1 rounded-full bg-primary/50" />
+                Data Atlas
+              </Link>
+              <Link
+                href="/further-research"
+                className="flex items-center gap-1.5 border border-border/30 px-2.5 py-1 hover:border-primary/30 hover:text-primary/70 transition-all duration-500"
+              >
+                <span className="w-1 h-1 rounded-full bg-gold/50" />
+                <span className="hidden xl:inline">Further Research</span>
+                <span className="xl:hidden">Research</span>
+              </Link>
+              <span className="w-px h-2.5 bg-border/30" />
               <span>46.6603° N</span>
               <span className="w-px h-2.5 bg-border/30" />
               <span>10.2176° E</span>

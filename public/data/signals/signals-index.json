@@ -1,0 +1,328 @@
+{
+  "_meta": {
+    "generated_utc": "2026-05-11T00:00:00Z",
+    "version": "1.0.0",
+    "description": "Website-ready index for the Signals of Stability data layer (Swiss National Park ECOSTRESS analysis). Provides normalized /data/... asset URLs for Next.js public folder serving. This is the single authoritative entry point for frontend data consumption. Do not overwrite source manifests (data-manifest.json, map_manifest.json, product_3d_manifest.json, raster-preview-manifest.json).",
+    "pathNormalization": "All asset URLs use /data/... for Next.js public folder serving. Source files contain public/data/... or bare relative prefixes that are incorrect for browser fetch() or <img src>. This index provides corrected paths throughout.",
+    "notes": {
+      "rasterPathFields": "Fields named raster_path in stability-summary.json, trend-summary.json, and anomaly-summary.json are backend processing-pipeline provenance paths (data/processed/...). They are not web-accessible URLs and must not be used in fetch() or <img src>.",
+      "previewCountZero": "data-manifest.json reports preview_count: 0. This means no inline preview blobs were embedded in that manifest file, not that preview files are absent. 796 raster PNG previews exist at /data/rasters/ and are indexed by raster-preview-manifest.json.",
+      "wue2024Absent": "WUE 2024 yearly 3D terrain renders are intentionally absent. WUE 2024 satellite coverage was unavailable; the composite mean uses 6 of 7 available June seasons (2019–2023, 2025). See knownAbsences. The yearly viewer must handle available: false gracefully.",
+      "observatoryReadoutsNullFields": "observatory-readouts.json has preview_png: null and legend_json: null on all 35 records. These are unfilled pipeline placeholders. Handle null gracefully; per-variable raster previews are accessible via raster-preview-manifest.json.",
+      "mapAssetResolution": "Assets in nasa_quality_maps/metadata/map_manifest.json are relative to the nasa_quality_maps/ directory, not to the metadata/ subdirectory where the manifest lives. This index provides fully-resolved /data/signals/nasa_quality_maps/... URLs.",
+      "mapInputsProvenance": "map_manifest.json contains a Windows absolute path block under inputs documenting the source TIF files used during map generation. These are machine-specific provenance records, not web assets.",
+      "mapIdNormalized": "map_manifest.json map_id values are inconsistent: map_01, map_05, map_06 use short form while map_02, map_03, map_04 use long form. This index normalizes all map IDs to map_01 through map_06.",
+      "provenanceSourceRasters": "provenanceSourceRasters fields in products3d entries document the backend raster composites used per product. Paths are normalized here from Windows backslashes to forward slashes. These are research-machine paths, not public web assets.",
+      "geotiffFiles": "GeoTIFF files at /data/signals/nasa_quality_maps/geotiff/ are served statically but not natively renderable by browsers. Use geotiff.js or similar for in-browser raster visualization, or offer as download assets.",
+      "rasterPreviewsOptional": "raster-preview-manifest.json (311 KB, 796 entries) and /data/rasters/ are needed only if the raster preview explorer feature is active. They are not required for the core signals display."
+    }
+  },
+
+  "study": {
+    "name": "Swiss National Park",
+    "coordinates": "46.6603°N, 10.2176°E",
+    "dateRange": {
+      "startYear": 2019,
+      "endYear": 2025
+    },
+    "variables": ["esi", "et", "ndvi", "pet", "wue"],
+    "resolution": "70 m nominal ECOSTRESS/AppEEARS product context",
+    "crs": "EPSG:32632",
+    "monthsAvailable": [1, 2, 3, 4, 5, 6],
+    "timeBinsAvailable": ["evening", "midday_afternoon", "morning", "night"],
+    "seasonsConfigured": ["jan_jun", "jan_mar", "apr_jun", "january", "february", "march", "april", "may", "june"],
+    "caveat": "Short-window raster-derived analysis. Current available raster set is not a full JJA or full growing-season record unless those months are present in the inventory.",
+    "dataStatus": "Raster-derived ECOSTRESS/AppEEARS output"
+  },
+
+  "dataFiles": {
+    "heroMetadata":          "/data/signals/hero-metadata.json",
+    "observatoryReadouts":   "/data/signals/observatory-readouts.json",
+    "timelineYearlyValues":  "/data/signals/timeline-yearly-values.json",
+    "interpretationSummary": "/data/signals/interpretation-summary.json",
+    "findingsFigures":       "/data/signals/findings-figures.json",
+    "stabilityMetrics":      "/data/signals/stability-summary.json",
+    "trends":                "/data/signals/trend-summary.json",
+    "anomalies":             "/data/signals/anomaly-summary.json",
+    "limitations":           "/data/signals/limitations.json",
+    "dataProvenance":        "/data/signals/data-provenance.json",
+    "rasterPreviewManifest": "/data/signals/raster-preview-manifest.json"
+  },
+
+  "maps": [
+    {
+      "id": "map_01",
+      "slug": "dominant_daytime",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_01_dominant_daytime.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_01_dominant_daytime.webp",
+      "overlayUrl": "/data/signals/nasa_quality_maps/overlays/dominant_daytime_overlay_transparent.png",
+      "geotiffUrl": "/data/signals/nasa_quality_maps/geotiff/dominant_daytime_class_map.tif",
+      "geotiffType": "class_raster",
+      "geotiffTargetClassCode": null
+    },
+    {
+      "id": "map_02",
+      "slug": "demand_efficiency_watch",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_02_demand_efficiency_watch.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_02_demand_efficiency_watch.webp",
+      "overlayUrl": "/data/signals/nasa_quality_maps/overlays/demand_efficiency_watch_overlay_transparent.png",
+      "geotiffUrl": "/data/signals/nasa_quality_maps/geotiff/demand_efficiency_watch_mask.tif",
+      "geotiffType": "binary_mask",
+      "geotiffTargetClassCode": 5
+    },
+    {
+      "id": "map_03",
+      "slug": "esi_watch_zone",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_03_esi_watch_zone.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_03_esi_watch_zone.webp",
+      "overlayUrl": "/data/signals/nasa_quality_maps/overlays/esi_watch_overlay_transparent.png",
+      "geotiffUrl": "/data/signals/nasa_quality_maps/geotiff/esi_watch_zone_mask.tif",
+      "geotiffType": "binary_mask",
+      "geotiffTargetClassCode": 4
+    },
+    {
+      "id": "map_04",
+      "slug": "stable_core",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_04_stable_core.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_04_stable_core.webp",
+      "overlayUrl": "/data/signals/nasa_quality_maps/overlays/stable_core_overlay_transparent.png",
+      "geotiffUrl": "/data/signals/nasa_quality_maps/geotiff/stable_core_mask.tif",
+      "geotiffType": "binary_mask",
+      "geotiffTargetClassCode": 1
+    },
+    {
+      "id": "map_05",
+      "slug": "timebin_comparison",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_05_timebin_comparison.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_05_timebin_comparison.webp",
+      "overlayUrl": null,
+      "geotiffUrl": null,
+      "geotiffType": null,
+      "geotiffTargetClassCode": null
+    },
+    {
+      "id": "map_06",
+      "slug": "terrain_context",
+      "pngUrl":     "/data/signals/nasa_quality_maps/png/map_06_terrain_context.png",
+      "webpUrl":    "/data/signals/nasa_quality_maps/webp/map_06_terrain_context.webp",
+      "overlayUrl": null,
+      "geotiffUrl": "/data/signals/nasa_quality_maps/geotiff/hillshade.tif",
+      "geotiffType": "hillshade",
+      "geotiffTargetClassCode": null
+    }
+  ],
+
+  "legends": {
+    "classLegendPng": "/data/signals/nasa_quality_maps/legends/class_legend.png",
+    "classLegendSvg": "/data/signals/nasa_quality_maps/legends/class_legend.svg"
+  },
+
+  "mapProvenance": {
+    "phase": "Phase 6 — NASA-Quality Map Export",
+    "created_utc": "2026-05-11T17:09:13.970156+00:00",
+    "crs": "EPSG:32632",
+    "pixel_size_m": 70.0,
+    "raster_shape_hw": [313, 303],
+    "captionsMd":    "/data/signals/nasa_quality_maps/metadata/captions.md",
+    "qcReportMd":   "/data/signals/nasa_quality_maps/metadata/qc_report.md",
+    "assetAuditMd": "/data/signals/nasa_quality_maps/metadata/asset_audit.md"
+  },
+
+  "products3d": [
+    {
+      "product": "esi",
+      "pngUrl":  "/data/signals/three-d-products/png/esi_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/webp/esi_3d_terrain.webp",
+      "title":    "Evaporative Stress Index over Alpine Terrain",
+      "subtitle": "ESI signal draped over NASADEM terrain to reveal terrain-linked moisture stress patterns.",
+      "caption":  "Multi-year June composite of the Evaporative Stress Index (ESI) draped over NASADEM 30 m terrain. ESI values near 1 suggest relatively unstressed evapotranspiration; lower values indicate surface moisture limitation relative to potential. Color ramp runs from terracotta (lower ESI) through stone beige (neutral) to alpine green (higher ESI). Terrain is vertically exaggerated for visual clarity. This is an exploratory proxy — terrain context is interpretive, not confirmatory.",
+      "role":    "stress indicator",
+      "units":   "index (0–1)",
+      "p2":  0.6503,
+      "p98": 0.9046,
+      "source_pixels": 35665,
+      "render_shape": [313, 303],
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "provenanceSourceRasters": [
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2019_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2020_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2021_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2022_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2023_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2024_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/esi_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "et",
+      "pngUrl":  "/data/signals/three-d-products/png/et_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/webp/et_3d_terrain.webp",
+      "title":    "Evapotranspiration over Alpine Terrain",
+      "subtitle": "ET signal draped over terrain to show spatial variation in vegetation water flux.",
+      "caption":  "Multi-year June composite of ECOSTRESS-derived evapotranspiration (ET) draped over NASADEM terrain. Higher ET values (teal) indicate greater vegetation water flux; lower values (stone gray) suggest sparser or less active vegetation. Terrain context highlights how ET varies with elevation and slope aspect. Units are approximate; treat as a relative spatial proxy.",
+      "role":    "vegetation water flux",
+      "units":   "mm day⁻¹ (proxy)",
+      "p2":  1.501,
+      "p98": 3.2307,
+      "source_pixels": 35665,
+      "render_shape": [313, 303],
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "provenanceSourceRasters": [
+        "data/processed/summary/timebin_validation/composites/daytime/et_2019_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2020_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2021_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2022_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2023_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2024_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/et_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "ndvi",
+      "pngUrl":  "/data/signals/three-d-products/png/ndvi_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/webp/ndvi_3d_terrain.webp",
+      "title":    "Vegetation Greenness over Alpine Terrain",
+      "subtitle": "NDVI signal draped over terrain to show vegetation structure across the park.",
+      "caption":  "Multi-year June composite of NDVI (Normalized Difference Vegetation Index) draped over NASADEM terrain. Higher NDVI values (alpine green) indicate denser, more photosynthetically active vegetation. Lower values (warm tan) correspond to sparse vegetation, rock, or snow. NDVI in this alpine context is typically moderate (0.1–0.4) even in vegetated areas due to short growing seasons and altitude.",
+      "role":    "vegetation greenness",
+      "units":   "index (−1 to 1)",
+      "p2":  0.0663,
+      "p98": 0.341,
+      "source_pixels": 35665,
+      "render_shape": [313, 303],
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "provenanceSourceRasters": [
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2019_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2020_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2021_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2022_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2023_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2024_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/ndvi_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "pet",
+      "pngUrl":  "/data/signals/three-d-products/png/pet_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/webp/pet_3d_terrain.webp",
+      "title":    "Potential Evapotranspiration over Alpine Terrain",
+      "subtitle": "Atmospheric demand proxy visualized against mountain structure.",
+      "caption":  "Multi-year June composite of potential evapotranspiration (PET) over NASADEM terrain. PET represents the atmospheric demand for water — higher values (warm gold) indicate greater atmospheric evaporative demand. The spatial pattern reflects both solar geometry (aspect-driven) and elevation (temperature-driven). Color ramp runs from cool slate blue (lower demand) to muted burnt sienna (higher demand).",
+      "role":    "atmospheric demand",
+      "units":   "W m⁻²",
+      "p2":  157.2326,
+      "p98": 297.1372,
+      "source_pixels": 35665,
+      "render_shape": [313, 303],
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "provenanceSourceRasters": [
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2019_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2020_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2021_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2022_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2023_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2024_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/pet_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "wue",
+      "pngUrl":  "/data/signals/three-d-products/png/wue_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/webp/wue_3d_terrain.webp",
+      "title":    "Water Use Efficiency over Alpine Terrain",
+      "subtitle": "Vegetation efficiency proxy visualized across elevation and slope structure.",
+      "caption":  "Multi-year June composite of water use efficiency (WUE) draped over NASADEM terrain. WUE is computed as the ratio of carbon uptake to water loss — a proxy for vegetation efficiency. Higher values (deep teal) suggest more carbon gained per unit water lost; lower values (burnt orange) indicate lower efficiency. Treat as a relative spatial proxy; absolute values are model-dependent. Note: 2024 data not available for WUE; mean computed from 6 of 7 available June seasons.",
+      "role":    "efficiency proxy",
+      "units":   "proxy index",
+      "p2":  0.0949,
+      "p98": 3.9759,
+      "source_pixels": 35665,
+      "render_shape": [313, 303],
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "provenanceSourceRasters": [
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2019_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2020_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2021_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2022_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2023_june_daytime_mean.tif",
+        "data/processed/summary/timebin_validation/composites/daytime/wue_2025_june_daytime_mean.tif"
+      ]
+    }
+  ],
+
+  "yearlyProducts3d": [
+    { "product": "esi",  "year": 2019, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2019_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2019_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2020, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2020_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2020_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2021, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2021_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2021_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2022, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2022_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2022_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2023, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2023_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2023_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2024, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2024_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2024_3d_terrain.webp"  },
+    { "product": "esi",  "year": 2025, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/esi_2025_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/esi_2025_3d_terrain.webp"  },
+
+    { "product": "et",   "year": 2019, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2019_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2019_3d_terrain.webp"   },
+    { "product": "et",   "year": 2020, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2020_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2020_3d_terrain.webp"   },
+    { "product": "et",   "year": 2021, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2021_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2021_3d_terrain.webp"   },
+    { "product": "et",   "year": 2022, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2022_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2022_3d_terrain.webp"   },
+    { "product": "et",   "year": 2023, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2023_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2023_3d_terrain.webp"   },
+    { "product": "et",   "year": 2024, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2024_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2024_3d_terrain.webp"   },
+    { "product": "et",   "year": 2025, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/et_2025_3d_terrain.png",   "webpUrl": "/data/signals/three-d-products/yearly/webp/et_2025_3d_terrain.webp"   },
+
+    { "product": "ndvi", "year": 2019, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2019_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2019_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2020, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2020_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2020_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2021, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2021_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2021_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2022, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2022_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2022_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2023, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2023_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2023_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2024, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2024_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2024_3d_terrain.webp" },
+    { "product": "ndvi", "year": 2025, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/ndvi_2025_3d_terrain.png", "webpUrl": "/data/signals/three-d-products/yearly/webp/ndvi_2025_3d_terrain.webp" },
+
+    { "product": "pet",  "year": 2019, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2019_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2019_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2020, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2020_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2020_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2021, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2021_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2021_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2022, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2022_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2022_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2023, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2023_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2023_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2024, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2024_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2024_3d_terrain.webp"  },
+    { "product": "pet",  "year": 2025, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/pet_2025_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/pet_2025_3d_terrain.webp"  },
+
+    { "product": "wue",  "year": 2019, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2019_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2019_3d_terrain.webp"  },
+    { "product": "wue",  "year": 2020, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2020_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2020_3d_terrain.webp"  },
+    { "product": "wue",  "year": 2021, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2021_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2021_3d_terrain.webp"  },
+    { "product": "wue",  "year": 2022, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2022_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2022_3d_terrain.webp"  },
+    { "product": "wue",  "year": 2023, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2023_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2023_3d_terrain.webp"  },
+    { "product": "wue",  "year": 2024, "available": false, "pngUrl": null,                                                                   "webpUrl": null                                                                    },
+    { "product": "wue",  "year": 2025, "available": true,  "pngUrl": "/data/signals/three-d-products/yearly/png/wue_2025_3d_terrain.png",  "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2025_3d_terrain.webp"  }
+  ],
+
+  "rasterPreviews": {
+    "manifestUrl":          "/data/signals/raster-preview-manifest.json",
+    "assetBase":            "/data/rasters",
+    "entryCount":           796,
+    "pathPrefixInManifest": "public/data/rasters",
+    "note": "png_path and metadata_path values in raster-preview-manifest.json use the public/data/rasters/ prefix. Replace leading public/ with / to obtain the correct web path, or strip the prefix and join with assetBase above."
+  },
+
+  "knownAbsences": [
+    {
+      "type":    "yearly_3d",
+      "product": "wue",
+      "year":    2024,
+      "pngUrl":  "/data/signals/three-d-products/yearly/png/wue_2024_3d_terrain.png",
+      "webpUrl": "/data/signals/three-d-products/yearly/webp/wue_2024_3d_terrain.webp",
+      "reason":  "WUE 2024 satellite overpasses had insufficient June coverage to produce a reliable composite. The WUE composite terrain render uses 6 of 7 available June seasons (2019–2023, 2025). Show a data-unavailable placeholder for this product–year slot."
+    }
+  ]
+}

@@ -1,17 +1,104 @@
 {
-  "site": "Swiss National Park",
-  "site_abbreviation": "SNP",
-  "coordinates": "46.6603°N 10.2176°E",
-  "area_km2": 170,
-  "elevation_range_m": [1400, 3174],
-  "platform": "ECOSTRESS / AppEEARS",
-  "instrument": "ECOSTRESS (ECOsystem Spaceborne Thermal Radiometer Experiment on Space Station)",
-  "nominal_resolution_m": 70,
-  "analysis_season": "April–June",
-  "season_code": "AMJ",
-  "analysis_years": "2019–2025",
-  "year_range": [2019, 2025],
-  "variables": ["NDVI", "ET", "ESI"],
+  "study_area": "Swiss National Park",
+  "coordinates": "46.6603\u00b0N, 10.2176\u00b0E",
+  "date_range": {
+    "start_year": 2019,
+    "end_year": 2025
+  },
+  "months_available": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "time_bins_available": [
+    "evening",
+    "midday_afternoon",
+    "morning",
+    "night"
+  ],
+  "variables": [
+    "esi",
+    "et",
+    "ndvi",
+    "pet",
+    "wue"
+  ],
+  "products": {
+    "ndvi": "ECOSTRESS ECO_L2T_STARS NDVI",
+    "et": "ECOSTRESS ECO_L3T_JET ET",
+    "esi": "ECOSTRESS ECO_L4T_ESI"
+  },
+  "resolution": "70 m nominal ECOSTRESS/AppEEARS product context",
+  "season_windows": {
+    "jan_jun": {
+      "label": "January\u2013June winter-to-early-growing-season window",
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "jan_mar": {
+      "label": "January\u2013March winter setup window",
+      "months": [
+        1,
+        2,
+        3
+      ]
+    },
+    "apr_jun": {
+      "label": "April\u2013June spring transition window",
+      "months": [
+        4,
+        5,
+        6
+      ]
+    },
+    "january": {
+      "label": "Deep Winter",
+      "months": [
+        1
+      ]
+    },
+    "february": {
+      "label": "Late Winter",
+      "months": [
+        2
+      ]
+    },
+    "march": {
+      "label": "Snowpack Holding",
+      "months": [
+        3
+      ]
+    },
+    "april": {
+      "label": "Snowmelt Begins",
+      "months": [
+        4
+      ]
+    },
+    "may": {
+      "label": "Spring Transition",
+      "months": [
+        5
+      ]
+    },
+    "june": {
+      "label": "Early Growing Season",
+      "months": [
+        6
+      ]
+    }
+  },
   "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
-  "note": "Observation frequency varies with ISS orbital overpass. 2024 ET and ESI are LOW CONFIDENCE (2 observations). 2025 is partial season only."
+  "provenance_json": "public/data/signals/data-provenance.json",
+  "interpretation_summary_json": "public/data/signals/interpretation-summary.json",
+  "caveat": "Short-window raster-derived analysis. Current available raster set is not a full JJA or full growing-season record unless those months are present in the inventory."
 }

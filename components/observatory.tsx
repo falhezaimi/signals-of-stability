@@ -35,25 +35,25 @@ const layers = [
 const years = ['2019', '2020', '2021', '2022', '2023', '2024', '2025']
 
 type Readout = {
+  variable: string
+  year: number
+  season: string
   mean: number
   median: number
   min: number
   max: number
   std: number
-  p05: number
-  p25: number
-  p75: number
-  p95: number
-  coverage_aoi_percent: number
-  obs_coverage_p95_percent: number
+  observation_count: number
   confidence_level: string
+  coverage_inside_aoi_percent: number
+  mean_pixel_observation_coverage_percent: number
   data_status: string
-  note?: string
 }
 
 function getReadout(layer: string, year: string): Readout | null {
-  const all = readoutsRaw.readouts as unknown as Record<string, Record<string, Readout>>
-  return all[layer]?.[year] ?? null
+  return (readoutsRaw as unknown as Readout[]).find(
+    d => d.variable === layer && String(d.year) === year && d.season === 'june'
+  ) ?? null
 }
 
 function RasterPanel({ layer, year, color }: { layer: string; year: string; color: string }) {
@@ -211,8 +211,8 @@ export function Observatory() {
     return r?.mean ?? 0
   })
 
-  const obsP95 = readout?.obs_coverage_p95_percent ?? 0
-  const coverageAoi = readout?.coverage_aoi_percent ?? 0
+  const obsP95 = readout?.mean_pixel_observation_coverage_percent ?? 0
+  const coverageAoi = readout?.coverage_inside_aoi_percent ?? 0
   const confidenceLevel = readout?.confidence_level ?? 'high'
 
   return (
@@ -386,7 +386,7 @@ export function Observatory() {
               <span className="text-[9px] font-mono uppercase tracking-[0.18em] text-muted-foreground/50">
                 Signal Values
               </span>
-              {readout && <ConfidenceBadge level={readout.confidence_level} note={readout.note} />}
+              {readout && <ConfidenceBadge level={readout.confidence_level} />}
             </div>
             {readout ? (
               <>
@@ -394,8 +394,8 @@ export function Observatory() {
                   {[
                     { label: 'Mean', value: readout.mean.toFixed(4), color: layerConfig.color },
                     { label: 'Std Dev', value: readout.std.toFixed(4), color: undefined },
-                    { label: 'p05', value: readout.p05.toFixed(4), color: undefined },
-                    { label: 'p95', value: readout.p95.toFixed(4), color: undefined },
+                    { label: 'Min', value: readout.min.toFixed(4), color: undefined },
+                    { label: 'Max', value: readout.max.toFixed(4), color: undefined },
                   ].map((stat) => (
                     <div key={stat.label} className="p-2.5 border border-border/15 bg-card/20">
                       <p className="text-[9px] font-mono text-muted-foreground/40 mb-0.5">{stat.label}</p>
@@ -405,9 +405,9 @@ export function Observatory() {
                     </div>
                   ))}
                 </div>
-                {readout.note && (
+                {readout.confidence_level === 'low' && (
                   <p className="text-[9px] font-mono text-muted-foreground/40 mt-2 italic leading-relaxed">
-                    {readout.note}
+                    Low confidence — limited ISS overpass coverage this season.
                   </p>
                 )}
               </>

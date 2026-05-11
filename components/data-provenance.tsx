@@ -34,12 +34,12 @@ export function DataProvenance() {
               </div>
               <div className="space-y-2.5">
                 {[
-                  { label: 'Platform', value: provenanceRaw.platform },
-                  { label: 'Operator', value: provenanceRaw.operator },
-                  { label: 'Resolution', value: `${provenanceRaw.nominal_spatial_resolution_m}m nominal` },
-                  { label: 'Access', value: 'NASA AppEEARS' },
-                  { label: 'Analysis window', value: provenanceRaw.analysis_window.months },
-                  { label: 'Products', value: provenanceRaw.products_used.map((p) => p.product).join(' · ') },
+                  { label: 'Platform',         value: 'ECOSTRESS (ISS)' },
+                  { label: 'Operator',         value: 'NASA / JPL' },
+                  { label: 'Resolution',       value: '70 m nominal' },
+                  { label: 'Access',           value: 'NASA AppEEARS' },
+                  { label: 'Analysis window',  value: 'Jan–Jun (months 1–6)' },
+                  { label: 'Products',         value: 'NDVI · ET · ESI · PET · WUE' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-baseline justify-between gap-4">
                     <span className="text-[9px] font-mono text-muted-foreground/45 shrink-0">{item.label}</span>
@@ -48,33 +48,27 @@ export function DataProvenance() {
                 ))}
               </div>
               <p className="text-[8px] font-mono text-muted-foreground/30 mt-4 italic leading-relaxed">
-                {provenanceRaw.processing_pipeline}
+                {provenanceRaw.important_note}
               </p>
             </div>
 
-            {/* Critical limitations */}
+            {/* Known limitations */}
             <div className="border border-border/30 bg-card/15 p-5">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-[8px] font-mono text-muted-foreground/45 uppercase tracking-[0.18em]">Known Limitations</span>
               </div>
               <div className="space-y-3">
-                {limitationsRaw.limitations.map((lim) => (
-                  <div key={lim.id} className="border-l-2 pl-3" style={{ borderColor: `${severityColor[lim.severity]}55` }}>
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-[9px] font-mono text-foreground/65">{lim.title}</span>
-                      <span
-                        className="text-[7px] font-mono uppercase tracking-[0.1em] px-1 py-0.5 border"
-                        style={{
-                          color: severityColor[lim.severity],
-                          borderColor: `${severityColor[lim.severity]}40`,
-                          backgroundColor: `${severityColor[lim.severity]}08`,
-                        }}
-                      >
-                        {lim.severity}
-                      </span>
-                    </div>
-                    <p className="text-[9px] font-mono text-muted-foreground/50 leading-relaxed">
-                      {lim.description.slice(0, 120)}{lim.description.length > 120 ? '…' : ''}
+                {[
+                  { title: 'Short time window',      note: limitationsRaw.short_time_window,    color: severityColor.high },
+                  { title: 'Coverage variability',   note: limitationsRaw.coverage,              color: severityColor.medium },
+                  { title: 'ISS overpass timing',    note: limitationsRaw.iss_overpass_timing,   color: severityColor.medium },
+                  { title: 'Trend interpretation',   note: limitationsRaw.trend,                 color: severityColor.low },
+                  { title: 'Stability metrics',      note: limitationsRaw.stability,             color: severityColor.low },
+                ].map((lim) => (
+                  <div key={lim.title} className="border-l-2 pl-3" style={{ borderColor: `${lim.color}55` }}>
+                    <span className="text-[9px] font-mono text-foreground/65">{lim.title}</span>
+                    <p className="text-[9px] font-mono text-muted-foreground/50 leading-relaxed mt-0.5">
+                      {lim.note.length > 120 ? `${lim.note.slice(0, 120)}…` : lim.note}
                     </p>
                   </div>
                 ))}
@@ -88,20 +82,22 @@ export function DataProvenance() {
               <span className="text-[8px] font-mono text-muted-foreground/40 uppercase tracking-[0.18em]">ECOSTRESS Products Used</span>
             </div>
             <div className="divide-y divide-border/10">
-              {provenanceRaw.products_used.map((p) => (
-                <div key={p.product} className="flex items-start justify-between px-5 py-3 gap-4">
+              {Object.entries(provenanceRaw.products).map(([key, p]) => (
+                <div key={key} className="flex items-start justify-between px-5 py-3 gap-4">
                   <div>
-                    <span className="text-[10px] font-mono text-foreground/70">{p.product}</span>
-                    <span className="text-[9px] font-mono text-muted-foreground/40 ml-3">{p.description}</span>
+                    <span className="text-[10px] font-mono text-foreground/70 uppercase">{key}</span>
+                    <span className="text-[9px] font-mono text-muted-foreground/40 ml-3">{p.label ?? p.product ?? '—'}</span>
                   </div>
-                  <span className="text-[8px] font-mono text-muted-foreground/35 shrink-0">v{p.version}</span>
+                  <span className="text-[8px] font-mono text-muted-foreground/35 shrink-0">
+                    {p.raster_inventory.raster_count} rasters
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
           <p className="text-[9px] font-mono text-muted-foreground/30 mt-5 uppercase tracking-[0.12em]">
-            {provenanceRaw.citation_note}
+            Raster-derived ECOSTRESS/AppEEARS output · EPSG:32632 · 70 m nominal · Swiss National Park 2019–2025
           </p>
         </SectionReveal>
       </div>

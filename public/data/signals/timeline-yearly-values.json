@@ -1,71 +1,184 @@
-{
-  "season": "April–June",
-  "season_code": "AMJ",
-  "platform": "ECOSTRESS / AppEEARS",
-  "note": "All means are area averages over ~37% of AOI pixels with valid composite data. ESI scale: 0=maximum stress, 1=no stress.",
-  "years": [
-    {
-      "year": "2019",
-      "ndvi": { "mean": 0.1365, "obs_coverage_p95": 75.0, "confidence_level": "high" },
-      "et":   { "mean": 2.1472, "obs_coverage_p95": 76.9, "confidence_level": "high", "unit": "mm/day" },
-      "esi":  { "mean": 0.8600, "obs_coverage_p95": 71.4, "confidence_level": "high", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Baseline season — near-average signal across all indicators",
-      "ecological_context": "Near-average NDVI and ET. Moderate observation density supports reliable seasonal characterization."
+[
+  {
+    "year": 2019,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.13654091954231262,
+    "et_mean": 2.147244691848755,
+    "esi_mean": 0.8599962592124939,
+    "observation_counts": {
+      "ndvi": 32,
+      "et": 13,
+      "esi": 14,
+      "pet": 14,
+      "wue": 14
     },
-    {
-      "year": "2020",
-      "ndvi": { "mean": 0.1204, "obs_coverage_p95": 72.4, "confidence_level": "high" },
-      "et":   { "mean": 1.1674, "obs_coverage_p95": 66.7, "confidence_level": "high", "unit": "mm/day" },
-      "esi":  { "mean": 0.7891, "obs_coverage_p95": 66.7, "confidence_level": "high", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Below-average NDVI and ET — lower signal than adjacent years",
-      "ecological_context": "NDVI and ET both below 2019 baseline. Directional signal only — single year cannot confirm trend."
+    "confidence": {
+      "ndvi": "higher",
+      "et": "medium",
+      "esi": "medium",
+      "pet": "medium",
+      "wue": "medium"
     },
-    {
-      "year": "2021",
-      "ndvi": { "mean": 0.1090, "obs_coverage_p95": 74.2, "confidence_level": "high" },
-      "et":   { "mean": 1.1739, "obs_coverage_p95": 79.5, "confidence_level": "high", "unit": "mm/day" },
-      "esi":  { "mean": 0.8181, "obs_coverage_p95": 79.5, "confidence_level": "high", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Lowest NDVI mean in series — potential stress episode",
-      "ecological_context": "Lowest NDVI in the April–June series (0.1090). ET also among the lowest. Directionally consistent with documented drought conditions; requires independent validation."
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2019 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2020,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.1806681603193283,
+    "et_mean": 1.731376051902771,
+    "esi_mean": 0.7721589803695679,
+    "observation_counts": {
+      "ndvi": 50,
+      "et": 15,
+      "esi": 15,
+      "pet": 15,
+      "wue": 15
     },
-    {
-      "year": "2022",
-      "ndvi": { "mean": 0.1453, "obs_coverage_p95": 72.1, "confidence_level": "high" },
-      "et":   { "mean": 1.6182, "obs_coverage_p95": 72.9, "confidence_level": "high", "unit": "mm/day" },
-      "esi":  { "mean": 0.7957, "obs_coverage_p95": 72.9, "confidence_level": "high", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Recovery signal — NDVI above 2021 low",
-      "ecological_context": "NDVI recovers from 2021 low. ET increases substantially. Directional recovery signal — not a confirmed trend."
+    "confidence": {
+      "ndvi": "higher",
+      "et": "higher",
+      "esi": "higher",
+      "pet": "higher",
+      "wue": "higher"
     },
-    {
-      "year": "2023",
-      "ndvi": { "mean": 0.1632, "obs_coverage_p95": 76.8, "confidence_level": "high" },
-      "et":   { "mean": 1.4058, "obs_coverage_p95": 75.5, "confidence_level": "high", "unit": "mm/day" },
-      "esi":  { "mean": 0.7811, "obs_coverage_p95": 75.5, "confidence_level": "high", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Highest NDVI mean in series — best-characterized season",
-      "ecological_context": "Highest NDVI mean in the series (0.1632). Well-characterized season with good observation density. ET below 2019 despite high NDVI — directional complexity."
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2020 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2021,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.16656722128391266,
+    "et_mean": 2.0769972801208496,
+    "esi_mean": 0.8376661539077759,
+    "observation_counts": {
+      "ndvi": 46,
+      "et": 14,
+      "esi": 14,
+      "pet": 14,
+      "wue": 14
     },
-    {
-      "year": "2024",
-      "ndvi": { "mean": 0.1252, "obs_coverage_p95": 72.7, "confidence_level": "medium" },
-      "et":   { "mean": 2.2553, "obs_coverage_p95": 50.0, "confidence_level": "low", "unit": "mm/day" },
-      "esi":  { "mean": 0.9248, "obs_coverage_p95": 50.0, "confidence_level": "low", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.4,
-      "note": "Reduced ET/ESI coverage — low-confidence values",
-      "ecological_context": "Only 2 ECOSTRESS overpasses available for ET and ESI. These values should not support trend statements. NDVI is better supported but still partial."
+    "confidence": {
+      "ndvi": "higher",
+      "et": "medium",
+      "esi": "medium",
+      "pet": "medium",
+      "wue": "medium"
     },
-    {
-      "year": "2025",
-      "ndvi": { "mean": 0.1524, "obs_coverage_p95": 85.7, "confidence_level": "low" },
-      "et":   { "mean": 1.9066, "obs_coverage_p95": 88.9, "confidence_level": "low", "unit": "mm/day" },
-      "esi":  { "mean": 0.7942, "obs_coverage_p95": 88.9, "confidence_level": "low", "unit": "index 0–1" },
-      "coverage_aoi_percent": 36.6,
-      "note": "Partial season — data collection ongoing",
-      "ecological_context": "Season not yet complete. All values preliminary and subject to revision as additional overpasses are acquired."
-    }
-  ]
-}
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2021 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2022,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.20879341661930084,
+    "et_mean": 2.6176273822784424,
+    "esi_mean": 0.7746780514717102,
+    "observation_counts": {
+      "ndvi": 54,
+      "et": 22,
+      "esi": 22,
+      "pet": 22,
+      "wue": 22
+    },
+    "confidence": {
+      "ndvi": "higher",
+      "et": "higher",
+      "esi": "higher",
+      "pet": "higher",
+      "wue": "higher"
+    },
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2022 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2023,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.2022908627986908,
+    "et_mean": 2.269378185272217,
+    "esi_mean": 0.751789927482605,
+    "observation_counts": {
+      "ndvi": 60,
+      "et": 22,
+      "esi": 22,
+      "pet": 22,
+      "wue": 22
+    },
+    "confidence": {
+      "ndvi": "higher",
+      "et": "higher",
+      "esi": "higher",
+      "pet": "higher",
+      "wue": "higher"
+    },
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2023 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2024,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.166966050863266,
+    "et_mean": 2.2552759647369385,
+    "esi_mean": 0.9247664213180542,
+    "observation_counts": {
+      "ndvi": 24,
+      "et": 2,
+      "esi": 2,
+      "pet": 2,
+      "wue": 2
+    },
+    "confidence": {
+      "ndvi": "higher",
+      "et": "low",
+      "esi": "low",
+      "pet": "low",
+      "wue": "low"
+    },
+    "low_confidence": true,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2024 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  },
+  {
+    "year": 2025,
+    "season": "june",
+    "season_label": "Early Growing Season",
+    "ndvi_mean": 0.20511284470558167,
+    "et_mean": 2.767418622970581,
+    "esi_mean": 0.735104501247406,
+    "observation_counts": {
+      "ndvi": 34,
+      "et": 6,
+      "esi": 6,
+      "pet": 6,
+      "wue": 6
+    },
+    "confidence": {
+      "ndvi": "higher",
+      "et": "medium",
+      "esi": "medium",
+      "pet": "medium",
+      "wue": "medium"
+    },
+    "low_confidence": false,
+    "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+    "ecological_note": "2025 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.",
+    "confidence_note": "Use observation counts and valid-observation metrics before ecological interpretation."
+  }
+]

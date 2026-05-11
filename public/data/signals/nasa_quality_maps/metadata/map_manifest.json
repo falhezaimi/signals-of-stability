@@ -1,0 +1,127 @@
+{
+  "phase": "Phase 6 \u2014 NASA-Quality Map Export",
+  "created_utc": "2026-05-11T17:09:13.970156+00:00",
+  "crs": "EPSG:32632",
+  "pixel_size_m": 70.0,
+  "raster_shape_hw": [
+    313,
+    303
+  ],
+  "inputs": {
+    "dominant_daytime": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\processed\\summary\\timebin_validation\\classes\\dominant_class_daytime.tif",
+    "dominant_midday": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\processed\\summary\\timebin_validation\\classes\\dominant_class_midday_afternoon.tif",
+    "dominant_daytime_evening": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\processed\\summary\\timebin_validation\\classes\\dominant_class_daytime_evening.tif",
+    "dominant_all_available": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\processed\\summary\\timebin_validation\\classes\\dominant_class_all_available.tif",
+    "elevation": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\topography\\elevation.tif",
+    "slope": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\topography\\slope.tif"
+  },
+  "assets": [
+    {
+      "file": "geotiff/dominant_daytime_class_map.tif",
+      "type": "class_raster"
+    },
+    {
+      "file": "geotiff/demand_efficiency_watch_mask.tif",
+      "type": "binary_mask",
+      "target_class_code": 5
+    },
+    {
+      "file": "geotiff/esi_watch_zone_mask.tif",
+      "type": "binary_mask",
+      "target_class_code": 4
+    },
+    {
+      "file": "geotiff/stable_core_mask.tif",
+      "type": "binary_mask",
+      "target_class_code": 1
+    },
+    {
+      "file": "geotiff/hillshade.tif",
+      "type": "hillshade"
+    },
+    {
+      "file": "png/map_01_dominant_daytime.png",
+      "type": "map_png",
+      "map_id": "map_01"
+    },
+    {
+      "file": "png/map_02_demand_efficiency_watch.png",
+      "type": "map_png",
+      "map_id": "map_02_demand_efficiency_watch"
+    },
+    {
+      "file": "png/map_03_esi_watch_zone.png",
+      "type": "map_png",
+      "map_id": "map_03_esi_watch_zone"
+    },
+    {
+      "file": "png/map_04_stable_core.png",
+      "type": "map_png",
+      "map_id": "map_04_stable_core"
+    },
+    {
+      "file": "png/map_05_timebin_comparison.png",
+      "type": "map_png",
+      "map_id": "map_05"
+    },
+    {
+      "file": "png/map_06_terrain_context.png",
+      "type": "map_png",
+      "map_id": "map_06"
+    },
+    {
+      "file": "webp/map_01_dominant_daytime.webp",
+      "type": "map_webp",
+      "map_id": "map_01"
+    },
+    {
+      "file": "webp/map_02_demand_efficiency_watch.webp",
+      "type": "map_webp",
+      "map_id": "map_02_demand_efficiency_watch"
+    },
+    {
+      "file": "webp/map_03_esi_watch_zone.webp",
+      "type": "map_webp",
+      "map_id": "map_03_esi_watch_zone"
+    },
+    {
+      "file": "webp/map_04_stable_core.webp",
+      "type": "map_webp",
+      "map_id": "map_04_stable_core"
+    },
+    {
+      "file": "webp/map_05_timebin_comparison.webp",
+      "type": "map_webp",
+      "map_id": "map_05"
+    },
+    {
+      "file": "webp/map_06_terrain_context.webp",
+      "type": "map_webp",
+      "map_id": "map_06"
+    },
+    {
+      "file": "overlays/dominant_daytime_overlay_transparent.png",
+      "type": "overlay_png"
+    },
+    {
+      "file": "overlays/demand_efficiency_watch_overlay_transparent.png",
+      "type": "overlay_png"
+    },
+    {
+      "file": "overlays/esi_watch_overlay_transparent.png",
+      "type": "overlay_png"
+    },
+    {
+      "file": "overlays/stable_core_overlay_transparent.png",
+      "type": "overlay_png"
+    },
+    {
+      "file": "legends/class_legend.png",
+      "type": "legend_png"
+    },
+    {
+      "file": "legends/class_legend.svg",
+      "type": "legend_svg"
+    }
+  ]
+}

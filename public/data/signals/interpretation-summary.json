@@ -1,61 +1,182 @@
 {
-  "site": "Swiss National Park",
-  "season": "April–June",
-  "period": "2019–2025",
-  "status": "Research prototype — exploratory findings only. Not peer reviewed.",
-  "headline": "Short-window ECOSTRESS signals show inter-annual variability in SNP April–June phenology, with a directional low in 2021 and recovery signal through 2023. 2024–2025 coverage is insufficient for seasonal characterization.",
-  "findings": [
+  "data_status": "Raster-derived ECOSTRESS/AppEEARS output",
+  "scientific_caveat": "Short-window raster-derived analysis. Available months and observation counts constrain interpretation.",
+  "coverage_note": "coverage_inside_aoi_percent now represents finite valid pixels divided by AOI pixels. Observation count and mean valid observations per AOI pixel should be used for confidence.",
+  "yearly": [
     {
-      "id": "finding_1",
-      "variable": "NDVI",
-      "signal": "directional_variability",
-      "summary": "NDVI area means range from 0.109 (2021) to 0.163 (2023). The 2021 minimum is directionally consistent with documented drought conditions but requires independent field validation.",
-      "confidence": "medium",
-      "values_high_confidence": [0.1365, 0.1204, 0.1090, 0.1453, 0.1632],
-      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
-      "caveats": ["April–June window only — not full growing season", "Area mean includes ~63% no-data pixels (bare rock, snow, persistent cloud)", "Short series limits trend inference"],
-      "language_required": "directional signal — requires multi-year validation"
+      "year": 2019,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.13654091954231262,
+      "et_mean": 2.147244691848755,
+      "esi_mean": 0.8599962592124939,
+      "ndvi_observation_count": 32,
+      "et_observation_count": 13,
+      "esi_observation_count": 14,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2019 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
     },
     {
-      "id": "finding_2",
-      "variable": "ET",
-      "signal": "variable",
-      "summary": "ET area means show notable variability (1.167–2.147 mm/day for high-confidence years). 2020 and 2021 show the lowest values. 2024 (2.255 mm/day) is LOW CONFIDENCE with only 2 overpasses and should not be interpreted.",
-      "confidence": "mixed",
-      "values_high_confidence": [2.1472, 1.1674, 1.1739, 1.6182, 1.4058],
-      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
-      "caveats": ["2024 ET based on 2 overpasses only — analytically insufficient", "April–June is early-season — peak ET typically occurs later in summer"],
-      "language_required": "cautious — do not extrapolate 2024 ET value"
+      "year": 2020,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.1806681603193283,
+      "et_mean": 1.731376051902771,
+      "esi_mean": 0.7721589803695679,
+      "ndvi_observation_count": 50,
+      "et_observation_count": 15,
+      "esi_observation_count": 15,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2020 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
     },
     {
-      "id": "finding_3",
-      "variable": "ESI",
-      "signal": "moderate_stable",
-      "summary": "ESI values range narrowly from 0.781 to 0.860 for high-confidence years, all in the moderate-to-high range (no extreme stress). The lowest ESI in 2023 (0.781) is unexpected given high NDVI — directional complexity not fully explained. 2024 (0.925) is LOW CONFIDENCE.",
-      "confidence": "medium",
-      "values_high_confidence": [0.8600, 0.7891, 0.8181, 0.7957, 0.7811],
-      "years_high_confidence": ["2019", "2020", "2021", "2022", "2023"],
-      "caveats": ["ESI is ET/PET ratio — higher PET in warmer years can lower ESI even with adequate actual ET", "2024 LOW CONFIDENCE", "April–June window captures pre-peak-season conditions"],
-      "language_required": "directional — do not claim confirmed stress or recovery"
+      "year": 2021,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.16656722128391266,
+      "et_mean": 2.0769972801208496,
+      "esi_mean": 0.8376661539077759,
+      "ndvi_observation_count": 46,
+      "et_observation_count": 14,
+      "esi_observation_count": 14,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2021 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
+    },
+    {
+      "year": 2022,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.20879341661930084,
+      "et_mean": 2.6176273822784424,
+      "esi_mean": 0.7746780514717102,
+      "ndvi_observation_count": 54,
+      "et_observation_count": 22,
+      "esi_observation_count": 22,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2022 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
+    },
+    {
+      "year": 2023,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.2022908627986908,
+      "et_mean": 2.269378185272217,
+      "esi_mean": 0.751789927482605,
+      "ndvi_observation_count": 60,
+      "et_observation_count": 22,
+      "esi_observation_count": 22,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2023 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
+    },
+    {
+      "year": 2024,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.166966050863266,
+      "et_mean": 2.2552759647369385,
+      "esi_mean": 0.9247664213180542,
+      "ndvi_observation_count": 24,
+      "et_observation_count": 2,
+      "esi_observation_count": 2,
+      "low_confidence": true,
+      "low_confidence_reasons": [
+        "ET observation count is low.",
+        "ESI observation count is low."
+      ],
+      "website_note": "2024 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion. Low-confidence year: ET observation count is low. ESI observation count is low."
+    },
+    {
+      "year": 2025,
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "ndvi_mean": 0.20511284470558167,
+      "et_mean": 2.767418622970581,
+      "esi_mean": 0.735104501247406,
+      "ndvi_observation_count": 34,
+      "et_observation_count": 6,
+      "esi_observation_count": 6,
+      "low_confidence": false,
+      "low_confidence_reasons": [],
+      "website_note": "2025 is summarized for the Early Growing Season. Use as a short-window raster-derived signal, not a full growing-season conclusion."
     }
   ],
-  "hypotheses": [
-    "The SNP April–June satellite signal shows inter-annual variability characteristic of alpine phenology.",
-    "The 2021 NDVI minimum (0.109) may reflect early-season drought. Directional signal only — requires ground-truth validation.",
-    "The NDVI recovery from 2021 to 2023 is a directional signal consistent with return to baseline, not a confirmed trend.",
-    "ESI values in the moderate range (0.78–0.86) across most years suggest the April–June period is not characterized by extreme stress conditions — but this window precedes peak-summer stress potential."
+  "trends": [
+    {
+      "variable": "esi",
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "slope_mean": -0.00573982298374176,
+      "slope_median": -0.0070393881760537624,
+      "label": "short-window directional trend",
+      "interpretation": "Short-window directional trend only. Do not interpret as long-term ecological change."
+    },
+    {
+      "variable": "et",
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "slope_mean": 0.11332204192876816,
+      "slope_median": 0.108642578125,
+      "label": "short-window directional trend",
+      "interpretation": "Short-window directional trend only. Do not interpret as long-term ecological change."
+    },
+    {
+      "variable": "ndvi",
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "slope_mean": 0.007803382817655802,
+      "slope_median": 0.0075124106369912624,
+      "label": "short-window directional trend",
+      "interpretation": "Short-window directional trend only. Do not interpret as long-term ecological change."
+    },
+    {
+      "variable": "pet",
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "slope_mean": 10.612720489501953,
+      "slope_median": 10.583333015441895,
+      "label": "short-window directional trend",
+      "interpretation": "Short-window directional trend only. Do not interpret as long-term ecological change."
+    },
+    {
+      "variable": "wue",
+      "season": "june",
+      "season_label": "Early Growing Season",
+      "slope_mean": 0.02752373181283474,
+      "slope_median": 0.02376302145421505,
+      "label": "short-window directional trend",
+      "interpretation": "Short-window directional trend only. Do not interpret as long-term ecological change."
+    }
   ],
-  "what_we_cannot_claim": [
-    "Confirmed long-term vegetation trend (positive or negative)",
-    "Confirmed drought impact in 2021 from satellite data alone",
-    "2024 seasonal characterization for ET or ESI",
-    "Full growing season (July–September) conditions — analysis window ends in June",
-    "Sub-pixel spatial patterns — 70m resolution limits fine-scale inference"
-  ],
-  "next_steps": [
-    "Extend to full growing season (July–September) to capture peak phenology",
-    "Cross-validate with SNP ground-station records and phenology cameras",
-    "Increase 2024–2025 data density as additional overpasses are acquired",
-    "Formal trend analysis requires ≥10 years of data for statistical reliability"
+  "recommended_figures": [
+    {
+      "figure_number": "Fig. 1",
+      "title": "April\u2013June NDVI signal, 2019\u20132025",
+      "purpose": "Show vegetation greenness signal across the available observation window."
+    },
+    {
+      "figure_number": "Fig. 2",
+      "title": "April\u2013June ET signal, 2019\u20132025",
+      "purpose": "Show water/energy exchange signal and identify years with low/high ET summary values."
+    },
+    {
+      "figure_number": "Fig. 3",
+      "title": "April\u2013June ESI signal, 2019\u20132025",
+      "purpose": "Show evaporative stress index context with careful product-specific interpretation."
+    },
+    {
+      "figure_number": "Fig. 4",
+      "title": "Short-window directional trend maps",
+      "purpose": "Map directional pixel-level tendencies without claiming long-term ecological change."
+    },
+    {
+      "figure_number": "Fig. 5",
+      "title": "Observation availability and confidence",
+      "purpose": "Explain uneven observation counts, especially low-confidence years."
+    }
   ]
 }

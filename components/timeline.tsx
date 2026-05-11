@@ -6,6 +6,13 @@ import { ArtisticBackground } from './artistic-background'
 import { SectionReveal } from './section-reveal'
 import timelineRaw from '@/public/data/signals/timeline-yearly-values.json'
 
+type RawEntry = {
+  year: number
+  ndvi_mean: number; et_mean: number; esi_mean: number
+  confidence: { ndvi: string; et: string; esi: string }
+  ecological_note: string; confidence_note: string
+}
+
 type YearEntry = {
   year: string
   ndvi: { mean: number; obs_coverage_p95: number; confidence_level: string }
@@ -16,7 +23,15 @@ type YearEntry = {
   ecological_context: string
 }
 
-const timelineData = timelineRaw.years as YearEntry[]
+const timelineData: YearEntry[] = (timelineRaw as unknown as RawEntry[]).map(raw => ({
+  year: String(raw.year),
+  ndvi: { mean: raw.ndvi_mean, obs_coverage_p95: 100, confidence_level: raw.confidence.ndvi },
+  et:   { mean: raw.et_mean,   obs_coverage_p95: 100, confidence_level: raw.confidence.et,   unit: 'mm/day' },
+  esi:  { mean: raw.esi_mean,  obs_coverage_p95: 100, confidence_level: raw.confidence.esi,  unit: '' },
+  coverage_aoi_percent: 100,
+  note: raw.ecological_note,
+  ecological_context: raw.confidence_note,
+}))
 
 type Condition = 'stable' | 'positive' | 'negative' | 'mixed' | 'partial'
 
