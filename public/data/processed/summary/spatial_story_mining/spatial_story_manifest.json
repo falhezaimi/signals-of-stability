@@ -1,0 +1,166 @@
+{
+  "phase": "Phase 1 Spatial Story Mining",
+  "xml_used": false,
+  "reference_raster": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/trends/ndvi_june_slope.tif",
+  "main_products": [
+    "ndvi",
+    "et",
+    "esi"
+  ],
+  "support_products": [
+    "pet",
+    "wue"
+  ],
+  "raster_story_products": [
+    "ndvi",
+    "et",
+    "esi",
+    "pet",
+    "wue"
+  ],
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "primary_window": "june",
+  "context_windows": [
+    "jan_mar",
+    "apr_jun"
+  ],
+  "thresholds": {
+    "ndvi_cv_low": 0.18158963322639465,
+    "et_cv_low": 0.1930209845304489,
+    "esi_cv_low": 0.11184363812208176,
+    "ndvi_cv_high": 0.4624471068382263,
+    "et_cv_high": 0.25720304250717163,
+    "esi_cv_high": 0.16901081800460815,
+    "ndvi_strong_slope": 0.0123291015625,
+    "et_strong_slope": 0.1845703125,
+    "consistent_fraction": 0.7,
+    "min_valid_years_for_activation": 3,
+    "pet_raster_support_available": true,
+    "wue_raster_support_available": true
+  },
+  "class_definitions": {
+    "0": {
+      "name": "unclassified_or_no_data",
+      "description": "No dominant spatial story assigned, often because data are missing or mixed."
+    },
+    "1": {
+      "name": "stable_core",
+      "description": "Low interannual variability across NDVI, ET, and ESI in June."
+    },
+    "2": {
+      "name": "coherent_june_activation",
+      "description": "June NDVI and ET slopes are positive and ESI is nonnegative."
+    },
+    "3": {
+      "name": "strong_june_activation",
+      "description": "June NDVI and ET slopes are both in the upper activation range."
+    },
+    "4": {
+      "name": "esi_watch_zone_exploratory",
+      "description": "June NDVI and ET are positive but ESI slope is negative. Exploratory only."
+    },
+    "5": {
+      "name": "demand_efficiency_watch_exploratory",
+      "description": "June NDVI and ET are positive, PET is positive, and WUE is negative. Exploratory PET/WUE support watch zone."
+    },
+    "6": {
+      "name": "efficient_activation_support",
+      "description": "June NDVI and ET are positive and WUE is nonnegative where WUE raster support exists."
+    },
+    "7": {
+      "name": "product_disagreement_zone",
+      "description": "Main products point in conflicting directions."
+    },
+    "8": {
+      "name": "high_variability_zone",
+      "description": "One or more main products show high interannual variability."
+    },
+    "9": {
+      "name": "seasonal_activation_zone",
+      "description": "Winter-to-spring activation is consistently positive for NDVI and ET."
+    },
+    "10": {
+      "name": "low_support_zone",
+      "description": "Too few valid years or weak support for spatial interpretation."
+    }
+  },
+  "outputs": {
+    "ndvi_activation_mean": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_activation_mean.tif",
+    "ndvi_activation_median": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_activation_median.tif",
+    "ndvi_activation_std": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_activation_std.tif",
+    "ndvi_activation_consistency": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_activation_consistency.tif",
+    "ndvi_activation_valid_year_count": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_activation_valid_year_count.tif",
+    "et_activation_mean": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_activation_mean.tif",
+    "et_activation_median": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_activation_median.tif",
+    "et_activation_std": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_activation_std.tif",
+    "et_activation_consistency": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_activation_consistency.tif",
+    "et_activation_valid_year_count": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_activation_valid_year_count.tif",
+    "esi_activation_mean": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_activation_mean.tif",
+    "esi_activation_median": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_activation_median.tif",
+    "esi_activation_std": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_activation_std.tif",
+    "esi_activation_consistency": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_activation_consistency.tif",
+    "esi_activation_valid_year_count": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_activation_valid_year_count.tif",
+    "pet_activation_mean": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_activation_mean.tif",
+    "pet_activation_median": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_activation_median.tif",
+    "pet_activation_std": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_activation_std.tif",
+    "pet_activation_consistency": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_activation_consistency.tif",
+    "pet_activation_valid_year_count": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_activation_valid_year_count.tif",
+    "wue_activation_mean": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_activation_mean.tif",
+    "wue_activation_median": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_activation_median.tif",
+    "wue_activation_std": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_activation_std.tif",
+    "wue_activation_consistency": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_activation_consistency.tif",
+    "wue_activation_valid_year_count": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_activation_valid_year_count.tif",
+    "ndvi_june_slope_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_june_slope_aligned.tif",
+    "ndvi_june_cv_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_june_cv_aligned.tif",
+    "ndvi_june_interannual_std_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_june_interannual_std_aligned.tif",
+    "ndvi_june_interannual_range_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/ndvi_june_interannual_range_aligned.tif",
+    "et_june_slope_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_june_slope_aligned.tif",
+    "et_june_cv_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_june_cv_aligned.tif",
+    "et_june_interannual_std_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_june_interannual_std_aligned.tif",
+    "et_june_interannual_range_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/et_june_interannual_range_aligned.tif",
+    "esi_june_slope_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_june_slope_aligned.tif",
+    "esi_june_cv_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_june_cv_aligned.tif",
+    "esi_june_interannual_std_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_june_interannual_std_aligned.tif",
+    "esi_june_interannual_range_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/esi_june_interannual_range_aligned.tif",
+    "pet_june_slope_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_june_slope_aligned.tif",
+    "pet_june_cv_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_june_cv_aligned.tif",
+    "pet_june_interannual_std_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_june_interannual_std_aligned.tif",
+    "pet_june_interannual_range_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/pet_june_interannual_range_aligned.tif",
+    "wue_june_slope_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_june_slope_aligned.tif",
+    "wue_june_cv_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_june_cv_aligned.tif",
+    "wue_june_interannual_std_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_june_interannual_std_aligned.tif",
+    "wue_june_interannual_range_aligned": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/wue_june_interannual_range_aligned.tif",
+    "valid_june_mask": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/valid_june_mask.tif",
+    "stable_core": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/stable_core.tif",
+    "coherent_june_activation": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/coherent_june_activation.tif",
+    "strong_june_activation": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/strong_june_activation.tif",
+    "watch_zone_exploratory": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/watch_zone_exploratory.tif",
+    "demand_efficiency_watch_exploratory": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/demand_efficiency_watch_exploratory.tif",
+    "efficient_activation_support": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/efficient_activation_support.tif",
+    "demand_increase_support": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/demand_increase_support.tif",
+    "product_disagreement_zone": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/product_disagreement_zone.tif",
+    "high_variability_zone": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/high_variability_zone.tif",
+    "seasonal_activation_zone": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/seasonal_activation_zone.tif",
+    "seasonal_activation_with_esi_support": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/seasonal_activation_with_esi_support.tif",
+    "low_support_zone": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/low_support_zone.tif",
+    "dominant_spatial_story_class": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/dominant_spatial_story_class.tif",
+    "story_zone_summary_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/story_zone_summary.csv",
+    "story_zone_definitions_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/story_zone_definitions.csv",
+    "dominant_class_summary_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/dominant_class_summary.csv",
+    "phase0_window_summary_used_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/phase0_window_summary_used.csv",
+    "june_timebin_summary_used_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/june_timebin_summary_used.csv",
+    "support_pet_wue_year_month_values_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/support_pet_wue_year_month_values.csv",
+    "support_pet_wue_june_trends_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/tables/support_pet_wue_june_trends.csv",
+    "dominant_class_png": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/png/dominant_spatial_story_class.png",
+    "spatial_story_report": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/spatial_story_report.md"
+  },
+  "interpretation_warning": "The current spatial story maps use all-scene raster outputs. PET/WUE rasters are used when their processed trend/composite/stability outputs exist. Do not make final ET/ESI/PET/WUE conclusions until time-bin-controlled composites are generated."
+}

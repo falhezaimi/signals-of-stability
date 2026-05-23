@@ -1,0 +1,4 @@
+product,raster_records,usable_records,epsg_values,crs_values,min_coverage_percent,mean_coverage_percent,tiny_footprint_records
+esi,309,214,['32632'],['EPSG:32632'],0.0057552300653218,78.57739357716999,19
+et,308,214,['32632'],['EPSG:32632'],0.0057552300653218,78.50783966021275,18
+ndvi,930,704,['32632'],['EPSG:32632'],97.15403873269834,99.90524911018264,226

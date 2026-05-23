@@ -7,20 +7,20 @@ import provenanceRaw from '@/public/data/signals/data-provenance.json'
 const severityColor: Record<string, string> = {
   critical: '#A6523A',
   high:     '#B99B45',
-  medium:   'oklch(0.52 0.010 80)',
-  low:      'oklch(0.42 0.010 80)',
+  medium:   '#7B837A',
+  low:      '#667067',
 }
 
 export function DataProvenance() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 md:px-8">
+    <section id="limitations" className="relative py-16 md:py-24 overflow-hidden">
+      <div id="provenance" className="max-w-5xl mx-auto px-6 md:px-8">
         <SectionReveal>
           {/* Coordinate strip */}
           <div className="flex items-center gap-3 mb-10 pb-4 border-b border-border/25">
             <span className="w-4 h-px bg-foreground/18" />
             <span className="text-[8px] font-mono uppercase tracking-[0.22em] text-muted-foreground/50">
-              Data Provenance · Limitations · Research Constraints
+              Interpretation Limits · Data Provenance · Research Constraints
             </span>
           </div>
 
@@ -38,7 +38,7 @@ export function DataProvenance() {
                   { label: 'Operator',         value: 'NASA / JPL' },
                   { label: 'Resolution',       value: '70 m nominal' },
                   { label: 'Access',           value: 'NASA AppEEARS' },
-                  { label: 'Analysis window',  value: 'Jan–Jun (months 1–6)' },
+                  { label: 'Available months',  value: 'January–June (months 1–6)' },
                   { label: 'Products',         value: 'NDVI · ET · ESI · PET · WUE' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-baseline justify-between gap-4">
@@ -97,7 +97,7 @@ export function DataProvenance() {
           </div>
 
           <p className="text-[9px] font-mono text-muted-foreground/30 mt-5 uppercase tracking-[0.12em]">
-            Raster-derived ECOSTRESS/AppEEARS output · EPSG:32632 · 70 m nominal · Swiss National Park 2019–2025
+            Short-window raster-derived ECOSTRESS/AppEEARS output · EPSG:32632 · 70 m nominal · Swiss National Park · January–June observations · Exploratory use only
           </p>
         </SectionReveal>
       </div>

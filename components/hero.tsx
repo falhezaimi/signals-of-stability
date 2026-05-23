@@ -176,8 +176,8 @@ function TopoArtifactSVG() {
       {/* Scene metadata — top-right corner */}
       <g transform="translate(340, 36)">
         <text x="0" y="0" fontSize="5.5" fill="currentColor" opacity="0.22" fontFamily="monospace">ECOSTRESS</text>
-        <text x="0" y="9" fontSize="5" fill="currentColor" opacity="0.18" fontFamily="monospace">APR–JUN AMJ</text>
-        <text x="0" y="18" fontSize="5" fill="currentColor" opacity="0.15" fontFamily="monospace">NDVI · ET · ESI</text>
+        <text x="0" y="9" fontSize="5" fill="currentColor" opacity="0.18" fontFamily="monospace">JAN–JUN</text>
+        <text x="0" y="18" fontSize="5" fill="currentColor" opacity="0.15" fontFamily="monospace">ESI · ET · NDVI · PET · WUE</text>
         <text x="0" y="27" fontSize="5" fill="currentColor" opacity="0.12" fontFamily="monospace">70m nominal</text>
       </g>
 
@@ -210,12 +210,8 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 60])
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
-  const scrollToObservatory = () => {
-    document.getElementById('observatory')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const scrollToMethodology = () => {
-    document.getElementById('method')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToFindings = () => {
+    document.getElementById('findings')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -266,7 +262,7 @@ export function Hero() {
                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary/75" />
                   </span>
                   <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-primary/85">
-                    Research Project
+                    ECOSTRESS Signal Atlas
                   </span>
                 </div>
                 <span className="text-[9px] font-mono uppercase tracking-[0.18em] text-muted-foreground/40">
@@ -286,7 +282,7 @@ export function Hero() {
                       className="font-serif font-medium tracking-tight text-foreground block leading-[0.90]"
                       style={{ fontSize: 'clamp(3.8rem, 8.5vw, 10.5rem)' }}
                     >
-                      Signals of
+                      Short-Window
                     </span>
                   </motion.div>
                 </div>
@@ -300,7 +296,7 @@ export function Hero() {
                       className="font-serif font-medium tracking-tight text-foreground block leading-[0.90] pl-6 md:pl-10"
                       style={{ fontSize: 'clamp(3.8rem, 8.5vw, 10.5rem)' }}
                     >
-                      Stability
+                      Signal Atlas
                     </span>
                   </motion.div>
                 </div>
@@ -316,20 +312,28 @@ export function Hero() {
               >
                 <div className="w-10 h-px bg-foreground/18" />
                 <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-muted-foreground/40 whitespace-nowrap">
-                  Vegetation Change · Swiss National Park
+                  ECOSTRESS · Swiss National Park
                 </span>
               </motion.div>
 
               {/* Body */}
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.78, ease: 'easeOut' }}
-                className="text-sm text-muted-foreground/65 leading-loose mb-8 max-w-sm text-pretty"
+                className="mb-8 max-w-sm space-y-3"
               >
-                Using satellite-derived environmental signals to examine whether one of Europe's most
-                protected alpine landscapes shows resilience, stress, or subtle ecological change.
-              </motion.p>
+                <p className="text-sm text-muted-foreground/65 leading-loose text-pretty">
+                  This project uses ECOSTRESS-derived raster products to examine short-window vegetation
+                  stress signals across Swiss National Park. The atlas focuses on five environmental
+                  variables: ESI, ET, NDVI, PET, and WUE.
+                </p>
+                <p className="text-xs text-muted-foreground/45 leading-relaxed text-pretty">
+                  Rather than making long-term ecological or causal claims, this website presents an
+                  exploratory signal-based view of where vegetation-water-energy patterns appear
+                  stronger, weaker, more variable, or observation-limited across available January–June scenes.
+                </p>
+              </motion.div>
 
               {/* Metadata block */}
               <motion.div
@@ -342,7 +346,7 @@ export function Hero() {
                   { label: 'Coordinates', value: '46.6603°N · 10.2176°E' },
                   { label: 'Area', value: '170 km²' },
                   { label: 'Study Window', value: '2019 – 2025' },
-                  { label: 'Signals', value: 'NDVI · ET · ESI' },
+                  { label: 'Variables', value: 'ESI · ET · NDVI · PET · WUE' },
                   { label: 'Resolution', value: '70m nominal' },
                   { label: 'Platform', value: 'ECOSTRESS / AppEEARS' },
                 ].map((item) => (
@@ -361,18 +365,26 @@ export function Hero() {
                 className="flex items-center gap-6"
               >
                 <button
-                  onClick={scrollToObservatory}
+                  onClick={scrollToFindings}
                   className="bg-foreground/90 text-background hover:bg-foreground transition-all duration-300 px-6 py-2.5 text-[10px] font-mono tracking-widest uppercase"
                 >
-                  Explore Observatory
+                  Explore the Atlas
                 </button>
-                <button
-                  onClick={scrollToMethodology}
-                  className="text-[10px] font-mono text-muted-foreground/55 hover:text-foreground/75 transition-colors duration-300 uppercase tracking-widest flex items-center gap-2"
-                >
-                  Methodology
-                  <span className="opacity-60">→</span>
-                </button>
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => document.getElementById('method')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-[10px] font-mono text-muted-foreground/55 hover:text-foreground/75 transition-colors duration-300 uppercase tracking-widest"
+                  >
+                    View Methods
+                  </button>
+                  <span className="text-muted-foreground/20">·</span>
+                  <button
+                    onClick={() => document.getElementById('limitations')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-[10px] font-mono text-muted-foreground/55 hover:text-foreground/75 transition-colors duration-300 uppercase tracking-widest"
+                  >
+                    Read Limitations
+                  </button>
+                </div>
               </motion.div>
             </div>
 
@@ -405,7 +417,7 @@ export function Hero() {
               <div className="flex items-center gap-4 mt-2 px-1">
                 <span className="text-[8px] font-mono text-muted-foreground/25">Fig. 0.1</span>
                 <span className="text-[8px] font-mono text-muted-foreground/25">
-                  Study area boundary and sensor coverage extent, April–June composite
+                  Study area boundary and sensor coverage extent, January–June observations
                 </span>
               </div>
             </motion.div>
@@ -431,7 +443,7 @@ export function Hero() {
             <div className="text-[8px] font-mono text-muted-foreground/30 leading-relaxed space-y-0.5">
               <div className="text-[7px] uppercase tracking-[0.15em] text-muted-foreground/20 mb-1">Study Period</div>
               <div>2019–2025</div>
-              <div>7 Seasons · Apr–Jun</div>
+              <div>Jan–Jun Observations</div>
             </div>
           </div>
         </div>

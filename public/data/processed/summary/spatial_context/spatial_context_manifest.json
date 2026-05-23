@@ -1,0 +1,28 @@
+{
+  "phase": "Phase 3 Spatial Context + Terrain Interpretation",
+  "xml_used": false,
+  "primary_class_map_key": "daytime",
+  "primary_class_map_path": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/classes/dominant_class_daytime.tif",
+  "available_class_maps": {
+    "daytime": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/classes/dominant_class_daytime.tif",
+    "midday_afternoon": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/classes/dominant_class_midday_afternoon.tif",
+    "daytime_evening": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/classes/dominant_class_daytime_evening.tif",
+    "all_available_timebin": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/classes/dominant_class_all_available.tif",
+    "phase1_all_scene": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/dominant_spatial_story_class.tif"
+  },
+  "context_rasters": {
+    "elevation": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/topography/elevation.tif",
+    "slope": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/topography/slope.tif",
+    "aspect": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/topography/aspect.tif",
+    "forest_mask": null
+  },
+  "outputs": {
+    "report": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/spatial_context_report.md",
+    "class_location_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/class_location_summary.csv",
+    "class_location_bins": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/class_location_bins.csv",
+    "class_elevation_bins": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/class_elevation_bins.csv",
+    "class_aspect_bins": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/class_aspect_bins.csv",
+    "largest_connected_patches": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/largest_connected_patches.csv",
+    "class_map_comparison_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_context/tables/class_map_comparison_summary.csv"
+  }
+}

@@ -1,0 +1,6 @@
+product,role,time_of_day_rule
+esi,main: evaporative stress / moisture condition,"time sensitive, prefer midday_afternoon or daytime fallback"
+et,main: water exchange / ecosystem activity,"time sensitive, prefer midday_afternoon or daytime fallback"
+ndvi,main: greenness / vegetation activity,"lower sensitivity, still audit time bins"
+pet,support: atmospheric or energy demand,"time sensitive, prefer midday_afternoon or daytime fallback"
+wue,support: water-use efficiency,"time sensitive, prefer midday_afternoon or daytime fallback"

@@ -37,26 +37,37 @@ export function FinalCTA() {
           <div className="flex items-center gap-3 mb-8">
             <span className="w-4 h-px bg-foreground/20" />
             <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/40">
-              Research Project · Signals of Stability
+              ECOSTRESS Short-Window Signal Atlas · Swiss National Park
             </span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight mb-5 text-balance">
-            Reading the Alpine Signal
+            Explore the evidence layer
           </h2>
 
           <p className="max-w-md text-muted-foreground/65 text-sm leading-relaxed mb-10 text-balance">
-            A research-driven digital experience connecting remote sensing,
-            ecological stability, and conservation storytelling across 170 km²
-            of protected Swiss alpine terrain.
+            The Further Research page presents the spatial evidence in detail — signal maps,
+            ECOSTRESS product comparisons, yearly variation across 2019–2025, and robustness
+            checks for the short-window observations.
           </p>
 
-          {/* Field-station navigation links */}
+          {/* Primary CTA — Further Research */}
+          <div className="mb-8">
+            <a
+              href="/further-research"
+              className="inline-flex items-center gap-3 bg-foreground/90 text-background hover:bg-foreground transition-all duration-300 px-6 py-3 text-[10px] font-mono tracking-widest uppercase"
+            >
+              Open Further Research
+              <span className="opacity-70">→</span>
+            </a>
+          </div>
+
+          {/* Secondary scroll links */}
           <div className="flex flex-wrap items-center gap-0">
             {[
               { label: 'Signal Observatory', href: '#observatory' },
-              { label: 'Methodology', href: '#method' },
               { label: 'Findings', href: '#findings' },
+              { label: 'Methodology', href: '#method' },
             ].map((item, i) => (
               <button
                 key={item.label}
@@ -82,10 +93,10 @@ export function FinalCTA() {
         >
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
-              { label: 'Project', value: 'Signals of Stability' },
+              { label: 'Project', value: 'SNP ECOSTRESS Signal Atlas' },
               { label: 'Location', value: 'Swiss National Park, CH' },
               { label: 'Period', value: '2019 – 2025' },
-              { label: 'Coverage', value: '170 km² · 7 Seasons · Apr–Jun' },
+              { label: 'Coverage', value: '170 km² · Jan–Jun observations' },
             ].map((item) => (
               <div key={item.label}>
                 <p className="text-[8px] font-mono uppercase tracking-[0.18em] text-muted-foreground/35 mb-1">{item.label}</p>
@@ -95,7 +106,7 @@ export function FinalCTA() {
           </div>
 
           <p className="text-[9px] font-mono text-muted-foreground/30 mt-8 uppercase tracking-[0.12em]">
-            Research prototype · Raster-derived ECOSTRESS/AppEEARS output · April–June composite · Validation pending
+            Short-window raster-derived ECOSTRESS/AppEEARS output · January–June observations · Exploratory research prototype · Validation pending
           </p>
         </motion.div>
       </div>

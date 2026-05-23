@@ -20,13 +20,14 @@ export function FrTrust() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-border/30 bg-card/15 mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-stone/60" />
               <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/80">
-                Could the pattern be an artifact?
+                How carefully should this pattern be trusted?
               </span>
             </div>
             <p className="max-w-2xl text-sm text-muted-foreground/65 leading-relaxed">
-              Time-bin comparisons and terrain context help separate stronger signals from fragile ones.
-              Patterns that persist across filtering choices and align with terrain structure are more credible
-              than those appearing under only one condition.
+              Not all signals here carry equal weight. Time-bin comparisons and terrain context help
+              calibrate confidence — separating patterns that persist across multiple filtering choices
+              from those that depend on a single condition. The known limitations are listed explicitly.
+              This analysis is exploratory and not peer-reviewed.
             </p>
           </div>
         </SectionReveal>
@@ -39,7 +40,7 @@ export function FrTrust() {
                 <span className="text-[9px] font-mono text-muted-foreground/50 uppercase tracking-[0.12em]">Time-Bin Validation</span>
                 <span className="text-[8px] font-mono text-muted-foreground/25">MAP 05</span>
               </div>
-              <div className="relative bg-[oklch(0.14_0.006_160)]" style={{ aspectRatio: '4/3' }}>
+              <div className="relative bg-[oklch(0.150_0.014_222)]" style={{ aspectRatio: '4/3' }}>
                 <picture>
                   <source srcSet="/data/signals/nasa_quality_maps/webp/map_05_timebin_comparison.webp" type="image/webp" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -67,7 +68,7 @@ export function FrTrust() {
                 <span className="text-[9px] font-mono text-muted-foreground/50 uppercase tracking-[0.12em]">Terrain Context</span>
                 <span className="text-[8px] font-mono text-muted-foreground/25">MAP 06</span>
               </div>
-              <div className="relative bg-[oklch(0.14_0.006_160)]" style={{ aspectRatio: '4/3' }}>
+              <div className="relative bg-[oklch(0.150_0.014_222)]" style={{ aspectRatio: '4/3' }}>
                 <picture>
                   <source srcSet="/data/signals/nasa_quality_maps/webp/map_06_terrain_context.webp" type="image/webp" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}

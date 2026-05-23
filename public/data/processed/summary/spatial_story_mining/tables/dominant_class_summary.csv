@@ -1,0 +1,10 @@
+class_code,class_name,description,pixel_count,area_km2,percent_of_valid_june_aoi,percent_total_check,percent_total_note
+0,unclassified_or_no_data,"No dominant spatial story assigned, often because data are missing or mixed.",2,0.0098,0.005755230065321861,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+1,stable_core,"Low interannual variability across NDVI, ET, and ESI in June.",384,1.8816,1.1050041725417974,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+2,coherent_june_activation,June NDVI and ET slopes are positive and ESI is nonnegative.,95,0.46549999999999997,0.2733734281027884,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+4,esi_watch_zone_exploratory,June NDVI and ET are positive but ESI slope is negative. Exploratory only.,13005,63.7245,37.4233834997554,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+5,demand_efficiency_watch_exploratory,"June NDVI and ET are positive, PET is positive, and WUE is negative. Exploratory PET/WUE support watch zone.",10099,49.485099999999996,29.061034214842742,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+6,efficient_activation_support,June NDVI and ET are positive and WUE is nonnegative where WUE raster support exists.,3185,15.606499999999999,9.165203879025064,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+7,product_disagreement_zone,Main products point in conflicting directions.,1965,9.628499999999999,5.654513539178729,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+8,high_variability_zone,One or more main products show high interannual variability.,38,0.1862,0.10934937124111535,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.
+9,seasonal_activation_zone,Winter-to-spring activation is consistently positive for NDVI and ET.,5978,29.292199999999998,17.202382665247043,100.00000000000001,Should be close to 100 because dominant classes are mutually exclusive.

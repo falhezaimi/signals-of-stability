@@ -1,0 +1,26 @@
+{
+  "target_season": "june",
+  "products": [
+    "ndvi",
+    "et",
+    "esi"
+  ],
+  "signal_class": "watch signal",
+  "slopes": {
+    "ndvi": 0.007644114217587852,
+    "et": 0.11073937586373674,
+    "esi": -0.005547736372268084
+  },
+  "loo_flags": [
+    "ESI slope is sensitive to removing individual years. Full sign: negative. Leave-one-out signs: ['negative', 'positive']."
+  ],
+  "sampling_flags": [
+    "NDVI may be influenced by observation count or coverage (high correlation with mean value)."
+  ],
+  "crs_flags": [
+    "ESI has some June rasters below 95% AOI coverage.",
+    "ET has some June rasters below 95% AOI coverage.",
+    "June rasters use EPSG:32632 based on raster inventory."
+  ],
+  "output_dir": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/signal_validity_checks"
+}

@@ -1,0 +1,97 @@
+{
+  "phase": "Phase 2 Time-Bin Validation",
+  "xml_used": false,
+  "reference_raster": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/spatial_story_mining/rasters/dominant_spatial_story_class.tif",
+  "products": [
+    "ndvi",
+    "et",
+    "esi",
+    "pet",
+    "wue"
+  ],
+  "target_month": 6,
+  "target_month_label": "June",
+  "scenarios": {
+    "midday_afternoon": {
+      "label": "Midday/Afternoon only",
+      "time_bins": [
+        "midday_afternoon"
+      ]
+    },
+    "daytime": {
+      "label": "Morning + Midday/Afternoon",
+      "time_bins": [
+        "morning",
+        "midday_afternoon"
+      ]
+    },
+    "daytime_evening": {
+      "label": "Morning + Midday/Afternoon + Evening",
+      "time_bins": [
+        "morning",
+        "midday_afternoon",
+        "evening"
+      ]
+    },
+    "all_available": {
+      "label": "All usable time bins",
+      "time_bins": [
+        "morning",
+        "midday_afternoon",
+        "evening",
+        "night",
+        "unknown"
+      ]
+    }
+  },
+  "class_definitions": {
+    "0": {
+      "name": "unclassified_or_no_data",
+      "description": "No dominant story assigned or no valid trend support."
+    },
+    "1": {
+      "name": "stable_core",
+      "description": "Low interannual variability across NDVI, ET, and ESI."
+    },
+    "2": {
+      "name": "coherent_june_activation",
+      "description": "NDVI and ET slopes are positive and ESI is nonnegative."
+    },
+    "3": {
+      "name": "strong_june_activation",
+      "description": "NDVI and ET slopes are both in the upper activation range."
+    },
+    "4": {
+      "name": "esi_watch_zone_exploratory",
+      "description": "NDVI and ET are positive but ESI slope is negative."
+    },
+    "5": {
+      "name": "demand_efficiency_watch_exploratory",
+      "description": "NDVI, ET, and PET are positive while WUE is negative."
+    },
+    "6": {
+      "name": "efficient_activation_support",
+      "description": "NDVI and ET are positive and WUE is nonnegative."
+    },
+    "7": {
+      "name": "product_disagreement_zone",
+      "description": "Main products point in conflicting directions."
+    },
+    "8": {
+      "name": "high_variability_zone",
+      "description": "One or more main products show high interannual variability."
+    },
+    "10": {
+      "name": "low_support_zone",
+      "description": "Too few valid years for trend-based interpretation."
+    }
+  },
+  "outputs": {
+    "report": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/timebin_validation_report.md",
+    "scene_counts": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/tables/timebin_scene_counts.csv",
+    "trend_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/tables/timebin_trend_summary.csv",
+    "class_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/tables/timebin_class_summary.csv",
+    "persistence": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/tables/phase1_timebin_class_persistence.csv",
+    "thresholds": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/timebin_validation/tables/timebin_thresholds.csv"
+  }
+}

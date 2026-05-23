@@ -74,8 +74,8 @@ function CoverageCell({ value, threshold }: { value: number; threshold: number }
   const intensity = 0.12 + normalizedAbs * 0.55
   const isLow = value < threshold
   const bg = isLow
-    ? `oklch(0.52 0.11 22 / ${intensity})`
-    : `oklch(0.555 0.09 140 / ${intensity})`
+    ? `rgba(168, 97, 69, ${intensity})`
+    : `rgba(63, 107, 74, ${intensity})`
   return (
     <div
       className="flex items-center justify-center text-[10px] font-mono py-2 transition-all duration-300"
@@ -109,7 +109,7 @@ function FigureFrame({
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.18em]">Fig. {number}</span>
             <span className="w-3 h-px bg-border/25" />
-            <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · AMJ · 2019–2025</span>
+            <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · Jan–Jun · 2019–2025</span>
           </div>
           <p className="text-sm font-medium text-foreground/85">{title}</p>
           <p className="text-[11px] text-muted-foreground/55 mt-0.5">{subtitle}</p>
@@ -139,7 +139,7 @@ export function DataVisualizations() {
           <div className="flex items-center gap-3 mb-10 pb-4 border-b border-border/15">
             <span className="w-4 h-px bg-foreground/18" />
             <span className="text-[8px] font-mono uppercase tracking-[0.22em] text-muted-foreground/40">
-              SNP · 46.6603°N 10.2176°E · AMJ Composite · April–June 2019–2025
+              SNP · 46.6603°N 10.2176°E · Short-Window Signal · January–June 2019–2025
             </span>
           </div>
 
@@ -156,7 +156,7 @@ export function DataVisualizations() {
                 Reading the Signals
               </h2>
               <p className="max-w-md text-muted-foreground/65 text-sm leading-relaxed">
-                Seven April–June seasons of raster-derived ECOSTRESS satellite indices across the Swiss National Park
+                Short-window raster-derived ECOSTRESS satellite indices across the Swiss National Park · January–June observations
               </p>
             </div>
             <div className="hidden md:block text-right">
@@ -333,8 +333,8 @@ export function DataVisualizations() {
             <FigureFrame
               number="4"
               title="Directional Trend Maps"
-              subtitle="Pixel-level linear slope per year · April–June AMJ · 2019–2025"
-              caption="Short-window directional signal only — not indicative of long-term ecological change. Seven-season record; independent validation pending."
+              subtitle="Pixel-level linear slope per year · January–June · 2019–2025"
+              caption="Short-window diagnostic signal only — not indicative of long-term ecological change. Short observation record; independent validation pending."
               tag="TREND"
             >
               <div className="grid grid-cols-3 gap-3">
@@ -367,7 +367,7 @@ export function DataVisualizations() {
                 ))}
               </div>
               <p className="text-[8px] font-mono text-muted-foreground/35 mt-3 italic">
-                ⚠ Directional signal from 7 seasons (2019–2025). Short observation window — not sufficient for trend attribution.
+                Short-window diagnostic signal (2019–2025). Not sufficient for trend attribution. Review alongside observation count and AOI coverage.
               </p>
             </FigureFrame>
           </div>
@@ -379,10 +379,10 @@ export function DataVisualizations() {
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.18em]">Fig. 5</span>
                   <span className="w-3 h-px bg-border/25" />
-                  <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · AMJ · 2019–2025</span>
+                  <span className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.15em]">SNP · Jan–Jun · 2019–2025</span>
                 </div>
                 <p className="text-sm font-medium text-foreground/85">Observation Coverage</p>
-                <p className="text-[11px] text-muted-foreground/55 mt-0.5">ECOSTRESS overpass count per pixel · April–June window</p>
+                <p className="text-[11px] text-muted-foreground/55 mt-0.5">ECOSTRESS overpass count per pixel · January–June window</p>
               </div>
               <span className="text-[8px] font-mono text-muted-foreground/25 mt-1 ml-4">COVERAGE</span>
             </div>
@@ -427,8 +427,8 @@ export function DataVisualizations() {
                 ))}
                 <div className="mt-4 flex items-center gap-6">
                   {[
-                    { color: 'oklch(0.555 0.09 140 / 0.6)', label: '≥60% — adequate coverage' },
-                    { color: 'oklch(0.52 0.11 22 / 0.6)', label: '<60% — low confidence' },
+                    { color: 'rgba(63, 107, 74, 0.6)', label: '≥60% — adequate coverage' },
+                    { color: 'rgba(168, 97, 69, 0.6)', label: '<60% — low confidence' },
                   ].map((l) => (
                     <div key={l.label} className="flex items-center gap-2">
                       <div className="w-3 h-3" style={{ backgroundColor: l.color }} />
@@ -449,8 +449,8 @@ export function DataVisualizations() {
           <div className="grid grid-cols-3 gap-px bg-border/20 border border-border/20">
             {[
               { label: 'NDVI Min/Max', value: '0.109 – 0.163', note: '2021 low · 2023 high' },
-              { label: 'ET Range', value: '1.17 – 2.26', note: 'mm/day · AMJ mean' },
-              { label: 'ESI Range', value: '0.781 – 0.925', note: '2024 is low confidence' },
+              { label: 'ET Range', value: '1.17 – 2.26', note: 'mm/day · Jan–Jun mean' },
+              { label: 'ESI Range', value: '0.781 – 0.925', note: '2024 limited coverage' },
             ].map((stat) => (
               <div key={stat.label} className="px-5 py-4 bg-card/8 text-center">
                 <p className="text-[8px] font-mono uppercase tracking-[0.15em] text-muted-foreground/35 mb-1">{stat.label}</p>
@@ -461,7 +461,7 @@ export function DataVisualizations() {
           </div>
 
           <p className="text-[9px] font-mono text-muted-foreground/30 mt-5 uppercase tracking-[0.12em]">
-            Raster-derived ECOSTRESS/AppEEARS output · April–June composite · Research prototype · Validation pending
+            Short-window raster-derived ECOSTRESS/AppEEARS output · January–June observations · Exploratory research prototype · Validation pending
           </p>
         </SectionReveal>
       </div>

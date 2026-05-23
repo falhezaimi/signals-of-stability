@@ -14,21 +14,21 @@ const layers = [
     label: 'NDVI',
     name: 'Vegetation Index',
     color: '#3F6F42',
-    description: 'NDVI area mean over valid SNP pixels — April–June composite. ECO2LSTE-derived. Scale: –1 to 1.',
+    description: 'NDVI area mean over valid SNP pixels — short-window Jan–Jun composite. ECO2LSTE-derived. Scale: –1 to 1.',
   },
   {
     id: 'et',
     label: 'ET',
     name: 'Evapotranspiration',
     color: '#557F96',
-    description: 'ET area mean (mm/day) over valid SNP pixels — April–June composite. ECO3ETPTJPL product. 2024 is LOW CONFIDENCE (2 overpasses only).',
+    description: 'ET area mean (mm/day) over valid SNP pixels — short-window Jan–Jun composite. ECO3ETPTJPL product. 2024 is limited coverage (2 overpasses only).',
   },
   {
     id: 'esi',
     label: 'ESI',
     name: 'Evaporative Stress',
     color: '#B99B45',
-    description: 'ESI area mean over valid SNP pixels — April–June composite. ECO4ESIPTJPL product. Scale: 0=maximum stress, 1=no stress. 2024 is LOW CONFIDENCE (2 overpasses only).',
+    description: 'ESI area mean over valid SNP pixels — short-window Jan–Jun composite. ECO4ESIPTJPL product. Scale: 0=maximum stress, 1=no stress. 2024 is limited coverage (2 overpasses only).',
   },
 ]
 
@@ -69,7 +69,7 @@ function RasterPanel({ layer, year, color }: { layer: string; year: string; colo
   }, [layer, year])
 
   return (
-    <div className="relative w-full h-full overflow-hidden" style={{ background: 'oklch(0.07 0.005 160)' }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ background: 'oklch(0.075 0.012 222)' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/data/rasters/${layer}_${year}_apr_jun_mean.png`}
@@ -133,13 +133,13 @@ function RasterPanel({ layer, year, color }: { layer: string; year: string; colo
       {/* Bottom instrument bar */}
       <div
         className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-1.5 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, oklch(0.05 0.004 160 / 0.85), transparent)' }}
+        style={{ background: 'linear-gradient(to top, oklch(0.055 0.010 222 / 0.85), transparent)' }}
       >
         <span className="text-[8px] font-mono uppercase tracking-[0.12em]" style={{ color: '#DDD3BE', opacity: 0.45 }}>
           ECOSTRESS raster composite
         </span>
         <span className="text-[8px] font-mono" style={{ color: '#DDD3BE', opacity: 0.32 }}>
-          {layer.toUpperCase()} · {year} · AMJ
+          {layer.toUpperCase()} · {year} · Jan–Jun
         </span>
       </div>
     </div>
@@ -276,7 +276,7 @@ export function Observatory() {
                         </span>
                         <span className="text-[10px] text-muted-foreground/40">ⓘ</span>
                         <span className="ml-auto text-[9px] font-mono text-muted-foreground/35">
-                          April–June (AMJ)
+                          January–June
                         </span>
                       </div>
                     </TooltipTrigger>
@@ -346,9 +346,9 @@ export function Observatory() {
               Analysis Window
             </span>
             <div className="px-3 py-2.5 border border-border/20 bg-card/15">
-              <p className="text-[10px] font-mono text-foreground/70">April – June (AMJ)</p>
+              <p className="text-[10px] font-mono text-foreground/70">January – June (months 1–6)</p>
               <p className="text-[9px] font-mono text-muted-foreground/40 mt-0.5">
-                Fixed season · early alpine growing window
+                Short-window · available observation months
               </p>
             </div>
           </div>
@@ -454,7 +454,7 @@ export function Observatory() {
       {/* Bottom note */}
       <div className="relative z-10 px-6 py-3 border-t border-border/15">
         <p className="text-[10px] font-mono text-muted-foreground/40 text-center">
-          ECOSTRESS/AppEEARS · April–June composite · ~37% AOI pixel coverage · 2024 ET & ESI are low confidence (2 overpasses)
+          ECOSTRESS/AppEEARS · January–June observations · ~37% AOI pixel coverage · 2024 ET &amp; ESI are limited coverage (2 overpasses)
         </p>
       </div>
     </section>

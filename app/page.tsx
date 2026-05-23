@@ -1,57 +1,75 @@
 import { Navigation } from '@/components/navigation'
 import { Hero } from '@/components/hero'
-import { EarthMap } from '@/components/earth-map'
+import { ProjectSnapshot } from '@/components/project-snapshot'
 import { ResearchQuestion } from '@/components/research-question'
+import { AnswerBrief } from '@/components/answer-brief'
+import { EarthMap } from '@/components/earth-map'
+import { DataVisualizations } from '@/components/data-visualizations'
+import { Interpretation } from '@/components/interpretation'
 import { Observatory } from '@/components/observatory'
 import { Methodology } from '@/components/methodology'
 import { Timeline } from '@/components/timeline'
-import { DataVisualizations } from '@/components/data-visualizations'
 import { DataProvenance } from '@/components/data-provenance'
-import { Interpretation } from '@/components/interpretation'
 import { ConservationClose } from '@/components/conservation-close'
 import { ForestDivider } from '@/components/alpine-accents'
 import { FinalCTA } from '@/components/final-cta'
 import { Footer } from '@/components/footer'
 
-export default function SignalsOfStability() {
+export default function SignalsAtlas() {
   return (
     <main className="relative min-h-screen">
       {/* Fixed Navigation */}
       <Navigation />
 
-      {/* ── FELDSTATION register: cartographic paper ───────────────── */}
+      {/* ── FELDSTATION register: context, question, answer, study region ─ */}
       <div
         data-register="feldstation"
         className="bg-background"
         style={{
-          '--background': 'oklch(0.892 0.018 75)',
-          '--card': 'oklch(0.875 0.020 78)',
-          '--border': 'oklch(0.740 0.022 80)',
-          '--secondary': 'oklch(0.858 0.022 80)',
+          '--background': '#E7E1D3',
+          '--card': '#ECE8DD',
+          '--border': '#C9C3B5',
+          '--secondary': '#EFE9DD',
         } as React.CSSProperties}
       >
         <Hero />
-        <EarthMap />
+        <ProjectSnapshot />
         <ResearchQuestion />
+        <AnswerBrief />
+        <EarthMap />
       </div>
 
-      {/* ── RASTERBAND register: alpine night instrument dark ───────── */}
+      {/* ── GRADIENTE register: evidence and findings ──────────────────── */}
+      <div
+        data-register="gradiente"
+        className="bg-background"
+        style={{
+          '--background': '#D8DCD6',
+          '--card': '#E4E6E1',
+          '--border': '#BBC3BC',
+        } as React.CSSProperties}
+      >
+        <DataVisualizations />
+        <Interpretation />
+      </div>
+
+      {/* ── RASTERBAND register: light instrument panel ────────────────── */}
       <div
         data-register="rasterband"
         className="bg-background text-foreground"
         style={{
-          '--background': 'oklch(0.095 0.006 160)',
-          '--foreground': 'oklch(0.875 0.010 80)',
-          '--card': 'oklch(0.13 0.008 160)',
-          '--card-foreground': 'oklch(0.875 0.010 80)',
-          '--muted-foreground': 'oklch(0.52 0.010 80)',
-          '--border': 'oklch(0.24 0.008 160)',
-          '--primary': 'oklch(0.62 0.095 140)',
-          '--secondary': 'oklch(0.155 0.008 160)',
-          '--secondary-foreground': 'oklch(0.875 0.010 80)',
-          '--ice-blue': 'oklch(0.62 0.092 234)',
-          '--gold': 'oklch(0.75 0.115 79)',
-          '--stone': 'oklch(0.62 0.016 80)',
+          '--background': '#D3D9D4',
+          '--foreground': '#1F2421',
+          '--card': '#E0E4DF',
+          '--card-foreground': '#1F2421',
+          '--muted-foreground': '#667067',
+          '--border': '#BBC3BC',
+          '--primary': '#3F6B4A',
+          '--secondary': '#E0E4DF',
+          '--secondary-foreground': '#1F2421',
+          '--ice-blue': '#496B7A',
+          '--gold': '#B3924A',
+          '--stone': '#8F978E',
         } as React.CSSProperties}
       >
         <Observatory />
@@ -59,19 +77,17 @@ export default function SignalsOfStability() {
         <Timeline />
       </div>
 
-      {/* ── GRADIENTE register: near-white, scientific ──────────────── */}
+      {/* ── GRADIENTE register: provenance, closure, CTA ──────────────── */}
       <div
         data-register="gradiente"
         className="bg-background"
         style={{
-          '--background': 'oklch(0.974 0.006 85)',
-          '--card': 'oklch(0.966 0.008 85)',
-          '--border': 'oklch(0.893 0.010 82)',
+          '--background': '#D8DCD6',
+          '--card': '#E4E6E1',
+          '--border': '#BBC3BC',
         } as React.CSSProperties}
       >
-        <DataVisualizations />
         <DataProvenance />
-        <Interpretation />
         <ForestDivider />
         <ConservationClose />
         <FinalCTA />

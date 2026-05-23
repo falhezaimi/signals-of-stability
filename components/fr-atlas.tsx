@@ -131,9 +131,10 @@ export function FrAtlas() {
               </span>
             </div>
             <p className="max-w-2xl text-sm text-muted-foreground/65 leading-relaxed">
-              The class maps show the park organizes into a terrain-linked mosaic, not a random patchwork.
-              Stable cores, ESI watch zones, demand-efficiency watch zones, and uncertain areas occupy
-              different spatial positions across the landscape.
+              Six classification maps show where different ecological signal classes appear across the park.
+              The spatial pattern is not randomly scattered — high-ESI areas, elevated-stress areas,
+              variable-demand areas, and uncertain pixels occupy distinct positions that correlate with
+              terrain structure. These are short-window signal patterns, not confirmed ecological classifications.
             </p>
           </div>
         </SectionReveal>
@@ -170,7 +171,7 @@ export function FrAtlas() {
               </div>
 
               {/* Image */}
-              <div className="relative bg-[oklch(0.14_0.006_160)]" style={{ aspectRatio: '4/3' }}>
+              <div className="relative bg-[oklch(0.150_0.014_222)]" style={{ aspectRatio: '4/3' }}>
                 <picture>
                   <source srcSet={m.webp} type="image/webp" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -236,7 +237,7 @@ export function FrAtlas() {
                   }`}
                 >
                   <div className="flex items-center gap-2.5 p-2">
-                    <div className="relative shrink-0 w-14 h-10 bg-[oklch(0.14_0.006_160)] overflow-hidden">
+                    <div className="relative shrink-0 w-14 h-10 bg-[oklch(0.150_0.014_222)] overflow-hidden">
                       <picture>
                         <source srcSet={map.webp} type="image/webp" />
                         {/* eslint-disable-next-line @next/next/no-img-element */}

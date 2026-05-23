@@ -1,14 +1,14 @@
 Signals of Stability — ECOSTRESS Raster Processing Summary
 ==============================================================
 
-Raster inventory rows: 1059
-Composite statistic rows: 147
-Anomaly rows: 42
-Trend rows: 3
-Stability rows: 9
-Preview PNGs: 96
+Raster inventory rows: 2122
+Composite statistic rows: 245
+Anomaly rows: 70
+Trend rows: 5
+Stability rows: 15
+Preview PNGs: 0
 
-Available months in raster inventory: [4, 5, 6]
+Available months in raster inventory: [1, 2, 3, 4, 5, 6]
 Available time bins in raster inventory: ['evening', 'midday_afternoon', 'morning', 'night']
 
 Coverage correction:

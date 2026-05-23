@@ -1,0 +1,1049 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - button [ref=e6]:
+          - img [ref=e7]
+        - button "Toggle menu" [ref=e9]:
+          - img [ref=e10]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic:
+          - img
+          - img
+        - generic:
+          - generic: ALPINE
+          - generic: SIGNALS
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e22]: Research Project
+            - generic [ref=e23]: 2019–2025
+          - generic [ref=e24]:
+            - generic [ref=e27]: Signals of
+            - generic [ref=e30]: Stability
+          - generic:
+            - generic: Vegetation Change · Swiss National Park
+          - paragraph [ref=e31]: Using satellite-derived environmental signals to examine whether one of Europe's most protected alpine landscapes shows resilience, stress, or subtle ecological change.
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - paragraph [ref=e34]: Coordinates
+              - paragraph [ref=e35]: 46.6603°N · 10.2176°E
+            - generic [ref=e36]:
+              - paragraph [ref=e37]: Area
+              - paragraph [ref=e38]: 170 km²
+            - generic [ref=e39]:
+              - paragraph [ref=e40]: Study Window
+              - paragraph [ref=e41]: 2019 – 2025
+            - generic [ref=e42]:
+              - paragraph [ref=e43]: Signals
+              - paragraph [ref=e44]: NDVI · ET · ESI
+            - generic [ref=e45]:
+              - paragraph [ref=e46]: Resolution
+              - paragraph [ref=e47]: 70m nominal
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: Platform
+              - paragraph [ref=e50]: ECOSTRESS / AppEEARS
+          - generic [ref=e51]:
+            - button "See the Evidence" [ref=e52]
+            - link "Further Research →" [ref=e53] [cursor=pointer]:
+              - /url: /further-research
+              - text: Further Research
+              - generic [ref=e54]: →
+        - generic [ref=e57]:
+          - img
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e65]: Research Question
+          - heading "Is ecological stability in Swiss National Park randomly distributed, or is it structured by terrain and water stress?" [level=2] [ref=e66]
+        - generic [ref=e67]:
+          - generic [ref=e69]:
+            - generic [ref=e70]: NDVI
+            - img [ref=e73]
+            - heading "Vegetation Greenness" [level=3] [ref=e76]
+            - paragraph [ref=e77]: Tracking photosynthetic activity and canopy health through normalized difference vegetation index (NDVI) measurements across growing seasons.
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - generic [ref=e80]: INDEX
+                - generic [ref=e81]: NDVI
+              - generic [ref=e82]:
+                - generic [ref=e83]: RANGE
+                - generic [ref=e84]: 0.2 – 0.8
+          - generic [ref=e86]:
+            - generic [ref=e87]: ET
+            - img [ref=e90]
+            - heading "Evapotranspiration & Water Use" [level=3] [ref=e93]
+            - paragraph [ref=e94]: Monitoring water flux from vegetation and soil surfaces to understand ecosystem water balance and drought stress responses.
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - generic [ref=e97]: INDEX
+                - generic [ref=e98]: ET
+              - generic [ref=e99]:
+                - generic [ref=e100]: RANGE
+                - generic [ref=e101]: 0 – 8 mm/day
+          - generic [ref=e103]:
+            - generic [ref=e104]: ESI
+            - img [ref=e107]
+            - heading "Evaporative Stress Index" [level=3] [ref=e109]
+            - paragraph [ref=e110]: "Tracking the ratio of actual to potential evapotranspiration. Low ESI values indicate water stress; high values suggest demand is being met. Scale: 0 (maximum stress) to 1 (no stress)."
+            - generic [ref=e111]:
+              - generic [ref=e112]:
+                - generic [ref=e113]: INDEX
+                - generic [ref=e114]: ESI
+              - generic [ref=e115]:
+                - generic [ref=e116]: RANGE
+                - generic [ref=e117]: 0–1 (0 = max stress)
+        - paragraph [ref=e118]: Focus areas represent key environmental signals analyzed in this research prototype
+      - generic [ref=e122]:
+        - generic [ref=e125]: What the evidence suggests
+        - heading "Structure, not randomness." [level=2] [ref=e126]
+        - paragraph [ref=e127]: "Swiss National Park does not behave like a uniform green landscape. ECOSTRESS/AppEEARS evidence from seven April–June seasons (2019–2025) points to a terrain-structured ecological mosaic: stable cores, evaporative stress watch zones, and demand-efficiency areas emerge from interactions between elevation, water flux, atmospheric demand, and vegetation behavior. This is a directional signal — not a confirmed trend."
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - paragraph [ref=e130]: Stable cores
+            - paragraph [ref=e131]: ~3.8% of AOI · ~6.7 km²
+          - generic [ref=e132]:
+            - paragraph [ref=e133]: ESI watch zones
+            - paragraph [ref=e134]: ~6.2% of AOI · ~10.9 km²
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Demand-efficiency areas
+            - paragraph [ref=e137]: ~29% of AOI · ~50.7 km²
+        - paragraph [ref=e140]: Directional signal only · Seven April–June seasons · 2024 ET & ESI low confidence · Validation pending
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - img [ref=e148]
+            - generic [ref=e152]: Earth Observation · 46.6603°N 10.2176°E
+          - heading "Study Region" [level=2] [ref=e153]
+          - paragraph [ref=e154]: Swiss National Park — 170 km² of protected alpine terrain · Graubünden, Switzerland · ECOSTRESS/AppEEARS April–June observation window
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e160]: Swiss National Park
+            - generic [ref=e162]: 170 km²
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - img "NDVI Raster Composite" [ref=e166]
+              - img
+              - img:
+                - generic: 10.08°E
+                - generic: 10.18°E
+                - generic: 10.28°E
+                - generic: 10.38°E
+                - generic: 46.72N
+                - generic: 46.67N
+                - generic: 46.62N
+                - generic: 46.57N
+                - generic:
+                  - generic: 5 km
+                - generic: SNP BOUNDARY
+              - generic [ref=e169]: ECOSTRESS raster · 2023 · AMJ
+              - generic [ref=e172]: AMJ · SNP · 2023
+            - generic [ref=e173]:
+              - button [ref=e174]:
+                - img [ref=e175]
+              - button [ref=e177]:
+                - img [ref=e178]
+              - button [ref=e181]:
+                - img [ref=e182]
+              - button [ref=e184]:
+                - img [ref=e185]
+              - button [ref=e188]:
+                - img [ref=e189]
+          - paragraph [ref=e196]: Raster-derived ECOSTRESS/AppEEARS output for Swiss National Park · April–June observation window · 2019–2025 · ~37% AOI pixel coverage · This is not a full growing-season or long-term ecological trend assessment · Research prototype — requires independent validation
+          - generic [ref=e197]:
+            - generic [ref=e198]:
+              - paragraph [ref=e199]: Study Area
+              - paragraph [ref=e200]: 170 km²
+            - generic [ref=e201]:
+              - paragraph [ref=e202]: Protected Since
+              - paragraph [ref=e203]: "1914"
+            - generic [ref=e204]:
+              - paragraph [ref=e205]: Analysis Window
+              - paragraph [ref=e206]: Apr–Jun · 2019–2025
+            - generic [ref=e207]:
+              - paragraph [ref=e208]: Raster Inputs
+              - paragraph [ref=e209]: 1,059
+    - generic [ref=e210]:
+      - generic [ref=e211]:
+        - generic:
+          - img
+        - generic [ref=e213]:
+          - generic [ref=e216]: SNP · 46.6603°N 10.2176°E · AMJ Composite · April–June 2019–2025
+          - generic [ref=e218]:
+            - generic [ref=e221]: Data Findings · ECOSTRESS/AppEEARS · Research Prototype
+            - heading "Reading the Signals" [level=2] [ref=e222]
+            - paragraph [ref=e223]: Seven April–June seasons of raster-derived ECOSTRESS satellite indices across the Swiss National Park
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - generic [ref=e228]:
+                    - generic [ref=e229]: Fig. 1
+                    - generic [ref=e231]: SNP · AMJ · 2019–2025
+                  - paragraph [ref=e232]: Available-window NDVI signal
+                  - paragraph [ref=e233]: Raster-derived ECOSTRESS/AppEEARS output
+                - generic [ref=e234]: ECOSTRESS
+              - generic [ref=e239]:
+                - generic [ref=e240]:
+                  - img "NDVI 2021 AMJ" [ref=e242]
+                  - paragraph [ref=e243]: 2021 — low
+                - generic [ref=e244]:
+                  - img "NDVI 2023 AMJ" [ref=e246]
+                  - paragraph [ref=e247]: 2023 — high
+                - generic [ref=e248]:
+                  - img "NDVI 2025 AMJ" [ref=e250]
+                  - paragraph [ref=e251]: 2025 — partial
+              - paragraph [ref=e253]: Raster-derived NDVI area statistics for Swiss National Park. Interpreted as a short-window vegetation signal.
+            - generic [ref=e254]:
+              - generic [ref=e255]:
+                - generic [ref=e256]:
+                  - generic [ref=e257]:
+                    - generic [ref=e258]: Fig. 2
+                    - generic [ref=e260]: SNP · AMJ · 2019–2025
+                  - paragraph [ref=e261]: Available-window ET signal
+                  - paragraph [ref=e262]: Raster-derived ECOSTRESS/AppEEARS output
+                - generic [ref=e263]: ECOSTRESS
+              - generic [ref=e264]:
+                - paragraph [ref=e268]: ⚠ 2024 LOW CONFIDENCE — 2 overpasses only
+                - generic [ref=e269]:
+                  - generic [ref=e270]:
+                    - img "ET 2021 AMJ" [ref=e272]
+                    - paragraph [ref=e273]: "2021"
+                  - generic [ref=e274]:
+                    - img "ET 2022 AMJ" [ref=e276]
+                    - paragraph [ref=e277]: "2022"
+                  - generic [ref=e278]:
+                    - generic [ref=e279]:
+                      - img "ET 2024 AMJ" [ref=e280]
+                      - generic [ref=e282]: LOW CONF
+                    - paragraph [ref=e283]: "2024"
+                  - generic [ref=e284]:
+                    - img "ET 2025 AMJ" [ref=e286]
+                    - paragraph [ref=e287]: "2025"
+              - paragraph [ref=e289]: Raster-derived ET area statistics. Interpreted as a water/energy exchange signal.
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - generic [ref=e295]: Fig. 3
+                  - generic [ref=e297]: SNP · AMJ · 2019–2025
+                - paragraph [ref=e298]: ESI evaporative stress signal
+                - paragraph [ref=e299]: Raster-derived ECOSTRESS/AppEEARS output
+              - generic [ref=e300]: ECOSTRESS
+            - generic [ref=e301]:
+              - generic [ref=e305]:
+                - generic [ref=e308]: 0 = max stress
+                - generic [ref=e311]: 1 = no stress
+                - generic [ref=e312]: ⚠ 2024 LOW CONF
+              - generic [ref=e313]:
+                - generic [ref=e314]:
+                  - img "ESI 2021 AMJ" [ref=e316]
+                  - paragraph [ref=e317]: "2021"
+                - generic [ref=e318]:
+                  - img "ESI 2023 AMJ" [ref=e320]
+                  - paragraph [ref=e321]: "2023"
+                - generic [ref=e322]:
+                  - generic [ref=e323]:
+                    - img "ESI 2024 AMJ" [ref=e324]
+                    - generic [ref=e326]: LOW CONF
+                  - paragraph [ref=e327]: "2024"
+            - paragraph [ref=e329]: Raster-derived ESI area statistics. Interpreted cautiously as evaporative stress context.
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]: Fig. 4
+                  - generic [ref=e337]: SNP · AMJ · 2019–2025
+                - paragraph [ref=e338]: Directional Trend Maps
+                - paragraph [ref=e339]: Pixel-level linear slope per year · April–June AMJ · 2019–2025
+              - generic [ref=e340]: TREND
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]:
+                    - img "NDVI slope per year" [ref=e345]
+                    - generic:
+                      - generic: NDVI slope/yr
+                  - paragraph [ref=e346]: Vegetation index
+                - generic [ref=e347]:
+                  - generic [ref=e348]:
+                    - img "ET slope per year" [ref=e349]
+                    - generic:
+                      - generic: ET slope/yr
+                  - paragraph [ref=e350]: Evapotranspiration
+                - generic [ref=e351]:
+                  - generic [ref=e352]:
+                    - img "ESI slope per year" [ref=e353]
+                    - generic:
+                      - generic: ESI slope/yr
+                  - paragraph [ref=e354]: Evaporative stress
+              - paragraph [ref=e355]: ⚠ Directional signal from 7 seasons (2019–2025). Short observation window — not sufficient for trend attribution.
+            - paragraph [ref=e357]: Short-window directional signal only — not indicative of long-term ecological change. Seven-season record; independent validation pending.
+          - generic [ref=e358]:
+            - generic [ref=e359]:
+              - generic [ref=e360]:
+                - generic [ref=e361]:
+                  - generic [ref=e362]: Fig. 5
+                  - generic [ref=e364]: SNP · AMJ · 2019–2025
+                - paragraph [ref=e365]: Observation Coverage
+                - paragraph [ref=e366]: ECOSTRESS overpass count per pixel · April–June window
+              - generic [ref=e367]: COVERAGE
+            - generic [ref=e368]:
+              - generic [ref=e369]:
+                - generic [ref=e370]:
+                  - img "Observation coverage 2019" [ref=e372]
+                  - paragraph [ref=e373]: "2019"
+                - generic [ref=e374]:
+                  - img "Observation coverage 2020" [ref=e376]
+                  - paragraph [ref=e377]: "2020"
+                - generic [ref=e378]:
+                  - img "Observation coverage 2021" [ref=e380]
+                  - paragraph [ref=e381]: "2021"
+                - generic [ref=e382]:
+                  - img "Observation coverage 2022" [ref=e384]
+                  - paragraph [ref=e385]: "2022"
+                - generic [ref=e386]:
+                  - img "Observation coverage 2023" [ref=e388]
+                  - paragraph [ref=e389]: "2023"
+                - generic [ref=e390]:
+                  - img "Observation coverage 2024" [ref=e392]
+                  - paragraph [ref=e394]: "2024"
+                  - paragraph [ref=e395]: 2 OVP
+                - generic [ref=e396]:
+                  - img "Observation coverage 2025" [ref=e398]
+                  - paragraph [ref=e400]: "2025"
+              - generic [ref=e401]:
+                - generic [ref=e402]:
+                  - generic [ref=e404]: NDVI
+                  - generic [ref=e405]: ET
+                  - generic [ref=e406]: ESI
+                - generic [ref=e407]:
+                  - generic [ref=e408]: "2019"
+                  - generic [ref=e409]: 100.0%
+                  - generic [ref=e410]: 100.0%
+                  - generic [ref=e411]: 100.0%
+                - generic [ref=e412]:
+                  - generic [ref=e413]: "2020"
+                  - generic [ref=e414]: 100.0%
+                  - generic [ref=e415]: 100.0%
+                  - generic [ref=e416]: 100.0%
+                - generic [ref=e417]:
+                  - generic [ref=e418]: "2021"
+                  - generic [ref=e419]: 100.0%
+                  - generic [ref=e420]: 100.0%
+                  - generic [ref=e421]: 100.0%
+                - generic [ref=e422]:
+                  - generic [ref=e423]: "2022"
+                  - generic [ref=e424]: 100.0%
+                  - generic [ref=e425]: 100.0%
+                  - generic [ref=e426]: 100.0%
+                - generic [ref=e427]:
+                  - generic [ref=e428]: "2023"
+                  - generic [ref=e429]: 100.0%
+                  - generic [ref=e430]: 100.0%
+                  - generic [ref=e431]: 100.0%
+                - generic [ref=e432]:
+                  - generic [ref=e433]: "2024"
+                  - generic [ref=e434]: 100.0%
+                  - generic [ref=e435]: 99.3%
+                  - generic [ref=e436]: 99.3%
+                - generic [ref=e437]:
+                  - generic [ref=e438]: "2025"
+                  - generic [ref=e439]: 100.0%
+                  - generic [ref=e440]: 100.0%
+                  - generic [ref=e441]: 100.0%
+                - generic [ref=e442]:
+                  - generic [ref=e445]: ≥60% — adequate coverage
+                  - generic [ref=e448]: <60% — low confidence
+            - paragraph [ref=e450]: Comparison of vegetation, evapotranspiration, and evaporative stress signals across the available short window.
+          - generic [ref=e451]:
+            - generic [ref=e452]:
+              - paragraph [ref=e453]: NDVI Min/Max
+              - paragraph [ref=e454]: 0.109 – 0.163
+              - paragraph [ref=e455]: 2021 low · 2023 high
+            - generic [ref=e456]:
+              - paragraph [ref=e457]: ET Range
+              - paragraph [ref=e458]: 1.17 – 2.26
+              - paragraph [ref=e459]: mm/day · AMJ mean
+            - generic [ref=e460]:
+              - paragraph [ref=e461]: ESI Range
+              - paragraph [ref=e462]: 0.781 – 0.925
+              - paragraph [ref=e463]: 2024 is low confidence
+          - paragraph [ref=e464]: Raster-derived ECOSTRESS/AppEEARS output · April–June composite · Research prototype · Validation pending
+      - generic [ref=e467]:
+        - generic [ref=e468]:
+          - generic [ref=e471]: Directional Findings
+          - heading "What the Signal Suggests" [level=2] [ref=e472]
+          - paragraph [ref=e473]: Directional findings from seven April–June seasons of ECOSTRESS/AppEEARS raster-derived output. Exploratory research prototype — independent validation pending.
+        - generic [ref=e474]:
+          - generic [ref=e477]:
+            - img [ref=e480]
+            - generic [ref=e483]:
+              - heading "A terrain-structured ecological mosaic" [level=3] [ref=e484]
+              - paragraph [ref=e485]: The April–June ECOSTRESS/AppEEARS signal across 2019–2025 does not show uniform distribution across the park. The evidence suggests ecological classes — stable cores, demand-efficiency zones, and stress watch areas — follow terrain structure rather than appearing randomly. Swiss National Park does not behave like a single homogeneous green landscape.
+            - generic [ref=e487]: structure
+          - generic [ref=e490]:
+            - img [ref=e493]
+            - generic [ref=e495]:
+              - heading "Stable core locations persist through time" [level=3] [ref=e496]
+              - paragraph [ref=e497]: Certain pixel clusters show consistent high-ESI, moderate-ET patterns across multiple seasons. This points to zones where vegetation appears to be reliably meeting atmospheric water demand, potentially corresponding to sheltered valley corridors or areas with mature canopy cover. These are directional signals — not confirmed stable zones pending field validation.
+            - generic [ref=e499]: stable cores
+          - generic [ref=e502]:
+            - img [ref=e505]
+            - generic [ref=e508]:
+              - heading "Evaporative stress watch zones indicate potential vulnerability" [level=3] [ref=e509]
+              - paragraph [ref=e510]: "Areas with persistently low ESI values — where actual evapotranspiration falls short of atmospheric demand — indicate zones under higher relative water stress. The pattern suggests these are not randomly distributed and may warrant closer monitoring. Note: 2024 ET and ESI data are low confidence (2 ECOSTRESS overpasses only)."
+            - generic [ref=e512]: stress watch
+        - paragraph [ref=e514]: Directional signals from raster-derived ECOSTRESS/AppEEARS output · April–June composite · 2019–2025 · ~37% AOI pixel coverage · 2024 ET & ESI low confidence · Research prototype — independent validation pending
+    - generic [ref=e515]:
+      - generic [ref=e516]:
+        - generic:
+          - img
+        - generic [ref=e517]:
+          - generic [ref=e519]: Signal Observatory
+          - generic [ref=e525]: Monitoring
+        - generic [ref=e526]:
+          - generic [ref=e528]:
+            - tablist [ref=e530]:
+              - tab "NDVI" [selected] [ref=e531]: NDVI
+              - tab "ET" [ref=e533]: ET
+              - tab "ESI" [ref=e535]: ESI
+            - tabpanel "NDVI" [ref=e537]:
+              - generic [ref=e538]:
+                - generic [ref=e539]: Vegetation Index
+                - generic [ref=e540]: ⓘ
+                - generic [ref=e541]: April–June (AMJ)
+              - generic [ref=e542]:
+                - generic:
+                  - img "NDVI 2023 April–June mean"
+                  - generic: 46.74°N
+                  - generic: 46.59°N
+                  - generic: 10.05°E
+                  - generic: 10.49°E
+                  - generic:
+                    - generic: ECOSTRESS raster composite
+                    - generic: NDVI · 2023 · AMJ
+              - generic [ref=e543]:
+                - generic [ref=e544]: Vegetation Index
+                - generic [ref=e545]: 2023 · April–June
+          - generic [ref=e546]:
+            - generic [ref=e547]:
+              - generic [ref=e548]:
+                - generic [ref=e549]: Year
+                - generic [ref=e550]: "2023"
+              - generic [ref=e554]:
+                - generic [ref=e555]: "2019"
+                - generic [ref=e556]: 2025 ↗
+            - generic [ref=e558]:
+              - generic [ref=e559]: Analysis Window
+              - generic [ref=e560]:
+                - paragraph [ref=e561]: April – June (AMJ)
+                - paragraph [ref=e562]: Fixed season · early alpine growing window
+            - generic [ref=e564]:
+              - generic [ref=e565]:
+                - generic [ref=e566]: Obs. Coverage (p95)
+                - generic [ref=e567]: 80.0%
+              - paragraph [ref=e570]: "AOI pixels w/ valid data: ~100%"
+            - generic [ref=e572]:
+              - generic [ref=e573]:
+                - generic [ref=e574]: Signal Values
+                - generic [ref=e575]: RASTER-DERIVED
+              - generic [ref=e576]:
+                - generic [ref=e577]:
+                  - paragraph [ref=e578]: Mean
+                  - paragraph [ref=e579]: "0.2023"
+                - generic [ref=e580]:
+                  - paragraph [ref=e581]: Std Dev
+                  - paragraph [ref=e582]: "0.0827"
+                - generic [ref=e583]:
+                  - paragraph [ref=e584]: Min
+                  - paragraph [ref=e585]: "-0.0532"
+                - generic [ref=e586]:
+                  - paragraph [ref=e587]: Max
+                  - paragraph [ref=e588]: "0.4509"
+            - generic [ref=e590]:
+              - generic [ref=e591]: Signal 2019–2025
+              - generic [ref=e601]:
+                - generic [ref=e602]: "2019"
+                - generic [ref=e603]: "2025"
+            - generic [ref=e604]:
+              - generic [ref=e605]: Legend
+              - generic [ref=e607]:
+                - generic [ref=e608]: Low
+                - generic [ref=e609]: High
+        - paragraph [ref=e611]: ECOSTRESS/AppEEARS · April–June composite · ~37% AOI pixel coverage · 2024 ET & ESI are low confidence (2 overpasses)
+      - generic [ref=e612]:
+        - generic:
+          - img
+        - generic [ref=e614]:
+          - generic [ref=e615]:
+            - generic [ref=e616]:
+              - img [ref=e617]
+              - generic [ref=e619]: Processing Pipeline · Remote Sensing
+            - heading "Methodology" [level=2] [ref=e620]
+            - paragraph [ref=e621]: A rigorous six-stage pipeline from satellite acquisition to ecological interpretation
+          - generic [ref=e623]:
+            - generic [ref=e624]:
+              - generic [ref=e628]: "01"
+              - generic [ref=e630]:
+                - generic [ref=e632]: RAW INGESTION
+                - paragraph [ref=e633]: Satellite Acquisition
+                - paragraph [ref=e634]: ECOSTRESS · AppEEARS
+            - generic [ref=e635]:
+              - generic [ref=e639]: "02"
+              - generic [ref=e641]:
+                - generic [ref=e643]: QA MASK
+                - paragraph [ref=e644]: QA Band Masking
+                - paragraph [ref=e645]: Cloud / shadow filter
+            - generic [ref=e646]:
+              - generic [ref=e650]: "03"
+              - generic [ref=e652]:
+                - generic [ref=e654]: CLOUD FILTER
+                - paragraph [ref=e655]: 70% Coverage Threshold
+                - paragraph [ref=e656]: Scene validity gate
+            - generic [ref=e657]:
+              - generic [ref=e661]: "04"
+              - generic [ref=e663]:
+                - generic [ref=e665]: TEMPORAL WINDOW
+                - paragraph [ref=e666]: April–June Composite
+                - paragraph [ref=e667]: AMJ season focus
+            - generic [ref=e668]:
+              - generic [ref=e672]: "05"
+              - generic [ref=e674]:
+                - generic [ref=e676]: SIGNAL DELTA
+                - paragraph [ref=e677]: Index Derivation
+                - paragraph [ref=e678]: NDVI · ET · ESI
+            - generic [ref=e679]:
+              - generic [ref=e683]: "06"
+              - generic [ref=e684]:
+                - generic [ref=e686]: SYNTHESIS
+                - paragraph [ref=e687]: Ecological Interpretation
+                - paragraph [ref=e688]: Stability assessment
+          - generic [ref=e689]:
+            - generic [ref=e690]:
+              - paragraph [ref=e691]: Spatial Resolution
+              - paragraph [ref=e692]: 70m nominal
+            - generic [ref=e693]:
+              - paragraph [ref=e694]: Temporal Coverage
+              - paragraph [ref=e695]: 2019 – 2025
+            - generic [ref=e696]:
+              - paragraph [ref=e697]: Analysis Window
+              - paragraph [ref=e698]: April – June (AMJ)
+          - paragraph [ref=e699]: Prototype Pipeline · Data Processing Under Validation
+      - generic [ref=e700]:
+        - generic:
+          - img
+        - generic [ref=e701]:
+          - generic [ref=e703]:
+            - generic [ref=e706]: Temporal Analysis · April–June · 2019–2025
+            - heading "Seven Years of Signal" [level=2] [ref=e707]
+            - paragraph [ref=e708]: Season-by-season ECOSTRESS/AppEEARS satellite composite. Scroll to advance through the study period.
+          - generic [ref=e710]:
+            - generic [ref=e711]:
+              - generic [ref=e712]:
+                - generic [ref=e713]:
+                  - generic [ref=e714]: FRAME 01 / 07
+                  - generic [ref=e716]: BASELINE
+                - generic [ref=e717]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e718]:
+                - generic [ref=e719]:
+                  - generic [ref=e720]:
+                    - generic [ref=e721]: "2019"
+                    - generic [ref=e723]:
+                      - img "NDVI 2019 April–June mean" [ref=e724]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2019
+                  - generic [ref=e725]:
+                    - generic [ref=e726]:
+                      - paragraph [ref=e727]: NDVI
+                      - paragraph [ref=e728]: "0.1365"
+                    - generic [ref=e729]:
+                      - paragraph [ref=e730]: ET mm/day
+                      - paragraph [ref=e731]: "2.147"
+                    - generic [ref=e732]:
+                      - paragraph [ref=e733]: ESI
+                      - paragraph [ref=e734]: "0.8600"
+                    - generic [ref=e735]:
+                      - paragraph [ref=e736]: Season
+                      - paragraph [ref=e737]: Apr–Jun
+                  - generic [ref=e738]: RASTER-DERIVED
+                - generic [ref=e739]:
+                  - generic [ref=e740]:
+                    - generic [ref=e741]:
+                      - generic [ref=e742]: "2019"
+                      - generic [ref=e743]:
+                        - generic [ref=e744]: BASELINE
+                        - generic [ref=e745]: Year 1 of 7
+                    - paragraph [ref=e746]: 2019 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e747]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e748]:
+                    - generic [ref=e750]:
+                      - generic [ref=e751]: NDVI
+                      - generic [ref=e752]: "0.1365"
+                    - generic [ref=e755]:
+                      - generic [ref=e756]: ET mm/day
+                      - generic [ref=e757]: "2.147"
+                    - generic [ref=e760]:
+                      - generic [ref=e761]: ESI (0–1)
+                      - generic [ref=e762]: "0.8600"
+            - generic [ref=e764]:
+              - generic [ref=e765]:
+                - generic [ref=e766]:
+                  - generic [ref=e767]: FRAME 02 / 07
+                  - generic [ref=e769]: VARIABLE
+                - generic [ref=e770]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e771]:
+                - generic [ref=e772]:
+                  - generic [ref=e773]:
+                    - generic [ref=e774]: "2020"
+                    - generic [ref=e776]:
+                      - img "NDVI 2020 April–June mean" [ref=e777]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2020
+                  - generic [ref=e778]:
+                    - generic [ref=e779]:
+                      - paragraph [ref=e780]: NDVI
+                      - paragraph [ref=e781]: "0.1807"
+                    - generic [ref=e782]:
+                      - paragraph [ref=e783]: ET mm/day
+                      - paragraph [ref=e784]: "1.731"
+                    - generic [ref=e785]:
+                      - paragraph [ref=e786]: ESI
+                      - paragraph [ref=e787]: "0.7722"
+                    - generic [ref=e788]:
+                      - paragraph [ref=e789]: Season
+                      - paragraph [ref=e790]: Apr–Jun
+                  - generic [ref=e791]: RASTER-DERIVED
+                - generic [ref=e792]:
+                  - generic [ref=e793]:
+                    - generic [ref=e794]:
+                      - generic [ref=e795]: "2020"
+                      - generic [ref=e796]:
+                        - generic [ref=e797]: VARIABLE
+                        - generic [ref=e798]: Year 2 of 7
+                    - paragraph [ref=e799]: 2020 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e800]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e801]:
+                    - generic [ref=e803]:
+                      - generic [ref=e804]: NDVI
+                      - generic [ref=e805]: "0.1807"
+                    - generic [ref=e808]:
+                      - generic [ref=e809]: ET mm/day
+                      - generic [ref=e810]: "1.731"
+                    - generic [ref=e813]:
+                      - generic [ref=e814]: ESI (0–1)
+                      - generic [ref=e815]: "0.7722"
+            - generic [ref=e817]:
+              - generic [ref=e818]:
+                - generic [ref=e819]:
+                  - generic [ref=e820]: FRAME 03 / 07
+                  - generic [ref=e822]: STRESSED
+                - generic [ref=e823]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e824]:
+                - generic [ref=e825]:
+                  - generic [ref=e826]:
+                    - generic [ref=e827]: "2021"
+                    - generic [ref=e829]:
+                      - img "NDVI 2021 April–June mean" [ref=e830]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2021
+                  - generic [ref=e831]:
+                    - generic [ref=e832]:
+                      - paragraph [ref=e833]: NDVI
+                      - paragraph [ref=e834]: "0.1666"
+                    - generic [ref=e835]:
+                      - paragraph [ref=e836]: ET mm/day
+                      - paragraph [ref=e837]: "2.077"
+                    - generic [ref=e838]:
+                      - paragraph [ref=e839]: ESI
+                      - paragraph [ref=e840]: "0.8377"
+                    - generic [ref=e841]:
+                      - paragraph [ref=e842]: Season
+                      - paragraph [ref=e843]: Apr–Jun
+                  - generic [ref=e844]: RASTER-DERIVED
+                - generic [ref=e845]:
+                  - generic [ref=e846]:
+                    - generic [ref=e847]:
+                      - generic [ref=e848]: "2021"
+                      - generic [ref=e849]:
+                        - generic [ref=e850]: STRESSED
+                        - generic [ref=e851]: Year 3 of 7
+                    - paragraph [ref=e852]: 2021 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e853]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e854]:
+                    - generic [ref=e856]:
+                      - generic [ref=e857]: NDVI
+                      - generic [ref=e858]: "0.1666"
+                    - generic [ref=e861]:
+                      - generic [ref=e862]: ET mm/day
+                      - generic [ref=e863]: "2.077"
+                    - generic [ref=e866]:
+                      - generic [ref=e867]: ESI (0–1)
+                      - generic [ref=e868]: "0.8377"
+            - generic [ref=e870]:
+              - generic [ref=e871]:
+                - generic [ref=e872]:
+                  - generic [ref=e873]: FRAME 04 / 07
+                  - generic [ref=e875]: VARIABLE
+                - generic [ref=e876]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e877]:
+                - generic [ref=e878]:
+                  - generic [ref=e879]:
+                    - generic [ref=e880]: "2022"
+                    - generic [ref=e882]:
+                      - img "NDVI 2022 April–June mean" [ref=e883]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2022
+                  - generic [ref=e884]:
+                    - generic [ref=e885]:
+                      - paragraph [ref=e886]: NDVI
+                      - paragraph [ref=e887]: "0.2088"
+                    - generic [ref=e888]:
+                      - paragraph [ref=e889]: ET mm/day
+                      - paragraph [ref=e890]: "2.618"
+                    - generic [ref=e891]:
+                      - paragraph [ref=e892]: ESI
+                      - paragraph [ref=e893]: "0.7747"
+                    - generic [ref=e894]:
+                      - paragraph [ref=e895]: Season
+                      - paragraph [ref=e896]: Apr–Jun
+                  - generic [ref=e897]: RASTER-DERIVED
+                - generic [ref=e898]:
+                  - generic [ref=e899]:
+                    - generic [ref=e900]:
+                      - generic [ref=e901]: "2022"
+                      - generic [ref=e902]:
+                        - generic [ref=e903]: VARIABLE
+                        - generic [ref=e904]: Year 4 of 7
+                    - paragraph [ref=e905]: 2022 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e906]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e907]:
+                    - generic [ref=e909]:
+                      - generic [ref=e910]: NDVI
+                      - generic [ref=e911]: "0.2088"
+                    - generic [ref=e914]:
+                      - generic [ref=e915]: ET mm/day
+                      - generic [ref=e916]: "2.618"
+                    - generic [ref=e919]:
+                      - generic [ref=e920]: ESI (0–1)
+                      - generic [ref=e921]: "0.7747"
+            - generic [ref=e923]:
+              - generic [ref=e924]:
+                - generic [ref=e925]:
+                  - generic [ref=e926]: FRAME 05 / 07
+                  - generic [ref=e928]: HIGH NDVI
+                - generic [ref=e929]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e930]:
+                - generic [ref=e931]:
+                  - generic [ref=e932]:
+                    - generic [ref=e933]: "2023"
+                    - generic [ref=e935]:
+                      - img "NDVI 2023 April–June mean" [ref=e936]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2023
+                  - generic [ref=e937]:
+                    - generic [ref=e938]:
+                      - paragraph [ref=e939]: NDVI
+                      - paragraph [ref=e940]: "0.2023"
+                    - generic [ref=e941]:
+                      - paragraph [ref=e942]: ET mm/day
+                      - paragraph [ref=e943]: "2.269"
+                    - generic [ref=e944]:
+                      - paragraph [ref=e945]: ESI
+                      - paragraph [ref=e946]: "0.7518"
+                    - generic [ref=e947]:
+                      - paragraph [ref=e948]: Season
+                      - paragraph [ref=e949]: Apr–Jun
+                  - generic [ref=e950]: RASTER-DERIVED
+                - generic [ref=e951]:
+                  - generic [ref=e952]:
+                    - generic [ref=e953]:
+                      - generic [ref=e954]: "2023"
+                      - generic [ref=e955]:
+                        - generic [ref=e956]: HIGH NDVI
+                        - generic [ref=e957]: Year 5 of 7
+                    - paragraph [ref=e958]: 2023 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e959]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e960]:
+                    - generic [ref=e962]:
+                      - generic [ref=e963]: NDVI
+                      - generic [ref=e964]: "0.2023"
+                    - generic [ref=e967]:
+                      - generic [ref=e968]: ET mm/day
+                      - generic [ref=e969]: "2.269"
+                    - generic [ref=e972]:
+                      - generic [ref=e973]: ESI (0–1)
+                      - generic [ref=e974]: "0.7518"
+            - generic [ref=e976]:
+              - generic [ref=e977]:
+                - generic [ref=e978]:
+                  - generic [ref=e979]: FRAME 06 / 07
+                  - generic [ref=e981]: PARTIAL
+                - generic [ref=e982]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e983]:
+                - generic [ref=e984]:
+                  - generic [ref=e985]:
+                    - generic [ref=e986]: "2024"
+                    - generic [ref=e988]:
+                      - img "NDVI 2024 April–June mean" [ref=e989]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2024
+                  - generic [ref=e990]:
+                    - generic [ref=e991]:
+                      - paragraph [ref=e992]: NDVI
+                      - paragraph [ref=e993]: "0.1670"
+                    - generic [ref=e994]:
+                      - paragraph [ref=e995]: ET mm/day
+                      - paragraph [ref=e996]: "2.255"
+                    - generic [ref=e997]:
+                      - paragraph [ref=e998]: ESI
+                      - paragraph [ref=e999]: "0.9248"
+                    - generic [ref=e1000]:
+                      - paragraph [ref=e1001]: Season
+                      - paragraph [ref=e1002]: Apr–Jun
+                  - generic [ref=e1003]: "ET · ESI: LOW CONFIDENCE"
+                - generic [ref=e1004]:
+                  - generic [ref=e1005]:
+                    - generic [ref=e1006]:
+                      - generic [ref=e1007]: "2024"
+                      - generic [ref=e1008]:
+                        - generic [ref=e1009]: PARTIAL
+                        - generic [ref=e1010]: Year 6 of 7
+                    - paragraph [ref=e1011]: 2024 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e1012]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e1013]:
+                    - generic [ref=e1015]:
+                      - generic [ref=e1016]: NDVI
+                      - generic [ref=e1017]: "0.1670"
+                    - generic [ref=e1020]:
+                      - generic [ref=e1021]: ET mm/day
+                      - generic [ref=e1022]: "2.255"
+                    - generic [ref=e1025]:
+                      - generic [ref=e1026]: ESI (0–1)
+                      - generic [ref=e1027]: "0.9248"
+            - generic [ref=e1029]:
+              - generic [ref=e1030]:
+                - generic [ref=e1031]:
+                  - generic [ref=e1032]: FRAME 07 / 07
+                  - generic [ref=e1034]: BASELINE
+                - generic [ref=e1035]: AMJ · SNP · ECOSTRESS
+              - generic [ref=e1036]:
+                - generic [ref=e1037]:
+                  - generic [ref=e1038]:
+                    - generic [ref=e1039]: "2025"
+                    - generic [ref=e1041]:
+                      - img "NDVI 2025 April–June mean" [ref=e1042]
+                      - img
+                      - img
+                      - generic:
+                        - generic: NDVI · 2025
+                  - generic [ref=e1043]:
+                    - generic [ref=e1044]:
+                      - paragraph [ref=e1045]: NDVI
+                      - paragraph [ref=e1046]: "0.2051"
+                    - generic [ref=e1047]:
+                      - paragraph [ref=e1048]: ET mm/day
+                      - paragraph [ref=e1049]: "2.767"
+                    - generic [ref=e1050]:
+                      - paragraph [ref=e1051]: ESI
+                      - paragraph [ref=e1052]: "0.7351"
+                    - generic [ref=e1053]:
+                      - paragraph [ref=e1054]: Season
+                      - paragraph [ref=e1055]: Apr–Jun
+                  - generic [ref=e1056]: RASTER-DERIVED
+                - generic [ref=e1057]:
+                  - generic [ref=e1058]:
+                    - generic [ref=e1059]:
+                      - generic [ref=e1060]: "2025"
+                      - generic [ref=e1061]:
+                        - generic [ref=e1062]: BASELINE
+                        - generic [ref=e1063]: Year 7 of 7
+                    - paragraph [ref=e1064]: 2025 uses raster-derived area statistics for the Early Growing Season. NDVI, ET, and ESI are interpreted as short-window signals only. Interpretation requires validation against observation count, data coverage, topography, and field context.
+                    - paragraph [ref=e1065]: Use observation counts and valid-observation metrics before ecological interpretation.
+                  - generic [ref=e1066]:
+                    - generic [ref=e1068]:
+                      - generic [ref=e1069]: NDVI
+                      - generic [ref=e1070]: "0.2051"
+                    - generic [ref=e1073]:
+                      - generic [ref=e1074]: ET mm/day
+                      - generic [ref=e1075]: "2.767"
+                    - generic [ref=e1078]:
+                      - generic [ref=e1079]: ESI (0–1)
+                      - generic [ref=e1080]: "0.7351"
+          - generic [ref=e1083]:
+            - generic [ref=e1084]:
+              - button "2019" [ref=e1085]
+              - button "2020" [ref=e1086]
+              - button "2021" [ref=e1087]
+              - button "2022" [ref=e1088]
+              - button "2023" [ref=e1089]
+              - button "2024" [ref=e1090]
+              - button "2025" [ref=e1091]
+            - generic [ref=e1092]:
+              - generic [ref=e1093]:
+                - generic [ref=e1094]: NDVI
+                - img [ref=e1096]
+              - generic [ref=e1099]:
+                - generic [ref=e1100]: ET
+                - img [ref=e1102]
+              - generic [ref=e1105]:
+                - generic [ref=e1106]: ESI
+                - img [ref=e1108]
+            - generic [ref=e1111]:
+              - generic [ref=e1112]: ECOSTRESS/AppEEARS · April–June · 2019–2025
+              - generic [ref=e1113]: Frame 01 / 07
+          - generic [ref=e1115]:
+            - paragraph [ref=e1116]: The April–June short-window signal shows inter-annual variability with a directional low in 2021 and apparent recovery through 2023. Directional signals only — requires independent validation.
+            - text: Exploratory Findings · Research Prototype · Not Peer Reviewed
+    - generic [ref=e1117]:
+      - generic [ref=e1120]:
+        - generic [ref=e1123]: Data Provenance · Limitations · Research Constraints
+        - generic [ref=e1124]:
+          - generic [ref=e1125]:
+            - generic [ref=e1126]:
+              - generic [ref=e1127]: Data Source
+              - generic [ref=e1129]: ECOSTRESS / AppEEARS
+            - generic [ref=e1130]:
+              - generic [ref=e1131]:
+                - generic [ref=e1132]: Platform
+                - generic [ref=e1133]: ECOSTRESS (ISS)
+              - generic [ref=e1134]:
+                - generic [ref=e1135]: Operator
+                - generic [ref=e1136]: NASA / JPL
+              - generic [ref=e1137]:
+                - generic [ref=e1138]: Resolution
+                - generic [ref=e1139]: 70 m nominal
+              - generic [ref=e1140]:
+                - generic [ref=e1141]: Access
+                - generic [ref=e1142]: NASA AppEEARS
+              - generic [ref=e1143]:
+                - generic [ref=e1144]: Analysis window
+                - generic [ref=e1145]: Jan–Jun (months 1–6)
+              - generic [ref=e1146]:
+                - generic [ref=e1147]: Products
+                - generic [ref=e1148]: NDVI · ET · ESI · PET · WUE
+            - paragraph [ref=e1149]: Raster calculations use data/NDVI, data/ET, and data/ESI. Metadata/statistics files are supporting provenance and QA context.
+          - generic [ref=e1150]:
+            - generic [ref=e1152]: Known Limitations
+            - generic [ref=e1153]:
+              - generic [ref=e1154]:
+                - text: Short time window
+                - paragraph [ref=e1155]: The available raster record supports short-window signals, not long-term ecological change claims.
+              - generic [ref=e1156]:
+                - text: Coverage variability
+                - paragraph [ref=e1157]: coverage_inside_aoi_percent represents finite valid pixels divided by total AOI pixels. Use observation_count and mean_v…
+              - generic [ref=e1158]:
+                - text: ISS overpass timing
+                - paragraph [ref=e1159]: ECOSTRESS observations depend on ISS overpass timing and may not sample each period evenly.
+              - generic [ref=e1160]:
+                - text: Trend interpretation
+                - paragraph [ref=e1161]: short-window directional trend
+              - generic [ref=e1162]:
+                - text: Stability metrics
+                - paragraph [ref=e1163]: Variability metrics are exploratory and should be interpreted cautiously.
+        - generic [ref=e1164]:
+          - generic [ref=e1165]: ECOSTRESS Products Used
+          - generic [ref=e1166]:
+            - generic [ref=e1167]:
+              - generic [ref=e1168]: ndviECOSTRESS Tiled Ancillary NDVI and Albedo L2 Global
+              - generic [ref=e1169]: 930 rasters
+            - generic [ref=e1170]:
+              - generic [ref=e1171]: etECOSTRESS Tiled Evapotranspiration Instantaneous and Daytime L3 Global
+              - generic [ref=e1172]: 308 rasters
+            - generic [ref=e1173]:
+              - generic [ref=e1174]: esiECOSTRESS Tiled Evaporative Stress Index PT-JPL Instantaneous L4 Global
+              - generic [ref=e1175]: 309 rasters
+            - generic [ref=e1176]:
+              - generic [ref=e1177]: pet—
+              - generic [ref=e1178]: 309 rasters
+            - generic [ref=e1179]:
+              - generic [ref=e1180]: wue—
+              - generic [ref=e1181]: 266 rasters
+        - paragraph [ref=e1182]: Raster-derived ECOSTRESS/AppEEARS output · EPSG:32632 · 70 m nominal · Swiss National Park 2019–2025
+      - img [ref=e1185]
+      - generic [ref=e1202]:
+        - generic:
+          - generic: STRUCTURE
+        - img [ref=e1204]
+        - generic [ref=e1212]:
+          - generic [ref=e1215]: Research Context
+          - paragraph [ref=e1217]: Stability in this landscape is not randomly distributed. The satellite signal suggests it follows terrain — concentrated where shelter and water converge, under pressure where atmospheric demand exceeds soil moisture capacity.
+          - paragraph [ref=e1218]: Seven April–June seasons of ECOSTRESS/AppEEARS data give a directional reading, not a confirmed trend. Whether this pattern holds — and whether the watch zones are precursors to broader change — requires ground validation, additional seasons, and targeted monitoring.
+          - paragraph [ref=e1219]: Directional signal only · Research prototype · Independent validation pending
+      - generic [ref=e1220]:
+        - img [ref=e1223]
+        - generic [ref=e1229]:
+          - generic [ref=e1230]:
+            - generic [ref=e1233]: Research Project · Signals of Stability
+            - heading "Continue into the evidence layer" [level=2] [ref=e1234]
+            - paragraph [ref=e1235]: The findings above are directional. The Further Research page presents the full spatial evidence — six maps, five ECOSTRESS products, yearly variation across 2019–2025, and robustness checks — behind the terrain-structured mosaic signal.
+            - link "Open Further Research →" [ref=e1237] [cursor=pointer]:
+              - /url: /further-research
+              - text: Open Further Research
+              - generic [ref=e1238]: →
+            - generic [ref=e1239]:
+              - button "01 Signal Observatory →" [ref=e1240]:
+                - generic [ref=e1241]: "01"
+                - generic [ref=e1242]: Signal Observatory
+                - generic [ref=e1243]: →
+              - button "02 Findings →" [ref=e1244]:
+                - generic [ref=e1245]: "02"
+                - generic [ref=e1246]: Findings
+                - generic [ref=e1247]: →
+              - button "03 Methodology →" [ref=e1248]:
+                - generic [ref=e1249]: "03"
+                - generic [ref=e1250]: Methodology
+                - generic [ref=e1251]: →
+          - generic [ref=e1252]:
+            - generic [ref=e1253]:
+              - generic [ref=e1254]:
+                - paragraph [ref=e1255]: Project
+                - paragraph [ref=e1256]: Signals of Stability
+              - generic [ref=e1257]:
+                - paragraph [ref=e1258]: Location
+                - paragraph [ref=e1259]: Swiss National Park, CH
+              - generic [ref=e1260]:
+                - paragraph [ref=e1261]: Period
+                - paragraph [ref=e1262]: 2019 – 2025
+              - generic [ref=e1263]:
+                - paragraph [ref=e1264]: Coverage
+                - paragraph [ref=e1265]: 170 km² · 7 Seasons · Apr–Jun
+            - paragraph [ref=e1266]: Research prototype · Raster-derived ECOSTRESS/AppEEARS output · April–June composite · Validation pending
+      - generic [ref=e1268]:
+        - generic [ref=e1269]:
+          - generic [ref=e1270]:
+            - button "SNP Research" [ref=e1271]:
+              - img [ref=e1272]
+              - generic [ref=e1274]: SNP Research
+            - paragraph [ref=e1275]: A digital exploration of vegetation change in the Swiss National Park
+          - generic [ref=e1276]:
+            - button "Overview" [ref=e1277]
+            - button "Earth View" [ref=e1278]
+            - button "Question" [ref=e1279]
+            - button "Observatory" [ref=e1280]
+            - button "Method" [ref=e1281]
+            - button "Timeline" [ref=e1282]
+            - button "Findings" [ref=e1283]
+            - button "Conclusion" [ref=e1284]
+          - generic [ref=e1286]:
+            - generic [ref=e1287]: 46.6603° N, 10.2176° E
+            - generic [ref=e1288]: Swiss National Park
+            - generic [ref=e1289]: Graubünden, Switzerland
+        - generic [ref=e1290]:
+          - paragraph [ref=e1291]: Signals of Stability — Research Prototype 2024
+          - generic [ref=e1292]:
+            - generic [ref=e1293]: 46.6603°N · 10.2176°E
+            - generic [ref=e1295]: Swiss National Park · Est. 1914
+  - button "Open Next.js Dev Tools" [ref=e1301] [cursor=pointer]:
+    - img [ref=e1302]

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Layers, Mountain, Leaf, Thermometer, Droplets, Satellite } from 'lucide-react'
 
-// Real raster layer definitions — ECOSTRESS/AppEEARS output, April–June 2023 reference
+// Real raster layer definitions — ECOSTRESS/AppEEARS output, January–June 2023 reference
 type LayerDef = {
   id: string
   label: string
@@ -35,7 +35,7 @@ const mapLayers: LayerDef[] = [
     icon: Leaf,
     png: '/data/rasters/ndvi_2023_apr_jun_mean.png',
     title: 'NDVI Raster Composite',
-    caption: 'Vegetation Index area mean · April–June 2023 · Highest area-mean NDVI in the 2019–2025 series · ECOSTRESS ECO2LSTE · AppEEARS output.',
+    caption: 'Vegetation Index area mean · January–June 2023 · Highest area-mean NDVI in the 2019–2025 series · ECOSTRESS ECO2LSTE · AppEEARS output.',
     mean: 0.1632,
     unit: 'index',
     meanLabel: 'area mean',
@@ -45,8 +45,8 @@ const mapLayers: LayerDef[] = [
     label: 'ET',
     icon: Thermometer,
     png: '/data/rasters/et_2023_apr_jun_mean.png',
-    title: 'ET April–June Signal',
-    caption: 'Evapotranspiration area mean · April–June 2023 · ECOSTRESS ECO3ETPTJPL product · mm/day · Raster-derived, requires validation.',
+    title: 'ET Short-Window Signal',
+    caption: 'Evapotranspiration area mean · January–June 2023 · ECOSTRESS ECO3ETPTJPL product · mm/day · Raster-derived, requires validation.',
     mean: 1.4058,
     unit: 'mm/day',
     meanLabel: 'area mean',
@@ -56,8 +56,8 @@ const mapLayers: LayerDef[] = [
     label: 'ESI',
     icon: Droplets,
     png: '/data/rasters/esi_2023_apr_jun_mean.png',
-    title: 'ESI April–June Signal',
-    caption: 'Evaporative Stress Index · April–June 2023 · Scale 0–1, higher = lower stress · ECOSTRESS ECO4ESIPTJPL · Directional signal only.',
+    title: 'ESI Short-Window Signal',
+    caption: 'Evaporative Stress Index · January–June 2023 · Scale 0–1, higher = lower stress · ECOSTRESS ECO4ESIPTJPL · Directional signal only.',
     mean: 0.7811,
     unit: '0–1',
     meanLabel: 'area mean',
@@ -68,7 +68,7 @@ const mapLayers: LayerDef[] = [
     icon: Satellite,
     png: '/data/rasters/ndvi_2023_apr_jun_observation_coverage.png',
     title: 'Observation Coverage',
-    caption: 'ECOSTRESS overpass count per pixel · April–June 2023 · ~37% of AOI pixels have valid composite data · ISS orbital constraint.',
+    caption: 'ECOSTRESS overpass count per pixel · January–June 2023 · ~37% of AOI pixels have valid composite data · ISS orbital constraint.',
     mean: null,
     unit: null,
     meanLabel: null,
@@ -79,7 +79,7 @@ const mapLayers: LayerDef[] = [
 const BOTTOM_STATS = [
   { label: 'Study Area', value: '170 km²' },
   { label: 'Protected Since', value: '1914' },
-  { label: 'Analysis Window', value: 'Apr–Jun · 2019–2025' },
+  { label: 'Analysis Window', value: 'Jan–Jun · 2019–2025' },
   { label: 'Raster Inputs', value: '1,059' },
 ]
 
@@ -88,7 +88,7 @@ function RasterMapPanel({ activeLayer }: { activeLayer: string }) {
   const hasPNG = Boolean(layer.png)
 
   return (
-    <div className="relative w-full h-full overflow-hidden" style={{ background: 'oklch(0.085 0.006 160)' }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ background: 'oklch(0.085 0.012 222)' }}>
 
       {/* Terrain gradient blobs — context layer only */}
       {!hasPNG && (
@@ -188,12 +188,12 @@ function RasterMapPanel({ activeLayer }: { activeLayer: string }) {
         {/* SNP boundary — more prominent over raster */}
         <path
           d="M118,78 L178,68 L242,88 L282,84 L302,108 L312,148 L292,190 L262,212 L202,222 L142,202 L98,160 L108,118 Z"
-          fill="none" stroke="oklch(0.565 0.095 140)" strokeWidth={hasPNG ? 1.6 : 1.4}
+          fill="none" stroke="#3F6B4A" strokeWidth={hasPNG ? 1.6 : 1.4}
           strokeDasharray="5,3" opacity={hasPNG ? 0.82 : 0.65}
         />
         {/* Center point */}
-        <circle cx="200" cy="140" r="2.5" fill="oklch(0.565 0.095 140)" opacity="0.70" />
-        <circle cx="200" cy="140" r="6" fill="none" stroke="oklch(0.565 0.095 140)" strokeWidth="0.5" opacity="0.30" />
+        <circle cx="200" cy="140" r="2.5" fill="#3F6B4A" opacity="0.70" />
+        <circle cx="200" cy="140" r="6" fill="none" stroke="#3F6B4A" strokeWidth="0.5" opacity="0.30" />
 
         {/* Corner registration marks */}
         {[[22,14],[378,14],[22,256],[378,256]].map(([cx,cy],i) => (
@@ -224,7 +224,7 @@ function RasterMapPanel({ activeLayer }: { activeLayer: string }) {
         <div className="absolute top-3 left-3 px-2.5 py-1 bg-background/58 border border-border/22 flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-primary/70" />
           <span className="text-[9px] font-mono text-foreground/70 uppercase tracking-[0.12em]">
-            ECOSTRESS raster · 2023 · AMJ
+            ECOSTRESS raster · 2023 · Jan–Jun
           </span>
         </div>
       )}
@@ -246,7 +246,7 @@ function RasterMapPanel({ activeLayer }: { activeLayer: string }) {
       {/* Bottom-right: source attribution */}
       <div className="absolute bottom-4 right-4 px-2.5 py-1.5 bg-background/55 border border-border/20 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-primary/55" />
-        <span className="text-[9px] font-mono text-muted-foreground/65">AMJ · SNP · 2023</span>
+        <span className="text-[9px] font-mono text-muted-foreground/65">Jan–Jun · SNP · 2023</span>
       </div>
     </div>
   )
@@ -382,7 +382,7 @@ export function EarthMap() {
             Study Region
           </h2>
           <p className="max-w-lg text-muted-foreground/70 text-sm text-balance leading-relaxed">
-            Swiss National Park — 170 km² of protected alpine terrain · Graubünden, Switzerland · ECOSTRESS/AppEEARS April–June observation window
+            Swiss National Park — 170 km² of protected alpine terrain · Graubünden, Switzerland · ECOSTRESS/AppEEARS January–June observation window
           </p>
         </motion.div>
 
@@ -438,7 +438,7 @@ export function EarthMap() {
             <div className="px-5 py-3 border-t border-border/15 bg-card/5">
               <p className="text-[9px] font-mono text-muted-foreground/45 leading-relaxed">
                 Raster-derived ECOSTRESS/AppEEARS output for Swiss National Park ·
-                April–June observation window · 2019–2025 · ~37% AOI pixel coverage ·
+                January–June observations · 2019–2025 · ~37% AOI pixel coverage ·
                 This is not a full growing-season or long-term ecological trend assessment ·
                 Research prototype — requires independent validation
               </p>

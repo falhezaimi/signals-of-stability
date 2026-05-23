@@ -1,0 +1,12 @@
+class_code,class_name,description
+0,unclassified_or_no_data,"No dominant spatial story assigned, often because data are missing or mixed."
+1,stable_core,"Low interannual variability across NDVI, ET, and ESI in June."
+2,coherent_june_activation,June NDVI and ET slopes are positive and ESI is nonnegative.
+3,strong_june_activation,June NDVI and ET slopes are both in the upper activation range.
+4,esi_watch_zone_exploratory,June NDVI and ET are positive but ESI slope is negative. Exploratory only.
+5,demand_efficiency_watch_exploratory,"June NDVI and ET are positive, PET is positive, and WUE is negative. Exploratory PET/WUE support watch zone."
+6,efficient_activation_support,June NDVI and ET are positive and WUE is nonnegative where WUE raster support exists.
+7,product_disagreement_zone,Main products point in conflicting directions.
+8,high_variability_zone,One or more main products show high interannual variability.
+9,seasonal_activation_zone,Winter-to-spring activation is consistently positive for NDVI and ET.
+10,low_support_zone,Too few valid years or weak support for spatial interpretation.

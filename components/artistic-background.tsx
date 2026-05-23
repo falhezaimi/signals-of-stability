@@ -16,17 +16,17 @@ function HeroBackground() {
       {/* Primary radial atmosphere — stronger, more visible */}
       <div
         className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full blur-[200px]"
-        style={{ background: 'oklch(0.565 0.095 140 / 0.055)' }}
+        style={{ background: 'rgba(63, 107, 74, 0.055)' }}
       />
-      {/* Gold accent atmosphere — right side */}
+      {/* Brass accent atmosphere — right side */}
       <div
         className="absolute top-[20%] right-[5%] w-[600px] h-[450px] rounded-full blur-[160px]"
-        style={{ background: 'oklch(0.687 0.115 79 / 0.04)' }}
+        style={{ background: 'rgba(179, 146, 74, 0.04)' }}
       />
-      {/* Cool atmosphere — left side */}
+      {/* Satellite-blue atmosphere — left side */}
       <div
         className="absolute bottom-[10%] left-[5%] w-[500px] h-[400px] rounded-full blur-[150px]"
-        style={{ background: 'oklch(0.527 0.092 234 / 0.025)' }}
+        style={{ background: 'rgba(73, 107, 122, 0.025)' }}
       />
 
       {/* Topographic contour rings — centered on virtual alpine summit */}
@@ -150,7 +150,7 @@ function ObservatoryBackground() {
       {/* Primary glow */}
       <div
         className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[700px] h-[450px] rounded-full blur-[160px]"
-        style={{ background: 'oklch(0.565 0.095 140 / 0.03)' }}
+        style={{ background: 'rgba(63, 107, 74, 0.03)' }}
       />
 
       {/* Scan line grid — horizontal */}
@@ -211,7 +211,7 @@ function MethodologyBackground() {
 
       <div
         className="absolute top-1/3 right-[15%] w-[600px] h-[400px] rounded-full blur-[160px]"
-        style={{ background: 'oklch(0.565 0.095 140 / 0.03)' }}
+        style={{ background: 'rgba(63, 107, 74, 0.03)' }}
       />
 
       <svg
@@ -253,10 +253,10 @@ function TimelineBackground() {
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
 
-      {/* Gold atmosphere — left */}
+      {/* Brass atmosphere — left */}
       <div
         className="absolute top-[15%] left-[5%] w-[500px] h-[700px] rounded-full blur-[180px]"
-        style={{ background: 'oklch(0.687 0.115 79 / 0.02)' }}
+        style={{ background: 'rgba(179, 146, 74, 0.02)' }}
       />
 
       <svg
@@ -333,10 +333,10 @@ function FindingsBackground() {
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
 
-      {/* Ice-blue atmosphere */}
+      {/* Satellite-blue atmosphere */}
       <div
         className="absolute top-[20%] right-[10%] w-[600px] h-[500px] rounded-full blur-[170px]"
-        style={{ background: 'oklch(0.527 0.092 234 / 0.035)' }}
+        style={{ background: 'rgba(73, 107, 122, 0.035)' }}
       />
 
       <svg
@@ -396,10 +396,10 @@ function ConclusionBackground() {
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/30" />
 
-      {/* Warm glow — stronger */}
+      {/* Brass glow — conclusion warmth */}
       <div
         className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[160px]"
-        style={{ background: 'oklch(0.687 0.115 79 / 0.035)' }}
+        style={{ background: 'rgba(179, 146, 74, 0.035)' }}
       />
 
       <svg
@@ -571,85 +571,62 @@ function FeldstationBackground() {
   )
 }
 
-/* ── RASTERBAND ── Alpine night: CRT scanlines, raster grid, crosshairs */
+/* ── RASTERBAND ── Light instrument panel: sparse measurement grid, survey marks */
 function RasterbandBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-      {/* Base: the dark background is provided by [data-register="rasterband"] CSS vars */}
-
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 1000 1000"
         preserveAspectRatio="xMidYMid slice"
+        style={{ color: '#1F2421' }}
       >
-        {/* CRT horizontal scanlines — tight, subtle */}
-        {Array.from({ length: 125 }, (_, i) => (
+        {/* Sparse measurement grid — horizontal */}
+        {[250, 500, 750].map((y, i) => (
           <line
-            key={`scan${i}`}
-            x1="0" y1={i * 8}
-            x2="1000" y2={i * 8}
-            stroke="white" strokeWidth="0.4"
-            opacity="0.028"
+            key={`gh${i}`}
+            x1="0" y1={y}
+            x2="1000" y2={y}
+            stroke="currentColor" strokeWidth="0.4"
+            opacity="0.040"
           />
         ))}
 
-        {/* Raster pixel dot grid — fine, regular */}
-        {Array.from({ length: 26 }, (_, col) =>
-          Array.from({ length: 26 }, (_, row) => (
-            <circle
-              key={`dot-${col}-${row}`}
-              cx={col * 40}
-              cy={row * 40}
-              r="0.7"
-              fill="white"
-              opacity="0.045"
-            />
-          ))
-        )}
-
-        {/* Vertical measurement lines — instrument grid */}
-        {[100, 200, 333, 500, 667, 800, 900].map((x, i) => (
+        {/* Sparse measurement grid — vertical */}
+        {[250, 500, 750].map((x, i) => (
           <line
-            key={`vl${i}`}
+            key={`gv${i}`}
             x1={x} y1="0"
             x2={x} y2="1000"
-            stroke="white" strokeWidth="0.3"
-            opacity="0.022"
+            stroke="currentColor" strokeWidth="0.4"
+            opacity="0.040"
           />
         ))}
 
-        {/* Crosshair observation marks */}
+        {/* Crosshair observation marks — survey feel */}
         {[[80, 100], [920, 90], [80, 900], [920, 910], [500, 50], [500, 950], [180, 500], [820, 500]].map(([cx, cy], i) => (
-          <g key={`cross${i}`} opacity="0.14">
-            <line x1={cx - 14} y1={cy} x2={cx + 14} y2={cy} stroke="white" strokeWidth="0.6" />
-            <line x1={cx} y1={cy - 14} x2={cx} y2={cy + 14} stroke="white" strokeWidth="0.6" />
-            <circle cx={cx} cy={cy} r="2.5" fill="none" stroke="white" strokeWidth="0.5" />
+          <g key={`cross${i}`} opacity="0.10">
+            <line x1={cx - 14} y1={cy} x2={cx + 14} y2={cy} stroke="currentColor" strokeWidth="0.6" />
+            <line x1={cx} y1={cy - 14} x2={cx} y2={cy + 14} stroke="currentColor" strokeWidth="0.6" />
+            <circle cx={cx} cy={cy} r="2.5" fill="none" stroke="currentColor" strokeWidth="0.5" />
           </g>
         ))}
 
         {/* Corner bracket marks — instrument frame */}
-        <g stroke="white" strokeWidth="0.9" fill="none" opacity="0.18">
+        <g stroke="currentColor" strokeWidth="0.9" fill="none" opacity="0.14">
           <path d="M35,35 L35,75 M35,35 L75,35" />
           <path d="M965,35 L965,75 M965,35 L925,35" />
           <path d="M35,965 L35,925 M35,965 L75,965" />
           <path d="M965,965 L965,925 M965,965 L925,965" />
         </g>
 
-        {/* Satellite pass diagonal — instrument reference */}
+        {/* Satellite pass diagonal — reference line */}
         <line
           x1="880" y1="20"
           x2="120" y2="980"
-          stroke="white" strokeWidth="0.35"
-          opacity="0.04"
+          stroke="currentColor" strokeWidth="0.35"
+          opacity="0.045"
           strokeDasharray="12,8"
-        />
-
-        {/* Horizontal horizon line */}
-        <line
-          x1="0" y1="500"
-          x2="1000" y2="500"
-          stroke="white" strokeWidth="0.25"
-          opacity="0.03"
         />
       </svg>
     </div>

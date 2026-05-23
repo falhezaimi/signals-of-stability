@@ -8,7 +8,7 @@ const directions = [
   {
     num: '01',
     title: 'Extend the seasonal window',
-    body: 'Compare June-only signals to Jan–Mar and Apr–Jun composites. Test whether stable core boundaries shift with season or remain consistent.',
+    body: 'Compare June-only signals to Jan–Mar and Apr–Jun composites. Test whether high-ESI signal boundaries shift with season or remain spatially consistent.',
     tag: 'Temporal',
   },
   {
@@ -20,7 +20,7 @@ const directions = [
   {
     num: '03',
     title: 'Isolate forested valley zones',
-    body: 'High ET and stable core pixels may concentrate in sheltered valley corridors with mature canopy. Mask by forest cover and compare stability metrics to exposed slopes.',
+    body: 'High-ET and high-ESI signal pixels may concentrate in sheltered valley corridors with mature canopy. Mask by forest cover and compare signal variability to exposed slopes.',
     tag: 'Vegetation',
   },
   {
@@ -31,8 +31,8 @@ const directions = [
   },
   {
     num: '05',
-    title: 'Compare stable cores across time-bin filters',
-    body: 'Do stable core pixels identified from daytime-only data remain stable under all-available-time filtering? Persistent cores across bins are stronger candidates for follow-up field study.',
+    title: 'Compare high-ESI signal areas across time-bin filters',
+    body: 'Do high-ESI pixels identified from daytime-only data persist under all-available-time filtering? Consistent signal areas across time bins are stronger candidates for follow-up field study.',
     tag: 'Robustness',
   },
   {
@@ -71,9 +71,9 @@ export function FrNext() {
                 <span className="text-foreground/50">to Hypothesis Testing</span>
               </h2>
               <p className="text-sm text-muted-foreground/65 leading-relaxed">
-                The next step is to move from visual evidence to testable hypotheses: compare stability zones across seasons,
+                The next step is to move from visual signal patterns to testable hypotheses: compare signal areas across seasons,
                 isolate forested valleys, examine snowmelt timing, test elevation and aspect controls, and validate whether
-                watch zones correspond to ecological vulnerability.
+                elevated-stress signal areas correspond to known ecological sensitivity zones.
               </p>
             </div>
           </div>
@@ -105,8 +105,11 @@ export function FrNext() {
                 <p className="text-[9px] font-mono text-muted-foreground/35 uppercase tracking-[0.18em] mb-3">
                   Summary Answer
                 </p>
-                <p className="font-serif text-lg md:text-xl font-medium text-foreground/80 leading-snug text-balance">
-                  Swiss National Park does not behave like a uniform green landscape. The evidence suggests a terrain-structured ecological mosaic — where stable cores, stress watch zones, and demand-efficiency areas emerge from interactions among elevation, water flux, atmospheric demand, vegetation greenness, water-use behavior, and time.
+                <p className="font-serif text-lg md:text-xl font-medium text-foreground/80 leading-snug text-balance mb-4">
+                  Short-window ECOSTRESS-derived signals do not appear uniformly distributed across Swiss National Park. Available January–June observations show spatially structured patterns — areas with consistently higher ESI signals, elevated stress signals, and variable-demand patterns — that correlate with terrain structure. These are candidate patterns, not confirmed ecological findings.
+                </p>
+                <p className="text-[9px] font-mono text-muted-foreground/35 uppercase tracking-[0.12em]">
+                  Short-window signal only · January–June observations · 2024 ET &amp; ESI limited coverage · Exploratory · Validation pending
                 </p>
               </div>
               <div className="hidden md:block text-right space-y-1">
@@ -127,8 +130,8 @@ export function FrNext() {
             >
               <ArrowLeft className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary/60 group-hover:-translate-x-0.5 transition-all duration-300" />
               <div>
-                <p className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.12em] mb-0.5">Back to</p>
-                <p className="text-[11px] font-medium text-foreground/70">Main Story</p>
+                <p className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.12em] mb-0.5">Return to</p>
+                <p className="text-[11px] font-medium text-foreground/70">Homepage</p>
               </div>
             </Link>
 
@@ -141,12 +144,12 @@ export function FrNext() {
             </div>
 
             <Link
-              href="/signals"
+              href="/#findings"
               className="flex items-center justify-end gap-3 group border border-border/25 px-5 py-3 hover:border-primary/30 hover:bg-card/15 transition-all duration-500"
             >
               <div className="text-right">
-                <p className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.12em] mb-0.5">Explore</p>
-                <p className="text-[11px] font-medium text-foreground/70">Data Atlas</p>
+                <p className="text-[8px] font-mono text-muted-foreground/35 uppercase tracking-[0.12em] mb-0.5">Review on Homepage</p>
+                <p className="text-[11px] font-medium text-foreground/70">Main Evidence</p>
               </div>
               <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-primary/60 group-hover:translate-x-0.5 transition-all duration-300" />
             </Link>

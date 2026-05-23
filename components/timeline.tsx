@@ -57,7 +57,7 @@ function RasterThumbnail({ year }: { year: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/data/rasters/ndvi_${year}_apr_jun_mean.png`}
-        alt={`NDVI ${year} April–June mean`}
+        alt={`NDVI ${year} January–June mean`}
         loading="lazy"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: 'cover', imageRendering: 'pixelated' }}
@@ -157,7 +157,7 @@ export function Timeline() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-border/30 bg-card/15 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-ice-blue/60" />
               <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/80">
-                Temporal Analysis · April–June · 2019–2025
+                Temporal Analysis · January–June · 2019–2025
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4 text-balance text-foreground">
@@ -205,7 +205,7 @@ export function Timeline() {
                       </span>
                     </div>
                     <span className="text-[8px] font-mono text-muted-foreground/25">
-                      AMJ · SNP · ECOSTRESS
+                      Jan–Jun · SNP · ECOSTRESS
                     </span>
                   </div>
 
@@ -347,7 +347,7 @@ export function Timeline() {
 
             <div className="flex items-center justify-between mt-3 pt-2 border-t border-border/15">
               <span className="text-[8px] font-mono text-muted-foreground/25 uppercase tracking-[0.12em]">
-                ECOSTRESS/AppEEARS · April–June · 2019–2025
+                ECOSTRESS/AppEEARS · January–June · 2019–2025
               </span>
               <span className="text-[8px] font-mono text-muted-foreground/20">
                 Frame {String(activeIdx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
@@ -359,8 +359,8 @@ export function Timeline() {
         <SectionReveal delay={0.3}>
           <div className="mt-6 border border-border/20 bg-card/8 px-6 py-5 text-center">
             <p className="text-xs text-muted-foreground/60 max-w-md mx-auto leading-relaxed mb-2">
-              The April–June short-window signal shows inter-annual variability with a directional low in 2021
-              and apparent recovery through 2023. Directional signals only — requires independent validation.
+              The January–June short-window signal shows inter-annual variability with a directional low in 2021.
+              These are short-window signal patterns only — not indicative of long-term change. Requires independent validation.
             </p>
             <span className="text-[9px] font-mono text-gold/45 uppercase tracking-[0.15em]">
               Exploratory Findings · Research Prototype · Not Peer Reviewed

@@ -19,14 +19,14 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Signals of Stability | Swiss National Park Research',
-  description: 'A Digital Exploration of Vegetation Change in the Swiss National Park. Using satellite-derived environmental signals to examine ecological resilience in one of Europe\'s most protected alpine landscapes.',
+  title: 'Swiss National Park ECOSTRESS Short-Window Signal Atlas',
+  description: 'An exploratory atlas of vegetation stress signals from ECOSTRESS-derived ESI, ET, NDVI, PET, and WUE products across January–June observations at Swiss National Park.',
   generator: 'v0.app',
-  keywords: ['vegetation change', 'Swiss National Park', 'remote sensing', 'NDVI', 'ecological monitoring', 'alpine ecosystems', 'conservation'],
+  keywords: ['Swiss National Park', 'ECOSTRESS', 'remote sensing', 'vegetation stress', 'ESI', 'ET', 'NDVI', 'PET', 'WUE', 'signal atlas', 'AppEEARS'],
   authors: [{ name: 'Research Team' }],
   openGraph: {
-    title: 'Signals of Stability',
-    description: 'A Digital Exploration of Vegetation Change in the Swiss National Park',
+    title: 'Swiss National Park ECOSTRESS Short-Window Signal Atlas',
+    description: 'An exploratory atlas of vegetation stress signals from ECOSTRESS-derived ESI, ET, NDVI, PET, and WUE products across January–June observations.',
     type: 'website',
   },
   icons: {

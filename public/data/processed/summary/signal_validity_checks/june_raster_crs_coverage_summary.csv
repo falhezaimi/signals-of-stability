@@ -1,0 +1,4 @@
+variable,raster_count,unique_epsg,unique_crs,min_coverage_inside_aoi_percent,mean_coverage_inside_aoi_percent
+esi,95,[32632],['EPSG:32632'],0.0345313803919311,63.83152572599118
+et,94,[32632],['EPSG:32632'],0.0345313803919311,63.44675472307619
+ndvi,300,[32632],['EPSG:32632'],99.08779603464647,99.93090846306582

@@ -1,0 +1,141 @@
+scenario,scenario_label,product,year,time_bins,scene_count,min_required_scenes,usable_for_composite,mean_scene_coverage,min_scene_coverage,mean_footprint_fraction
+midday_afternoon,Midday/Afternoon only,ndvi,2019,midday_afternoon,14,1,True,99.83309832810566,99.47915167908836,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2020,midday_afternoon,16,1,True,99.88471554775401,99.16261402549569,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2021,midday_afternoon,10,1,True,99.97179937267992,99.81295502287703,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2022,midday_afternoon,24,1,True,99.95275915321382,99.69209519150527,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2023,midday_afternoon,16,1,True,99.87464389513971,99.13671549020172,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2024,midday_afternoon,8,1,True,99.97554027222239,99.8676297084976,1.0
+midday_afternoon,Midday/Afternoon only,ndvi,2025,midday_afternoon,12,1,True,99.98681093110031,99.92230439411816,1.0
+midday_afternoon,Midday/Afternoon only,et,2019,midday_afternoon,4,1,True,93.43400189922593,73.86262265834077,1.0
+midday_afternoon,Midday/Afternoon only,et,2020,midday_afternoon,2,1,True,85.31984691088026,72.7921498661909,1.0
+midday_afternoon,Midday/Afternoon only,et,2021,midday_afternoon,2,1,True,94.4131104140888,88.82622082817761,1.0
+midday_afternoon,Midday/Afternoon only,et,2022,midday_afternoon,4,1,True,91.60599694972807,71.40513942044832,1.0
+midday_afternoon,Midday/Afternoon only,et,2023,midday_afternoon,3,1,True,82.05998868138086,70.64544905182585,1.0
+midday_afternoon,Midday/Afternoon only,et,2024,midday_afternoon,1,1,True,99.2633305516388,99.2633305516388,1.0
+midday_afternoon,Midday/Afternoon only,et,2025,midday_afternoon,1,1,True,90.7714885902564,90.7714885902564,1.0
+midday_afternoon,Midday/Afternoon only,esi,2019,midday_afternoon,4,1,True,93.43400189922593,73.86262265834077,1.0
+midday_afternoon,Midday/Afternoon only,esi,2020,midday_afternoon,2,1,True,85.31984691088026,72.7921498661909,1.0
+midday_afternoon,Midday/Afternoon only,esi,2021,midday_afternoon,2,1,True,94.4131104140888,88.82622082817761,1.0
+midday_afternoon,Midday/Afternoon only,esi,2022,midday_afternoon,4,1,True,91.60599694972807,71.40513942044832,1.0
+midday_afternoon,Midday/Afternoon only,esi,2023,midday_afternoon,3,1,True,82.05998868138086,70.64544905182585,1.0
+midday_afternoon,Midday/Afternoon only,esi,2024,midday_afternoon,1,1,True,99.2633305516388,99.2633305516388,1.0
+midday_afternoon,Midday/Afternoon only,esi,2025,midday_afternoon,1,1,True,90.7714885902564,90.7714885902564,1.0
+midday_afternoon,Midday/Afternoon only,pet,2019,midday_afternoon,4,1,True,93.43400189922593,73.86262265834077,1.0
+midday_afternoon,Midday/Afternoon only,pet,2020,midday_afternoon,2,1,True,85.31984691088026,72.7921498661909,1.0
+midday_afternoon,Midday/Afternoon only,pet,2021,midday_afternoon,2,1,True,94.4131104140888,88.82622082817761,1.0
+midday_afternoon,Midday/Afternoon only,pet,2022,midday_afternoon,4,1,True,91.60599694972807,71.40513942044832,1.0
+midday_afternoon,Midday/Afternoon only,pet,2023,midday_afternoon,3,1,True,82.05998868138086,70.64544905182585,1.0
+midday_afternoon,Midday/Afternoon only,pet,2024,midday_afternoon,1,1,True,99.2633305516388,99.2633305516388,1.0
+midday_afternoon,Midday/Afternoon only,pet,2025,midday_afternoon,1,1,True,90.7714885902564,90.7714885902564,1.0
+midday_afternoon,Midday/Afternoon only,wue,2019,midday_afternoon,1,1,True,81.5199562602515,81.5199562602515,1.0
+midday_afternoon,Midday/Afternoon only,wue,2020,midday_afternoon,2,1,True,84.09973813703202,72.7921498661909,1.0
+midday_afternoon,Midday/Afternoon only,wue,2021,midday_afternoon,2,1,True,88.90679404909213,85.23495726741676,1.0
+midday_afternoon,Midday/Afternoon only,wue,2022,midday_afternoon,3,1,True,97.34492052986485,94.9699289229087,1.0
+midday_afternoon,Midday/Afternoon only,wue,2023,midday_afternoon,2,1,True,84.08247244683606,83.38752841644845,1.0
+midday_afternoon,Midday/Afternoon only,wue,2024,midday_afternoon,0,1,False,,,
+midday_afternoon,Midday/Afternoon only,wue,2025,midday_afternoon,1,1,True,89.92834738568675,89.92834738568675,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2019,"morning,midday_afternoon",20,1,True,99.7971281401974,99.26045293660614,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2020,"morning,midday_afternoon",32,1,True,99.94172829558862,99.16261402549569,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2021,"morning,midday_afternoon",24,1,True,99.97290245844243,99.81295502287703,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2022,"morning,midday_afternoon",36,1,True,99.90503870392219,99.08779603464647,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2023,"morning,midday_afternoon",38,1,True,99.84748640326897,99.13671549020172,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2024,"morning,midday_afternoon",14,1,True,99.9856119248367,99.8676297084976,1.0
+daytime,Morning + Midday/Afternoon,ndvi,2025,"morning,midday_afternoon",28,1,True,99.90195554495865,99.27196339673678,1.0
+daytime,Morning + Midday/Afternoon,et,2019,"morning,midday_afternoon",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime,Morning + Midday/Afternoon,et,2020,"morning,midday_afternoon",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime,Morning + Midday/Afternoon,et,2021,"morning,midday_afternoon",8,1,True,95.3879025064027,78.30566026876924,1.0
+daytime,Morning + Midday/Afternoon,et,2022,"morning,midday_afternoon",9,1,True,93.87899309052655,71.40513942044832,1.0
+daytime,Morning + Midday/Afternoon,et,2023,"morning,midday_afternoon",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime,Morning + Midday/Afternoon,et,2024,"morning,midday_afternoon",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime,Morning + Midday/Afternoon,et,2025,"morning,midday_afternoon",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime,Morning + Midday/Afternoon,esi,2019,"morning,midday_afternoon",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime,Morning + Midday/Afternoon,esi,2020,"morning,midday_afternoon",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime,Morning + Midday/Afternoon,esi,2021,"morning,midday_afternoon",8,1,True,95.3879025064027,78.30566026876924,1.0
+daytime,Morning + Midday/Afternoon,esi,2022,"morning,midday_afternoon",9,1,True,93.87899309052655,71.40513942044832,1.0
+daytime,Morning + Midday/Afternoon,esi,2023,"morning,midday_afternoon",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime,Morning + Midday/Afternoon,esi,2024,"morning,midday_afternoon",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime,Morning + Midday/Afternoon,esi,2025,"morning,midday_afternoon",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime,Morning + Midday/Afternoon,pet,2019,"morning,midday_afternoon",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime,Morning + Midday/Afternoon,pet,2020,"morning,midday_afternoon",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime,Morning + Midday/Afternoon,pet,2021,"morning,midday_afternoon",8,1,True,95.3879025064027,78.30566026876924,1.0
+daytime,Morning + Midday/Afternoon,pet,2022,"morning,midday_afternoon",9,1,True,93.87899309052655,71.40513942044832,1.0
+daytime,Morning + Midday/Afternoon,pet,2023,"morning,midday_afternoon",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime,Morning + Midday/Afternoon,pet,2024,"morning,midday_afternoon",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime,Morning + Midday/Afternoon,pet,2025,"morning,midday_afternoon",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime,Morning + Midday/Afternoon,wue,2019,"morning,midday_afternoon",4,1,True,82.70697246122413,76.63952116485856,1.0
+daytime,Morning + Midday/Afternoon,wue,2020,"morning,midday_afternoon",4,1,True,90.40171505855946,72.7921498661909,1.0
+daytime,Morning + Midday/Afternoon,wue,2021,"morning,midday_afternoon",6,1,True,85.26565182776515,73.53457454461743,1.0
+daytime,Morning + Midday/Afternoon,wue,2022,"morning,midday_afternoon",8,1,True,94.86129895542575,84.04074702886248,1.0
+daytime,Morning + Midday/Afternoon,wue,2023,"morning,midday_afternoon",9,1,True,88.60944049571714,72.28568962044257,1.0
+daytime,Morning + Midday/Afternoon,wue,2024,"morning,midday_afternoon",0,1,False,,,
+daytime,Morning + Midday/Afternoon,wue,2025,"morning,midday_afternoon",4,1,True,91.44269229662457,80.64803890535525,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2019,"morning,midday_afternoon,evening",24,1,True,99.80360277402087,99.26045293660614,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2020,"morning,midday_afternoon,evening",38,1,True,99.92533346257358,99.16261402549569,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2021,"morning,midday_afternoon,evening",32,1,True,99.97347198641765,99.81295502287703,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2022,"morning,midday_afternoon,evening",44,1,True,99.91988458147706,99.08779603464647,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2023,"morning,midday_afternoon,evening",46,1,True,99.87394795019972,99.13671549020172,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2024,"morning,midday_afternoon,evening",14,1,True,99.9856119248367,99.8676297084976,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,ndvi,2025,"morning,midday_afternoon,evening",30,1,True,99.90849184196139,99.27196339673678,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2019,"morning,midday_afternoon,evening",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2020,"morning,midday_afternoon,evening",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2021,"morning,midday_afternoon,evening",9,1,True,95.07064544905182,78.30566026876924,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2022,"morning,midday_afternoon,evening",11,1,True,94.06504979582013,71.40513942044832,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2023,"morning,midday_afternoon,evening",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2024,"morning,midday_afternoon,evening",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,et,2025,"morning,midday_afternoon,evening",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2019,"morning,midday_afternoon,evening",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2020,"morning,midday_afternoon,evening",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2021,"morning,midday_afternoon,evening",9,1,True,95.07064544905182,78.30566026876924,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2022,"morning,midday_afternoon,evening",11,1,True,94.06504979582013,71.40513942044832,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2023,"morning,midday_afternoon,evening",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2024,"morning,midday_afternoon,evening",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,esi,2025,"morning,midday_afternoon,evening",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2019,"morning,midday_afternoon,evening",7,1,True,95.71687556781512,73.86262265834077,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2020,"morning,midday_afternoon,evening",5,1,True,94.1279387643521,72.7921498661909,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2021,"morning,midday_afternoon,evening",9,1,True,95.07064544905182,78.30566026876924,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2022,"morning,midday_afternoon,evening",11,1,True,94.06504979582013,71.40513942044832,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2023,"morning,midday_afternoon,evening",10,1,True,90.39049235993208,70.64544905182585,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2024,"morning,midday_afternoon,evening",1,1,True,99.2633305516388,99.2633305516388,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,pet,2025,"morning,midday_afternoon,evening",4,1,True,93.70305890477972,84.04362464389514,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2019,"morning,midday_afternoon,evening",4,1,True,82.70697246122413,76.63952116485856,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2020,"morning,midday_afternoon,evening",4,1,True,90.40171505855946,72.7921498661909,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2021,"morning,midday_afternoon,evening",6,1,True,85.26565182776515,73.53457454461743,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2022,"morning,midday_afternoon,evening",10,1,True,94.85223446807287,84.04074702886248,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2023,"morning,midday_afternoon,evening",9,1,True,88.60944049571714,72.28568962044257,1.0
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2024,"morning,midday_afternoon,evening",0,1,False,,,
+daytime_evening,Morning + Midday/Afternoon + Evening,wue,2025,"morning,midday_afternoon,evening",4,1,True,91.44269229662457,80.64803890535525,1.0
+all_available,All usable time bins,ndvi,2019,"morning,midday_afternoon,evening,night,unknown",24,1,True,99.80360277402087,99.26045293660614,1.0
+all_available,All usable time bins,ndvi,2020,"morning,midday_afternoon,evening,night,unknown",38,1,True,99.92533346257358,99.16261402549569,1.0
+all_available,All usable time bins,ndvi,2021,"morning,midday_afternoon,evening,night,unknown",32,1,True,99.97347198641765,99.81295502287703,1.0
+all_available,All usable time bins,ndvi,2022,"morning,midday_afternoon,evening,night,unknown",44,1,True,99.91988458147706,99.08779603464647,1.0
+all_available,All usable time bins,ndvi,2023,"morning,midday_afternoon,evening,night,unknown",48,1,True,99.87896031768871,99.13671549020172,1.0
+all_available,All usable time bins,ndvi,2024,"morning,midday_afternoon,evening,night,unknown",18,1,True,99.98625139484395,99.8676297084976,1.0
+all_available,All usable time bins,ndvi,2025,"morning,midday_afternoon,evening,night,unknown",30,1,True,99.90849184196139,99.27196339673678,1.0
+all_available,All usable time bins,et,2019,"morning,midday_afternoon,evening,night,unknown",7,1,True,95.71687556781512,73.86262265834077,1.0
+all_available,All usable time bins,et,2020,"morning,midday_afternoon,evening,night,unknown",5,1,True,94.1279387643521,72.7921498661909,1.0
+all_available,All usable time bins,et,2021,"morning,midday_afternoon,evening,night,unknown",9,1,True,95.07064544905182,78.30566026876924,1.0
+all_available,All usable time bins,et,2022,"morning,midday_afternoon,evening,night,unknown",11,1,True,94.06504979582013,71.40513942044832,1.0
+all_available,All usable time bins,et,2023,"morning,midday_afternoon,evening,night,unknown",10,1,True,90.39049235993208,70.64544905182585,1.0
+all_available,All usable time bins,et,2024,"morning,midday_afternoon,evening,night,unknown",1,1,True,99.2633305516388,99.2633305516388,1.0
+all_available,All usable time bins,et,2025,"morning,midday_afternoon,evening,night,unknown",4,1,True,93.70305890477972,84.04362464389514,1.0
+all_available,All usable time bins,esi,2019,"morning,midday_afternoon,evening,night,unknown",7,1,True,95.71687556781512,73.86262265834077,1.0
+all_available,All usable time bins,esi,2020,"morning,midday_afternoon,evening,night,unknown",5,1,True,94.1279387643521,72.7921498661909,1.0
+all_available,All usable time bins,esi,2021,"morning,midday_afternoon,evening,night,unknown",9,1,True,95.07064544905182,78.30566026876924,1.0
+all_available,All usable time bins,esi,2022,"morning,midday_afternoon,evening,night,unknown",11,1,True,94.06504979582013,71.40513942044832,1.0
+all_available,All usable time bins,esi,2023,"morning,midday_afternoon,evening,night,unknown",10,1,True,90.39049235993208,70.64544905182585,1.0
+all_available,All usable time bins,esi,2024,"morning,midday_afternoon,evening,night,unknown",1,1,True,99.2633305516388,99.2633305516388,1.0
+all_available,All usable time bins,esi,2025,"morning,midday_afternoon,evening,night,unknown",4,1,True,93.70305890477972,84.04362464389514,1.0
+all_available,All usable time bins,pet,2019,"morning,midday_afternoon,evening,night,unknown",7,1,True,95.71687556781512,73.86262265834077,1.0
+all_available,All usable time bins,pet,2020,"morning,midday_afternoon,evening,night,unknown",5,1,True,94.1279387643521,72.7921498661909,1.0
+all_available,All usable time bins,pet,2021,"morning,midday_afternoon,evening,night,unknown",9,1,True,95.07064544905182,78.30566026876924,1.0
+all_available,All usable time bins,pet,2022,"morning,midday_afternoon,evening,night,unknown",11,1,True,94.06504979582013,71.40513942044832,1.0
+all_available,All usable time bins,pet,2023,"morning,midday_afternoon,evening,night,unknown",10,1,True,90.39049235993208,70.64544905182585,1.0
+all_available,All usable time bins,pet,2024,"morning,midday_afternoon,evening,night,unknown",1,1,True,99.2633305516388,99.2633305516388,1.0
+all_available,All usable time bins,pet,2025,"morning,midday_afternoon,evening,night,unknown",4,1,True,93.70305890477972,84.04362464389514,1.0
+all_available,All usable time bins,wue,2019,"morning,midday_afternoon,evening,night,unknown",4,1,True,82.70697246122413,76.63952116485856,1.0
+all_available,All usable time bins,wue,2020,"morning,midday_afternoon,evening,night,unknown",4,1,True,90.40171505855946,72.7921498661909,1.0
+all_available,All usable time bins,wue,2021,"morning,midday_afternoon,evening,night,unknown",6,1,True,85.26565182776515,73.53457454461743,1.0
+all_available,All usable time bins,wue,2022,"morning,midday_afternoon,evening,night,unknown",10,1,True,94.85223446807287,84.04074702886248,1.0
+all_available,All usable time bins,wue,2023,"morning,midday_afternoon,evening,night,unknown",9,1,True,88.60944049571714,72.28568962044257,1.0
+all_available,All usable time bins,wue,2024,"morning,midday_afternoon,evening,night,unknown",0,1,False,,,
+all_available,All usable time bins,wue,2025,"morning,midday_afternoon,evening,night,unknown",4,1,True,91.44269229662457,80.64803890535525,1.0

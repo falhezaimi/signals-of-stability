@@ -85,16 +85,8 @@ export function FrNav() {
               ))}
             </div>
 
-            {/* Right side: label + signals link */}
+            {/* Right side: page label */}
             <div className="hidden md:flex items-center gap-4 text-[10px] font-mono text-muted-foreground/40">
-              <Link
-                href="/signals"
-                className="flex items-center gap-1.5 border border-border/30 px-2.5 py-1 hover:border-primary/30 hover:text-primary/70 transition-all duration-500"
-              >
-                <span className="w-1 h-1 rounded-full bg-primary/50" />
-                Data Atlas
-              </Link>
-              <span className="w-px h-2.5 bg-border/30" />
               <span className="uppercase tracking-[0.15em] text-muted-foreground/30">Further Research</span>
             </div>
 

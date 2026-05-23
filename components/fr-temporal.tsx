@@ -63,8 +63,10 @@ export function FrTemporal() {
               </span>
             </div>
             <p className="max-w-2xl text-sm text-muted-foreground/60 leading-relaxed">
-              The multi-year composite gives the stable picture. Yearly outputs reveal how the signal breathes from season to season.
-              These views do not prove long-term change, but they reveal persistence, variability, and possible transition zones.
+              The multi-year composite gives the stable average picture behind the homepage finding.
+              Yearly outputs reveal how that signal breathes from season to season — exposing variability,
+              possible transition zones, and years where coverage was too sparse to draw strong conclusions.
+              These views do not prove long-term ecological change. They are directional only.
             </p>
           </div>
         </SectionReveal>
@@ -111,7 +113,7 @@ export function FrTemporal() {
                     disabled={abs}
                     title={abs ? 'Data unavailable' : `${activeProduct.toUpperCase()} ${yr}`}
                   >
-                    <div className="aspect-square bg-[oklch(0.07_0.005_160)]">
+                    <div className="aspect-square bg-[oklch(0.075_0.012_222)]">
                       {abs ? (
                         <div className="w-full h-full flex items-center justify-center">
                           <span className="text-[6px] font-mono text-muted-foreground/30">N/A</span>
@@ -166,7 +168,7 @@ export function FrTemporal() {
                 </div>
               </div>
 
-              <div className="relative" style={{ background: 'oklch(0.07 0.005 160)', aspectRatio: '4/3' }}>
+              <div className="relative" style={{ background: 'oklch(0.075 0.012 222)', aspectRatio: '4/3' }}>
                 {absent ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                     <div className="w-8 h-px bg-border/30" />
@@ -199,7 +201,7 @@ export function FrTemporal() {
                     </picture>
                     <div
                       className="absolute bottom-0 left-0 right-0 flex items-end justify-between px-4 py-2.5 z-20 pointer-events-none"
-                      style={{ background: 'linear-gradient(to top, oklch(0.05 0.004 160 / 0.85), transparent)' }}
+                      style={{ background: 'linear-gradient(to top, oklch(0.055 0.010 222 / 0.85), transparent)' }}
                     >
                       <span className="text-[8px] font-mono uppercase tracking-[0.12em]" style={{ color: '#DDD3BE', opacity: 0.50 }}>
                         {prod.label} · June {activeYear} · SNP

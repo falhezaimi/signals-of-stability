@@ -28,7 +28,7 @@ export function FrOpening() {
           <div className="flex items-center gap-3 mb-10 pb-4 border-b border-border/25">
             <span className="w-4 h-px bg-foreground/18" />
             <span className="text-[8px] font-mono uppercase tracking-[0.22em] text-muted-foreground/50">
-              Further Research · Inside the Signal · Swiss National Park
+              Evidence Layer · Swiss National Park · ECOSTRESS Short-Window Signal Atlas
             </span>
           </div>
         </SectionReveal>
@@ -40,22 +40,32 @@ export function FrOpening() {
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-border/30 bg-card/15 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
                 <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-muted-foreground/80">
-                  Section 1 · The Question
+                  The Evidence Layer
                 </span>
               </div>
             </SectionReveal>
 
             <SectionReveal delay={0.07}>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.1] text-balance mb-4">
-                Further Research:
+                Inside the Evidence Layer
                 <br />
-                <span className="text-foreground/55">Inside the Signal</span>
+                <span className="text-foreground/55">Swiss National Park</span>
               </h1>
             </SectionReveal>
 
             <SectionReveal delay={0.12}>
               <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-muted-foreground/50 mb-8">
-                ECOSTRESS/AppEEARS · Swiss National Park · 2019–2025 · Early Growing Season
+                ECOSTRESS/AppEEARS · Swiss National Park · 2019–2025 · January–June Observations
+              </p>
+            </SectionReveal>
+
+            {/* Bridge from homepage CTA */}
+            <SectionReveal delay={0.15}>
+              <p className="max-w-2xl text-sm text-muted-foreground/65 leading-relaxed mb-8">
+                The homepage states the directional finding. This page opens the evidence behind it —
+                moving through six spatial maps, five ECOSTRESS product signals, yearly variation
+                across 2019–2025, and robustness checks that support or qualify the terrain-structured
+                mosaic claim. This is exploratory evidence, not a confirmed trend.
               </p>
             </SectionReveal>
 
@@ -64,7 +74,7 @@ export function FrOpening() {
               <div className="border-l-2 border-primary/30 pl-5 mb-8">
                 <p className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground/40 mb-2">Research Question</p>
                 <p className="font-serif text-xl md:text-2xl font-medium leading-snug text-foreground/85 text-balance">
-                  "Is ecological stability in Swiss National Park randomly distributed, or structured by terrain and water stress?"
+                  "Are short-window vegetation stress signals in Swiss National Park uniformly distributed, or do they show spatial structure?"
                 </p>
               </div>
             </SectionReveal>
@@ -72,12 +82,12 @@ export function FrOpening() {
             {/* The answer */}
             <SectionReveal delay={0.24}>
               <div className="bg-card/20 border border-border/30 p-5 mb-8">
-                <p className="text-[9px] font-mono uppercase tracking-[0.18em] text-primary/60 mb-2">The Evidence Suggests</p>
+                <p className="text-[9px] font-mono uppercase tracking-[0.18em] text-primary/60 mb-2">Early Signal Pattern</p>
                 <p className="text-sm leading-relaxed text-foreground/80">
-                  <span className="font-medium">Structure.</span> Swiss National Park does not behave like a uniform green landscape.
-                  The evidence points to a terrain-structured ecological mosaic — where stable cores,
-                  stress watch zones, and demand-efficiency areas emerge from interactions among elevation,
-                  water flux, atmospheric demand, vegetation greenness, water-use behavior, and time.
+                  <span className="font-medium">Signal structure, not uniform distribution.</span> Short-window ECOSTRESS-derived outputs
+                  show spatially differentiated patterns across the park — areas with consistently higher
+                  ESI signals, elevated stress signals, and variable-demand patterns emerge from
+                  available January–June observations. These are candidate patterns, not confirmed ecological findings.
                 </p>
               </div>
             </SectionReveal>

@@ -79,7 +79,7 @@ export function Footer() {
           className="mt-12 pt-6 border-t border-border/10 flex flex-col sm:flex-row items-center justify-between gap-3"
         >
           <p className="text-[10px] text-muted-foreground/35">
-            Signals of Stability — Research Prototype 2024
+            SNP ECOSTRESS Short-Window Signal Atlas — Exploratory Research Prototype
           </p>
           <div className="flex items-center gap-4 text-[10px] font-mono text-muted-foreground/30">
             <span>46.6603°N · 10.2176°E</span>

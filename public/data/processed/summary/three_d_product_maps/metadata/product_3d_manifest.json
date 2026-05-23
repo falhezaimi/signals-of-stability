@@ -1,0 +1,161 @@
+{
+  "phase": "Phase 7 -- 3D Product Terrain Export",
+  "created_utc": "2026-05-11T17:34:02.715079+00:00",
+  "elevation_source": "C:\\Users\\Stej4\\OneDrive\\Documents\\school\\research\\env 231\\final\\data\\topography\\elevation.tif",
+  "camera": {
+    "elevation_deg": 38,
+    "azimuth_deg": 225,
+    "vertical_exag": 3.0
+  },
+  "assets": [
+    {
+      "product": "esi",
+      "source_pixels": 35665,
+      "render_shape": [
+        313,
+        303
+      ],
+      "p2": 0.6503,
+      "p98": 0.9046,
+      "units": "index (0\u20131)",
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "png_path": "data\\processed\\summary\\three_d_product_maps\\png\\esi_3d_terrain.png",
+      "webp_path": "data\\processed\\summary\\three_d_product_maps\\webp\\esi_3d_terrain.webp",
+      "title": "Evaporative Stress Index over Alpine Terrain",
+      "subtitle": "ESI signal draped over NASADEM terrain to reveal terrain-linked moisture stress patterns.",
+      "caption": "Multi-year June composite of the Evaporative Stress Index (ESI) draped over NASADEM 30 m terrain. ESI values near 1 suggest relatively unstressed evapotranspiration; lower values indicate surface moisture limitation relative to potential. Color ramp runs from terracotta (lower ESI) through stone beige (neutral) to alpine green (higher ESI). Terrain is vertically exaggerated for visual clarity. This is an exploratory proxy \u2014 terrain context is interpretive, not confirmatory.",
+      "role": "stress indicator",
+      "source_rasters": [
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2019_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2020_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2021_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2022_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2023_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2024_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\esi_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "et",
+      "source_pixels": 35665,
+      "render_shape": [
+        313,
+        303
+      ],
+      "p2": 1.501,
+      "p98": 3.2307,
+      "units": "mm day\u207b\u00b9 (proxy)",
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "png_path": "data\\processed\\summary\\three_d_product_maps\\png\\et_3d_terrain.png",
+      "webp_path": "data\\processed\\summary\\three_d_product_maps\\webp\\et_3d_terrain.webp",
+      "title": "Evapotranspiration over Alpine Terrain",
+      "subtitle": "ET signal draped over terrain to show spatial variation in vegetation water flux.",
+      "caption": "Multi-year June composite of ECOSTRESS-derived evapotranspiration (ET) draped over NASADEM terrain. Higher ET values (teal) indicate greater vegetation water flux; lower values (stone gray) suggest sparser or less active vegetation. Terrain context highlights how ET varies with elevation and slope aspect. Units are approximate; treat as a relative spatial proxy.",
+      "role": "vegetation water flux",
+      "source_rasters": [
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2019_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2020_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2021_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2022_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2023_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2024_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\et_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "pet",
+      "source_pixels": 35665,
+      "render_shape": [
+        313,
+        303
+      ],
+      "p2": 157.2326,
+      "p98": 297.1372,
+      "units": "W m\u207b\u00b2",
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "png_path": "data\\processed\\summary\\three_d_product_maps\\png\\pet_3d_terrain.png",
+      "webp_path": "data\\processed\\summary\\three_d_product_maps\\webp\\pet_3d_terrain.webp",
+      "title": "Potential Evapotranspiration over Alpine Terrain",
+      "subtitle": "Atmospheric demand proxy visualized against mountain structure.",
+      "caption": "Multi-year June composite of potential evapotranspiration (PET) over NASADEM terrain. PET represents the atmospheric demand for water \u2014 higher values (warm gold) indicate greater atmospheric evaporative demand. The spatial pattern reflects both solar geometry (aspect-driven) and elevation (temperature-driven). Color ramp runs from cool slate blue (lower demand) to muted burnt sienna (higher demand).",
+      "role": "atmospheric demand",
+      "source_rasters": [
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2019_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2020_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2021_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2022_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2023_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2024_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\pet_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "ndvi",
+      "source_pixels": 35665,
+      "render_shape": [
+        313,
+        303
+      ],
+      "p2": 0.0663,
+      "p98": 0.341,
+      "units": "index (\u22121 to 1)",
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "png_path": "data\\processed\\summary\\three_d_product_maps\\png\\ndvi_3d_terrain.png",
+      "webp_path": "data\\processed\\summary\\three_d_product_maps\\webp\\ndvi_3d_terrain.webp",
+      "title": "Vegetation Greenness over Alpine Terrain",
+      "subtitle": "NDVI signal draped over terrain to show vegetation structure across the park.",
+      "caption": "Multi-year June composite of NDVI (Normalized Difference Vegetation Index) draped over NASADEM terrain. Higher NDVI values (alpine green) indicate denser, more photosynthetically active vegetation. Lower values (warm tan) correspond to sparse vegetation, rock, or snow. NDVI in this alpine context is typically moderate (0.1\u20130.4) even in vegetated areas due to short growing seasons and altitude.",
+      "role": "vegetation greenness",
+      "source_rasters": [
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2019_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2020_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2021_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2022_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2023_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2024_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\ndvi_2025_june_daytime_mean.tif"
+      ]
+    },
+    {
+      "product": "wue",
+      "source_pixels": 35665,
+      "render_shape": [
+        313,
+        303
+      ],
+      "p2": 0.0949,
+      "p98": 3.9759,
+      "units": "proxy index",
+      "camera_elev": 38,
+      "camera_azim": 225,
+      "vertical_exag": 3.0,
+      "render_max_dim": 280,
+      "png_path": "data\\processed\\summary\\three_d_product_maps\\png\\wue_3d_terrain.png",
+      "webp_path": "data\\processed\\summary\\three_d_product_maps\\webp\\wue_3d_terrain.webp",
+      "title": "Water Use Efficiency over Alpine Terrain",
+      "subtitle": "Vegetation efficiency proxy visualized across elevation and slope structure.",
+      "caption": "Multi-year June composite of water use efficiency (WUE) draped over NASADEM terrain. WUE is computed as the ratio of carbon uptake to water loss \u2014 a proxy for vegetation efficiency. Higher values (deep teal) suggest more carbon gained per unit water lost; lower values (burnt orange) indicate lower efficiency. Treat as a relative spatial proxy; absolute values are model-dependent. Note: 2024 data not available for WUE; mean computed from 6 of 7 available June seasons.",
+      "role": "efficiency proxy",
+      "source_rasters": [
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2019_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2020_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2021_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2022_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2023_june_daytime_mean.tif",
+        "data\\processed\\summary\\timebin_validation\\composites\\daytime\\wue_2025_june_daytime_mean.tif"
+      ]
+    }
+  ]
+}

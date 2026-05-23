@@ -7,8 +7,8 @@ import { FrTrust } from '@/components/fr-trust'
 import { FrNext } from '@/components/fr-next'
 
 export const metadata = {
-  title: 'Further Research: Inside the Signal | Swiss National Park',
-  description: 'A deeper look at the map evidence, ECOSTRESS products, yearly variation, and terrain context behind the Swiss National Park stability story.',
+  title: 'Further Research — SNP ECOSTRESS Short-Window Signal Atlas',
+  description: 'A deeper research chapter showing spatial maps, ECOSTRESS product evidence, yearly signal variation, robustness checks, and future research directions for the Swiss National Park short-window signal analysis.',
 }
 
 export default function FurtherResearch() {
@@ -16,52 +16,52 @@ export default function FurtherResearch() {
     <main className="relative min-h-screen">
       <FrNav />
 
-      {/* ── FELDSTATION: cartographic ivory ─────────────────────── */}
+      {/* ── FELDSTATION: warm field paper ────────────────────────── */}
       <div
         data-register="feldstation"
         className="bg-background"
         style={{
-          '--background': 'oklch(0.892 0.018 75)',
-          '--card': 'oklch(0.875 0.020 78)',
-          '--border': 'oklch(0.740 0.022 80)',
-          '--secondary': 'oklch(0.858 0.022 80)',
+          '--background': '#E7E1D3',
+          '--card': '#ECE8DD',
+          '--border': '#C9C3B5',
+          '--secondary': '#EFE9DD',
         } as React.CSSProperties}
       >
         <FrOpening />
         <FrAtlas />
       </div>
 
-      {/* ── RASTERBAND: alpine night dark ──────────────────────── */}
+      {/* ── RASTERBAND: light cool instrument panel ──────────────── */}
       <div
         data-register="rasterband"
         className="bg-background text-foreground"
         style={{
-          '--background': 'oklch(0.095 0.006 160)',
-          '--foreground': 'oklch(0.875 0.010 80)',
-          '--card': 'oklch(0.13 0.008 160)',
-          '--card-foreground': 'oklch(0.875 0.010 80)',
-          '--muted-foreground': 'oklch(0.52 0.010 80)',
-          '--border': 'oklch(0.24 0.008 160)',
-          '--primary': 'oklch(0.62 0.095 140)',
-          '--secondary': 'oklch(0.155 0.008 160)',
-          '--secondary-foreground': 'oklch(0.875 0.010 80)',
-          '--ice-blue': 'oklch(0.62 0.092 234)',
-          '--gold': 'oklch(0.75 0.115 79)',
-          '--stone': 'oklch(0.62 0.016 80)',
+          '--background': '#D3D9D4',
+          '--foreground': '#1F2421',
+          '--card': '#E0E4DF',
+          '--card-foreground': '#1F2421',
+          '--muted-foreground': '#667067',
+          '--border': '#BBC3BC',
+          '--primary': '#3F6B4A',
+          '--secondary': '#E0E4DF',
+          '--secondary-foreground': '#1F2421',
+          '--ice-blue': '#496B7A',
+          '--gold': '#B3924A',
+          '--stone': '#8F978E',
         } as React.CSSProperties}
       >
         <FrProducts />
         <FrTemporal />
       </div>
 
-      {/* ── GRADIENTE: near-white, scientific ──────────────────── */}
+      {/* ── GRADIENTE: snowline off-white, scientific ─────────────── */}
       <div
         data-register="gradiente"
         className="bg-background"
         style={{
-          '--background': 'oklch(0.974 0.006 85)',
-          '--card': 'oklch(0.966 0.008 85)',
-          '--border': 'oklch(0.893 0.010 82)',
+          '--background': '#D8DCD6',
+          '--card': '#E4E6E1',
+          '--border': '#BBC3BC',
         } as React.CSSProperties}
       >
         <FrTrust />

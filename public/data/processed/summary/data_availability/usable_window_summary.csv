@@ -1,0 +1,26 @@
+product,window,window_label,months,years_expected,years_with_all_months_usable_count,years_with_partial_usable_count,years_with_all_months_usable,years_with_partial_usable,years_missing_or_low,total_usable_records_in_window,min_monthly_usable_records,mean_monthly_usable_records,window_confidence
+esi,jan_mar,January-March winter setup window,"1,2,3",7,0,5,[],"[2019, 2021, 2022, 2023, 2025]","[2020, 2024]",88,0,4.190476190476191,medium_partial
+esi,apr_jun,April-June spring transition window,"4,5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],126,0,6.0,medium_partial
+esi,jan_jun,January-June winter-to-early-growing-season window,"1,2,3,4,5,6",7,0,6,[],"[2019, 2020, 2021, 2022, 2023, 2025]",[2024],214,0,5.095238095238095,medium_partial
+esi,may_jun,May-June early growing-season support window,"5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],59,0,4.214285714285714,medium_partial
+esi,june,June early growing-season window,6,7,6,0,"[2019, 2020, 2021, 2022, 2023, 2025]",[],[2024],47,1,6.714285714285714,high
+et,jan_mar,January-March winter setup window,"1,2,3",7,0,5,[],"[2019, 2021, 2022, 2023, 2025]","[2020, 2024]",88,0,4.190476190476191,medium_partial
+et,apr_jun,April-June spring transition window,"4,5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],126,0,6.0,medium_partial
+et,jan_jun,January-June winter-to-early-growing-season window,"1,2,3,4,5,6",7,0,6,[],"[2019, 2020, 2021, 2022, 2023, 2025]",[2024],214,0,5.095238095238095,medium_partial
+et,may_jun,May-June early growing-season support window,"5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],59,0,4.214285714285714,medium_partial
+et,june,June early growing-season window,6,7,6,0,"[2019, 2020, 2021, 2022, 2023, 2025]",[],[2024],47,1,6.714285714285714,high
+ndvi,jan_mar,January-March winter setup window,"1,2,3",7,2,5,"[2021, 2023]","[2019, 2020, 2022, 2024, 2025]",[],208,0,9.904761904761905,medium_partial
+ndvi,apr_jun,April-June spring transition window,"4,5,6",7,4,3,"[2021, 2022, 2023, 2025]","[2019, 2020, 2024]",[],496,0,23.61904761904762,medium_partial
+ndvi,jan_jun,January-June winter-to-early-growing-season window,"1,2,3,4,5,6",7,2,5,"[2021, 2023]","[2019, 2020, 2022, 2024, 2025]",[],704,0,16.761904761904763,medium_partial
+ndvi,may_jun,May-June early growing-season support window,"5,6",7,4,3,"[2021, 2022, 2023, 2025]","[2019, 2020, 2024]",[],292,0,20.857142857142858,medium_partial
+ndvi,june,June early growing-season window,6,7,7,0,"[2019, 2020, 2021, 2022, 2023, 2024, 2025]",[],[],234,18,33.42857142857143,high
+pet,jan_mar,January-March winter setup window,"1,2,3",7,0,5,[],"[2019, 2021, 2022, 2023, 2025]","[2020, 2024]",88,0,4.190476190476191,medium_partial
+pet,apr_jun,April-June spring transition window,"4,5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],126,0,6.0,medium_partial
+pet,jan_jun,January-June winter-to-early-growing-season window,"1,2,3,4,5,6",7,0,6,[],"[2019, 2020, 2021, 2022, 2023, 2025]",[2024],214,0,5.095238095238095,medium_partial
+pet,may_jun,May-June early growing-season support window,"5,6",7,1,5,[2021],"[2019, 2020, 2022, 2023, 2025]",[2024],59,0,4.214285714285714,medium_partial
+pet,june,June early growing-season window,6,7,6,0,"[2019, 2020, 2021, 2022, 2023, 2025]",[],[2024],47,1,6.714285714285714,high
+wue,jan_mar,January-March winter setup window,"1,2,3",7,0,0,[],[],"[2019, 2020, 2021, 2022, 2023, 2024, 2025]",0,0,0.0,low
+wue,apr_jun,April-June spring transition window,"4,5,6",7,0,6,[],"[2019, 2020, 2021, 2022, 2023, 2025]",[2024],40,0,1.9047619047619047,medium_partial
+wue,jan_jun,January-June winter-to-early-growing-season window,"1,2,3,4,5,6",7,0,6,[],"[2019, 2020, 2021, 2022, 2023, 2025]",[2024],40,0,0.9523809523809523,medium_partial
+wue,may_jun,May-June early growing-season support window,"5,6",7,1,5,[2025],"[2019, 2020, 2021, 2022, 2023]",[2024],40,0,2.857142857142857,medium_partial
+wue,june,June early growing-season window,6,7,6,0,"[2019, 2020, 2021, 2022, 2023, 2025]",[],[2024],37,0,5.285714285714286,high

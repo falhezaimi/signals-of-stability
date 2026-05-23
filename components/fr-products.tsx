@@ -48,7 +48,7 @@ const products: Product[] = [
     webp: '/data/signals/three-d-products/webp/et_3d_terrain.webp',
     png:  '/data/signals/three-d-products/png/et_3d_terrain.png',
     caption: 'Multi-year June composite ET draped over NASADEM terrain. Higher ET (teal) indicates greater vegetation water flux; lower values (stone gray) suggest sparser or less active vegetation. Terrain context highlights how ET varies with elevation and slope aspect.',
-    interpretation: 'ET variation across terrain reveals where vegetation is most active. High ET areas often correspond to sheltered valleys with mature canopy cover — locations that may overlap with stable core zones.',
+    interpretation: 'ET variation across terrain reveals where vegetation-water activity appears strongest. High-ET areas often correspond to sheltered valleys with mature canopy cover — locations that may overlap with high-ESI signal areas.',
   },
   {
     id: 'pet',
@@ -76,7 +76,7 @@ const products: Product[] = [
     webp: '/data/signals/three-d-products/webp/ndvi_3d_terrain.webp',
     png:  '/data/signals/three-d-products/png/ndvi_3d_terrain.png',
     caption: 'Multi-year June composite NDVI draped over NASADEM terrain. Higher values (alpine green) indicate denser, more photosynthetically active vegetation. Lower values (warm tan) correspond to sparse vegetation, rock, or snow. NDVI is typically moderate (0.1–0.4) in alpine contexts.',
-    interpretation: 'NDVI terrain structure reveals where vegetation is densest. Note that apparent greenness does not guarantee stability — some greening areas also coincide with declining water-use efficiency or stress signals.',
+    interpretation: 'NDVI terrain structure reveals where vegetation appears densest. Note that apparent greenness does not confirm good water status — some high-NDVI areas also coincide with declining water-use efficiency or elevated stress signals.',
   },
   {
     id: 'wue',
@@ -122,7 +122,11 @@ export function FrProducts() {
               </span>
             </div>
             <p className="max-w-2xl text-sm text-muted-foreground/60 leading-relaxed">
-              Each ECOSTRESS product captures a different ecological lens. Together, ET, PET, ESI, NDVI, and WUE help explain why one part of the park appears stable while another becomes a watch zone.
+              ECOSTRESS is a NASA thermal sensor on the International Space Station that measures
+              how land surfaces use water. Each product derived from it captures a different
+              ecological signal: ET as water flux, PET as atmospheric demand, ESI as evaporative
+              stress, NDVI as vegetation greenness, and WUE as efficiency. Together they help explain
+              why one part of the park appears stable while another becomes a watch zone.
             </p>
           </div>
         </SectionReveal>
@@ -169,7 +173,7 @@ export function FrProducts() {
             </div>
 
             {/* 3D terrain image */}
-            <div className="relative" style={{ background: 'oklch(0.07 0.005 160)', aspectRatio: '4/3' }}>
+            <div className="relative" style={{ background: 'oklch(0.075 0.012 222)', aspectRatio: '4/3' }}>
               {/* Scan-line pattern */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" aria-hidden>
                 <defs>
@@ -194,7 +198,7 @@ export function FrProducts() {
               {/* Bottom bar */}
               <div
                 className="absolute bottom-0 left-0 right-0 flex items-end justify-between px-4 py-2.5 z-20 pointer-events-none"
-                style={{ background: 'linear-gradient(to top, oklch(0.05 0.004 160 / 0.85), transparent)' }}
+                style={{ background: 'linear-gradient(to top, oklch(0.055 0.010 222 / 0.85), transparent)' }}
               >
                 <span className="text-[8px] font-mono uppercase tracking-[0.12em]" style={{ color: '#DDD3BE', opacity: 0.50 }}>
                   {p.label} · Multi-year June · SNP
@@ -283,7 +287,7 @@ export function FrProducts() {
                     }`}
                     style={{ ...(active === i ? { borderColor: prod.color } : {}) }}
                   >
-                    <div className="relative aspect-square bg-[oklch(0.07_0.005_160)]">
+                    <div className="relative aspect-square bg-[oklch(0.075_0.012_222)]">
                       <picture>
                         <source srcSet={prod.webp} type="image/webp" />
                         {/* eslint-disable-next-line @next/next/no-img-element */}

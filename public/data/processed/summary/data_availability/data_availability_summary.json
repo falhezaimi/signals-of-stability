@@ -1,0 +1,50 @@
+{
+  "project_root": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final",
+  "master_metadata_csv": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/metadata/snp_jan_jun_all_products_master_with_pet_wue.csv",
+  "coverage_threshold_percent": 70.0,
+  "tiny_footprint_threshold": 0.1,
+  "expected_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "expected_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "products_present": [
+    "esi",
+    "et",
+    "ndvi",
+    "pet",
+    "wue"
+  ],
+  "record_counts": {
+    "raster_records": 1547,
+    "statistics_records": 1730,
+    "all_records": 3277,
+    "preferred_records": 2122,
+    "low_coverage_records": 792,
+    "tiny_footprint_records": 263
+  },
+  "outputs": {
+    "all_normalized_records": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/all_normalized_records.csv",
+    "preferred_analysis_records": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/preferred_analysis_records.csv",
+    "product_year_month_availability": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/product_year_month_availability.csv",
+    "product_year_month_timebin_matrix": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/product_year_month_timebin_matrix.csv",
+    "usable_window_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/usable_window_summary.csv",
+    "missing_data_report": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/missing_data_report.csv",
+    "low_coverage_records": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/low_coverage_records.csv",
+    "tiny_footprint_records": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/tiny_footprint_records.csv",
+    "crs_summary": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/crs_summary.csv",
+    "data_availability_report": "C:/Users/Stej4/OneDrive/Documents/school/research/env 231/final/data/processed/summary/data_availability/data_availability_report.md"
+  }
+}

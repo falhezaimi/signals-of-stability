@@ -9,7 +9,7 @@ const NODES = [
   {
     id: 1,
     label: 'Satellite\nAcquisition',
-    sublabel: 'MODIS · Landsat · S2',
+    sublabel: 'ECOSTRESS · AppEEARS',
     tag: 'RAW INGESTION',
   },
   {
@@ -26,21 +26,21 @@ const NODES = [
   },
   {
     id: 4,
-    label: 'Monthly\nComposite',
-    sublabel: 'JJA season focus',
+    label: 'April–June\nComposite',
+    sublabel: 'Jan–Jun window',
     tag: 'TEMPORAL WINDOW',
   },
   {
     id: 5,
     label: 'Index\nDerivation',
-    sublabel: 'NDVI · ET · LST',
+    sublabel: 'NDVI · ET · ESI',
     tag: 'SIGNAL DELTA',
   },
   {
     id: 6,
-    label: 'Ecological\nInterpretation',
-    sublabel: 'Stability assessment',
-    tag: 'SYNTHESIS',
+    label: 'Signal Atlas\nOutput',
+    sublabel: 'Website-ready JSON + PNG export',
+    tag: 'EXPORT',
   },
 ]
 
@@ -196,7 +196,7 @@ function FlowchartSVG({ inView }: { inView: boolean }) {
           fontSize="6" fill="currentColor" opacity="0.22"
           fontFamily="monospace" letterSpacing="0.12em"
         >
-          ▸ STABILITY SIGNAL OUTPUT
+          ▸ SIGNAL ATLAS OUTPUT
         </text>
       </motion.g>
     </svg>
@@ -266,7 +266,7 @@ export function Methodology() {
             Methodology
           </h2>
           <p className="max-w-lg text-muted-foreground/70 text-sm text-balance leading-relaxed">
-            A rigorous six-stage pipeline from satellite acquisition to ecological interpretation
+            An eight-stage processing pipeline from satellite acquisition to website-ready signal atlas export
           </p>
         </motion.div>
 
@@ -288,9 +288,9 @@ export function Methodology() {
           className="mt-16 md:mt-20 grid grid-cols-3 gap-px border border-border/20 bg-border/20"
         >
           {[
-            { label: 'Spatial Resolution', value: '30m / 10m' },
-            { label: 'Temporal Coverage', value: '2019 – 2024' },
-            { label: 'Quality Threshold', value: '≥ 70% Valid' },
+            { label: 'Spatial Resolution', value: '70m nominal' },
+            { label: 'Temporal Coverage', value: '2019 – 2025' },
+            { label: 'Available Months', value: 'January – June' },
           ].map((item) => (
             <div key={item.label} className="px-5 py-4 bg-card/8 text-center">
               <p className="text-[9px] font-mono uppercase tracking-[0.15em] text-muted-foreground/40 mb-1">{item.label}</p>

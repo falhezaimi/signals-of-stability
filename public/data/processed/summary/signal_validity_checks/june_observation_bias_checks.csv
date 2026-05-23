@@ -1,0 +1,4 @@
+variable,n_years,min_observation_count,min_mean_pixel_observation_coverage_percent,min_coverage_inside_aoi_percent,corr_observation_count_vs_mean,corr_pixel_coverage_vs_mean,corr_valid_observations_per_pixel_vs_mean,potential_sampling_bias_flag
+ndvi,7,24.0,69.62557220458984,100.0,0.558552928602047,0.725593632803311,0.6940017245315567,True
+et,7,2.0,44.785282135009766,99.30649477712872,-0.09429042816700818,0.6267769500337216,0.05516799185076195,False
+esi,7,2.0,44.785282135009766,99.30649477712872,-0.5113098723398875,-0.13990500311015197,-0.483383535212098,False

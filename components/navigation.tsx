@@ -7,13 +7,11 @@ import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { label: 'Overview', href: '#hero' },
-  { label: 'Earth View', href: '#earth' },
-  { label: 'Question', href: '#question' },
-  { label: 'Observatory', href: '#observatory' },
-  { label: 'Method', href: '#method' },
-  { label: 'Timeline', href: '#timeline' },
+  { label: 'Signal Atlas', href: '#observatory' },
   { label: 'Findings', href: '#findings' },
-  { label: 'Conclusion', href: '#conclusion' },
+  { label: 'Methods', href: '#method' },
+  { label: 'Limitations', href: '#limitations' },
+  { label: 'Provenance', href: '#provenance' },
 ]
 
 export function Navigation() {
@@ -83,7 +81,7 @@ export function Navigation() {
                 <circle cx="10" cy="10" r="1.5" fill="currentColor" />
               </svg>
               <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-foreground/55 group-hover:text-foreground/75 transition-colors duration-500 hidden sm:block">
-                SNP Research
+                SNP · Signal Atlas
               </span>
             </button>
 
@@ -111,15 +109,8 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Data Atlas + Further Research links + Coordinates */}
+            {/* Further Research link + Coordinates */}
             <div className="hidden md:flex items-center gap-3 text-[10px] font-mono text-muted-foreground/40">
-              <Link
-                href="/signals"
-                className="flex items-center gap-1.5 border border-border/30 px-2.5 py-1 hover:border-primary/30 hover:text-primary/70 transition-all duration-500"
-              >
-                <span className="w-1 h-1 rounded-full bg-primary/50" />
-                Data Atlas
-              </Link>
               <Link
                 href="/further-research"
                 className="flex items-center gap-1.5 border border-border/30 px-2.5 py-1 hover:border-primary/30 hover:text-primary/70 transition-all duration-500"

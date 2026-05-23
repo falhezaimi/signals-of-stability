@@ -1,0 +1,34 @@
+scenario,class_code,class_name,description,pixel_count,area_km2,percent_of_valid_aoi
+midday_afternoon,0,unclassified_or_no_data,No dominant story assigned or no valid trend support.,640,3.136,1.794476377400813
+midday_afternoon,1,stable_core,"Low interannual variability across NDVI, ET, and ESI.",1370,6.713,3.841300995373616
+midday_afternoon,2,coherent_june_activation,NDVI and ET slopes are positive and ESI is nonnegative.,187,0.9163,0.5243235665218001
+midday_afternoon,3,strong_june_activation,NDVI and ET slopes are both in the upper activation range.,24,0.1176,0.0672928641525305
+midday_afternoon,4,esi_watch_zone_exploratory,NDVI and ET are positive but ESI slope is negative.,2225,10.9025,6.238609280807514
+midday_afternoon,5,demand_efficiency_watch_exploratory,"NDVI, ET, and PET are positive while WUE is negative.",10350,50.714999999999996,29.020047665778776
+midday_afternoon,6,efficient_activation_support,NDVI and ET are positive and WUE is nonnegative.,977,4.7873,2.739380344875929
+midday_afternoon,7,product_disagreement_zone,Main products point in conflicting directions.,17934,87.8766,50.28459273797841
+midday_afternoon,8,high_variability_zone,One or more main products show high interannual variability.,1958,9.594199999999999,5.489976167110613
+daytime,0,unclassified_or_no_data,No dominant story assigned or no valid trend support.,135,0.6615,0.378522360857984
+daytime,1,stable_core,"Low interannual variability across NDVI, ET, and ESI.",374,1.8326,1.0486471330436002
+daytime,2,coherent_june_activation,NDVI and ET slopes are positive and ESI is nonnegative.,96,0.4704,0.269171456610122
+daytime,4,esi_watch_zone_exploratory,NDVI and ET are positive but ESI slope is negative.,10646,52.1654,29.84999299032665
+daytime,5,demand_efficiency_watch_exploratory,"NDVI, ET, and PET are positive while WUE is negative.",12386,60.6914,34.72872564138511
+daytime,6,efficient_activation_support,NDVI and ET are positive and WUE is nonnegative.,2445,11.9805,6.855460535539044
+daytime,7,product_disagreement_zone,Main products point in conflicting directions.,8817,43.2033,24.72171596803589
+daytime,8,high_variability_zone,One or more main products show high interannual variability.,766,3.7534,2.1477639142015983
+daytime_evening,0,unclassified_or_no_data,No dominant story assigned or no valid trend support.,116,0.5684,0.32524884340389737
+daytime_evening,1,stable_core,"Low interannual variability across NDVI, ET, and ESI.",377,1.8473,1.0570587410626664
+daytime_evening,2,coherent_june_activation,NDVI and ET slopes are positive and ESI is nonnegative.,99,0.4851,0.2775830646291883
+daytime_evening,4,esi_watch_zone_exploratory,NDVI and ET are positive but ESI slope is negative.,11239,55.0711,31.512687508762095
+daytime_evening,5,demand_efficiency_watch_exploratory,"NDVI, ET, and PET are positive while WUE is negative.",12176,59.6624,34.13991308005047
+daytime_evening,6,efficient_activation_support,NDVI and ET are positive and WUE is nonnegative.,2366,11.593399999999999,6.633954857703631
+daytime_evening,7,product_disagreement_zone,Main products point in conflicting directions.,8714,42.6986,24.432917426047947
+daytime_evening,8,high_variability_zone,One or more main products show high interannual variability.,578,2.8322,1.6206364783401095
+all_available,0,unclassified_or_no_data,No dominant story assigned or no valid trend support.,97,0.4753,0.2719753259498108
+all_available,1,stable_core,"Low interannual variability across NDVI, ET, and ESI.",416,2.0383999999999998,1.1664096453105284
+all_available,2,coherent_june_activation,NDVI and ET slopes are positive and ESI is nonnegative.,94,0.4606,0.26356371793074446
+all_available,4,esi_watch_zone_exploratory,NDVI and ET are positive but ESI slope is negative.,11458,56.1442,32.12673489415393
+all_available,5,demand_efficiency_watch_exploratory,"NDVI, ET, and PET are positive while WUE is negative.",11829,57.9621,33.16697041917847
+all_available,6,efficient_activation_support,NDVI and ET are positive and WUE is nonnegative.,2390,11.711,6.701247721856161
+all_available,7,product_disagreement_zone,Main products point in conflicting directions.,9032,44.2568,25.324547876068976
+all_available,8,high_variability_zone,One or more main products show high interannual variability.,349,1.7101,0.9785503995513809

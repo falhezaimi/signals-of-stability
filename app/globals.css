@@ -4,53 +4,86 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Warm Editorial Science Theme */
-  --background: oklch(0.963 0.016 90);         /* #F7F2E8 warm ivory */
-  --foreground: oklch(0.175 0.006 80);          /* #2A2A28 charcoal */
-  --card: oklch(0.950 0.020 90);               /* warm card surface */
-  --card-foreground: oklch(0.175 0.006 80);
-  --popover: oklch(0.963 0.016 90);
-  --popover-foreground: oklch(0.175 0.006 80);
-  --primary: oklch(0.565 0.095 140);           /* #6F8F5B muted green */
-  --primary-foreground: oklch(0.963 0.016 90);
-  --secondary: oklch(0.894 0.028 88);          /* #E8DDC8 warm beige */
-  --secondary-foreground: oklch(0.175 0.006 80);
-  --muted: oklch(0.915 0.022 88);
-  --muted-foreground: oklch(0.48 0.016 80);
-  --accent: oklch(0.687 0.115 79);             /* #C9A34A soft gold */
-  --accent-foreground: oklch(0.175 0.006 80);
-  --destructive: oklch(0.524 0.12 22);         /* #C95A4A muted red */
-  --destructive-foreground: oklch(0.963 0.016 90);
-  --border: oklch(0.875 0.025 88);             /* warm light border */
-  --input: oklch(0.875 0.025 88);
-  --ring: oklch(0.527 0.092 234);              /* #5A7FA3 muted blue */
+  /* Alpine Mineral Light — warm limestone · glacier dust · mineral field paper */
+  --background: #E7E1D3;
+  --foreground: #1F2421;
+  --card: #ECE8DD;
+  --card-foreground: #1F2421;
+  --popover: #ECE8DD;
+  --popover-foreground: #1F2421;
+  --primary: #3F6B4A;
+  --primary-foreground: #F1EDE2;
+  --secondary: #EFE9DD;
+  --secondary-foreground: #1F2421;
+  --muted: #EFE9DD;
+  --muted-foreground: #667067;
+  --accent: #B3924A;
+  --accent-foreground: #1F2421;
+  --destructive: #A86145;
+  --destructive-foreground: #F1EDE2;
+  --border: #C9C3B5;
+  --input: #C9C3B5;
+  --ring: #496B7A;
 
-  /* Extended brand palette */
-  --warm-ivory: oklch(0.963 0.016 90);
-  --warm-beige: oklch(0.894 0.028 88);
-  --glacier: oklch(0.975 0.010 90);
-  --ice-blue: oklch(0.527 0.092 234);          /* #5A7FA3 muted blue */
-  --forest: oklch(0.35 0.08 140);
-  --alpine-night: oklch(0.18 0.010 85);        /* warm dark, used for map/raster backgrounds */
-  --stone: oklch(0.728 0.016 80);              /* #B8B1A3 stone gray */
-  --gold: oklch(0.687 0.115 79);               /* #C9A34A soft gold */
+  /* Full mineral palette */
+  --field-bg: #E7E1D3;
+  --field-bg-soft: #EFE9DD;
+  --evidence-bg: #D8DCD6;
+  --evidence-bg-soft: #E4E6E1;
+  --instrument-bg: #D3D9D4;
+  --instrument-bg-soft: #E0E4DF;
+  --panel-bg: #ECE8DD;
+  --panel-bg-cool: #E2E5DF;
+  --panel-bg-warm: #EDE4D4;
+
+  --text-main: #1F2421;
+  --text-strong: #111613;
+  --text-muted: #667067;
+  --text-soft: #7B837A;
+  --text-inverse: #F1EDE2;
+
+  --border-soft: #C9C3B5;
+  --border-cool: #BBC3BC;
+  --border-strong: #8F978E;
+  --divider: #D2CCBE;
+
+  --alpine-green: #3F6B4A;
+  --alpine-green-dark: #294A34;
+  --moss: #6F8262;
+  --satellite-blue: #496B7A;
+  --satellite-blue-dark: #334D59;
+  --stress-terracotta: #A86145;
+  --stress-terracotta-dark: #7D4736;
+  --brass: #B3924A;
+  --brass-dark: #7A612F;
+  --pine-charcoal: #26312D;
+
+  /* Legacy compat tokens — component Tailwind utilities depend on these names */
+  --warm-ivory: #E7E1D3;
+  --warm-beige: #EFE9DD;
+  --glacier: #D8DCD6;
+  --ice-blue: #496B7A;
+  --forest: #294A34;
+  --alpine-night: #26312D;
+  --stone: #8F978E;
+  --gold: #B3924A;
 
   /* Charts */
-  --chart-1: oklch(0.565 0.095 140);
-  --chart-2: oklch(0.527 0.092 234);
-  --chart-3: oklch(0.687 0.115 79);
-  --chart-4: oklch(0.524 0.12 22);
-  --chart-5: oklch(0.728 0.016 80);
+  --chart-1: #3F6B4A;
+  --chart-2: #496B7A;
+  --chart-3: #B3924A;
+  --chart-4: #A86145;
+  --chart-5: #8F978E;
 
   --radius: 0.5rem;
-  --sidebar: oklch(0.950 0.020 90);
-  --sidebar-foreground: oklch(0.175 0.006 80);
-  --sidebar-primary: oklch(0.565 0.095 140);
-  --sidebar-primary-foreground: oklch(0.963 0.016 90);
-  --sidebar-accent: oklch(0.894 0.028 88);
-  --sidebar-accent-foreground: oklch(0.175 0.006 80);
-  --sidebar-border: oklch(0.875 0.025 88);
-  --sidebar-ring: oklch(0.527 0.092 234);
+  --sidebar: #ECE8DD;
+  --sidebar-foreground: #1F2421;
+  --sidebar-primary: #3F6B4A;
+  --sidebar-primary-foreground: #F1EDE2;
+  --sidebar-accent: #EFE9DD;
+  --sidebar-accent-foreground: #1F2421;
+  --sidebar-border: #C9C3B5;
+  --sidebar-ring: #496B7A;
 }
 
 @theme inline {
@@ -81,6 +114,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  /* Legacy compat */
   --color-warm-ivory: var(--warm-ivory);
   --color-warm-beige: var(--warm-beige);
   --color-glacier: var(--glacier);
@@ -89,6 +123,16 @@
   --color-alpine-night: var(--alpine-night);
   --color-stone: var(--stone);
   --color-gold: var(--gold);
+  /* Mineral palette tokens */
+  --color-field-bg: var(--field-bg);
+  --color-evidence-bg: var(--evidence-bg);
+  --color-instrument-bg: var(--instrument-bg);
+  --color-alpine-green: var(--alpine-green);
+  --color-moss: var(--moss);
+  --color-satellite-blue: var(--satellite-blue);
+  --color-stress-terracotta: var(--stress-terracotta);
+  --color-brass: var(--brass);
+  --color-pine-charcoal: var(--pine-charcoal);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -105,38 +149,55 @@
 
 /* ── Three-Register Spatial System ──────────────────────────────────── */
 
-/* FELDSTATION: cartographic paper, heavy topo — Hero, EarthMap, ResearchQuestion */
+/* FELDSTATION: warm limestone field paper — Hero, EarthMap, ResearchQuestion, AnswerBrief */
 [data-register="feldstation"] {
-  --background: oklch(0.892 0.018 75);   /* #E2D9C4 cartographic paper */
-  --card: oklch(0.875 0.020 78);
-  --border: oklch(0.740 0.022 80);
-  --secondary: oklch(0.858 0.022 80);
+  --background: #E7E1D3;
+  --foreground: #1F2421;
+  --card: #ECE8DD;
+  --card-foreground: #1F2421;
+  --muted: #EFE9DD;
+  --muted-foreground: #667067;
+  --border: #C9C3B5;
+  --primary: #3F6B4A;
+  --accent: #B3924A;
+  --secondary: #EFE9DD;
+  --secondary-foreground: #1F2421;
 }
 
-/* RASTERBAND: alpine night, instrument dark — Observatory, Methodology, Timeline */
+/* RASTERBAND: light slate instrument surface — Observatory, Methodology, Timeline */
 [data-register="rasterband"] {
-  --background: oklch(0.095 0.006 160);  /* #0B0E0B near-black */
-  --foreground: oklch(0.875 0.010 80);   /* near-white text */
-  --card: oklch(0.13 0.008 160);
-  --card-foreground: oklch(0.875 0.010 80);
-  --popover: oklch(0.13 0.008 160);
-  --popover-foreground: oklch(0.875 0.010 80);
-  --muted-foreground: oklch(0.52 0.010 80);
-  --border: oklch(0.24 0.008 160);
-  --input: oklch(0.24 0.008 160);
-  --primary: oklch(0.62 0.095 140);
-  --secondary: oklch(0.155 0.008 160);
-  --secondary-foreground: oklch(0.875 0.010 80);
-  --ice-blue: oklch(0.62 0.092 234);
-  --gold: oklch(0.75 0.115 79);
-  --stone: oklch(0.62 0.016 80);
+  --background: #D3D9D4;
+  --foreground: #1F2421;
+  --card: #E0E4DF;
+  --card-foreground: #1F2421;
+  --popover: #E0E4DF;
+  --popover-foreground: #1F2421;
+  --muted: #D8DCD6;
+  --muted-foreground: #667067;
+  --border: #BBC3BC;
+  --input: #BBC3BC;
+  --primary: #3F6B4A;
+  --accent: #496B7A;
+  --secondary: #E0E4DF;
+  --secondary-foreground: #1F2421;
+  --ice-blue: #496B7A;
+  --gold: #B3924A;
+  --stone: #8F978E;
 }
 
-/* GRADIENTE: near-white, zero decoration — DataVisualizations, ConservationClose */
+/* GRADIENTE: cool stone/snowline evidence surface — Findings, Interpretation, Conclusion */
 [data-register="gradiente"] {
-  --background: oklch(0.974 0.006 85);   /* #F5F4F1 */
-  --card: oklch(0.966 0.008 85);
-  --border: oklch(0.893 0.010 82);
+  --background: #D8DCD6;
+  --foreground: #1F2421;
+  --card: #E4E6E1;
+  --card-foreground: #1F2421;
+  --muted: #ECE8DD;
+  --muted-foreground: #667067;
+  --border: #BBC3BC;
+  --primary: #3F6B4A;
+  --accent: #A86145;
+  --secondary: #E4E6E1;
+  --secondary-foreground: #1F2421;
 }
 
 @layer base {
@@ -152,23 +213,23 @@
   }
 }
 
-/* Warm scrollbar */
+/* Mineral scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: oklch(0.963 0.016 90);
+  background: #E7E1D3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.875 0.025 88);
+  background: #C9C3B5;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.728 0.016 80);
+  background: #8F978E;
 }
 
 /* Subtle fade up animation */
@@ -217,8 +278,8 @@
 
 /* Selection color */
 ::selection {
-  background: oklch(0.565 0.095 140 / 0.18);
-  color: oklch(0.175 0.006 80);
+  background: rgba(63, 107, 74, 0.18);
+  color: #1F2421;
 }
 
 /* Precision mono label */
@@ -227,7 +288,7 @@
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: oklch(0.48 0.016 80 / 0.6);
+  color: rgba(102, 112, 103, 0.6);
 }
 
 /* Editorial serif display */
@@ -242,13 +303,13 @@
 .signal-bar {
   height: 2px;
   border-radius: 1px;
-  background: oklch(0.875 0.025 88);
+  background: #C9C3B5;
   overflow: hidden;
 }
 
 /* Refined focus ring */
 :focus-visible {
-  outline: 1.5px solid oklch(0.565 0.095 140 / 0.5);
+  outline: 1.5px solid rgba(63, 107, 74, 0.5);
   outline-offset: 3px;
 }
 
