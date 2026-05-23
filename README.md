@@ -1,35 +1,57 @@
-# snp-research
+# SNP Research
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+SNP Research is a web-based research companion for exploring vegetation stress and ecological signals in Swiss National Park using short-window remote sensing outputs.
 
-## Built with v0
+The project presents processed environmental indicators in a visual, discussion-oriented format so that patterns in vegetation condition, water stress, surface temperature, evapotranspiration, and ecosystem response can be examined more clearly.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## Project Overview
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_YjkWXiHqRIEJv7qfS6H3qa1T5tWq)
+This project focuses on Swiss National Park as a case study for understanding how satellite-derived environmental variables can reveal short-term ecological signals across a mountainous protected landscape.
 
-## Getting Started
+The site is not meant to function as a software product or public tool. It is a research communication page designed to organize, explain, and visually present the results of a remote sensing analysis.
 
-First, run the development server:
+## Research Focus
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The project examines variables commonly used in vegetation stress and ecosystem monitoring, including:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Evaporative Stress Index
+- Evapotranspiration
+- Potential evapotranspiration
+- Water-use efficiency
+- Vegetation indices
+- Land surface temperature-related signals
+- Short-window anomalies and variability
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+These variables help describe how vegetation and surface conditions may shift across space and time, especially under changing temperature and water availability.
 
-## Learn More
+## Scientific Purpose
 
-To learn more, take a look at the following resources:
+The goal is to support exploratory interpretation of ecological patterns in Swiss National Park.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+The project is designed to help answer questions such as:
 
-<a href="https://v0.app/chat/api/kiro/clone/faresw/snp-research" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+- Where do vegetation stress signals appear strongest?
+- How do water and temperature-related variables vary across the park?
+- Which areas show unusual short-window behavior?
+- How does time of day affect the interpretation of ECOSTRESS-derived variables?
+- Which visualizations best communicate environmental stress patterns?
+
+## Interpretation Notes
+
+This project should be interpreted carefully.
+
+The outputs support short-window remote sensing analysis. They should not be described as proof of long-term ecological change unless supported by a longer temporal record.
+
+Time of day is especially important for ECOSTRESS-based interpretation. Midday and afternoon observations are generally more useful for primary comparisons of ET, PET, LST, WUE, and ESI when data coverage allows.
+
+Coverage values should be interpreted using the corrected Area of Interest pixel denominator, not older rectangle-footprint coverage estimates.
+
+## Project Status
+
+This is an active research communication project.
+
+The website is intended to support discussion, refinement, and scientific framing. It may evolve as the analysis improves, additional figures are added, or the research question becomes more focused.
+
+## Repository Note
+
+This repository contains the website used to present the project. It may include visual outputs, written interpretation, and supporting interface components for communicating the analysis.
