@@ -54,7 +54,8 @@
       "Bash(echo \"Dev server started, PID: $!\")",
       "Bash(curl -s http://localhost:3000)",
       "Bash(grep -E 'public/data|\\\\.py$')",
-      "Bash([ -f \"/root/projects/swiss-national-park-site/$f\" ])"
+      "Bash([ -f \"/root/projects/swiss-national-park-site/$f\" ])",
+      "Bash(git -C /root/projects/swiss-national-park-site status --short)"
     ]
   }
 }
